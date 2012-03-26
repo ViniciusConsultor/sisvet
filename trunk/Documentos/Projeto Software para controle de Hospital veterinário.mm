@@ -13,10 +13,9 @@
       <font size="5" face="Arial">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(SYSVET)</font>
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <font NAME="SansSerif" SIZE="12"/>
-<node CREATED="1332370050927" FOLDED="true" HGAP="23" ID="ID_1691624391" MODIFIED="1332549543241" POSITION="left" TEXT="1-Introdu&#xe7;&#xe3;o" VSHIFT="-212">
+<node CREATED="1332370050927" HGAP="23" ID="ID_1691624391" MODIFIED="1332789213481" POSITION="left" TEXT="1-Introdu&#xe7;&#xe3;o" VSHIFT="-212">
 <font NAME="SansSerif" SIZE="12"/>
 <node CREATED="1332370099857" HGAP="17" ID="ID_1644651510" MODIFIED="1332468804458" TEXT="Empresa: Hospital Veterin&#xe1;rio UENP-CLM" VSHIFT="-9">
 <font NAME="SansSerif" SIZE="12"/>
@@ -38,10 +37,10 @@
 </node>
 <node CREATED="1332371063565" HGAP="22" ID="ID_161695574" MODIFIED="1332468804458" TEXT="Representante Legal" VSHIFT="16">
 <font NAME="SansSerif" SIZE="12"/>
-<node CREATED="1332371088311" ID="ID_1715674767" MODIFIED="1332468804458" TEXT="RG: ">
+<node CREATED="1332371088311" ID="ID_1715674767" MODIFIED="1332790918671" TEXT="RG: 283524546">
 <font NAME="SansSerif" SIZE="12"/>
 </node>
-<node CREATED="1332371102969" ID="ID_1618409916" MODIFIED="1332468804458" TEXT="CPF: ">
+<node CREATED="1332371102969" ID="ID_1618409916" MODIFIED="1332790938421" TEXT="CPF: 25409963881">
 <font NAME="SansSerif" SIZE="12"/>
 </node>
 <node CREATED="1332371158868" HGAP="32" ID="ID_841697929" MODIFIED="1332468804458" TEXT="Nome: Rog&#xe9;rio Salvador " VSHIFT="6">
@@ -49,7 +48,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1332371080385" FOLDED="true" HGAP="47" ID="ID_1537703604" MODIFIED="1332549510718" POSITION="left" TEXT="2-Perspectiva do Produto" VSHIFT="60">
+<node CREATED="1332371080385" HGAP="47" ID="ID_1537703604" MODIFIED="1332789259469" POSITION="left" TEXT="2-Perspectiva do Produto" VSHIFT="60">
 <font NAME="SansSerif" SIZE="12"/>
 <node CREATED="1332371723253" ID="ID_1293717241" MODIFIED="1332468804458" TEXT="2.1-Descri&#xe7;&#xe3;o do Problema">
 <font NAME="SansSerif" SIZE="12"/>
@@ -88,7 +87,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1332467992839" FOLDED="true" HGAP="-89" ID="ID_813600322" MODIFIED="1332549530666" POSITION="right" TEXT="3- Envolvidos" VSHIFT="166">
+<node CREATED="1332467992839" HGAP="-89" ID="ID_813600322" MODIFIED="1332789412958" POSITION="right" TEXT="3- Envolvidos" VSHIFT="166">
 <font NAME="SansSerif" SIZE="12"/>
 <node CREATED="1332468032722" ID="ID_1272176178" MODIFIED="1332531760822" TEXT="3.1-Descri&#xe7;&#xe3;o">
 <font NAME="SansSerif" SIZE="12"/>
@@ -105,7 +104,7 @@
 <node CREATED="1332469900652" ID="ID_1112288794" MODIFIED="1332469921985" TEXT="Envolvido 3">
 <node CREATED="1332469921985" ID="ID_1817056759" MODIFIED="1332469941454" TEXT="Nome:Farmacia"/>
 <node CREATED="1332469943425" ID="ID_1507984179" MODIFIED="1332469986608" TEXT="Breve Descri&#xe7;&#xe3;o: Farmacia para uso interno do Hospital Veterinario"/>
-<node CREATED="1332469989609" ID="ID_388095452" MODIFIED="1332531732407" TEXT="Responsabilidade:&#xa;&#x9;-cadastrar medicamento&#xa;&#x9;-cadastrar material de consumo&#xa;&#x9;-cadastrar anestesico&#xa;&#x9;-controlar estoque&#xa;&#x9;-entregar medicamento&#xa;&#x9;-entregar anestesico&#xa;&#x9;-entregar material de consumo"/>
+<node CREATED="1332469989609" ID="ID_388095452" MODIFIED="1332790303850" TEXT="Responsabilidade:&#xa;&#x9;-cadastrar medicamento&#xa;&#x9;-cadastrar material de consumo&#xa;&#x9;-cadastrar anestesico&#xa;&#x9;-controlar estoque&#xa;&#x9;-entregar medicamento&#xa;&#x9;-entregar anestesico&#xa;&#x9;-entregar material de consumo&#xa;&#x9;- libera exame"/>
 </node>
 <node CREATED="1332531760822" ID="ID_1489200025" MODIFIED="1332531776634" TEXT="Envolvido 4">
 <node CREATED="1332531776634" ID="ID_832330413" MODIFIED="1332531798459" TEXT="Nome:Estagiario(Aluno)"/>
@@ -127,15 +126,14 @@
       Cadastro de paciente/Cliente
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node CREATED="1332543860122" ID="ID_103544579" MODIFIED="1332548708748" TEXT="N. pessoas envolvidas: 2"/>
-<node CREATED="1332544244841" ID="ID_461975150" MODIFIED="1332544273625" TEXT="Tempo de dura&#xe7;&#xe3;o: 5 min"/>
-<node CREATED="1332544277890" ID="ID_84117602" MODIFIED="1332545588121" TEXT="Restri&#xe7;&#xf5;es:???"/>
+<node CREATED="1332544244841" ID="ID_461975150" MODIFIED="1332790355268" TEXT="Tempo de dura&#xe7;&#xe3;o: 10 min"/>
+<node CREATED="1332544277890" ID="ID_84117602" MODIFIED="1332790477838" TEXT="Restri&#xe7;&#xf5;es:n&#xe3;o estando no SPC(se este estiver todo o procedimento deve ser adiantado)"/>
 </node>
 <node CREATED="1332544301908" ID="ID_532435259" MODIFIED="1332544342889" TEXT="Cadastro de consulta">
 <node CREATED="1332544343893" ID="ID_1527537400" MODIFIED="1332548776227" TEXT="N. pessoas envolvidas:3"/>
-<node CREATED="1332544404804" ID="ID_539848800" MODIFIED="1332544477611" TEXT="Tempo de dura&#xe7;&#xe3;o:2min"/>
+<node CREATED="1332544404804" ID="ID_539848800" MODIFIED="1332790583200" TEXT="Tempo de dura&#xe7;&#xe3;o:5min"/>
 <node CREATED="1332544480877" ID="ID_1401773034" MODIFIED="1332545513225" TEXT="Restri&#xe7;&#xf5;es: urgencia,horario,medico veterinario"/>
 </node>
 <node CREATED="1332544656387" ID="ID_732706743" MODIFIED="1332544711198" TEXT="Cadastro de Cirurgia">
@@ -148,10 +146,11 @@
 <font NAME="SansSerif" SIZE="12"/>
 <node CREATED="1332468501604" ID="ID_1616325716" MODIFIED="1332468804458" TEXT="Microsoft Office Word 2003"/>
 <node CREATED="1332468505978" ID="ID_1436955801" MODIFIED="1332468804458" TEXT="Microsoft Office Excel 2003"/>
+<node CREATED="1332790755431" ID="ID_469471510" MODIFIED="1332790801437" TEXT="Agenda Nova Bra"/>
 </node>
 </node>
 </node>
-<node CREATED="1332468122186" FOLDED="true" HGAP="26" ID="ID_381565935" MODIFIED="1332549244872" POSITION="right" TEXT="4- Principais necessidades do usuario" VSHIFT="-85">
+<node CREATED="1332468122186" HGAP="26" ID="ID_381565935" MODIFIED="1332789398559" POSITION="right" TEXT="4- Principais necessidades do usuario" VSHIFT="-85">
 <font NAME="SansSerif" SIZE="12"/>
 <node CREATED="1332542580627" ID="ID_244538647" MODIFIED="1332543223635" TEXT="Controle de Clientes">
 <node CREATED="1332543190088" ID="ID_1942648274" MODIFIED="1332543217669" TEXT="Prioridade: Essencial"/>
