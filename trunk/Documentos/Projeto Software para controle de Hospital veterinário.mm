@@ -87,7 +87,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1332467992839" HGAP="102" ID="ID_813600322" MODIFIED="1333412914396" POSITION="right" TEXT="3- Envolvidos" VSHIFT="-59">
+<node CREATED="1332467992839" HGAP="102" ID="ID_813600322" MODIFIED="1333500236563" POSITION="right" TEXT="3- Envolvidos" VSHIFT="-59">
 <font NAME="SansSerif" SIZE="12"/>
 <node CREATED="1332468032722" ID="ID_1272176178" MODIFIED="1333412655976" TEXT="3.1-Descri&#xe7;&#xe3;o">
 <font NAME="SansSerif" SIZE="12"/>
@@ -99,7 +99,7 @@
 <node CREATED="1332469389178" ID="ID_12095009" MODIFIED="1333412663166" TEXT="Envolvido 2">
 <node CREATED="1332469404725" ID="ID_807502870" MODIFIED="1332469428343" TEXT="Nome:Medico Veterinario"/>
 <node CREATED="1332469430019" ID="ID_351197652" MODIFIED="1332469540437" TEXT="Breve Descri&#xe7;&#xe3;o: Medico Veterinario (Docente ou Residente) que atende no Hospital Veterinario"/>
-<node CREATED="1332469552080" ID="ID_1580034686" MODIFIED="1332469883765" TEXT="Responsabilidade:&#xa;&#x9;-Consultar Consultas&#xa;&#x9;-Realizar Consulta&#xa;&#x9;-Solicitar Exame&#xa;&#x9;-Solicitar Cirurgia&#xa;&#x9;-Realizar Cirurgia&#xa;&#x9;-Realizar Medica&#xe7;&#xe3;o&#xa;&#x9;-Realizar Interna&#xe7;&#xe3;o"/>
+<node CREATED="1332469552080" ID="ID_1580034686" MODIFIED="1333499894361" TEXT="Responsabilidade:&#xa;&#x9;-Consultar Consultas&#xa;&#x9;-Realizar Consulta&#xa;&#x9;-Solicitar Exame&#xa;&#x9;-Solicitar Cirurgia&#xa;&#x9;-Realizar Cirurgia&#xa;&#x9;-Realizar Medica&#xe7;&#xe3;o&#xa;&#x9;-Realizar Interna&#xe7;&#xe3;o&#xa;&#x9;-Solicitar interna&#xe7;&#xe3;o"/>
 </node>
 <node CREATED="1332469900652" ID="ID_1112288794" MODIFIED="1333412806226" TEXT="Envolvido 3">
 <node CREATED="1332469921985" ID="ID_1817056759" MODIFIED="1332469941454" TEXT="Nome:Farmacia"/>
@@ -112,7 +112,7 @@
 <node CREATED="1332531874881" ID="ID_742071511" MODIFIED="1332532145887" TEXT="Responsabilidade:&#xa;&#x9;-Acessorar e ajudar o Medico Veterinario em suas fun&#xe7;&#xf5;es&#xa;&#x9;-observar o Medico Veterinario em suas fun&#xe7;&#xf5;es                                                                                              "/>
 </node>
 </node>
-<node CREATED="1332468061946" ID="ID_946460102" MODIFIED="1333412951796" TEXT="3.2- Ambiente da Secretaria">
+<node CREATED="1332468061946" FOLDED="true" ID="ID_946460102" MODIFIED="1333499612618" TEXT="3.2- Ambiente da Secretaria">
 <font NAME="SansSerif" SIZE="12"/>
 <node CREATED="1332468449001" ID="ID_1029572046" MODIFIED="1333413022246" TEXT="Tarefas executadas no ambiente">
 <font NAME="SansSerif" SIZE="12"/>
@@ -149,7 +149,7 @@
 <node CREATED="1332790755431" ID="ID_469471510" MODIFIED="1332790801437" TEXT="Agenda Nova Bra"/>
 </node>
 </node>
-<node CREATED="1333412918305" ID="ID_1975055834" MODIFIED="1333412966896" TEXT="3.4-Ambiente da Farmacia">
+<node CREATED="1333412918305" ID="ID_1975055834" MODIFIED="1333499731521" TEXT="3.4-Ambiente da Farmacia">
 <node CREATED="1333412973946" ID="ID_1163221778" MODIFIED="1333413311007" TEXT="Tarefas executadas no ambiente">
 <node CREATED="1333413037046" ID="ID_1160344930" MODIFIED="1333413219747" TEXT="Cadastro de medicamento"/>
 <node CREATED="1333413312935" ID="ID_114415302" MODIFIED="1333413333027" TEXT="Cadaastro de Materialde Consumo"/>
@@ -165,8 +165,20 @@
 <node CREATED="1333414223097" ID="ID_785894032" MODIFIED="1333414247684" TEXT="Microsoft Office Excel 2007"/>
 </node>
 </node>
+<node CREATED="1333499550358" ID="ID_277354573" MODIFIED="1333499578251" TEXT="3.5-Ambiente do Consultorio">
+<node CREATED="1333499580877" ID="ID_1388505874" MODIFIED="1333499813307" TEXT="Tarefasexecutadas no ambiente">
+<node CREATED="1333499603412" ID="ID_1617176183" MODIFIED="1333499674363" TEXT="realizar consulta"/>
+<node CREATED="1333499677629" ID="ID_430512797" MODIFIED="1333499688332" TEXT="solicitar exame"/>
+<node CREATED="1333499690195" ID="ID_1055189986" MODIFIED="1333499707606" TEXT="realizar medica&#xe7;&#xe3;o"/>
+<node CREATED="1333499813307" ID="ID_679277003" MODIFIED="1333499831949" TEXT="solicitar cirurgia"/>
+<node CREATED="1333499832469" ID="ID_1458460311" MODIFIED="1333499846839" TEXT="solicitar interna&#xe7;&#xe3;o"/>
 </node>
-<node CREATED="1332468122186" FOLDED="true" HGAP="139" ID="ID_381565935" MODIFIED="1332977104009" POSITION="right" TEXT="4- Principais necessidades do usuario" VSHIFT="-13">
+<node CREATED="1333499725716" ID="ID_658465779" MODIFIED="1333499748806" TEXT="Aplicativos utilizados">
+<node CREATED="1333499758978" ID="ID_1573269268" MODIFIED="1333499793066" TEXT="Nenhum aplicativo"/>
+</node>
+</node>
+</node>
+<node CREATED="1332468122186" HGAP="139" ID="ID_381565935" MODIFIED="1333499925389" POSITION="right" TEXT="4- Principais necessidades do usuario" VSHIFT="-13">
 <font NAME="SansSerif" SIZE="12"/>
 <node CREATED="1332542580627" FOLDED="true" ID="ID_244538647" MODIFIED="1332976147226" TEXT="Controle de Clientes">
 <node CREATED="1332543190088" ID="ID_1942648274" MODIFIED="1332543217669" TEXT="Prioridade: Essencial"/>
@@ -188,28 +200,33 @@
 <node CREATED="1332543573688" ID="ID_1634762696" MODIFIED="1332546719653" TEXT="Situa&#xe7;&#xe3;o atual: entrada e saida de itens por formulario de papel"/>
 <node CREATED="1332543588781" ID="ID_722693342" MODIFIED="1332546800821" TEXT="Solu&#xe7;&#xe3;o proposta: cria&#xe7;&#xe3;o de um controle infomatizado  para entradas saidas de determinada categorias de itens e controle do estoque"/>
 </node>
-<node CREATED="1332975502391" FOLDED="true" ID="ID_1454047878" MODIFIED="1332975746186" TEXT="Controle de Laborat&#xf3;rios">
+<node CREATED="1332975502391" ID="ID_1454047878" MODIFIED="1333500062685" TEXT="Controle de Laborat&#xf3;rios">
 <node CREATED="1332975538394" ID="ID_1939655208" MODIFIED="1332975569444" TEXT="Prioridade: Importante"/>
 <node CREATED="1332975599005" ID="ID_1518383478" MODIFIED="1332975672340" TEXT="Situa&#xe7;&#xe3;o atual: feito realizados em papel"/>
 <node CREATED="1332975676447" ID="ID_1985184160" MODIFIED="1332975718003" TEXT="cria&#xe7;&#xe3;o de um controle individualizado e informatizado de laborat&#xf3;rios"/>
 </node>
-<node CREATED="1332975755890" FOLDED="true" ID="ID_1301172510" MODIFIED="1332975963105" TEXT="Controle de Cirurgias e interna&#xe7;&#xf5;es ">
+<node CREATED="1332975755890" FOLDED="true" ID="ID_1301172510" MODIFIED="1333499919945" TEXT="Controle de Cirurgias e interna&#xe7;&#xf5;es ">
 <node CREATED="1332975788659" ID="ID_1902969483" MODIFIED="1332975803316" TEXT="Prioridade: importante"/>
 <node CREATED="1332975805005" ID="ID_418668069" MODIFIED="1332975875643" TEXT="Situa&#xe7;&#xe3;o atual: feito em papel junto ao cadastro de clientes"/>
 <node CREATED="1332975881542" ID="ID_728128292" MODIFIED="1332975958487" TEXT="Solu&#xe7;&#xe3;o Proposta: cria&#xe7;&#xe3;o de um controle individualizado e informatizado para cirurgias"/>
 </node>
-<node CREATED="1332975966795" FOLDED="true" ID="ID_852474560" MODIFIED="1332976761610" TEXT="Controle de M&#xe9;dicos">
+<node CREATED="1332975966795" FOLDED="true" ID="ID_852474560" MODIFIED="1333499921240" TEXT="Controle de M&#xe9;dicos">
 <node CREATED="1332975985945" ID="ID_1922015261" MODIFIED="1332976004294" TEXT="Prioridade: Essencial"/>
 <node CREATED="1332976008144" ID="ID_544815081" MODIFIED="1332976080658" TEXT="Situa&#xe7;&#xe3;o atual: n&#xe3;o possui controle"/>
 <node CREATED="1332976085824" ID="ID_767478534" MODIFIED="1332976133247" TEXT="Solu&#xe7;&#xe3;o Proposta : cria&#xe7;&#xe3;o de um controle individualizado e informatizado de m&#xe9;dicos"/>
 </node>
-<node CREATED="1332976175075" FOLDED="true" ID="ID_921634350" MODIFIED="1332976760401" TEXT="Controle de M&#xe9;dicos auxiliares">
+<node CREATED="1332976175075" ID="ID_921634350" MODIFIED="1333499944804" TEXT="Controle de M&#xe9;dicos auxiliares">
 <node CREATED="1332976202945" ID="ID_1250113451" MODIFIED="1332976368950" TEXT="Prioridade: Importante"/>
 <node CREATED="1332976372242" ID="ID_279582992" MODIFIED="1332976523776" TEXT="Situa&#xe7;&#xe3;o atual: feito em papel"/>
 <node CREATED="1332976689083" ID="ID_960967926" MODIFIED="1332976757077" TEXT="Solu&#xe7;&#xe3;o Proposta:  cria&#xe7;&#xe3;o de um controle individualizado e informatizado de m&#xe9;dicos auxiliares"/>
 </node>
+<node CREATED="1333499929623" FOLDED="true" ID="ID_1057293027" MODIFIED="1333500849565" TEXT="Controle de resultado de Exames">
+<node CREATED="1333499950909" ID="ID_494044401" MODIFIED="1333499970302" TEXT="Prioridade:Importante"/>
+<node CREATED="1333499971291" ID="ID_750947083" MODIFIED="1333499999903" TEXT="Situa&#xe7;&#xe3;o Atual:feito em papel"/>
+<node CREATED="1333500000736" ID="ID_115819317" MODIFIED="1333500022266" TEXT="Solu&#xe7;&#xe3;o Proposta:  cria&#xe7;&#xe3;o de um controle individualizado e informatizado de exames"/>
 </node>
-<node CREATED="1332468172816" FOLDED="true" HGAP="177" ID="ID_1419849865" MODIFIED="1332977111121" POSITION="right" TEXT="5-Arquitetura" VSHIFT="24">
+</node>
+<node CREATED="1332468172816" HGAP="177" ID="ID_1419849865" MODIFIED="1333500026961" POSITION="right" TEXT="5-Arquitetura" VSHIFT="24">
 <font NAME="SansSerif" SIZE="12"/>
 <node CREATED="1332468214368" ID="ID_1767477996" MODIFIED="1332468804458" TEXT="Linguagem: Visual Basic .NET">
 <font NAME="SansSerif" SIZE="12"/>
@@ -229,7 +246,7 @@
 </node>
 <node CREATED="1332550714461" ID="ID_1079424662" MODIFIED="1332552934568" TEXT="SGDB: PostgresSQL 9.1"/>
 </node>
-<node CREATED="1332468716830" FOLDED="true" HGAP="98" ID="ID_448556002" MODIFIED="1332977115249" POSITION="right" TEXT="6-Processo de desenvolvimento" VSHIFT="-13">
+<node CREATED="1332468716830" HGAP="98" ID="ID_448556002" MODIFIED="1333500034153" POSITION="right" TEXT="6-Processo de desenvolvimento" VSHIFT="-13">
 <font NAME="SansSerif" SIZE="12"/>
 <node CREATED="1332468852249" FOLDED="true" ID="ID_1942721025" MODIFIED="1332972748145" TEXT="Levantamento de Requisitos">
 <node CREATED="1332546867270" FOLDED="true" ID="ID_1464808763" MODIFIED="1332972667850" TEXT="Definir vis&#xe3;o e escopo">
