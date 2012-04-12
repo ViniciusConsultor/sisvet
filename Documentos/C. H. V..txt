@@ -21,3 +21,29 @@ WITH (
 );
 ALTER TABLE cliente
   OWNER TO postgres;
+
+
+
+
+
+
+
+-- Table: pagamento
+
+-- DROP TABLE pagamento;
+
+CREATE TABLE pagamento
+(
+  valor_pagamento numeric(8,2),
+  cod_pagamento serial NOT NULL,
+  CONSTRAINT cod_pagamento_pk PRIMARY KEY (cod_pagamento )
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE pagamento
+  OWNER TO postgres;
+
+
+
+
