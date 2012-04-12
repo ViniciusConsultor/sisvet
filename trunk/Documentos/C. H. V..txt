@@ -72,3 +72,24 @@ WITH (
 
 
 
+
+-- Table: auxiliares
+
+-- DROP TABLE auxiliares;
+
+CREATE TABLE auxiliares
+(
+  cod_auxiliar serial NOT NULL,
+  nome_auxiliar character varying(50) NOT NULL,
+  rg_auxiliar character varying(15) NOT NULL,
+  cpf_auxiliar character(14) NOT NULL,
+  CONSTRAINT cod_auxiliar_pk PRIMARY KEY (cod_auxiliar )
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE auxiliares
+  OWNER TO postgres;
+
+
+
