@@ -47,3 +47,28 @@ ALTER TABLE pagamento
 
 
 
+
+-- Table: paciente
+
+-- DROP TABLE paciente;
+
+CREATE TABLE paciente
+(
+  cod_paciente serial NOT NULL,
+  rghv character varying(10) NOT NULL,
+  nome_paciente character varying,
+  especie_paciente character varying(50) NOT NULL,
+  raca_paciete character varying(50) NOT NULL,
+  nascimento_paciente date,
+  pelagem_paciente character varying(50) NOT NULL,
+  sexo_paciente character(1) NOT NULL,
+  castrado_paciente character(1),
+  CONSTRAINT cod_paciente_pk PRIMARY KEY (cod_paciente )
+)
+WITH (
+  OIDS=FALSE
+);
+
+
+
+
