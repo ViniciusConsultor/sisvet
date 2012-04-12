@@ -111,3 +111,82 @@ WITH (
 );
 ALTER TABLE medico_veterinario
   OWNER TO postgres;
+
+
+
+
+
+
+
+
+-- Table: medico_auxiliar
+
+-- DROP TABLE medico_auxiliar;
+
+CREATE TABLE medico_auxiliar
+(
+  auxiliarescod_auxiliar integer NOT NULL,
+  medico_veterinariocod_medico_vet integer NOT NULL,
+  CONSTRAINT medico_auxiliar_pkey PRIMARY KEY (auxiliarescod_auxiliar , medico_veterinariocod_medico_vet ),
+  CONSTRAINT auxiliarescod_auxiliar_fk FOREIGN KEY (auxiliarescod_auxiliar)
+      REFERENCES auxiliares (cod_auxiliar) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT medico_veterinariocod_medico_vet_fk FOREIGN KEY (medico_veterinariocod_medico_vet)
+      REFERENCES medico_veterinario (cod_medico_vet) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE medico_auxiliar
+  OWNER TO postgres;
+
+
+
+
+
+
+
+
+
+
+
+-- Table: remedios
+
+-- DROP TABLE remedios;
+
+CREATE TABLE remedios
+(
+  cod_remedio serial NOT NULL,
+  nome_remedio character varying(50) NOT NULL,
+  valor_unitario_remedio numeric(6,2) NOT NULL,
+  qtd_utilizada_remedio integer NOT NULL,
+  categoria_remedio character varying(50),
+  CONSTRAINT cod_remedio_pk PRIMARY KEY (cod_remedio )
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE remedios
+  OWNER TO postgres;
+
+
+
+
+
+-- Table: laboratorio
+
+-- DROP TABLE laboratorio;
+
+CREATE TABLE laboratorio
+(
+  cod_laboratorio serial NOT NULL,
+  nome_laboratorio character varying NOT NULL,
+  examecod_exame integer NOT NULL,
+  CONSTRAINT cod_laboratorio_pk PRIMARY KEY (cod_laboratorio )
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE laboratorio
+  OWNER TO postgres;
