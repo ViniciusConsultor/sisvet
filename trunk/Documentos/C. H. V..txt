@@ -93,3 +93,21 @@ ALTER TABLE auxiliares
 
 
 
+-- Table: medico_veterinario
+
+-- DROP TABLE medico_veterinario;
+
+CREATE TABLE medico_veterinario
+(
+  cod_medico_vet serial NOT NULL,
+  nome_medico_vet character varying(50) NOT NULL,
+  especialidade_medico_vet character varying(50) NOT NULL,
+  crmv_medico_vet character varying(10) NOT NULL,
+  telefone_medico_vet character(13) NOT NULL,
+  CONSTRAINT cod_medico_vet_pk PRIMARY KEY (cod_medico_vet )
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE medico_veterinario
+  OWNER TO postgres;
