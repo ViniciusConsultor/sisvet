@@ -1,0 +1,1133 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.1.3
+-- Dumped by pg_dump version 9.1.3
+-- Started on 2012-04-13 21:58:54
+
+SET statement_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- TOC entry 184 (class 3079 OID 11638)
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- TOC entry 1987 (class 0 OID 0)
+-- Dependencies: 184
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 168 (class 1259 OID 24907)
+-- Dependencies: 5
+-- Name: auxiliares; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE auxiliares (
+    cod_auxiliar integer NOT NULL,
+    nome_auxiliar character varying(50) NOT NULL,
+    rg_auxiliar character varying(15) NOT NULL,
+    cpf_auxiliar character(14) NOT NULL
+);
+
+
+ALTER TABLE public.auxiliares OWNER TO postgres;
+
+--
+-- TOC entry 167 (class 1259 OID 24905)
+-- Dependencies: 5 168
+-- Name: auxiliares_cod_auxiliar_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE auxiliares_cod_auxiliar_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auxiliares_cod_auxiliar_seq OWNER TO postgres;
+
+--
+-- TOC entry 1988 (class 0 OID 0)
+-- Dependencies: 167
+-- Name: auxiliares_cod_auxiliar_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE auxiliares_cod_auxiliar_seq OWNED BY auxiliares.cod_auxiliar;
+
+
+--
+-- TOC entry 1989 (class 0 OID 0)
+-- Dependencies: 167
+-- Name: auxiliares_cod_auxiliar_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('auxiliares_cod_auxiliar_seq', 1, false);
+
+
+--
+-- TOC entry 162 (class 1259 OID 24870)
+-- Dependencies: 5
+-- Name: cliente; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE cliente (
+    cod_cliente integer NOT NULL,
+    nome_cliente character varying(50) NOT NULL,
+    data_nascimento_cliente date NOT NULL,
+    "endereço_cliente" character varying(100) NOT NULL,
+    telefone_cliente character varying(13) NOT NULL,
+    rg_cliente character varying(15) NOT NULL,
+    expedidor_rg_cliente character(5) NOT NULL,
+    cpf_cliente character(14) NOT NULL,
+    municipio_cliente character varying(50) NOT NULL
+);
+
+
+ALTER TABLE public.cliente OWNER TO postgres;
+
+--
+-- TOC entry 161 (class 1259 OID 24868)
+-- Dependencies: 162 5
+-- Name: cliente_cod_cliente_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE cliente_cod_cliente_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.cliente_cod_cliente_seq OWNER TO postgres;
+
+--
+-- TOC entry 1990 (class 0 OID 0)
+-- Dependencies: 161
+-- Name: cliente_cod_cliente_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE cliente_cod_cliente_seq OWNED BY cliente.cod_cliente;
+
+
+--
+-- TOC entry 1991 (class 0 OID 0)
+-- Dependencies: 161
+-- Name: cliente_cod_cliente_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('cliente_cod_cliente_seq', 1, false);
+
+
+--
+-- TOC entry 183 (class 1259 OID 25013)
+-- Dependencies: 5
+-- Name: consulta; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE consulta (
+    cod_consuta integer NOT NULL,
+    medico_auxiliarmedico_veterinariocod_medico_vet integer NOT NULL,
+    data_consulta date NOT NULL,
+    hora_consulta character varying(5) NOT NULL,
+    agendado character(1) NOT NULL,
+    tipo_consulta character varying(10),
+    consulta_paciente_cliente_pagamentoclientecod_cliente integer NOT NULL,
+    consulta_paciente_cliente_pagamentopacientecodpaciente integer NOT NULL,
+    consulta_paciente_cliente_pagamentopagamentocod_pagamento integer NOT NULL,
+    medico_auxiliarauxiliarescod_auxiliar integer
+);
+
+
+ALTER TABLE public.consulta OWNER TO postgres;
+
+--
+-- TOC entry 182 (class 1259 OID 25011)
+-- Dependencies: 5 183
+-- Name: consulta_cod_consuta_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE consulta_cod_consuta_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.consulta_cod_consuta_seq OWNER TO postgres;
+
+--
+-- TOC entry 1992 (class 0 OID 0)
+-- Dependencies: 182
+-- Name: consulta_cod_consuta_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE consulta_cod_consuta_seq OWNED BY consulta.cod_consuta;
+
+
+--
+-- TOC entry 1993 (class 0 OID 0)
+-- Dependencies: 182
+-- Name: consulta_cod_consuta_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('consulta_cod_consuta_seq', 1, false);
+
+
+--
+-- TOC entry 180 (class 1259 OID 24983)
+-- Dependencies: 5
+-- Name: consulta_paciente_cliente_pagamento; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE consulta_paciente_cliente_pagamento (
+    clientecod_cliente integer NOT NULL,
+    pacientecod_paciente integer NOT NULL,
+    pagamentocod_pagamento integer NOT NULL
+);
+
+
+ALTER TABLE public.consulta_paciente_cliente_pagamento OWNER TO postgres;
+
+--
+-- TOC entry 179 (class 1259 OID 24972)
+-- Dependencies: 5
+-- Name: exame; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE exame (
+    cod_exame integer NOT NULL,
+    exame_tratamento_cirurgiaconsultacod_consulta integer NOT NULL,
+    exame_tratamento_cirurgiaconsultamedico_auxiliarmedico_veterina integer NOT NULL,
+    descricao_exame character varying(50),
+    exame_tratamento_cirurgiaconsultadata_consulta date NOT NULL,
+    exame_tratamento_cirurgiaconsultamedico_auxiliarescod_auxiliar integer,
+    nome_exame character varying(50)
+);
+
+
+ALTER TABLE public.exame OWNER TO postgres;
+
+--
+-- TOC entry 178 (class 1259 OID 24970)
+-- Dependencies: 5 179
+-- Name: exame_cod_exame_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE exame_cod_exame_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.exame_cod_exame_seq OWNER TO postgres;
+
+--
+-- TOC entry 1994 (class 0 OID 0)
+-- Dependencies: 178
+-- Name: exame_cod_exame_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE exame_cod_exame_seq OWNED BY exame.cod_exame;
+
+
+--
+-- TOC entry 1995 (class 0 OID 0)
+-- Dependencies: 178
+-- Name: exame_cod_exame_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('exame_cod_exame_seq', 1, false);
+
+
+--
+-- TOC entry 181 (class 1259 OID 25008)
+-- Dependencies: 5
+-- Name: exame_tratamento_cirurgia; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE exame_tratamento_cirurgia (
+    consultacodconsulta integer NOT NULL,
+    consultamedico_auxiliarmedico_veterinariocod_medico_vet integer NOT NULL,
+    consultadata_consulta date NOT NULL,
+    consultahora_consulta character varying(5) NOT NULL,
+    consultamedico_auxiliarauxiliarescodauxiliar integer
+);
+
+
+ALTER TABLE public.exame_tratamento_cirurgia OWNER TO postgres;
+
+--
+-- TOC entry 172 (class 1259 OID 24923)
+-- Dependencies: 5
+-- Name: laboratorio; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE laboratorio (
+    cod_laboratorio integer NOT NULL,
+    nome_laboratorio character varying(50) NOT NULL,
+    examecod_exame integer NOT NULL
+);
+
+
+ALTER TABLE public.laboratorio OWNER TO postgres;
+
+--
+-- TOC entry 171 (class 1259 OID 24921)
+-- Dependencies: 5 172
+-- Name: laboratorio_cod_laboratorio_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE laboratorio_cod_laboratorio_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.laboratorio_cod_laboratorio_seq OWNER TO postgres;
+
+--
+-- TOC entry 1996 (class 0 OID 0)
+-- Dependencies: 171
+-- Name: laboratorio_cod_laboratorio_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE laboratorio_cod_laboratorio_seq OWNED BY laboratorio.cod_laboratorio;
+
+
+--
+-- TOC entry 1997 (class 0 OID 0)
+-- Dependencies: 171
+-- Name: laboratorio_cod_laboratorio_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('laboratorio_cod_laboratorio_seq', 1, false);
+
+
+--
+-- TOC entry 175 (class 1259 OID 24947)
+-- Dependencies: 5
+-- Name: medico_auxiliar; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE medico_auxiliar (
+    auxiliarescod_auxiliar integer NOT NULL,
+    medico_veterinariocod_medico_vet integer NOT NULL
+);
+
+
+ALTER TABLE public.medico_auxiliar OWNER TO postgres;
+
+--
+-- TOC entry 170 (class 1259 OID 24915)
+-- Dependencies: 5
+-- Name: medico_veterinario; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE medico_veterinario (
+    cod_medico_vet integer NOT NULL,
+    nome_medico_vet character varying(50) NOT NULL,
+    especialidade_medico_vet character varying(50) NOT NULL,
+    crmv_medico_vet character varying(10) NOT NULL,
+    telefone_medico_vet character(13) NOT NULL
+);
+
+
+ALTER TABLE public.medico_veterinario OWNER TO postgres;
+
+--
+-- TOC entry 169 (class 1259 OID 24913)
+-- Dependencies: 5 170
+-- Name: medico_veterinario_cod_medico_vet_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE medico_veterinario_cod_medico_vet_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.medico_veterinario_cod_medico_vet_seq OWNER TO postgres;
+
+--
+-- TOC entry 1998 (class 0 OID 0)
+-- Dependencies: 169
+-- Name: medico_veterinario_cod_medico_vet_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE medico_veterinario_cod_medico_vet_seq OWNED BY medico_veterinario.cod_medico_vet;
+
+
+--
+-- TOC entry 1999 (class 0 OID 0)
+-- Dependencies: 169
+-- Name: medico_veterinario_cod_medico_vet_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('medico_veterinario_cod_medico_vet_seq', 1, false);
+
+
+--
+-- TOC entry 166 (class 1259 OID 24896)
+-- Dependencies: 5
+-- Name: paciente; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE paciente (
+    cod_paciente integer NOT NULL,
+    rghv_paciente character varying(10) NOT NULL,
+    nome_paciente character varying,
+    especie_paciente character varying(50) NOT NULL,
+    raca_paciete character varying(50) NOT NULL,
+    nascimento_paciente date,
+    pelagem_paciente character varying(50) NOT NULL,
+    sexo_paciente character(1) NOT NULL,
+    castrado_paciente character(1)
+);
+
+
+ALTER TABLE public.paciente OWNER TO postgres;
+
+--
+-- TOC entry 165 (class 1259 OID 24894)
+-- Dependencies: 166 5
+-- Name: paciente_cod_paciente_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE paciente_cod_paciente_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.paciente_cod_paciente_seq OWNER TO postgres;
+
+--
+-- TOC entry 2000 (class 0 OID 0)
+-- Dependencies: 165
+-- Name: paciente_cod_paciente_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE paciente_cod_paciente_seq OWNED BY paciente.cod_paciente;
+
+
+--
+-- TOC entry 2001 (class 0 OID 0)
+-- Dependencies: 165
+-- Name: paciente_cod_paciente_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('paciente_cod_paciente_seq', 1, false);
+
+
+--
+-- TOC entry 163 (class 1259 OID 24880)
+-- Dependencies: 5
+-- Name: pagamento; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE pagamento (
+    valor_pagamento numeric(8,2),
+    cod_pagamento integer NOT NULL
+);
+
+
+ALTER TABLE public.pagamento OWNER TO postgres;
+
+--
+-- TOC entry 164 (class 1259 OID 24886)
+-- Dependencies: 163 5
+-- Name: pagamento_cod_pagamento_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE pagamento_cod_pagamento_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.pagamento_cod_pagamento_seq OWNER TO postgres;
+
+--
+-- TOC entry 2002 (class 0 OID 0)
+-- Dependencies: 164
+-- Name: pagamento_cod_pagamento_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE pagamento_cod_pagamento_seq OWNED BY pagamento.cod_pagamento;
+
+
+--
+-- TOC entry 2003 (class 0 OID 0)
+-- Dependencies: 164
+-- Name: pagamento_cod_pagamento_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('pagamento_cod_pagamento_seq', 1, false);
+
+
+--
+-- TOC entry 174 (class 1259 OID 24932)
+-- Dependencies: 5
+-- Name: remedios; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE remedios (
+    cod_remedio integer NOT NULL,
+    nome_remedio character varying(50) NOT NULL,
+    valor_unitario_remedio numeric(6,2) NOT NULL,
+    qtd_utilizada_remedio integer NOT NULL,
+    categoria_remedio character varying(50),
+    tratamentocod_tratamento integer NOT NULL
+);
+
+
+ALTER TABLE public.remedios OWNER TO postgres;
+
+--
+-- TOC entry 173 (class 1259 OID 24930)
+-- Dependencies: 174 5
+-- Name: remedios_cod_remedio_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE remedios_cod_remedio_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.remedios_cod_remedio_seq OWNER TO postgres;
+
+--
+-- TOC entry 2004 (class 0 OID 0)
+-- Dependencies: 173
+-- Name: remedios_cod_remedio_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE remedios_cod_remedio_seq OWNED BY remedios.cod_remedio;
+
+
+--
+-- TOC entry 2005 (class 0 OID 0)
+-- Dependencies: 173
+-- Name: remedios_cod_remedio_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('remedios_cod_remedio_seq', 1, false);
+
+
+--
+-- TOC entry 177 (class 1259 OID 24964)
+-- Dependencies: 5
+-- Name: tratamento; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE tratamento (
+    cod_tratamento integer NOT NULL,
+    exame_tratamento_cirurgiaconsultacod_consulta integer NOT NULL,
+    exame_tratamento_cirurgiaconsultamedico_auxiliarmedico_vetetina integer NOT NULL,
+    descricao_tratamento character varying(255) NOT NULL,
+    exame_tratamento_cirurgiaconsultadata_consulta date NOT NULL,
+    exame_tratamento_cirurgiaconsultahora_consulta character varying(5) NOT NULL,
+    exame_tratamento_cirurgiaconsultamedico_auxiliarauxiliarescod_a integer
+);
+
+
+ALTER TABLE public.tratamento OWNER TO postgres;
+
+--
+-- TOC entry 176 (class 1259 OID 24962)
+-- Dependencies: 5 177
+-- Name: tratamento_cod_tratamento_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE tratamento_cod_tratamento_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.tratamento_cod_tratamento_seq OWNER TO postgres;
+
+--
+-- TOC entry 2006 (class 0 OID 0)
+-- Dependencies: 176
+-- Name: tratamento_cod_tratamento_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE tratamento_cod_tratamento_seq OWNED BY tratamento.cod_tratamento;
+
+
+--
+-- TOC entry 2007 (class 0 OID 0)
+-- Dependencies: 176
+-- Name: tratamento_cod_tratamento_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('tratamento_cod_tratamento_seq', 1, false);
+
+
+--
+-- TOC entry 1918 (class 2604 OID 24910)
+-- Dependencies: 167 168 168
+-- Name: cod_auxiliar; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY auxiliares ALTER COLUMN cod_auxiliar SET DEFAULT nextval('auxiliares_cod_auxiliar_seq'::regclass);
+
+
+--
+-- TOC entry 1915 (class 2604 OID 24873)
+-- Dependencies: 162 161 162
+-- Name: cod_cliente; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY cliente ALTER COLUMN cod_cliente SET DEFAULT nextval('cliente_cod_cliente_seq'::regclass);
+
+
+--
+-- TOC entry 1924 (class 2604 OID 25016)
+-- Dependencies: 182 183 183
+-- Name: cod_consuta; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY consulta ALTER COLUMN cod_consuta SET DEFAULT nextval('consulta_cod_consuta_seq'::regclass);
+
+
+--
+-- TOC entry 1923 (class 2604 OID 24975)
+-- Dependencies: 178 179 179
+-- Name: cod_exame; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY exame ALTER COLUMN cod_exame SET DEFAULT nextval('exame_cod_exame_seq'::regclass);
+
+
+--
+-- TOC entry 1920 (class 2604 OID 24926)
+-- Dependencies: 172 171 172
+-- Name: cod_laboratorio; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY laboratorio ALTER COLUMN cod_laboratorio SET DEFAULT nextval('laboratorio_cod_laboratorio_seq'::regclass);
+
+
+--
+-- TOC entry 1919 (class 2604 OID 24918)
+-- Dependencies: 170 169 170
+-- Name: cod_medico_vet; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY medico_veterinario ALTER COLUMN cod_medico_vet SET DEFAULT nextval('medico_veterinario_cod_medico_vet_seq'::regclass);
+
+
+--
+-- TOC entry 1917 (class 2604 OID 24899)
+-- Dependencies: 166 165 166
+-- Name: cod_paciente; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY paciente ALTER COLUMN cod_paciente SET DEFAULT nextval('paciente_cod_paciente_seq'::regclass);
+
+
+--
+-- TOC entry 1916 (class 2604 OID 24888)
+-- Dependencies: 164 163
+-- Name: cod_pagamento; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY pagamento ALTER COLUMN cod_pagamento SET DEFAULT nextval('pagamento_cod_pagamento_seq'::regclass);
+
+
+--
+-- TOC entry 1921 (class 2604 OID 24935)
+-- Dependencies: 173 174 174
+-- Name: cod_remedio; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY remedios ALTER COLUMN cod_remedio SET DEFAULT nextval('remedios_cod_remedio_seq'::regclass);
+
+
+--
+-- TOC entry 1922 (class 2604 OID 24967)
+-- Dependencies: 176 177 177
+-- Name: cod_tratamento; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY tratamento ALTER COLUMN cod_tratamento SET DEFAULT nextval('tratamento_cod_tratamento_seq'::regclass);
+
+
+--
+-- TOC entry 1972 (class 0 OID 24907)
+-- Dependencies: 168
+-- Data for Name: auxiliares; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY auxiliares (cod_auxiliar, nome_auxiliar, rg_auxiliar, cpf_auxiliar) FROM stdin;
+\.
+
+
+--
+-- TOC entry 1969 (class 0 OID 24870)
+-- Dependencies: 162
+-- Data for Name: cliente; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY cliente (cod_cliente, nome_cliente, data_nascimento_cliente, "endereço_cliente", telefone_cliente, rg_cliente, expedidor_rg_cliente, cpf_cliente, municipio_cliente) FROM stdin;
+\.
+
+
+--
+-- TOC entry 1981 (class 0 OID 25013)
+-- Dependencies: 183
+-- Data for Name: consulta; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY consulta (cod_consuta, medico_auxiliarmedico_veterinariocod_medico_vet, data_consulta, hora_consulta, agendado, tipo_consulta, consulta_paciente_cliente_pagamentoclientecod_cliente, consulta_paciente_cliente_pagamentopacientecodpaciente, consulta_paciente_cliente_pagamentopagamentocod_pagamento, medico_auxiliarauxiliarescod_auxiliar) FROM stdin;
+\.
+
+
+--
+-- TOC entry 1979 (class 0 OID 24983)
+-- Dependencies: 180
+-- Data for Name: consulta_paciente_cliente_pagamento; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY consulta_paciente_cliente_pagamento (clientecod_cliente, pacientecod_paciente, pagamentocod_pagamento) FROM stdin;
+\.
+
+
+--
+-- TOC entry 1978 (class 0 OID 24972)
+-- Dependencies: 179
+-- Data for Name: exame; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY exame (cod_exame, exame_tratamento_cirurgiaconsultacod_consulta, exame_tratamento_cirurgiaconsultamedico_auxiliarmedico_veterina, descricao_exame, exame_tratamento_cirurgiaconsultadata_consulta, exame_tratamento_cirurgiaconsultamedico_auxiliarescod_auxiliar, nome_exame) FROM stdin;
+\.
+
+
+--
+-- TOC entry 1980 (class 0 OID 25008)
+-- Dependencies: 181
+-- Data for Name: exame_tratamento_cirurgia; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY exame_tratamento_cirurgia (consultacodconsulta, consultamedico_auxiliarmedico_veterinariocod_medico_vet, consultadata_consulta, consultahora_consulta, consultamedico_auxiliarauxiliarescodauxiliar) FROM stdin;
+\.
+
+
+--
+-- TOC entry 1974 (class 0 OID 24923)
+-- Dependencies: 172
+-- Data for Name: laboratorio; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY laboratorio (cod_laboratorio, nome_laboratorio, examecod_exame) FROM stdin;
+\.
+
+
+--
+-- TOC entry 1976 (class 0 OID 24947)
+-- Dependencies: 175
+-- Data for Name: medico_auxiliar; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY medico_auxiliar (auxiliarescod_auxiliar, medico_veterinariocod_medico_vet) FROM stdin;
+\.
+
+
+--
+-- TOC entry 1973 (class 0 OID 24915)
+-- Dependencies: 170
+-- Data for Name: medico_veterinario; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY medico_veterinario (cod_medico_vet, nome_medico_vet, especialidade_medico_vet, crmv_medico_vet, telefone_medico_vet) FROM stdin;
+\.
+
+
+--
+-- TOC entry 1971 (class 0 OID 24896)
+-- Dependencies: 166
+-- Data for Name: paciente; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY paciente (cod_paciente, rghv_paciente, nome_paciente, especie_paciente, raca_paciete, nascimento_paciente, pelagem_paciente, sexo_paciente, castrado_paciente) FROM stdin;
+\.
+
+
+--
+-- TOC entry 1970 (class 0 OID 24880)
+-- Dependencies: 163
+-- Data for Name: pagamento; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY pagamento (valor_pagamento, cod_pagamento) FROM stdin;
+\.
+
+
+--
+-- TOC entry 1975 (class 0 OID 24932)
+-- Dependencies: 174
+-- Data for Name: remedios; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY remedios (cod_remedio, nome_remedio, valor_unitario_remedio, qtd_utilizada_remedio, categoria_remedio, tratamentocod_tratamento) FROM stdin;
+\.
+
+
+--
+-- TOC entry 1977 (class 0 OID 24964)
+-- Dependencies: 177
+-- Data for Name: tratamento; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY tratamento (cod_tratamento, exame_tratamento_cirurgiaconsultacod_consulta, exame_tratamento_cirurgiaconsultamedico_auxiliarmedico_vetetina, descricao_tratamento, exame_tratamento_cirurgiaconsultadata_consulta, exame_tratamento_cirurgiaconsultahora_consulta, exame_tratamento_cirurgiaconsultamedico_auxiliarauxiliarescod_a) FROM stdin;
+\.
+
+
+--
+-- TOC entry 1936 (class 2606 OID 24912)
+-- Dependencies: 168 168
+-- Name: cod_auxiliar_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY auxiliares
+    ADD CONSTRAINT cod_auxiliar_pk PRIMARY KEY (cod_auxiliar);
+
+
+--
+-- TOC entry 1926 (class 2606 OID 24875)
+-- Dependencies: 162 162
+-- Name: cod_cliente_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY cliente
+    ADD CONSTRAINT cod_cliente_pk PRIMARY KEY (cod_cliente);
+
+
+--
+-- TOC entry 1952 (class 2606 OID 25027)
+-- Dependencies: 183 183
+-- Name: cod_consulta; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY consulta
+    ADD CONSTRAINT cod_consulta UNIQUE (cod_consuta);
+
+
+--
+-- TOC entry 1948 (class 2606 OID 24977)
+-- Dependencies: 179 179
+-- Name: cod_exame_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY exame
+    ADD CONSTRAINT cod_exame_pk PRIMARY KEY (cod_exame);
+
+
+--
+-- TOC entry 1940 (class 2606 OID 24940)
+-- Dependencies: 172 172
+-- Name: cod_laboratorio_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY laboratorio
+    ADD CONSTRAINT cod_laboratorio_pk PRIMARY KEY (cod_laboratorio);
+
+
+--
+-- TOC entry 1938 (class 2606 OID 24920)
+-- Dependencies: 170 170
+-- Name: cod_medico_vet_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY medico_veterinario
+    ADD CONSTRAINT cod_medico_vet_pk PRIMARY KEY (cod_medico_vet);
+
+
+--
+-- TOC entry 1934 (class 2606 OID 24904)
+-- Dependencies: 166 166
+-- Name: cod_paciente_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY paciente
+    ADD CONSTRAINT cod_paciente_pk PRIMARY KEY (cod_paciente);
+
+
+--
+-- TOC entry 1930 (class 2606 OID 24893)
+-- Dependencies: 163 163
+-- Name: cod_pagamento_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY pagamento
+    ADD CONSTRAINT cod_pagamento_pk PRIMARY KEY (cod_pagamento);
+
+
+--
+-- TOC entry 1942 (class 2606 OID 24945)
+-- Dependencies: 174 174
+-- Name: cod_remedio_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY remedios
+    ADD CONSTRAINT cod_remedio_pk PRIMARY KEY (cod_remedio);
+
+
+--
+-- TOC entry 1946 (class 2606 OID 24969)
+-- Dependencies: 177 177
+-- Name: cod_tratamento_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY tratamento
+    ADD CONSTRAINT cod_tratamento_pk PRIMARY KEY (cod_tratamento);
+
+
+--
+-- TOC entry 1932 (class 2606 OID 25133)
+-- Dependencies: 163 163
+-- Name: codigo; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY pagamento
+    ADD CONSTRAINT codigo UNIQUE (cod_pagamento);
+
+
+--
+-- TOC entry 1954 (class 2606 OID 25029)
+-- Dependencies: 183 183
+-- Name: codigo_consulta; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY consulta
+    ADD CONSTRAINT codigo_consulta PRIMARY KEY (cod_consuta);
+
+
+--
+-- TOC entry 1950 (class 2606 OID 24987)
+-- Dependencies: 180 180 180 180
+-- Name: consulta_paciente_cliente_pagamento_pk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY consulta_paciente_cliente_pagamento
+    ADD CONSTRAINT consulta_paciente_cliente_pagamento_pk PRIMARY KEY (clientecod_cliente, pacientecod_paciente, pagamentocod_pagamento);
+
+
+--
+-- TOC entry 1928 (class 2606 OID 24877)
+-- Dependencies: 162 162
+-- Name: cpf_cliente; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY cliente
+    ADD CONSTRAINT cpf_cliente UNIQUE (cpf_cliente);
+
+
+--
+-- TOC entry 1944 (class 2606 OID 24961)
+-- Dependencies: 175 175 175
+-- Name: medico_auxiliar_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY medico_auxiliar
+    ADD CONSTRAINT medico_auxiliar_pkey PRIMARY KEY (auxiliarescod_auxiliar, medico_veterinariocod_medico_vet);
+
+
+--
+-- TOC entry 1966 (class 2606 OID 25159)
+-- Dependencies: 183 168 1935
+-- Name: auxiliar; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY consulta
+    ADD CONSTRAINT auxiliar FOREIGN KEY (medico_auxiliarauxiliarescod_auxiliar) REFERENCES auxiliares(cod_auxiliar);
+
+
+--
+-- TOC entry 1959 (class 2606 OID 25075)
+-- Dependencies: 183 177 1951
+-- Name: auxiliar_medico; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY tratamento
+    ADD CONSTRAINT auxiliar_medico FOREIGN KEY (exame_tratamento_cirurgiaconsultamedico_auxiliarauxiliarescod_a) REFERENCES consulta(cod_consuta);
+
+
+--
+-- TOC entry 1957 (class 2606 OID 24950)
+-- Dependencies: 175 168 1935
+-- Name: auxiliarescod_auxiliar_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY medico_auxiliar
+    ADD CONSTRAINT auxiliarescod_auxiliar_fk FOREIGN KEY (auxiliarescod_auxiliar) REFERENCES auxiliares(cod_auxiliar);
+
+
+--
+-- TOC entry 1962 (class 2606 OID 24988)
+-- Dependencies: 1925 180 162
+-- Name: clientecod_cliente_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY consulta_paciente_cliente_pagamento
+    ADD CONSTRAINT clientecod_cliente_fk FOREIGN KEY (clientecod_cliente) REFERENCES cliente(cod_cliente);
+
+
+--
+-- TOC entry 1967 (class 2606 OID 25164)
+-- Dependencies: 162 183 1925
+-- Name: cod_cliente; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY consulta
+    ADD CONSTRAINT cod_cliente FOREIGN KEY (consulta_paciente_cliente_pagamentoclientecod_cliente) REFERENCES cliente(cod_cliente);
+
+
+--
+-- TOC entry 1960 (class 2606 OID 25080)
+-- Dependencies: 177 1951 183
+-- Name: cod_veterinario; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY tratamento
+    ADD CONSTRAINT cod_veterinario FOREIGN KEY (exame_tratamento_cirurgiaconsultamedico_auxiliarmedico_vetetina) REFERENCES consulta(cod_consuta);
+
+
+--
+-- TOC entry 1961 (class 2606 OID 25085)
+-- Dependencies: 1951 177 183
+-- Name: consulta; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY tratamento
+    ADD CONSTRAINT consulta FOREIGN KEY (exame_tratamento_cirurgiaconsultacod_consulta) REFERENCES consulta(cod_consuta);
+
+
+--
+-- TOC entry 1955 (class 2606 OID 25021)
+-- Dependencies: 179 172 1947
+-- Name: examecod_exame_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY laboratorio
+    ADD CONSTRAINT examecod_exame_fk FOREIGN KEY (examecod_exame) REFERENCES exame(cod_exame);
+
+
+--
+-- TOC entry 1965 (class 2606 OID 25154)
+-- Dependencies: 1937 170 183
+-- Name: medico_veterinario; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY consulta
+    ADD CONSTRAINT medico_veterinario FOREIGN KEY (medico_auxiliarmedico_veterinariocod_medico_vet) REFERENCES medico_veterinario(cod_medico_vet);
+
+
+--
+-- TOC entry 1958 (class 2606 OID 24955)
+-- Dependencies: 1937 175 170
+-- Name: medico_veterinariocod_medico_vet_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY medico_auxiliar
+    ADD CONSTRAINT medico_veterinariocod_medico_vet_fk FOREIGN KEY (medico_veterinariocod_medico_vet) REFERENCES medico_veterinario(cod_medico_vet);
+
+
+--
+-- TOC entry 1968 (class 2606 OID 25169)
+-- Dependencies: 183 1933 166
+-- Name: paciente; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY consulta
+    ADD CONSTRAINT paciente FOREIGN KEY (consulta_paciente_cliente_pagamentopacientecodpaciente) REFERENCES paciente(cod_paciente);
+
+
+--
+-- TOC entry 1963 (class 2606 OID 24993)
+-- Dependencies: 1933 166 180
+-- Name: pacientecod_paciente_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY consulta_paciente_cliente_pagamento
+    ADD CONSTRAINT pacientecod_paciente_fk FOREIGN KEY (pacientecod_paciente) REFERENCES paciente(cod_paciente);
+
+
+--
+-- TOC entry 1964 (class 2606 OID 24998)
+-- Dependencies: 163 180 1929
+-- Name: pagamentocod_pagamento; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY consulta_paciente_cliente_pagamento
+    ADD CONSTRAINT pagamentocod_pagamento FOREIGN KEY (pagamentocod_pagamento) REFERENCES pagamento(cod_pagamento);
+
+
+--
+-- TOC entry 1956 (class 2606 OID 25003)
+-- Dependencies: 1945 174 177
+-- Name: tratamentocod_tratamento_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY remedios
+    ADD CONSTRAINT tratamentocod_tratamento_fk FOREIGN KEY (tratamentocod_tratamento) REFERENCES tratamento(cod_tratamento);
+
+
+--
+-- TOC entry 1986 (class 0 OID 0)
+-- Dependencies: 5
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+-- Completed on 2012-04-13 21:58:55
+
+--
+-- PostgreSQL database dump complete
+--
+
