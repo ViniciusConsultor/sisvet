@@ -1,0 +1,21 @@
+﻿Public Class conexãoPostgres
+    Dim connectionString As String = "Dsn=PostgreSQL35W;database=C. H. V.;server=127.0.0.1;port=5432;uid=postgres;sslmode=disable;readonly=0;protocol=7.4;fakeoidindex=0;showoidcolumn=0;rowversioning=0;showsystemtables=0;fetch=100;socket=4096;unknownsizes=0;maxvarcharsize=255;maxlongvarcharsize=8190;debug=0;commlog=0;optimizer=0;ksqo=1;usedeclarefetch=0;textaslongvarchar=1;unknownsaslongvarchar=0;boolsaschar=1;parse=0;cancelasfreestmt=0;extrasystableprefixes=dd_;lfconversion=1;updatablecursors=1;disallowpremature=0;trueisminus1=0;bi=0;byteaaslongvarbinary=0;useserversideprepare=0;lowercaseidentifier=0;gssauthusegss=0;xaopt=1;pwd=postgres"
+
+    Public Function connection() As Integer
+        Dim conn As New Odbc.OdbcConnection(connectionString)
+        Dim result As Integer = 0
+
+        Try
+            conn.Open()
+            MessageBox.Show("ok")
+
+            result = 1
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+        Return result
+    End Function
+
+
+End Class
