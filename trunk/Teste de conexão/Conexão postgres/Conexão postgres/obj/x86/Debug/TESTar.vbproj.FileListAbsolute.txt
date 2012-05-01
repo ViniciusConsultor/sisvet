@@ -1,0 +1,12 @@
+c:\users\ediel\documents\visual studio 2010\Projects\TESTar\TESTar\bin\Debug\TESTar.exe.config
+c:\users\ediel\documents\visual studio 2010\Projects\TESTar\TESTar\bin\Debug\TESTar.exe
+c:\users\ediel\documents\visual studio 2010\Projects\TESTar\TESTar\bin\Debug\TESTar.pdb
+c:\users\ediel\documents\visual studio 2010\Projects\TESTar\TESTar\bin\Debug\TESTar.xml
+c:\users\ediel\documents\visual studio 2010\Projects\TESTar\TESTar\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\ediel\documents\visual studio 2010\Projects\TESTar\TESTar\obj\x86\Debug\TESTar.Form1.resources
+c:\users\ediel\documents\visual studio 2010\Projects\TESTar\TESTar\obj\x86\Debug\TESTar.Resources.resources
+c:\users\ediel\documents\visual studio 2010\Projects\TESTar\TESTar\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\ediel\documents\visual studio 2010\Projects\TESTar\TESTar\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\ediel\documents\visual studio 2010\Projects\TESTar\TESTar\obj\x86\Debug\TESTar.exe
+c:\users\ediel\documents\visual studio 2010\Projects\TESTar\TESTar\obj\x86\Debug\TESTar.xml
+c:\users\ediel\documents\visual studio 2010\Projects\TESTar\TESTar\obj\x86\Debug\TESTar.pdb

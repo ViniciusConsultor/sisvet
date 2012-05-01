@@ -1,0 +1,284 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+TESTar
+</name>
+</assembly>
+<members>
+<member name="T:TESTar._C__H__V_DataSet.cirurgiaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.cirurgia_enternacaoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.clienteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.consultaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.custosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.exameDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.laboratoriaisDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.laboratoriosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.medicacaoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.medico_veterinarioDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.pacienteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.remediosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.tipo_consultaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.tratamentoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.cirurgiaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.cirurgia_enternacaoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.clienteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.consultaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.custosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.exameRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.laboratoriaisRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.laboratoriosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.medicacaoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.medico_veterinarioRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.pacienteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.remediosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.tipo_consultaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.tratamentoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.cirurgiaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.cirurgia_enternacaoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.clienteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.consultaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.custosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.exameRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.laboratoriaisRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.laboratoriosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.medicacaoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.medico_veterinarioRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.pacienteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.remediosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.tipo_consultaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet.tratamentoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSetTableAdapters.cirurgiaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSetTableAdapters.cirurgia_enternacaoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSetTableAdapters.clienteTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSetTableAdapters.consultaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSetTableAdapters.custosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSetTableAdapters.exameTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSetTableAdapters.laboratoriaisTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSetTableAdapters.laboratoriosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSetTableAdapters.medicacaoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSetTableAdapters.medico_veterinarioTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSetTableAdapters.pacienteTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSetTableAdapters.remediosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSetTableAdapters.tipo_consultaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSetTableAdapters.tratamentoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:TESTar._C__H__V_DataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(TESTar._C__H__V_DataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:TESTar._C__H__V_DataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(TESTar._C__H__V_DataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:TESTar._C__H__V_DataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(TESTar._C__H__V_DataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:TESTar._C__H__V_DataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:TESTar._C__H__V_DataSetTableAdapters.TableAdapterManager.UpdateAll(TESTar._C__H__V_DataSet)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:TESTar._C__H__V_DataSetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="P:TESTar.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:TESTar.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:TESTar.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>
