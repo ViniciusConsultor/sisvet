@@ -36,3 +36,28 @@ E:\Documentos\Visual Studio 2010\Projects\StockPC\StockPC\obj\x86\Debug\StockPC.
 C:\Users\Ediel\Desktop\StockPC (Versão Final)\StockPC\StockPC\bin\Debug\StockPC.exe.config
 C:\Users\Ediel\Desktop\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\StockPC.exe
 C:\Users\Ediel\Desktop\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\StockPC.pdb
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\bin\Debug\StockPC.exe.config
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\StockPC.exe
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\StockPC.pdb
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\bin\Debug\StockPC.exe
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\bin\Debug\StockPC.pdb
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\StockPC.wfCadCategoria.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\StockPC.wfCadCidade.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\StockPC.wfCadFornecedor.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\StockPC.wfCadFuncionario.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\StockPC.wfCadPedido.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\StockPC.wfCadProduto.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\StockPC.wfHome.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\StockPC.Properties.Resources.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\StockPC.wfLogin.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\StockPC.wfRelCategoria.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\StockPC.wfRelCidade.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\StockPC.wfRelFornecedor.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\StockPC.wfRelFuncionario.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\StockPC.wfRelPedido.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\StockPC.wfRelProduto.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\RdlCompile.cache
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Programas e outros\StockPC (Versão Final)\StockPC\StockPC\obj\x86\Debug\RdlCompile.compiled
