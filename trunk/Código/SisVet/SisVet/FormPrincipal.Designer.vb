@@ -42,6 +42,10 @@ Partial Class FormPrincipal
         Me.AuxiliarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelatóriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CirurgiaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LaboratórioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MedicamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -65,12 +69,12 @@ Partial Class FormPrincipal
         'SairToolStripMenuItem1
         '
         Me.SairToolStripMenuItem1.Name = "SairToolStripMenuItem1"
-        Me.SairToolStripMenuItem1.Size = New System.Drawing.Size(107, 26)
+        Me.SairToolStripMenuItem1.Size = New System.Drawing.Size(152, 26)
         Me.SairToolStripMenuItem1.Text = "Sair"
         '
         'CadastroToolStripMenuItem
         '
-        Me.CadastroToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClienteToolStripMenuItem1, Me.MedicoToolStripMenuItem, Me.AuxiliarToolStripMenuItem1, Me.PacienteToolStripMenuItem1})
+        Me.CadastroToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClienteToolStripMenuItem1, Me.MedicoToolStripMenuItem, Me.AuxiliarToolStripMenuItem1, Me.PacienteToolStripMenuItem1, Me.LaboratórioToolStripMenuItem, Me.MedicamentoToolStripMenuItem})
         Me.CadastroToolStripMenuItem.Name = "CadastroToolStripMenuItem"
         Me.CadastroToolStripMenuItem.Size = New System.Drawing.Size(84, 25)
         Me.CadastroToolStripMenuItem.Text = "Cadastro"
@@ -79,49 +83,49 @@ Partial Class FormPrincipal
         '
         Me.ClienteToolStripMenuItem1.Image = Global.SisVet.My.Resources.Resources.aesthetica_5022_users
         Me.ClienteToolStripMenuItem1.Name = "ClienteToolStripMenuItem1"
-        Me.ClienteToolStripMenuItem1.Size = New System.Drawing.Size(138, 26)
+        Me.ClienteToolStripMenuItem1.Size = New System.Drawing.Size(175, 26)
         Me.ClienteToolStripMenuItem1.Text = "Cliente"
         '
         'MedicoToolStripMenuItem
         '
         Me.MedicoToolStripMenuItem.Image = Global.SisVet.My.Resources.Resources.Medicina_e_Saude_5558_Head_physician_icon
         Me.MedicoToolStripMenuItem.Name = "MedicoToolStripMenuItem"
-        Me.MedicoToolStripMenuItem.Size = New System.Drawing.Size(138, 26)
+        Me.MedicoToolStripMenuItem.Size = New System.Drawing.Size(175, 26)
         Me.MedicoToolStripMenuItem.Text = "Medico"
         '
         'AuxiliarToolStripMenuItem1
         '
         Me.AuxiliarToolStripMenuItem1.Image = Global.SisVet.My.Resources.Resources.Medicina_e_Saude_5552_surgeon_icon
         Me.AuxiliarToolStripMenuItem1.Name = "AuxiliarToolStripMenuItem1"
-        Me.AuxiliarToolStripMenuItem1.Size = New System.Drawing.Size(138, 26)
+        Me.AuxiliarToolStripMenuItem1.Size = New System.Drawing.Size(175, 26)
         Me.AuxiliarToolStripMenuItem1.Text = "Auxiliar"
         '
         'PacienteToolStripMenuItem1
         '
         Me.PacienteToolStripMenuItem1.Image = Global.SisVet.My.Resources.Resources.cattle
         Me.PacienteToolStripMenuItem1.Name = "PacienteToolStripMenuItem1"
-        Me.PacienteToolStripMenuItem1.Size = New System.Drawing.Size(138, 26)
+        Me.PacienteToolStripMenuItem1.Size = New System.Drawing.Size(175, 26)
         Me.PacienteToolStripMenuItem1.Text = "Paciente"
         '
         'ConsultaToolStripMenuItem1
         '
-        Me.ConsultaToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MarcarToolStripMenuItem, Me.ConsultarToolStripMenuItem})
+        Me.ConsultaToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MarcarToolStripMenuItem, Me.ConsultarToolStripMenuItem, Me.ExameToolStripMenuItem, Me.CirurgiaToolStripMenuItem})
         Me.ConsultaToolStripMenuItem1.Name = "ConsultaToolStripMenuItem1"
-        Me.ConsultaToolStripMenuItem1.Size = New System.Drawing.Size(83, 25)
-        Me.ConsultaToolStripMenuItem1.Text = "Consulta"
+        Me.ConsultaToolStripMenuItem1.Size = New System.Drawing.Size(112, 25)
+        Me.ConsultaToolStripMenuItem1.Text = "Atendimento"
         '
         'MarcarToolStripMenuItem
         '
         Me.MarcarToolStripMenuItem.Name = "MarcarToolStripMenuItem"
-        Me.MarcarToolStripMenuItem.Size = New System.Drawing.Size(147, 26)
-        Me.MarcarToolStripMenuItem.Text = "Marcar"
+        Me.MarcarToolStripMenuItem.Size = New System.Drawing.Size(160, 26)
+        Me.MarcarToolStripMenuItem.Text = "Tratamento"
         '
         'ConsultarToolStripMenuItem
         '
         Me.ConsultarToolStripMenuItem.Image = Global.SisVet.My.Resources.Resources.Medicina_e_Saude_5549_Medical_invoice_information_icon
         Me.ConsultarToolStripMenuItem.Name = "ConsultarToolStripMenuItem"
-        Me.ConsultarToolStripMenuItem.Size = New System.Drawing.Size(147, 26)
-        Me.ConsultarToolStripMenuItem.Text = "Consultar"
+        Me.ConsultarToolStripMenuItem.Size = New System.Drawing.Size(160, 26)
+        Me.ConsultarToolStripMenuItem.Text = "Consulta"
         '
         'ArquivoToolStripMenuItem
         '
@@ -181,6 +185,30 @@ Partial Class FormPrincipal
         Me.RelatóriosToolStripMenuItem.Size = New System.Drawing.Size(92, 25)
         Me.RelatóriosToolStripMenuItem.Text = "Relatórios"
         '
+        'ExameToolStripMenuItem
+        '
+        Me.ExameToolStripMenuItem.Name = "ExameToolStripMenuItem"
+        Me.ExameToolStripMenuItem.Size = New System.Drawing.Size(160, 26)
+        Me.ExameToolStripMenuItem.Text = "Exame"
+        '
+        'CirurgiaToolStripMenuItem
+        '
+        Me.CirurgiaToolStripMenuItem.Name = "CirurgiaToolStripMenuItem"
+        Me.CirurgiaToolStripMenuItem.Size = New System.Drawing.Size(160, 26)
+        Me.CirurgiaToolStripMenuItem.Text = "Cirurgia"
+        '
+        'LaboratórioToolStripMenuItem
+        '
+        Me.LaboratórioToolStripMenuItem.Name = "LaboratórioToolStripMenuItem"
+        Me.LaboratórioToolStripMenuItem.Size = New System.Drawing.Size(175, 26)
+        Me.LaboratórioToolStripMenuItem.Text = "Laboratório"
+        '
+        'MedicamentoToolStripMenuItem
+        '
+        Me.MedicamentoToolStripMenuItem.Name = "MedicamentoToolStripMenuItem"
+        Me.MedicamentoToolStripMenuItem.Size = New System.Drawing.Size(175, 26)
+        Me.MedicamentoToolStripMenuItem.Text = "Medicamento"
+        '
         'FormPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -222,5 +250,9 @@ Partial Class FormPrincipal
     Friend WithEvents ConsultaToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MarcarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConsultarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LaboratórioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MedicamentoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ExameToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CirurgiaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

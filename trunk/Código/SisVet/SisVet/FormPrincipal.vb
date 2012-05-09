@@ -28,4 +28,40 @@
         FormPaciente.Show()
 
     End Sub
+
+    Private Sub LaboratórioToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles LaboratórioToolStripMenuItem.Click
+        FormLaboratorio.MdiParent = Me
+        FormLaboratorio.Show()
+
+    End Sub
+
+    Private Sub MedicamentoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles MedicamentoToolStripMenuItem.Click
+        FormMedicamento.MdiParent = Me
+        FormMedicamento.Show()
+
+    End Sub
+
+    Private Sub MarcarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles MarcarToolStripMenuItem.Click
+        FormTratamento.MdiParent = Me
+        FormTratamento.Show()
+
+    End Sub
+
+    Private Sub ConsultarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarToolStripMenuItem.Click
+        FormConsulta.MdiParent = Me
+        FormConsulta.Show()
+
+    End Sub
+
+    Private Sub ExameToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ExameToolStripMenuItem.Click
+        FormExame.MdiParent = Me
+        FormExame.Show()
+
+    End Sub
+
+    Private Sub CirurgiaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles CirurgiaToolStripMenuItem.Click
+        FormCirurgia.MdiParent = Me
+        FormCirurgia.Show()
+
+    End Sub
 End Class

@@ -102,6 +102,12 @@
     <Compile Include="FormAuxiliar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormMedicacao.Designer.vb">
+      <DependentUpon>FormMedicacao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormMedicacao.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="NewFolder1\FormCirurgia.Designer.vb">
       <DependentUpon>FormCirurgia.vb</DependentUpon>
     </Compile>
@@ -188,6 +194,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FormAuxiliar.resx">
       <DependentUpon>FormAuxiliar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMedicacao.resx">
+      <DependentUpon>FormMedicacao.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.vb</DependentUpon>

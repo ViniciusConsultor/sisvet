@@ -17,13 +17,23 @@
                     .id = txtcodigo.Text
                 End If
                 .nome = txtnomepaciente.Text
-                .datanasc = txtdata_nascim_paciente.Text
+                .datanasc = masckDatanascimento.Text
                 .especie = txtespecie.Text
                 .raça = txtraça.Text
                 .rghv = txtrghv.Text
                 .pelagem = txtpelagem.Text
-                .sexo = txtsexo.Text
-                .cadastro = txtcadastro.Text
+                If Radiomasculino.Checked = True Then
+                    .sexo = "MASCUINO"
+                ElseIf RadioFeminino.Checked = True Then
+
+                    .sexo = "FEMININO"
+                End If
+                If RadioSim.Checked = True Then
+                    .cadastro = "SIM"
+                ElseIf RadioNao.Checked = True Then
+                    .cadastro = "NÃO"
+                End If
+
             End With
 
 
