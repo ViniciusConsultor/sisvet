@@ -22,13 +22,11 @@ Partial Class FormMedicamento
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.txtresponsavel = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.btexcluir = New System.Windows.Forms.Button()
         Me.btsalvar = New System.Windows.Forms.Button()
         Me.btnovo = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.txtquantidade = New System.Windows.Forms.TextBox()
+        Me.txtestoque = New System.Windows.Forms.TextBox()
         Me.txtnome = New System.Windows.Forms.TextBox()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.tt = New System.Windows.Forms.Label()
@@ -36,26 +34,10 @@ Partial Class FormMedicamento
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtvalor = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ComboTratamento = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.txttipo = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'txtresponsavel
-        '
-        Me.txtresponsavel.Location = New System.Drawing.Point(134, 135)
-        Me.txtresponsavel.Name = "txtresponsavel"
-        Me.txtresponsavel.Size = New System.Drawing.Size(100, 20)
-        Me.txtresponsavel.TabIndex = 114
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(30, 142)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(72, 13)
-        Me.Label1.TabIndex = 113
-        Me.Label1.Text = "Responsável:"
         '
         'btexcluir
         '
@@ -98,23 +80,23 @@ Partial Class FormMedicamento
         Me.DataGridView1.Size = New System.Drawing.Size(590, 150)
         Me.DataGridView1.TabIndex = 109
         '
-        'txtquantidade
+        'txtestoque
         '
-        Me.txtquantidade.Location = New System.Drawing.Point(134, 99)
-        Me.txtquantidade.Name = "txtquantidade"
-        Me.txtquantidade.Size = New System.Drawing.Size(100, 20)
-        Me.txtquantidade.TabIndex = 108
+        Me.txtestoque.Location = New System.Drawing.Point(148, 99)
+        Me.txtestoque.Name = "txtestoque"
+        Me.txtestoque.Size = New System.Drawing.Size(100, 20)
+        Me.txtestoque.TabIndex = 108
         '
         'txtnome
         '
-        Me.txtnome.Location = New System.Drawing.Point(134, 66)
+        Me.txtnome.Location = New System.Drawing.Point(148, 66)
         Me.txtnome.Name = "txtnome"
         Me.txtnome.Size = New System.Drawing.Size(269, 20)
         Me.txtnome.TabIndex = 107
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(134, 32)
+        Me.txtcodigo.Location = New System.Drawing.Point(148, 32)
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(100, 20)
         Me.txtcodigo.TabIndex = 106
@@ -124,9 +106,9 @@ Partial Class FormMedicamento
         Me.tt.AutoSize = True
         Me.tt.Location = New System.Drawing.Point(30, 106)
         Me.tt.Name = "tt"
-        Me.tt.Size = New System.Drawing.Size(65, 13)
+        Me.tt.Size = New System.Drawing.Size(49, 13)
         Me.tt.TabIndex = 105
-        Me.tt.Text = "Quantidade:"
+        Me.tt.Text = "Estoque:"
         '
         'Label7
         '
@@ -148,7 +130,7 @@ Partial Class FormMedicamento
         '
         'txtvalor
         '
-        Me.txtvalor.Location = New System.Drawing.Point(134, 168)
+        Me.txtvalor.Location = New System.Drawing.Point(148, 135)
         Me.txtvalor.Name = "txtvalor"
         Me.txtvalor.Size = New System.Drawing.Size(100, 20)
         Me.txtvalor.TabIndex = 116
@@ -156,64 +138,59 @@ Partial Class FormMedicamento
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(30, 175)
+        Me.Label2.Location = New System.Drawing.Point(30, 142)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(34, 13)
         Me.Label2.TabIndex = 115
         Me.Label2.Text = "Valor:"
         '
-        'ComboTratamento
-        '
-        Me.ComboTratamento.FormattingEnabled = True
-        Me.ComboTratamento.Location = New System.Drawing.Point(134, 201)
-        Me.ComboTratamento.Name = "ComboTratamento"
-        Me.ComboTratamento.Size = New System.Drawing.Size(121, 21)
-        Me.ComboTratamento.TabIndex = 117
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(30, 209)
+        Me.Label3.Location = New System.Drawing.Point(30, 176)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(64, 13)
+        Me.Label3.Size = New System.Drawing.Size(113, 13)
         Me.Label3.TabIndex = 118
-        Me.Label3.Text = "Tratamento:"
+        Me.Label3.Text = "Tipo do Medicamento:"
+        '
+        'txttipo
+        '
+        Me.txttipo.Location = New System.Drawing.Point(148, 169)
+        Me.txttipo.Name = "txttipo"
+        Me.txttipo.Size = New System.Drawing.Size(100, 20)
+        Me.txttipo.TabIndex = 119
         '
         'FormMedicamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(620, 497)
+        Me.Controls.Add(Me.txttipo)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.ComboTratamento)
         Me.Controls.Add(Me.txtvalor)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.txtresponsavel)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btexcluir)
         Me.Controls.Add(Me.btsalvar)
         Me.Controls.Add(Me.btnovo)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.txtquantidade)
+        Me.Controls.Add(Me.txtestoque)
         Me.Controls.Add(Me.txtnome)
         Me.Controls.Add(Me.txtcodigo)
         Me.Controls.Add(Me.tt)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Name = "FormMedicamento"
-        Me.Text = "Cadastro de Medicamento"
+        Me.Text = "SisVet - Cadastro de Medicamento"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents txtresponsavel As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btexcluir As System.Windows.Forms.Button
     Friend WithEvents btsalvar As System.Windows.Forms.Button
     Friend WithEvents btnovo As System.Windows.Forms.Button
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents txtquantidade As System.Windows.Forms.TextBox
+    Friend WithEvents txtestoque As System.Windows.Forms.TextBox
     Friend WithEvents txtnome As System.Windows.Forms.TextBox
     Friend WithEvents txtcodigo As System.Windows.Forms.TextBox
     Friend WithEvents tt As System.Windows.Forms.Label
@@ -221,6 +198,6 @@ Partial Class FormMedicamento
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents txtvalor As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents ComboTratamento As System.Windows.Forms.ComboBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents txttipo As System.Windows.Forms.TextBox
 End Class

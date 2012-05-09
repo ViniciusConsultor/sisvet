@@ -31,11 +31,11 @@ Partial Class FormMedico
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txttelefone = New System.Windows.Forms.TextBox()
         Me.btexcluir = New System.Windows.Forms.Button()
         Me.btsalvar = New System.Windows.Forms.Button()
         Me.btnovo = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txttelefone = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -111,6 +111,22 @@ Partial Class FormMedico
         Me.Label1.TabIndex = 23
         Me.Label1.Text = "Nome:"
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(29, 157)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(52, 13)
+        Me.Label4.TabIndex = 104
+        Me.Label4.Text = "Telefone:"
+        '
+        'txttelefone
+        '
+        Me.txttelefone.Location = New System.Drawing.Point(133, 150)
+        Me.txttelefone.Name = "txttelefone"
+        Me.txttelefone.Size = New System.Drawing.Size(100, 20)
+        Me.txttelefone.TabIndex = 105
+        '
         'btexcluir
         '
         Me.btexcluir.Image = Global.SisVet.My.Resources.Resources.Button_Delete_icon32
@@ -144,22 +160,6 @@ Partial Class FormMedico
         Me.btnovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnovo.UseVisualStyleBackColor = True
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(29, 157)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(52, 13)
-        Me.Label4.TabIndex = 104
-        Me.Label4.Text = "Telefone:"
-        '
-        'txttelefone
-        '
-        Me.txttelefone.Location = New System.Drawing.Point(133, 150)
-        Me.txttelefone.Name = "txttelefone"
-        Me.txttelefone.Size = New System.Drawing.Size(100, 20)
-        Me.txttelefone.TabIndex = 105
-        '
         'FormMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -180,7 +180,7 @@ Partial Class FormMedico
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "FormMedico"
-        Me.Text = "FormMedico"
+        Me.Text = "SisVet - Cadastro de Médico"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

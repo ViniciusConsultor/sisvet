@@ -26,12 +26,9 @@ Partial Class FormCliente
         Me.Label9 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.txtmunicipio = New System.Windows.Forms.TextBox()
-        Me.txtcpf = New System.Windows.Forms.TextBox()
         Me.txtorgaoExpeditor = New System.Windows.Forms.TextBox()
         Me.txtrg = New System.Windows.Forms.TextBox()
-        Me.txttelefone = New System.Windows.Forms.TextBox()
         Me.txtendereco = New System.Windows.Forms.TextBox()
-        Me.txtdata_nascim = New System.Windows.Forms.TextBox()
         Me.txtnome = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -45,6 +42,9 @@ Partial Class FormCliente
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.btpaciente = New System.Windows.Forms.Button()
+        Me.masckDatanascimento = New System.Windows.Forms.MaskedTextBox()
+        Me.txttelefone = New System.Windows.Forms.MaskedTextBox()
+        Me.txtcpf_cliente = New System.Windows.Forms.MaskedTextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -52,7 +52,7 @@ Partial Class FormCliente
         '
         Me.txtcodcli.Location = New System.Drawing.Point(162, 16)
         Me.txtcodcli.Name = "txtcodcli"
-        Me.txtcodcli.Size = New System.Drawing.Size(97, 20)
+        Me.txtcodcli.Size = New System.Drawing.Size(59, 20)
         Me.txtcodcli.TabIndex = 77
         '
         'Label9
@@ -79,18 +79,11 @@ Partial Class FormCliente
         Me.txtmunicipio.Size = New System.Drawing.Size(246, 20)
         Me.txtmunicipio.TabIndex = 73
         '
-        'txtcpf
-        '
-        Me.txtcpf.Location = New System.Drawing.Point(162, 242)
-        Me.txtcpf.Name = "txtcpf"
-        Me.txtcpf.Size = New System.Drawing.Size(100, 20)
-        Me.txtcpf.TabIndex = 72
-        '
         'txtorgaoExpeditor
         '
         Me.txtorgaoExpeditor.Location = New System.Drawing.Point(162, 208)
         Me.txtorgaoExpeditor.Name = "txtorgaoExpeditor"
-        Me.txtorgaoExpeditor.Size = New System.Drawing.Size(100, 20)
+        Me.txtorgaoExpeditor.Size = New System.Drawing.Size(59, 20)
         Me.txtorgaoExpeditor.TabIndex = 71
         '
         'txtrg
@@ -100,26 +93,12 @@ Partial Class FormCliente
         Me.txtrg.Size = New System.Drawing.Size(100, 20)
         Me.txtrg.TabIndex = 70
         '
-        'txttelefone
-        '
-        Me.txttelefone.Location = New System.Drawing.Point(162, 138)
-        Me.txttelefone.Name = "txttelefone"
-        Me.txttelefone.Size = New System.Drawing.Size(100, 20)
-        Me.txttelefone.TabIndex = 69
-        '
         'txtendereco
         '
         Me.txtendereco.Location = New System.Drawing.Point(162, 107)
         Me.txtendereco.Name = "txtendereco"
         Me.txtendereco.Size = New System.Drawing.Size(246, 20)
         Me.txtendereco.TabIndex = 68
-        '
-        'txtdata_nascim
-        '
-        Me.txtdata_nascim.Location = New System.Drawing.Point(162, 77)
-        Me.txtdata_nascim.Name = "txtdata_nascim"
-        Me.txtdata_nascim.Size = New System.Drawing.Size(100, 20)
-        Me.txtdata_nascim.TabIndex = 67
         '
         'txtnome
         '
@@ -244,11 +223,39 @@ Partial Class FormCliente
         Me.btpaciente.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btpaciente.UseVisualStyleBackColor = True
         '
+        'masckDatanascimento
+        '
+        Me.masckDatanascimento.Location = New System.Drawing.Point(162, 81)
+        Me.masckDatanascimento.Mask = "00/00/0000"
+        Me.masckDatanascimento.Name = "masckDatanascimento"
+        Me.masckDatanascimento.Size = New System.Drawing.Size(68, 20)
+        Me.masckDatanascimento.TabIndex = 81
+        Me.masckDatanascimento.ValidatingType = GetType(Date)
+        '
+        'txttelefone
+        '
+        Me.txttelefone.Location = New System.Drawing.Point(162, 138)
+        Me.txttelefone.Mask = "(00)0000-0000"
+        Me.txttelefone.Name = "txttelefone"
+        Me.txttelefone.Size = New System.Drawing.Size(75, 20)
+        Me.txttelefone.TabIndex = 82
+        '
+        'txtcpf_cliente
+        '
+        Me.txtcpf_cliente.Location = New System.Drawing.Point(162, 242)
+        Me.txtcpf_cliente.Mask = "000 000 000-00"
+        Me.txtcpf_cliente.Name = "txtcpf_cliente"
+        Me.txtcpf_cliente.Size = New System.Drawing.Size(84, 20)
+        Me.txtcpf_cliente.TabIndex = 83
+        '
         'FormCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(677, 538)
+        Me.Controls.Add(Me.txtcpf_cliente)
+        Me.Controls.Add(Me.txttelefone)
+        Me.Controls.Add(Me.masckDatanascimento)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button3)
@@ -257,12 +264,9 @@ Partial Class FormCliente
         Me.Controls.Add(Me.btpaciente)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.txtmunicipio)
-        Me.Controls.Add(Me.txtcpf)
         Me.Controls.Add(Me.txtorgaoExpeditor)
         Me.Controls.Add(Me.txtrg)
-        Me.Controls.Add(Me.txttelefone)
         Me.Controls.Add(Me.txtendereco)
-        Me.Controls.Add(Me.txtdata_nascim)
         Me.Controls.Add(Me.txtnome)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
@@ -273,7 +277,7 @@ Partial Class FormCliente
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "FormCliente"
-        Me.Text = "Cadastro de Clientes:"
+        Me.Text = "SisVet - Cadastro de Clientes:"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -287,12 +291,9 @@ Partial Class FormCliente
     Friend WithEvents btpaciente As System.Windows.Forms.Button
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents txtmunicipio As System.Windows.Forms.TextBox
-    Friend WithEvents txtcpf As System.Windows.Forms.TextBox
     Friend WithEvents txtorgaoExpeditor As System.Windows.Forms.TextBox
     Friend WithEvents txtrg As System.Windows.Forms.TextBox
-    Friend WithEvents txttelefone As System.Windows.Forms.TextBox
     Friend WithEvents txtendereco As System.Windows.Forms.TextBox
-    Friend WithEvents txtdata_nascim As System.Windows.Forms.TextBox
     Friend WithEvents txtnome As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
@@ -302,4 +303,7 @@ Partial Class FormCliente
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents masckDatanascimento As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txttelefone As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txtcpf_cliente As System.Windows.Forms.MaskedTextBox
 End Class

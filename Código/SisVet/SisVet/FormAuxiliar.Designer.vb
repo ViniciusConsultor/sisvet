@@ -65,21 +65,21 @@ Partial Class FormAuxiliar
         '
         Me.txtcpfAux.Location = New System.Drawing.Point(133, 117)
         Me.txtcpfAux.Name = "txtcpfAux"
-        Me.txtcpfAux.Size = New System.Drawing.Size(100, 20)
+        Me.txtcpfAux.Size = New System.Drawing.Size(128, 20)
         Me.txtcpfAux.TabIndex = 51
         '
         'txtrgAux
         '
         Me.txtrgAux.Location = New System.Drawing.Point(133, 87)
         Me.txtrgAux.Name = "txtrgAux"
-        Me.txtrgAux.Size = New System.Drawing.Size(100, 20)
+        Me.txtrgAux.Size = New System.Drawing.Size(128, 20)
         Me.txtrgAux.TabIndex = 50
         '
         'txtnomeAux
         '
         Me.txtnomeAux.Location = New System.Drawing.Point(133, 56)
         Me.txtnomeAux.Name = "txtnomeAux"
-        Me.txtnomeAux.Size = New System.Drawing.Size(246, 20)
+        Me.txtnomeAux.Size = New System.Drawing.Size(293, 20)
         Me.txtnomeAux.TabIndex = 49
         '
         'Label3
@@ -160,7 +160,7 @@ Partial Class FormAuxiliar
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "FormAuxiliar"
-        Me.Text = "FormAuxiliar"
+        Me.Text = "SisVet - Cadastro de Auxiliar"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

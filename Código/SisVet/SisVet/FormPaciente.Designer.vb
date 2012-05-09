@@ -23,16 +23,11 @@ Partial Class FormPaciente
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.txtcadastro = New System.Windows.Forms.TextBox()
-        Me.txtsexo = New System.Windows.Forms.TextBox()
         Me.txtpelagem = New System.Windows.Forms.TextBox()
         Me.txtrghv = New System.Windows.Forms.TextBox()
         Me.txtraça = New System.Windows.Forms.TextBox()
         Me.txtespecie = New System.Windows.Forms.TextBox()
-        Me.txtdata_nascim_paciente = New System.Windows.Forms.TextBox()
         Me.txtnomepaciente = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -44,7 +39,18 @@ Partial Class FormPaciente
         Me.btexcluir = New System.Windows.Forms.Button()
         Me.btsalvar = New System.Windows.Forms.Button()
         Me.btnovo = New System.Windows.Forms.Button()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.RadioNao = New System.Windows.Forms.RadioButton()
+        Me.RadioSim = New System.Windows.Forms.RadioButton()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.RadioFeminino = New System.Windows.Forms.RadioButton()
+        Me.Radiomasculino = New System.Windows.Forms.RadioButton()
+        Me.masckDatanascimento = New System.Windows.Forms.MaskedTextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -55,84 +61,45 @@ Partial Class FormPaciente
         Me.DataGridView1.Size = New System.Drawing.Size(590, 150)
         Me.DataGridView1.TabIndex = 40
         '
-        'txtcadastro
-        '
-        Me.txtcadastro.Location = New System.Drawing.Point(133, 267)
-        Me.txtcadastro.Name = "txtcadastro"
-        Me.txtcadastro.Size = New System.Drawing.Size(100, 20)
-        Me.txtcadastro.TabIndex = 36
-        '
-        'txtsexo
-        '
-        Me.txtsexo.Location = New System.Drawing.Point(133, 234)
-        Me.txtsexo.Name = "txtsexo"
-        Me.txtsexo.Size = New System.Drawing.Size(100, 20)
-        Me.txtsexo.TabIndex = 35
-        '
         'txtpelagem
         '
-        Me.txtpelagem.Location = New System.Drawing.Point(133, 200)
+        Me.txtpelagem.Location = New System.Drawing.Point(471, 91)
         Me.txtpelagem.Name = "txtpelagem"
-        Me.txtpelagem.Size = New System.Drawing.Size(100, 20)
+        Me.txtpelagem.Size = New System.Drawing.Size(147, 20)
         Me.txtpelagem.TabIndex = 34
         '
         'txtrghv
         '
-        Me.txtrghv.Location = New System.Drawing.Point(133, 164)
+        Me.txtrghv.Location = New System.Drawing.Point(471, 55)
         Me.txtrghv.Name = "txtrghv"
-        Me.txtrghv.Size = New System.Drawing.Size(100, 20)
+        Me.txtrghv.Size = New System.Drawing.Size(147, 20)
         Me.txtrghv.TabIndex = 33
         '
         'txtraça
         '
-        Me.txtraça.Location = New System.Drawing.Point(133, 130)
+        Me.txtraça.Location = New System.Drawing.Point(471, 128)
         Me.txtraça.Name = "txtraça"
-        Me.txtraça.Size = New System.Drawing.Size(100, 20)
+        Me.txtraça.Size = New System.Drawing.Size(133, 20)
         Me.txtraça.TabIndex = 32
         '
         'txtespecie
         '
-        Me.txtespecie.Location = New System.Drawing.Point(133, 99)
+        Me.txtespecie.Location = New System.Drawing.Point(127, 121)
         Me.txtespecie.Name = "txtespecie"
-        Me.txtespecie.Size = New System.Drawing.Size(246, 20)
+        Me.txtespecie.Size = New System.Drawing.Size(133, 20)
         Me.txtespecie.TabIndex = 31
-        '
-        'txtdata_nascim_paciente
-        '
-        Me.txtdata_nascim_paciente.Location = New System.Drawing.Point(133, 69)
-        Me.txtdata_nascim_paciente.Name = "txtdata_nascim_paciente"
-        Me.txtdata_nascim_paciente.Size = New System.Drawing.Size(100, 20)
-        Me.txtdata_nascim_paciente.TabIndex = 30
         '
         'txtnomepaciente
         '
-        Me.txtnomepaciente.Location = New System.Drawing.Point(133, 38)
+        Me.txtnomepaciente.Location = New System.Drawing.Point(127, 60)
         Me.txtnomepaciente.Name = "txtnomepaciente"
         Me.txtnomepaciente.Size = New System.Drawing.Size(246, 20)
         Me.txtnomepaciente.TabIndex = 29
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(29, 274)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(52, 13)
-        Me.Label8.TabIndex = 28
-        Me.Label8.Text = "Cadastro:"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(29, 241)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(34, 13)
-        Me.Label7.TabIndex = 27
-        Me.Label7.Text = "Sexo:"
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(29, 207)
+        Me.Label6.Location = New System.Drawing.Point(414, 98)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(48, 13)
         Me.Label6.TabIndex = 26
@@ -141,7 +108,7 @@ Partial Class FormPaciente
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(29, 171)
+        Me.Label5.Location = New System.Drawing.Point(414, 62)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(41, 13)
         Me.Label5.TabIndex = 25
@@ -150,7 +117,7 @@ Partial Class FormPaciente
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(29, 137)
+        Me.Label4.Location = New System.Drawing.Point(414, 135)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(36, 13)
         Me.Label4.TabIndex = 24
@@ -159,7 +126,7 @@ Partial Class FormPaciente
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(29, 106)
+        Me.Label3.Location = New System.Drawing.Point(23, 128)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(48, 13)
         Me.Label3.TabIndex = 23
@@ -168,7 +135,7 @@ Partial Class FormPaciente
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(29, 76)
+        Me.Label2.Location = New System.Drawing.Point(23, 98)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(92, 13)
         Me.Label2.TabIndex = 22
@@ -177,7 +144,7 @@ Partial Class FormPaciente
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(29, 45)
+        Me.Label1.Location = New System.Drawing.Point(23, 67)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(98, 13)
         Me.Label1.TabIndex = 21
@@ -185,7 +152,7 @@ Partial Class FormPaciente
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(133, 6)
+        Me.txtcodigo.Location = New System.Drawing.Point(127, 28)
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(100, 20)
         Me.txtcodigo.TabIndex = 105
@@ -193,7 +160,7 @@ Partial Class FormPaciente
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(29, 13)
+        Me.Label9.Location = New System.Drawing.Point(23, 35)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(43, 13)
         Me.Label9.TabIndex = 104
@@ -232,27 +199,119 @@ Partial Class FormPaciente
         Me.btnovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnovo.UseVisualStyleBackColor = True
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(127, 152)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(246, 21)
+        Me.ComboBox1.TabIndex = 106
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(23, 160)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(88, 13)
+        Me.Label10.TabIndex = 107
+        Me.Label10.Text = "Nome do Cliente:"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.RadioNao)
+        Me.GroupBox1.Controls.Add(Me.RadioSim)
+        Me.GroupBox1.Location = New System.Drawing.Point(340, 204)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(201, 45)
+        Me.GroupBox1.TabIndex = 108
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Castrado?"
+        '
+        'RadioNao
+        '
+        Me.RadioNao.AutoSize = True
+        Me.RadioNao.Location = New System.Drawing.Point(103, 19)
+        Me.RadioNao.Name = "RadioNao"
+        Me.RadioNao.Size = New System.Drawing.Size(45, 17)
+        Me.RadioNao.TabIndex = 1
+        Me.RadioNao.TabStop = True
+        Me.RadioNao.Text = "Não"
+        Me.RadioNao.UseVisualStyleBackColor = True
+        '
+        'RadioSim
+        '
+        Me.RadioSim.AutoSize = True
+        Me.RadioSim.Location = New System.Drawing.Point(7, 22)
+        Me.RadioSim.Name = "RadioSim"
+        Me.RadioSim.Size = New System.Drawing.Size(42, 17)
+        Me.RadioSim.TabIndex = 0
+        Me.RadioSim.TabStop = True
+        Me.RadioSim.Text = "Sim"
+        Me.RadioSim.UseVisualStyleBackColor = True
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.RadioFeminino)
+        Me.GroupBox2.Controls.Add(Me.Radiomasculino)
+        Me.GroupBox2.Location = New System.Drawing.Point(60, 204)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(200, 42)
+        Me.GroupBox2.TabIndex = 109
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Sexo:"
+        '
+        'RadioFeminino
+        '
+        Me.RadioFeminino.AutoSize = True
+        Me.RadioFeminino.Location = New System.Drawing.Point(102, 19)
+        Me.RadioFeminino.Name = "RadioFeminino"
+        Me.RadioFeminino.Size = New System.Drawing.Size(67, 17)
+        Me.RadioFeminino.TabIndex = 1
+        Me.RadioFeminino.TabStop = True
+        Me.RadioFeminino.Text = "Feminino"
+        Me.RadioFeminino.UseVisualStyleBackColor = True
+        '
+        'Radiomasculino
+        '
+        Me.Radiomasculino.AutoSize = True
+        Me.Radiomasculino.Location = New System.Drawing.Point(6, 19)
+        Me.Radiomasculino.Name = "Radiomasculino"
+        Me.Radiomasculino.Size = New System.Drawing.Size(73, 17)
+        Me.Radiomasculino.TabIndex = 0
+        Me.Radiomasculino.TabStop = True
+        Me.Radiomasculino.Text = "Masculino"
+        Me.Radiomasculino.UseVisualStyleBackColor = True
+        '
+        'masckDatanascimento
+        '
+        Me.masckDatanascimento.Location = New System.Drawing.Point(127, 91)
+        Me.masckDatanascimento.Mask = "00/00/0000"
+        Me.masckDatanascimento.Name = "masckDatanascimento"
+        Me.masckDatanascimento.Size = New System.Drawing.Size(68, 20)
+        Me.masckDatanascimento.TabIndex = 110
+        Me.masckDatanascimento.ValidatingType = GetType(Date)
+        '
         'FormPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(625, 529)
+        Me.ClientSize = New System.Drawing.Size(643, 529)
+        Me.Controls.Add(Me.masckDatanascimento)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.txtcodigo)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btexcluir)
         Me.Controls.Add(Me.btsalvar)
         Me.Controls.Add(Me.btnovo)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.txtcadastro)
-        Me.Controls.Add(Me.txtsexo)
         Me.Controls.Add(Me.txtpelagem)
         Me.Controls.Add(Me.txtrghv)
         Me.Controls.Add(Me.txtraça)
         Me.Controls.Add(Me.txtespecie)
-        Me.Controls.Add(Me.txtdata_nascim_paciente)
         Me.Controls.Add(Me.txtnomepaciente)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
@@ -262,21 +321,20 @@ Partial Class FormPaciente
         Me.Name = "FormPaciente"
         Me.Text = "SisVet - Cadastro de Pacientes"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents txtcadastro As System.Windows.Forms.TextBox
-    Friend WithEvents txtsexo As System.Windows.Forms.TextBox
     Friend WithEvents txtpelagem As System.Windows.Forms.TextBox
     Friend WithEvents txtrghv As System.Windows.Forms.TextBox
     Friend WithEvents txtraça As System.Windows.Forms.TextBox
     Friend WithEvents txtespecie As System.Windows.Forms.TextBox
-    Friend WithEvents txtdata_nascim_paciente As System.Windows.Forms.TextBox
     Friend WithEvents txtnomepaciente As System.Windows.Forms.TextBox
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
@@ -288,4 +346,13 @@ Partial Class FormPaciente
     Friend WithEvents btnovo As System.Windows.Forms.Button
     Friend WithEvents txtcodigo As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents RadioNao As System.Windows.Forms.RadioButton
+    Friend WithEvents RadioSim As System.Windows.Forms.RadioButton
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents RadioFeminino As System.Windows.Forms.RadioButton
+    Friend WithEvents Radiomasculino As System.Windows.Forms.RadioButton
+    Friend WithEvents masckDatanascimento As System.Windows.Forms.MaskedTextBox
 End Class

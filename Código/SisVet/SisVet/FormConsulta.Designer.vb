@@ -25,21 +25,20 @@ Partial Class FormConsulta
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtagendado = New System.Windows.Forms.TextBox()
         Me.ComboMedico = New System.Windows.Forms.ComboBox()
-        Me.ComboMedicoAuxiliar = New System.Windows.Forms.ComboBox()
         Me.txtdata = New System.Windows.Forms.MaskedTextBox()
         Me.txthora = New System.Windows.Forms.MaskedTextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtcodConsulta = New System.Windows.Forms.TextBox()
+        Me.ComboTipoConsulta = New System.Windows.Forms.ComboBox()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.btexcluir = New System.Windows.Forms.Button()
         Me.btsalvar = New System.Windows.Forms.Button()
         Me.btnovo = New System.Windows.Forms.Button()
-        Me.ComboTipoConsulta = New System.Windows.Forms.ComboBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -70,19 +69,10 @@ Partial Class FormConsulta
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Hora consulta:"
         '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(27, 156)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(81, 13)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Medico Auxiliar:"
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(27, 192)
+        Me.Label6.Location = New System.Drawing.Point(27, 154)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(59, 13)
         Me.Label6.TabIndex = 5
@@ -91,34 +81,19 @@ Partial Class FormConsulta
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(27, 228)
+        Me.Label7.Location = New System.Drawing.Point(27, 190)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(90, 13)
         Me.Label7.TabIndex = 6
         Me.Label7.Text = "Tipo de Consulta:"
-        '
-        'txtagendado
-        '
-        Me.txtagendado.Location = New System.Drawing.Point(130, 185)
-        Me.txtagendado.Name = "txtagendado"
-        Me.txtagendado.Size = New System.Drawing.Size(65, 20)
-        Me.txtagendado.TabIndex = 8
         '
         'ComboMedico
         '
         Me.ComboMedico.FormattingEnabled = True
         Me.ComboMedico.Location = New System.Drawing.Point(130, 50)
         Me.ComboMedico.Name = "ComboMedico"
-        Me.ComboMedico.Size = New System.Drawing.Size(121, 21)
+        Me.ComboMedico.Size = New System.Drawing.Size(274, 21)
         Me.ComboMedico.TabIndex = 10
-        '
-        'ComboMedicoAuxiliar
-        '
-        Me.ComboMedicoAuxiliar.FormattingEnabled = True
-        Me.ComboMedicoAuxiliar.Location = New System.Drawing.Point(130, 148)
-        Me.ComboMedicoAuxiliar.Name = "ComboMedicoAuxiliar"
-        Me.ComboMedicoAuxiliar.Size = New System.Drawing.Size(121, 21)
-        Me.ComboMedicoAuxiliar.TabIndex = 11
         '
         'txtdata
         '
@@ -158,6 +133,36 @@ Partial Class FormConsulta
         Me.txtcodConsulta.Size = New System.Drawing.Size(65, 20)
         Me.txtcodConsulta.TabIndex = 7
         '
+        'ComboTipoConsulta
+        '
+        Me.ComboTipoConsulta.FormattingEnabled = True
+        Me.ComboTipoConsulta.Location = New System.Drawing.Point(130, 182)
+        Me.ComboTipoConsulta.Name = "ComboTipoConsulta"
+        Me.ComboTipoConsulta.Size = New System.Drawing.Size(121, 21)
+        Me.ComboTipoConsulta.TabIndex = 104
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(218, 150)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(45, 17)
+        Me.RadioButton2.TabIndex = 106
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "Não"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(130, 150)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(42, 17)
+        Me.RadioButton1.TabIndex = 105
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Sim"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
         'btexcluir
         '
         Me.btexcluir.Image = Global.SisVet.My.Resources.Resources.Button_Delete_icon32
@@ -191,19 +196,13 @@ Partial Class FormConsulta
         Me.btnovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnovo.UseVisualStyleBackColor = True
         '
-        'ComboTipoConsulta
-        '
-        Me.ComboTipoConsulta.FormattingEnabled = True
-        Me.ComboTipoConsulta.Location = New System.Drawing.Point(130, 220)
-        Me.ComboTipoConsulta.Name = "ComboTipoConsulta"
-        Me.ComboTipoConsulta.Size = New System.Drawing.Size(121, 21)
-        Me.ComboTipoConsulta.TabIndex = 104
-        '
         'FormConsulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(621, 491)
+        Me.Controls.Add(Me.RadioButton2)
+        Me.Controls.Add(Me.RadioButton1)
         Me.Controls.Add(Me.ComboTipoConsulta)
         Me.Controls.Add(Me.btexcluir)
         Me.Controls.Add(Me.btsalvar)
@@ -211,19 +210,16 @@ Partial Class FormConsulta
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.txthora)
         Me.Controls.Add(Me.txtdata)
-        Me.Controls.Add(Me.ComboMedicoAuxiliar)
         Me.Controls.Add(Me.ComboMedico)
-        Me.Controls.Add(Me.txtagendado)
         Me.Controls.Add(Me.txtcodConsulta)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "FormConsulta"
-        Me.Text = "SysVet - Cadastro de Consultas"
+        Me.Text = "SisVet -  Cadastro de Consultas"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -232,12 +228,9 @@ Partial Class FormConsulta
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents txtagendado As System.Windows.Forms.TextBox
     Friend WithEvents ComboMedico As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboMedicoAuxiliar As System.Windows.Forms.ComboBox
     Friend WithEvents txtdata As System.Windows.Forms.MaskedTextBox
     Friend WithEvents txthora As System.Windows.Forms.MaskedTextBox
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
@@ -247,4 +240,6 @@ Partial Class FormConsulta
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtcodConsulta As System.Windows.Forms.TextBox
     Friend WithEvents ComboTipoConsulta As System.Windows.Forms.ComboBox
+    Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
+    Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
 End Class
