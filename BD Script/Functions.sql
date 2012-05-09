@@ -43,9 +43,6 @@ BEGIN
 END
 $$LANGUAGE PLPGSQL;
 
-
-
-
 -- PACIENTE
 -- add
 CREATE OR REPLACE FUNCTION inserir_paciente(codclientefk int, rghvpaciente varchar, especiepaciente varchar, racapaciente varchar, nascimentopaciente date,
@@ -91,5 +88,133 @@ BEGIN
 END
 $$LANGUAGE PLPGSQL;
 
+-- MEDICOS
+-- Add:
+CREATE OR REPLACE FUNCTION inserir_medVet(nomemedico varchar, especialidade varchar, crmv varchar, telefone varchar) RETURNS integer AS $$
+	begin
+	insert into medico_veterinario(nome_medico_veterinario, especialidade_veterinario, crmv_veterinario, telefone_veterinario) VALUES
+	(nomemedico, especialidade, crmv, telefone);
 
+	return 1;
+	end;
+$$language plpgsql;
+
+-- Atualizar:
+CREATE OR REPLACE FUNCTION atualizar_medVet(codmedico int, nomemedico varchar, especialidade varchar, crmv varchar, telefone varchar) RETURNS integer AS $$
+	begin
+	update medico_veterinario set nome_medico_veterinario = nomemedico, especialidade_veterinario = especialidade, 
+	crmv_veterinario = crmv, telefone_veterinario = telefone where codigo_medico_vet_pk = codmedico;
+
+	return 1;
+	end;
+$$language plpgsql;
+
+-- Deletar:
+CREATE OR REPLACE FUNCTION deletar_medVet(codmedico int) RETURNS integer AS $$
+	begin
+	delete from medico_veterinario where codigo_medico_vet_pk = codmedico;
+
+	return 1;
+	end;
+$$language plpgsql;
+
+-- Select
+CREATE OR REPLACE FUNCTION fnGetMedVet() RETURNS SETOF medico_veterinario AS $$
+DECLARE 
+	linha medico_veterinario%ROWTYPE;
+BEGIN
+	FOR linha in  SELECT * FROM medico_veterinario LOOP
+		RETURN NEXT linha;
+	END LOOP;
+	RETURN;
+END
+$$LANGUAGE PLPGSQL;
+
+-- CONSULTA
+-- Add:
+CREATE OR REPLACE FUNCTION inserir_consulta(dataconsulta varchar, horaconsulta varchar, medicoveterinario int, codigotipo int,
+	agendamento char, paciente int, prontuario text) RETURNS integer AS $$
+	begin
+	insert into consulta(data_consulta, hora_consutla, cod_medico_veterinario_fk, cod_tipo_consulta_fk, agendado, cod_paciente_fk,
+	prontuario_paciente) VALUES (dataconsulta, horaconsulta, medicoveterinario, codigotipo, agendamento, paciente, prontuario);
+
+	return 1;
+	end;
+$$language plpgsql; 
+
+-- Atualizar:
+CREATE OR REPLACE FUNCTION atualizar_consulta(codigoconsulta int, dataconsulta varchar, horaconsulta varchar, medicoveterinario int, codigotipo int,
+	agendamento char, paciente int, prontuario text) RETURNS integer AS $$
+	begin
+	update consulta set data_consulta = dataconsulta, hora_consutla = horaconsulta, cod_medico_veterinario_fk = medicoveterinario, 
+	cod_tipo_consulta_fk = codigotipo, agendado = agendamento, cod_paciente_fk = paciente, prontuario_paciente = prontuario 
+	where codigo_consulta = codigoconsulta;
+	
+	return 1;
+	end;
+$$language plpgsql; 
+
+-- Deletar:
+CREATE OR REPLACE FUNCTION deletar_consulta(codigoconsulta int) RETURNS integer AS $$
+	begin
+	delete from consulta where codigo_consulta = codigoconsulta;
+
+	return 1;
+	end;
+$$language plpgsql;
+
+-- Select:
+CREATE OR REPLACE FUNCTION fnGetConsulta() RETURNS SETOF consulta AS $$
+DECLARE 
+	linha consulta%ROWTYPE;
+BEGIN
+	FOR linha in  SELECT * FROM consulta LOOP
+		RETURN NEXT linha;
+	END LOOP;
+	RETURN;
+END
+$$LANGUAGE PLPGSQL;
+
+-- TIPO DE CONSULTA
+-- Add:
+CREATE OR REPLACE FUNCTION inserir_tipoConsulta(valorconsulta numeric) RETURNS integer AS $$
+	begin
+	insert into tipo_consulta(valor_consulta) VALUES (valorconsulta);
+
+	return 1;
+	end;
+$$language plpgsql;
+
+-- Atualizar:
+CREATE OR REPLACE FUNCTION atualizar_tipoConsulta(codtipoconsulta int, valorconsulta numeric) RETURNS integer AS $$
+	begin
+	update tipo_consulta set valor_consulta = valorconsulta where cod_tipo_consulta = codtipoconsulta;
+	
+	return 1;
+	end;
+$$language plpgsql;
+
+-- Deletar:
+CREATE OR REPLACE FUNCTION deletar_tipoConsulta(codtipoconsulta int) RETURNS integer AS $$
+	begin
+	delete from tipo_consulta where cod_tipo_consulta = codtipoconsulta;
+
+	return 1;
+	end;
+$$language plpgsql;
+
+-- Select:
+CREATE OR REPLACE FUNCTION fnGetTipoConsulta() RETURNS SETOF tipo_consulta AS $$
+DECLARE 
+	linha tipo_consulta%ROWTYPE;
+BEGIN
+	FOR linha in  SELECT * FROM tipo_consulta LOOP
+		RETURN NEXT linha;
+	END LOOP;
+	RETURN;
+END
+$$LANGUAGE PLPGSQL;
+
+-- CUSTOS
+-- Add:
 
