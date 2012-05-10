@@ -217,4 +217,33 @@ $$LANGUAGE PLPGSQL;
 
 -- CUSTOS
 -- Add:
+CREATE OR REPLACE FUNCTION inserir_custos(codconsulta int, valortotal numeric) RETURNS integer AS $$
+	begin
+	insert into custos(cod_consulta_fk, valor_Total) VALUES (codconsulta, valortotal);
+
+	return 1;
+	end;
+$$language plpgsql;
+
+-- Atualizar:
+CREATE OR REPLACE FUNCTION atualizar_custos(codcliente int, codconsulta int, valortotal numeric) RETURNS integer AS $$
+	begin
+	update custos set cod_consulta_fk = codconsulta, valor_Total = valortotal where cod_cliente_fk = codcliente;
+	
+	return 1;
+	end;
+$$language plpgsql;
+
+-- Select:
+CREATE OR REPLACE FUNCTION fnGetCustos() RETURNS SETOF custos AS $$
+DECLARE 
+	linha custos%ROWTYPE;
+BEGIN
+	FOR linha in  SELECT * FROM custos LOOP
+		RETURN NEXT linha;
+	END LOOP;
+	RETURN;
+END
+$$LANGUAGE PLPGSQL;
+
 
