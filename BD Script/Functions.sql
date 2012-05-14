@@ -1,7 +1,26 @@
 ﻿-- CLIENTE 
--- add
+-- receber 
+CREATE OR REPLACE FUNCTION receber_dados(nomecliente varchar, datanascimentocliente date, enderecocliente varchar, rgcliente varchar, telefone char,
+ expeditorrg varchar, municipiocliente varchar, cpfcliente char, verificar int) RETURNS integer AS $$
+	begin
+		--select validarCampos(nomecliente, datanascimentocliente, enderecocliente, rgcliente, telefone, expeditorrg,
+		--municipiocliente, cpfcliente);
+		
+		if (verificar = null) then
+			select inserir_cliente(nomecliente, datanascimentocliente, enderecocliente, rgcliente, telefone, expeditorrg,
+		municipiocliente, cpfcliente);
+		else 
+			select atuazliar_cliente(nomecliente, datanascimentocliente, enderecocliente, rgcliente, telefone, expeditorrg,
+		municipiocliente, cpfcliente, verificar);
+		end if;
+		
+	return 1;
+
+	end;
+ $$language plpgsql;
+ -- add 
 CREATE OR REPLACE FUNCTION inserir_cliente(nomecliente varchar, datanascimentocliente date, enderecocliente varchar, rgcliente varchar, telefone char,
- exxpeditorrgcliente varchar, municipiocliente varchar, cpfcliente char) RETURNS integer AS $$
+ exxpeditorrgcliente varchar, municipiocliente varchar, cpfcliente char) AS $$
  begin
 	insert into cliente (nome_cliente, data_nascimeto_cliente, endereco_cliente, rg_cliente, telefone_cliente, 
 	exxpedidor_rg_cliente, municipio_cliente, cpf_cliente) values (nomecliente, datanascimentocliente, enderecocliente, rgcliente, telefone, exxpeditorrgcliente, 
@@ -13,7 +32,7 @@ $$language plpgsql;
 
 -- atualizar
 CREATE OR REPLACE FUNCTION atualizar_cliente(nomecliente varchar, datanascimentocliente date, enderecocliente varchar, rgcliente varchar, telefone char,
- exxpeditorrgcliente varchar, municipiocliente varchar, cpfcliente char, codcliente int) RETURNS integer AS $$
+ exxpeditorrgcliente varchar, municipiocliente varchar, cpfcliente char, codcliente int) AS $$
  begin
 	update cliente set nome_cliente = nomecliente, data_nascimeto_cliente = datanascimentocliente, endereco_cliente = enderecocliente, 
 	rg_cliente = rgcliente, telefone_cliente = telefone, exxpedidor_rg_cliente = exxpeditorrgcliente, municipio_cliente = municipiocliente, 
@@ -42,6 +61,8 @@ BEGIN
 	RETURN;
 END
 $$LANGUAGE PLPGSQL;
+
+select fnGetCliente();
 
 -- PACIENTE
 -- add
