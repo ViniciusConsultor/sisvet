@@ -1,11 +1,9 @@
 ﻿-- CLIENTE 
--- receber 
-CREATE OR REPLACE FUNCTION receber_dados(nomecliente varchar, datanascimentocliente date, enderecocliente varchar, rgcliente varchar, telefone char,
+-- receber dados
+CREATE OR REPLACE FUNCTION receber_dadosCliente(nomecliente varchar, datanascimentocliente date, enderecocliente varchar, rgcliente varchar, telefone char,
  expeditorrg varchar, municipiocliente varchar, cpfcliente char, verificar int) RETURNS integer AS $$
-	begin
-		--select validarCampos(nomecliente, datanascimentocliente, enderecocliente, rgcliente, telefone, expeditorrg,
-		--municipiocliente, cpfcliente);
-		
+	begin		
+
 		if (verificar = null) then
 			select inserir_cliente(nomecliente, datanascimentocliente, enderecocliente, rgcliente, telefone, expeditorrg,
 		municipiocliente, cpfcliente);
@@ -18,6 +16,7 @@ CREATE OR REPLACE FUNCTION receber_dados(nomecliente varchar, datanascimentoclie
 
 	end;
  $$language plpgsql;
+ 
  -- add 
 CREATE OR REPLACE FUNCTION inserir_cliente(nomecliente varchar, datanascimentocliente date, enderecocliente varchar, rgcliente varchar, telefone char,
  exxpeditorrgcliente varchar, municipiocliente varchar, cpfcliente char) AS $$
@@ -64,7 +63,25 @@ $$LANGUAGE PLPGSQL;
 
 select fnGetCliente();
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -- PACIENTE
+-- receber dados
+
+
 -- add
 CREATE OR REPLACE FUNCTION inserir_paciente(codclientefk int, rghvpaciente varchar, especiepaciente varchar, racapaciente varchar, nascimentopaciente date,
 			pelagempaciente varchar, sexopaciente char, pacientecadastrado char, nomepaciente varchar) RETURNS integer AS $$
