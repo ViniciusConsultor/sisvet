@@ -91,10 +91,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassBanco.vb" />
-    <Compile Include="FormAuxiliar.Designer.vb">
-      <DependentUpon>FormAuxiliar.vb</DependentUpon>
+    <Compile Include="FormContasApagar.Designer.vb">
+      <DependentUpon>FormContasApagar.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormAuxiliar.vb">
+    <Compile Include="FormContasApagar.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMedicacao.Designer.vb">
@@ -193,8 +193,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormAuxiliar.resx">
-      <DependentUpon>FormAuxiliar.vb</DependentUpon>
+    <EmbeddedResource Include="FormContasApagar.resx">
+      <DependentUpon>FormContasApagar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMedicacao.resx">
       <DependentUpon>FormMedicacao.vb</DependentUpon>
