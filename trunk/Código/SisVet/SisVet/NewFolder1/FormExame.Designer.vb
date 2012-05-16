@@ -32,7 +32,13 @@ Partial Class FormExame
         Me.btexcluir = New System.Windows.Forms.Button()
         Me.btsalvar = New System.Windows.Forms.Button()
         Me.btnovo = New System.Windows.Forms.Button()
+        Me.btbusca = New System.Windows.Forms.Button()
+        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.rbbuscaNome = New System.Windows.Forms.RadioButton()
+        Me.rbid = New System.Windows.Forms.RadioButton()
+        Me.txtbusca = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox10.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -41,21 +47,21 @@ Partial Class FormExame
         Me.DataGridView1.Location = New System.Drawing.Point(15, 272)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(590, 150)
-        Me.DataGridView1.TabIndex = 87
+        Me.DataGridView1.TabIndex = 6
         '
         'txtdescricao
         '
         Me.txtdescricao.Location = New System.Drawing.Point(134, 65)
         Me.txtdescricao.Name = "txtdescricao"
         Me.txtdescricao.Size = New System.Drawing.Size(269, 20)
-        Me.txtdescricao.TabIndex = 85
+        Me.txtdescricao.TabIndex = 1
         '
         'txtcodigo
         '
         Me.txtcodigo.Location = New System.Drawing.Point(134, 31)
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(100, 20)
-        Me.txtcodigo.TabIndex = 84
+        Me.txtcodigo.TabIndex = 0
         '
         'Label8
         '
@@ -90,15 +96,15 @@ Partial Class FormExame
         Me.ComboLaboratorio.Location = New System.Drawing.Point(134, 97)
         Me.ComboLaboratorio.Name = "ComboLaboratorio"
         Me.ComboLaboratorio.Size = New System.Drawing.Size(269, 21)
-        Me.ComboLaboratorio.TabIndex = 91
+        Me.ComboLaboratorio.TabIndex = 2
         '
         'btexcluir
         '
         Me.btexcluir.Image = Global.SisVet.My.Resources.Resources.Button_Delete_icon32
-        Me.btexcluir.Location = New System.Drawing.Point(274, 177)
+        Me.btexcluir.Location = New System.Drawing.Point(274, 138)
         Me.btexcluir.Name = "btexcluir"
         Me.btexcluir.Size = New System.Drawing.Size(75, 66)
-        Me.btexcluir.TabIndex = 89
+        Me.btexcluir.TabIndex = 4
         Me.btexcluir.Text = "Excluir"
         Me.btexcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btexcluir.UseVisualStyleBackColor = True
@@ -106,10 +112,10 @@ Partial Class FormExame
         'btsalvar
         '
         Me.btsalvar.Image = Global.SisVet.My.Resources.Resources.informatica_3632_disquete13
-        Me.btsalvar.Location = New System.Drawing.Point(154, 177)
+        Me.btsalvar.Location = New System.Drawing.Point(154, 138)
         Me.btsalvar.Name = "btsalvar"
         Me.btsalvar.Size = New System.Drawing.Size(75, 66)
-        Me.btsalvar.TabIndex = 88
+        Me.btsalvar.TabIndex = 3
         Me.btsalvar.Text = "Salvar"
         Me.btsalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btsalvar.UseVisualStyleBackColor = True
@@ -117,19 +123,73 @@ Partial Class FormExame
         'btnovo
         '
         Me.btnovo.Image = Global.SisVet.My.Resources.Resources.Button_Add_icon32
-        Me.btnovo.Location = New System.Drawing.Point(399, 177)
+        Me.btnovo.Location = New System.Drawing.Point(399, 138)
         Me.btnovo.Name = "btnovo"
         Me.btnovo.Size = New System.Drawing.Size(75, 66)
-        Me.btnovo.TabIndex = 90
+        Me.btnovo.TabIndex = 5
         Me.btnovo.Text = "Novo"
         Me.btnovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnovo.UseVisualStyleBackColor = True
+        '
+        'btbusca
+        '
+        Me.btbusca.Location = New System.Drawing.Point(361, 12)
+        Me.btbusca.Name = "btbusca"
+        Me.btbusca.Size = New System.Drawing.Size(95, 23)
+        Me.btbusca.TabIndex = 0
+        Me.btbusca.Text = "Buscar"
+        Me.btbusca.UseVisualStyleBackColor = True
+        '
+        'GroupBox10
+        '
+        Me.GroupBox10.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox10.Controls.Add(Me.rbbuscaNome)
+        Me.GroupBox10.Controls.Add(Me.rbid)
+        Me.GroupBox10.Controls.Add(Me.txtbusca)
+        Me.GroupBox10.Controls.Add(Me.btbusca)
+        Me.GroupBox10.Location = New System.Drawing.Point(74, 226)
+        Me.GroupBox10.Name = "GroupBox10"
+        Me.GroupBox10.Size = New System.Drawing.Size(467, 40)
+        Me.GroupBox10.TabIndex = 84
+        Me.GroupBox10.TabStop = False
+        '
+        'rbbuscaNome
+        '
+        Me.rbbuscaNome.AutoSize = True
+        Me.rbbuscaNome.Location = New System.Drawing.Point(104, 15)
+        Me.rbbuscaNome.Name = "rbbuscaNome"
+        Me.rbbuscaNome.Size = New System.Drawing.Size(104, 17)
+        Me.rbbuscaNome.TabIndex = 2
+        Me.rbbuscaNome.TabStop = True
+        Me.rbbuscaNome.Text = "Busca por Nome"
+        Me.rbbuscaNome.UseVisualStyleBackColor = True
+        '
+        'rbid
+        '
+        Me.rbid.AutoSize = True
+        Me.rbid.Location = New System.Drawing.Point(11, 15)
+        Me.rbid.Name = "rbid"
+        Me.rbid.Size = New System.Drawing.Size(87, 17)
+        Me.rbid.TabIndex = 1
+        Me.rbid.TabStop = True
+        Me.rbid.Text = "Busca por ID"
+        Me.rbid.UseVisualStyleBackColor = True
+        '
+        'txtbusca
+        '
+        Me.txtbusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtbusca.Location = New System.Drawing.Point(214, 12)
+        Me.txtbusca.MaxLength = 7
+        Me.txtbusca.Name = "txtbusca"
+        Me.txtbusca.Size = New System.Drawing.Size(125, 20)
+        Me.txtbusca.TabIndex = 3
         '
         'FormExame
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(620, 431)
+        Me.Controls.Add(Me.GroupBox10)
         Me.Controls.Add(Me.ComboLaboratorio)
         Me.Controls.Add(Me.btexcluir)
         Me.Controls.Add(Me.btsalvar)
@@ -143,6 +203,8 @@ Partial Class FormExame
         Me.Name = "FormExame"
         Me.Text = "SisVet - Cadastro de Exame"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox10.ResumeLayout(False)
+        Me.GroupBox10.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -157,4 +219,9 @@ Partial Class FormExame
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents ComboLaboratorio As System.Windows.Forms.ComboBox
+    Friend WithEvents btbusca As System.Windows.Forms.Button
+    Friend WithEvents GroupBox10 As System.Windows.Forms.GroupBox
+    Friend WithEvents rbbuscaNome As System.Windows.Forms.RadioButton
+    Friend WithEvents rbid As System.Windows.Forms.RadioButton
+    Friend WithEvents txtbusca As System.Windows.Forms.TextBox
 End Class

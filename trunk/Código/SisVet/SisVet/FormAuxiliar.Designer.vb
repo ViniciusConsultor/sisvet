@@ -42,7 +42,7 @@ Partial Class FormAuxiliar
         Me.txtcodAux.Location = New System.Drawing.Point(133, 26)
         Me.txtcodAux.Name = "txtcodAux"
         Me.txtcodAux.Size = New System.Drawing.Size(97, 20)
-        Me.txtcodAux.TabIndex = 57
+        Me.txtcodAux.TabIndex = 0
         '
         'Label9
         '
@@ -59,28 +59,28 @@ Partial Class FormAuxiliar
         Me.DataGridView1.Location = New System.Drawing.Point(14, 241)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(590, 150)
-        Me.DataGridView1.TabIndex = 55
+        Me.DataGridView1.TabIndex = 7
         '
         'txtcpfAux
         '
         Me.txtcpfAux.Location = New System.Drawing.Point(133, 117)
         Me.txtcpfAux.Name = "txtcpfAux"
         Me.txtcpfAux.Size = New System.Drawing.Size(128, 20)
-        Me.txtcpfAux.TabIndex = 51
+        Me.txtcpfAux.TabIndex = 3
         '
         'txtrgAux
         '
         Me.txtrgAux.Location = New System.Drawing.Point(133, 87)
         Me.txtrgAux.Name = "txtrgAux"
         Me.txtrgAux.Size = New System.Drawing.Size(128, 20)
-        Me.txtrgAux.TabIndex = 50
+        Me.txtrgAux.TabIndex = 2
         '
         'txtnomeAux
         '
         Me.txtnomeAux.Location = New System.Drawing.Point(133, 56)
         Me.txtnomeAux.Name = "txtnomeAux"
         Me.txtnomeAux.Size = New System.Drawing.Size(293, 20)
-        Me.txtnomeAux.TabIndex = 49
+        Me.txtnomeAux.TabIndex = 1
         '
         'Label3
         '
@@ -115,7 +115,7 @@ Partial Class FormAuxiliar
         Me.btexcluir.Location = New System.Drawing.Point(272, 164)
         Me.btexcluir.Name = "btexcluir"
         Me.btexcluir.Size = New System.Drawing.Size(75, 66)
-        Me.btexcluir.TabIndex = 102
+        Me.btexcluir.TabIndex = 5
         Me.btexcluir.Text = "Excluir"
         Me.btexcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btexcluir.UseVisualStyleBackColor = True
@@ -126,7 +126,7 @@ Partial Class FormAuxiliar
         Me.btsalvar.Location = New System.Drawing.Point(152, 164)
         Me.btsalvar.Name = "btsalvar"
         Me.btsalvar.Size = New System.Drawing.Size(75, 66)
-        Me.btsalvar.TabIndex = 101
+        Me.btsalvar.TabIndex = 4
         Me.btsalvar.Text = "Salvar"
         Me.btsalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btsalvar.UseVisualStyleBackColor = True
@@ -137,7 +137,7 @@ Partial Class FormAuxiliar
         Me.btnovo.Location = New System.Drawing.Point(397, 164)
         Me.btnovo.Name = "btnovo"
         Me.btnovo.Size = New System.Drawing.Size(75, 66)
-        Me.btnovo.TabIndex = 103
+        Me.btnovo.TabIndex = 6
         Me.btnovo.Text = "Novo"
         Me.btnovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnovo.UseVisualStyleBackColor = True
