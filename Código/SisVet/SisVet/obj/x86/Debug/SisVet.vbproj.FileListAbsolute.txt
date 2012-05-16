@@ -52,3 +52,6 @@ C:\Users\usuario\Documents\Visual Studio 2010\SisVet2\SisVet\obj\x86\Debug\SisVe
 C:\Users\usuario\Documents\FACULDADE\5º Semestre\Sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.exe
 C:\Users\usuario\Documents\FACULDADE\5º Semestre\Sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.xml
 C:\Users\usuario\Documents\FACULDADE\5º Semestre\Sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.pdb
+C:\Users\Phyllipe\Documents\UTFPR\C. H. V\Código\SisVet\SisVet\obj\x86\Debug\SisVet.exe
+C:\Users\Phyllipe\Documents\UTFPR\C. H. V\Código\SisVet\SisVet\obj\x86\Debug\SisVet.xml
+C:\Users\Phyllipe\Documents\UTFPR\C. H. V\Código\SisVet\SisVet\obj\x86\Debug\SisVet.pdb
