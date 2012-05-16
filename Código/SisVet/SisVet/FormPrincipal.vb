@@ -18,8 +18,8 @@
     End Sub
 
     Private Sub AuxiliarToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles AuxiliarToolStripMenuItem1.Click
-        FormAuxiliar.MdiParent = Me
-        FormAuxiliar.Show()
+        FormContasApagar.MdiParent = Me
+        FormContasApagar.Show()
 
     End Sub
 
