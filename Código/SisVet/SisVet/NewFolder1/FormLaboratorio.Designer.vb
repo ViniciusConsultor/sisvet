@@ -36,30 +36,36 @@ Partial Class FormLaboratorio
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.txttelefone = New System.Windows.Forms.MaskedTextBox()
+        Me.btbusca = New System.Windows.Forms.Button()
+        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.rbbuscaNome = New System.Windows.Forms.RadioButton()
+        Me.rbid = New System.Windows.Forms.RadioButton()
+        Me.txtbusca = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox10.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(16, 321)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 376)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(590, 150)
-        Me.DataGridView1.TabIndex = 87
+        Me.DataGridView1.TabIndex = 8
         '
         'txtnome
         '
         Me.txtnome.Location = New System.Drawing.Point(135, 67)
         Me.txtnome.Name = "txtnome"
         Me.txtnome.Size = New System.Drawing.Size(340, 20)
-        Me.txtnome.TabIndex = 85
+        Me.txtnome.TabIndex = 1
         '
         'txtcodigo
         '
         Me.txtcodigo.Location = New System.Drawing.Point(135, 33)
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(100, 20)
-        Me.txtcodigo.TabIndex = 84
+        Me.txtcodigo.TabIndex = 0
         '
         'Label7
         '
@@ -84,7 +90,7 @@ Partial Class FormLaboratorio
         Me.txtendereco.Location = New System.Drawing.Point(135, 142)
         Me.txtendereco.Name = "txtendereco"
         Me.txtendereco.Size = New System.Drawing.Size(340, 20)
-        Me.txtendereco.TabIndex = 92
+        Me.txtendereco.TabIndex = 3
         '
         'Label1
         '
@@ -109,7 +115,7 @@ Partial Class FormLaboratorio
         Me.txtmunicipio.Location = New System.Drawing.Point(135, 177)
         Me.txtmunicipio.Name = "txtmunicipio"
         Me.txtmunicipio.Size = New System.Drawing.Size(340, 20)
-        Me.txtmunicipio.TabIndex = 96
+        Me.txtmunicipio.TabIndex = 4
         '
         'Label3
         '
@@ -123,10 +129,10 @@ Partial Class FormLaboratorio
         'Button1
         '
         Me.Button1.Image = Global.SisVet.My.Resources.Resources.Button_Delete_icon32
-        Me.Button1.Location = New System.Drawing.Point(275, 249)
+        Me.Button1.Location = New System.Drawing.Point(273, 215)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 66)
-        Me.Button1.TabIndex = 89
+        Me.Button1.TabIndex = 6
         Me.Button1.Text = "Excluir"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button1.UseVisualStyleBackColor = True
@@ -134,10 +140,10 @@ Partial Class FormLaboratorio
         'Button2
         '
         Me.Button2.Image = Global.SisVet.My.Resources.Resources.informatica_3632_disquete13
-        Me.Button2.Location = New System.Drawing.Point(155, 249)
+        Me.Button2.Location = New System.Drawing.Point(153, 215)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 66)
-        Me.Button2.TabIndex = 88
+        Me.Button2.TabIndex = 5
         Me.Button2.Text = "Salvar"
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button2.UseVisualStyleBackColor = True
@@ -145,10 +151,10 @@ Partial Class FormLaboratorio
         'Button3
         '
         Me.Button3.Image = Global.SisVet.My.Resources.Resources.Button_Add_icon32
-        Me.Button3.Location = New System.Drawing.Point(400, 249)
+        Me.Button3.Location = New System.Drawing.Point(398, 215)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 66)
-        Me.Button3.TabIndex = 90
+        Me.Button3.TabIndex = 7
         Me.Button3.Text = "Novo"
         Me.Button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button3.UseVisualStyleBackColor = True
@@ -159,13 +165,67 @@ Partial Class FormLaboratorio
         Me.txttelefone.Mask = "(00)0000-0000"
         Me.txttelefone.Name = "txttelefone"
         Me.txttelefone.Size = New System.Drawing.Size(75, 20)
-        Me.txttelefone.TabIndex = 97
+        Me.txttelefone.TabIndex = 2
+        '
+        'btbusca
+        '
+        Me.btbusca.Location = New System.Drawing.Point(361, 12)
+        Me.btbusca.Name = "btbusca"
+        Me.btbusca.Size = New System.Drawing.Size(95, 23)
+        Me.btbusca.TabIndex = 0
+        Me.btbusca.Text = "Buscar"
+        Me.btbusca.UseVisualStyleBackColor = True
+        '
+        'GroupBox10
+        '
+        Me.GroupBox10.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox10.Controls.Add(Me.rbbuscaNome)
+        Me.GroupBox10.Controls.Add(Me.rbid)
+        Me.GroupBox10.Controls.Add(Me.txtbusca)
+        Me.GroupBox10.Controls.Add(Me.btbusca)
+        Me.GroupBox10.Location = New System.Drawing.Point(80, 330)
+        Me.GroupBox10.Name = "GroupBox10"
+        Me.GroupBox10.Size = New System.Drawing.Size(467, 40)
+        Me.GroupBox10.TabIndex = 96
+        Me.GroupBox10.TabStop = False
+        '
+        'rbbuscaNome
+        '
+        Me.rbbuscaNome.AutoSize = True
+        Me.rbbuscaNome.Location = New System.Drawing.Point(104, 15)
+        Me.rbbuscaNome.Name = "rbbuscaNome"
+        Me.rbbuscaNome.Size = New System.Drawing.Size(104, 17)
+        Me.rbbuscaNome.TabIndex = 2
+        Me.rbbuscaNome.TabStop = True
+        Me.rbbuscaNome.Text = "Busca por Nome"
+        Me.rbbuscaNome.UseVisualStyleBackColor = True
+        '
+        'rbid
+        '
+        Me.rbid.AutoSize = True
+        Me.rbid.Location = New System.Drawing.Point(11, 15)
+        Me.rbid.Name = "rbid"
+        Me.rbid.Size = New System.Drawing.Size(87, 17)
+        Me.rbid.TabIndex = 1
+        Me.rbid.TabStop = True
+        Me.rbid.Text = "Busca por ID"
+        Me.rbid.UseVisualStyleBackColor = True
+        '
+        'txtbusca
+        '
+        Me.txtbusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtbusca.Location = New System.Drawing.Point(214, 12)
+        Me.txtbusca.MaxLength = 7
+        Me.txtbusca.Name = "txtbusca"
+        Me.txtbusca.Size = New System.Drawing.Size(125, 20)
+        Me.txtbusca.TabIndex = 3
         '
         'FormLaboratorio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(622, 491)
+        Me.ClientSize = New System.Drawing.Size(622, 538)
+        Me.Controls.Add(Me.GroupBox10)
         Me.Controls.Add(Me.txttelefone)
         Me.Controls.Add(Me.txtmunicipio)
         Me.Controls.Add(Me.Label3)
@@ -183,6 +243,8 @@ Partial Class FormLaboratorio
         Me.Name = "FormLaboratorio"
         Me.Text = "SisVet - Cadastro de Laboratório"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox10.ResumeLayout(False)
+        Me.GroupBox10.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -201,4 +263,9 @@ Partial Class FormLaboratorio
     Friend WithEvents txtmunicipio As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents txttelefone As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents btbusca As System.Windows.Forms.Button
+    Friend WithEvents GroupBox10 As System.Windows.Forms.GroupBox
+    Friend WithEvents rbbuscaNome As System.Windows.Forms.RadioButton
+    Friend WithEvents rbid As System.Windows.Forms.RadioButton
+    Friend WithEvents txtbusca As System.Windows.Forms.TextBox
 End Class

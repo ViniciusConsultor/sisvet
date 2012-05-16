@@ -32,11 +32,17 @@ Partial Class FormMedico
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txttelefone = New System.Windows.Forms.TextBox()
         Me.btexcluir = New System.Windows.Forms.Button()
         Me.btsalvar = New System.Windows.Forms.Button()
         Me.btnovo = New System.Windows.Forms.Button()
+        Me.btbusca = New System.Windows.Forms.Button()
+        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.rbbuscaNome = New System.Windows.Forms.RadioButton()
+        Me.rbid = New System.Windows.Forms.RadioButton()
+        Me.txtbusca = New System.Windows.Forms.TextBox()
+        Me.txttelefone = New System.Windows.Forms.MaskedTextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox10.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtcodMed
@@ -44,7 +50,7 @@ Partial Class FormMedico
         Me.txtcodMed.Location = New System.Drawing.Point(133, 26)
         Me.txtcodMed.Name = "txtcodMed"
         Me.txtcodMed.Size = New System.Drawing.Size(97, 20)
-        Me.txtcodMed.TabIndex = 45
+        Me.txtcodMed.TabIndex = 0
         '
         'Label9
         '
@@ -58,31 +64,31 @@ Partial Class FormMedico
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 296)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 329)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(590, 150)
-        Me.DataGridView1.TabIndex = 42
+        Me.DataGridView1.TabIndex = 9
         '
         'txtcrmv
         '
         Me.txtcrmv.Location = New System.Drawing.Point(133, 117)
         Me.txtcrmv.Name = "txtcrmv"
         Me.txtcrmv.Size = New System.Drawing.Size(100, 20)
-        Me.txtcrmv.TabIndex = 33
+        Me.txtcrmv.TabIndex = 3
         '
         'txtespecialidade
         '
         Me.txtespecialidade.Location = New System.Drawing.Point(133, 87)
         Me.txtespecialidade.Name = "txtespecialidade"
         Me.txtespecialidade.Size = New System.Drawing.Size(100, 20)
-        Me.txtespecialidade.TabIndex = 32
+        Me.txtespecialidade.TabIndex = 2
         '
         'txtnomeMed
         '
         Me.txtnomeMed.Location = New System.Drawing.Point(133, 56)
         Me.txtnomeMed.Name = "txtnomeMed"
         Me.txtnomeMed.Size = New System.Drawing.Size(246, 20)
-        Me.txtnomeMed.TabIndex = 31
+        Me.txtnomeMed.TabIndex = 1
         '
         'Label3
         '
@@ -120,20 +126,13 @@ Partial Class FormMedico
         Me.Label4.TabIndex = 104
         Me.Label4.Text = "Telefone:"
         '
-        'txttelefone
-        '
-        Me.txttelefone.Location = New System.Drawing.Point(133, 150)
-        Me.txttelefone.Name = "txttelefone"
-        Me.txttelefone.Size = New System.Drawing.Size(100, 20)
-        Me.txttelefone.TabIndex = 105
-        '
         'btexcluir
         '
         Me.btexcluir.Image = Global.SisVet.My.Resources.Resources.Button_Delete_icon32
-        Me.btexcluir.Location = New System.Drawing.Point(291, 217)
+        Me.btexcluir.Location = New System.Drawing.Point(288, 193)
         Me.btexcluir.Name = "btexcluir"
         Me.btexcluir.Size = New System.Drawing.Size(75, 66)
-        Me.btexcluir.TabIndex = 102
+        Me.btexcluir.TabIndex = 6
         Me.btexcluir.Text = "Excluir"
         Me.btexcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btexcluir.UseVisualStyleBackColor = True
@@ -141,10 +140,10 @@ Partial Class FormMedico
         'btsalvar
         '
         Me.btsalvar.Image = Global.SisVet.My.Resources.Resources.informatica_3632_disquete13
-        Me.btsalvar.Location = New System.Drawing.Point(171, 217)
+        Me.btsalvar.Location = New System.Drawing.Point(168, 193)
         Me.btsalvar.Name = "btsalvar"
         Me.btsalvar.Size = New System.Drawing.Size(75, 66)
-        Me.btsalvar.TabIndex = 101
+        Me.btsalvar.TabIndex = 5
         Me.btsalvar.Text = "Salvar"
         Me.btsalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btsalvar.UseVisualStyleBackColor = True
@@ -152,20 +151,82 @@ Partial Class FormMedico
         'btnovo
         '
         Me.btnovo.Image = Global.SisVet.My.Resources.Resources.Button_Add_icon32
-        Me.btnovo.Location = New System.Drawing.Point(416, 217)
+        Me.btnovo.Location = New System.Drawing.Point(413, 193)
         Me.btnovo.Name = "btnovo"
         Me.btnovo.Size = New System.Drawing.Size(75, 66)
-        Me.btnovo.TabIndex = 103
+        Me.btnovo.TabIndex = 7
         Me.btnovo.Text = "Novo"
         Me.btnovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnovo.UseVisualStyleBackColor = True
+        '
+        'btbusca
+        '
+        Me.btbusca.Location = New System.Drawing.Point(361, 12)
+        Me.btbusca.Name = "btbusca"
+        Me.btbusca.Size = New System.Drawing.Size(95, 23)
+        Me.btbusca.TabIndex = 0
+        Me.btbusca.Text = "Buscar"
+        Me.btbusca.UseVisualStyleBackColor = True
+        '
+        'GroupBox10
+        '
+        Me.GroupBox10.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox10.Controls.Add(Me.rbbuscaNome)
+        Me.GroupBox10.Controls.Add(Me.rbid)
+        Me.GroupBox10.Controls.Add(Me.txtbusca)
+        Me.GroupBox10.Controls.Add(Me.btbusca)
+        Me.GroupBox10.Location = New System.Drawing.Point(78, 283)
+        Me.GroupBox10.Name = "GroupBox10"
+        Me.GroupBox10.Size = New System.Drawing.Size(467, 40)
+        Me.GroupBox10.TabIndex = 8
+        Me.GroupBox10.TabStop = False
+        '
+        'rbbuscaNome
+        '
+        Me.rbbuscaNome.AutoSize = True
+        Me.rbbuscaNome.Location = New System.Drawing.Point(104, 15)
+        Me.rbbuscaNome.Name = "rbbuscaNome"
+        Me.rbbuscaNome.Size = New System.Drawing.Size(104, 17)
+        Me.rbbuscaNome.TabIndex = 2
+        Me.rbbuscaNome.TabStop = True
+        Me.rbbuscaNome.Text = "Busca por Nome"
+        Me.rbbuscaNome.UseVisualStyleBackColor = True
+        '
+        'rbid
+        '
+        Me.rbid.AutoSize = True
+        Me.rbid.Location = New System.Drawing.Point(11, 15)
+        Me.rbid.Name = "rbid"
+        Me.rbid.Size = New System.Drawing.Size(87, 17)
+        Me.rbid.TabIndex = 1
+        Me.rbid.TabStop = True
+        Me.rbid.Text = "Busca por ID"
+        Me.rbid.UseVisualStyleBackColor = True
+        '
+        'txtbusca
+        '
+        Me.txtbusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtbusca.Location = New System.Drawing.Point(214, 12)
+        Me.txtbusca.MaxLength = 7
+        Me.txtbusca.Name = "txtbusca"
+        Me.txtbusca.Size = New System.Drawing.Size(125, 20)
+        Me.txtbusca.TabIndex = 3
+        '
+        'txttelefone
+        '
+        Me.txttelefone.Location = New System.Drawing.Point(133, 150)
+        Me.txttelefone.Mask = "(00)0000-0000"
+        Me.txttelefone.Name = "txttelefone"
+        Me.txttelefone.Size = New System.Drawing.Size(75, 20)
+        Me.txttelefone.TabIndex = 4
         '
         'FormMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(620, 479)
+        Me.ClientSize = New System.Drawing.Size(620, 490)
         Me.Controls.Add(Me.txttelefone)
+        Me.Controls.Add(Me.GroupBox10)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btexcluir)
         Me.Controls.Add(Me.btsalvar)
@@ -182,6 +243,8 @@ Partial Class FormMedico
         Me.Name = "FormMedico"
         Me.Text = "SisVet - Cadastro de Médico"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox10.ResumeLayout(False)
+        Me.GroupBox10.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -199,5 +262,10 @@ Partial Class FormMedico
     Friend WithEvents btsalvar As System.Windows.Forms.Button
     Friend WithEvents btnovo As System.Windows.Forms.Button
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents txttelefone As System.Windows.Forms.TextBox
+    Friend WithEvents btbusca As System.Windows.Forms.Button
+    Friend WithEvents GroupBox10 As System.Windows.Forms.GroupBox
+    Friend WithEvents rbbuscaNome As System.Windows.Forms.RadioButton
+    Friend WithEvents rbid As System.Windows.Forms.RadioButton
+    Friend WithEvents txtbusca As System.Windows.Forms.TextBox
+    Friend WithEvents txttelefone As System.Windows.Forms.MaskedTextBox
 End Class

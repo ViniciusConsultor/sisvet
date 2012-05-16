@@ -33,17 +33,23 @@ Partial Class FormTratamento
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ComboPaciente = New System.Windows.Forms.ComboBox()
-        Me.ComboVeterinario = New System.Windows.Forms.ComboBox()
+        Me.comboMedico = New System.Windows.Forms.ComboBox()
+        Me.btbusca = New System.Windows.Forms.Button()
+        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.rbbuscaNome = New System.Windows.Forms.RadioButton()
+        Me.rbid = New System.Windows.Forms.RadioButton()
+        Me.txtbusca = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox10.SuspendLayout()
         Me.SuspendLayout()
         '
         'btexcluir
         '
         Me.btexcluir.Image = Global.SisVet.My.Resources.Resources.Button_Delete_icon32
-        Me.btexcluir.Location = New System.Drawing.Point(292, 292)
+        Me.btexcluir.Location = New System.Drawing.Point(289, 234)
         Me.btexcluir.Name = "btexcluir"
         Me.btexcluir.Size = New System.Drawing.Size(75, 66)
-        Me.btexcluir.TabIndex = 99
+        Me.btexcluir.TabIndex = 5
         Me.btexcluir.Text = "Excluir"
         Me.btexcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btexcluir.UseVisualStyleBackColor = True
@@ -51,10 +57,10 @@ Partial Class FormTratamento
         'btsalvar
         '
         Me.btsalvar.Image = Global.SisVet.My.Resources.Resources.informatica_3632_disquete13
-        Me.btsalvar.Location = New System.Drawing.Point(172, 292)
+        Me.btsalvar.Location = New System.Drawing.Point(169, 234)
         Me.btsalvar.Name = "btsalvar"
         Me.btsalvar.Size = New System.Drawing.Size(75, 66)
-        Me.btsalvar.TabIndex = 98
+        Me.btsalvar.TabIndex = 4
         Me.btsalvar.Text = "Salvar"
         Me.btsalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btsalvar.UseVisualStyleBackColor = True
@@ -62,10 +68,10 @@ Partial Class FormTratamento
         'btnovo
         '
         Me.btnovo.Image = Global.SisVet.My.Resources.Resources.Button_Add_icon32
-        Me.btnovo.Location = New System.Drawing.Point(417, 292)
+        Me.btnovo.Location = New System.Drawing.Point(414, 234)
         Me.btnovo.Name = "btnovo"
         Me.btnovo.Size = New System.Drawing.Size(75, 66)
-        Me.btnovo.TabIndex = 100
+        Me.btnovo.TabIndex = 6
         Me.btnovo.Text = "Novo"
         Me.btnovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnovo.UseVisualStyleBackColor = True
@@ -76,21 +82,21 @@ Partial Class FormTratamento
         Me.DataGridView1.Location = New System.Drawing.Point(33, 393)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(590, 150)
-        Me.DataGridView1.TabIndex = 97
+        Me.DataGridView1.TabIndex = 7
         '
         'txtdescricao
         '
         Me.txtdescricao.Location = New System.Drawing.Point(134, 65)
         Me.txtdescricao.Name = "txtdescricao"
         Me.txtdescricao.Size = New System.Drawing.Size(269, 20)
-        Me.txtdescricao.TabIndex = 95
+        Me.txtdescricao.TabIndex = 1
         '
         'txtcodigo
         '
         Me.txtcodigo.Location = New System.Drawing.Point(134, 31)
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(100, 20)
-        Me.txtcodigo.TabIndex = 94
+        Me.txtcodigo.TabIndex = 0
         '
         'Label7
         '
@@ -134,22 +140,76 @@ Partial Class FormTratamento
         Me.ComboPaciente.Location = New System.Drawing.Point(134, 101)
         Me.ComboPaciente.Name = "ComboPaciente"
         Me.ComboPaciente.Size = New System.Drawing.Size(121, 21)
-        Me.ComboPaciente.TabIndex = 103
+        Me.ComboPaciente.TabIndex = 2
         '
-        'ComboVeterinario
+        'comboMedico
         '
-        Me.ComboVeterinario.FormattingEnabled = True
-        Me.ComboVeterinario.Location = New System.Drawing.Point(134, 140)
-        Me.ComboVeterinario.Name = "ComboVeterinario"
-        Me.ComboVeterinario.Size = New System.Drawing.Size(121, 21)
-        Me.ComboVeterinario.TabIndex = 104
+        Me.comboMedico.FormattingEnabled = True
+        Me.comboMedico.Location = New System.Drawing.Point(134, 140)
+        Me.comboMedico.Name = "comboMedico"
+        Me.comboMedico.Size = New System.Drawing.Size(121, 21)
+        Me.comboMedico.TabIndex = 3
+        '
+        'btbusca
+        '
+        Me.btbusca.Location = New System.Drawing.Point(361, 12)
+        Me.btbusca.Name = "btbusca"
+        Me.btbusca.Size = New System.Drawing.Size(95, 23)
+        Me.btbusca.TabIndex = 0
+        Me.btbusca.Text = "Buscar"
+        Me.btbusca.UseVisualStyleBackColor = True
+        '
+        'GroupBox10
+        '
+        Me.GroupBox10.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox10.Controls.Add(Me.rbbuscaNome)
+        Me.GroupBox10.Controls.Add(Me.rbid)
+        Me.GroupBox10.Controls.Add(Me.txtbusca)
+        Me.GroupBox10.Controls.Add(Me.btbusca)
+        Me.GroupBox10.Location = New System.Drawing.Point(104, 338)
+        Me.GroupBox10.Name = "GroupBox10"
+        Me.GroupBox10.Size = New System.Drawing.Size(467, 40)
+        Me.GroupBox10.TabIndex = 103
+        Me.GroupBox10.TabStop = False
+        '
+        'rbbuscaNome
+        '
+        Me.rbbuscaNome.AutoSize = True
+        Me.rbbuscaNome.Location = New System.Drawing.Point(104, 15)
+        Me.rbbuscaNome.Name = "rbbuscaNome"
+        Me.rbbuscaNome.Size = New System.Drawing.Size(104, 17)
+        Me.rbbuscaNome.TabIndex = 2
+        Me.rbbuscaNome.TabStop = True
+        Me.rbbuscaNome.Text = "Busca por Nome"
+        Me.rbbuscaNome.UseVisualStyleBackColor = True
+        '
+        'rbid
+        '
+        Me.rbid.AutoSize = True
+        Me.rbid.Location = New System.Drawing.Point(11, 15)
+        Me.rbid.Name = "rbid"
+        Me.rbid.Size = New System.Drawing.Size(87, 17)
+        Me.rbid.TabIndex = 1
+        Me.rbid.TabStop = True
+        Me.rbid.Text = "Busca por ID"
+        Me.rbid.UseVisualStyleBackColor = True
+        '
+        'txtbusca
+        '
+        Me.txtbusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtbusca.Location = New System.Drawing.Point(214, 12)
+        Me.txtbusca.MaxLength = 7
+        Me.txtbusca.Name = "txtbusca"
+        Me.txtbusca.Size = New System.Drawing.Size(125, 20)
+        Me.txtbusca.TabIndex = 3
         '
         'FormTratamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(700, 566)
-        Me.Controls.Add(Me.ComboVeterinario)
+        Me.ClientSize = New System.Drawing.Size(656, 566)
+        Me.Controls.Add(Me.GroupBox10)
+        Me.Controls.Add(Me.comboMedico)
         Me.Controls.Add(Me.ComboPaciente)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label2)
@@ -164,6 +224,8 @@ Partial Class FormTratamento
         Me.Name = "FormTratamento"
         Me.Text = "SisVet - Cadastro de Tratamento"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox10.ResumeLayout(False)
+        Me.GroupBox10.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -179,5 +241,10 @@ Partial Class FormTratamento
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents ComboPaciente As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboVeterinario As System.Windows.Forms.ComboBox
+    Friend WithEvents comboMedico As System.Windows.Forms.ComboBox
+    Friend WithEvents btbusca As System.Windows.Forms.Button
+    Friend WithEvents GroupBox10 As System.Windows.Forms.GroupBox
+    Friend WithEvents rbbuscaNome As System.Windows.Forms.RadioButton
+    Friend WithEvents rbid As System.Windows.Forms.RadioButton
+    Friend WithEvents txtbusca As System.Windows.Forms.TextBox
 End Class

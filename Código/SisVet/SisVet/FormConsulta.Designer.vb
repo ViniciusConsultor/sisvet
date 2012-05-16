@@ -28,24 +28,34 @@ Partial Class FormConsulta
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ComboMedico = New System.Windows.Forms.ComboBox()
-        Me.txtdata = New System.Windows.Forms.MaskedTextBox()
         Me.txthora = New System.Windows.Forms.MaskedTextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtcodConsulta = New System.Windows.Forms.TextBox()
         Me.ComboTipoConsulta = New System.Windows.Forms.ComboBox()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.radioNao = New System.Windows.Forms.RadioButton()
+        Me.radioSim = New System.Windows.Forms.RadioButton()
         Me.btexcluir = New System.Windows.Forms.Button()
         Me.btsalvar = New System.Windows.Forms.Button()
         Me.btnovo = New System.Windows.Forms.Button()
+        Me.comboPaciente = New System.Windows.Forms.ComboBox()
+        Me.txtprontuario = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtdata = New System.Windows.Forms.MaskedTextBox()
+        Me.btbusca = New System.Windows.Forms.Button()
+        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.rbbuscaNome = New System.Windows.Forms.RadioButton()
+        Me.rbid = New System.Windows.Forms.RadioButton()
+        Me.txtbusca = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox10.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(27, 58)
+        Me.Label2.Location = New System.Drawing.Point(300, 27)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(45, 13)
         Me.Label2.TabIndex = 1
@@ -54,7 +64,7 @@ Partial Class FormConsulta
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(27, 91)
+        Me.Label3.Location = New System.Drawing.Point(27, 60)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(77, 13)
         Me.Label3.TabIndex = 2
@@ -63,7 +73,7 @@ Partial Class FormConsulta
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(27, 123)
+        Me.Label4.Location = New System.Drawing.Point(300, 60)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(76, 13)
         Me.Label4.TabIndex = 3
@@ -72,7 +82,7 @@ Partial Class FormConsulta
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(27, 154)
+        Me.Label6.Location = New System.Drawing.Point(27, 95)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(59, 13)
         Me.Label6.TabIndex = 5
@@ -81,7 +91,7 @@ Partial Class FormConsulta
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(27, 190)
+        Me.Label7.Location = New System.Drawing.Point(300, 95)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(90, 13)
         Me.Label7.TabIndex = 6
@@ -90,32 +100,27 @@ Partial Class FormConsulta
         'ComboMedico
         '
         Me.ComboMedico.FormattingEnabled = True
-        Me.ComboMedico.Location = New System.Drawing.Point(130, 50)
+        Me.ComboMedico.Location = New System.Drawing.Point(395, 19)
         Me.ComboMedico.Name = "ComboMedico"
         Me.ComboMedico.Size = New System.Drawing.Size(274, 21)
-        Me.ComboMedico.TabIndex = 10
-        '
-        'txtdata
-        '
-        Me.txtdata.Location = New System.Drawing.Point(130, 84)
-        Me.txtdata.Name = "txtdata"
-        Me.txtdata.Size = New System.Drawing.Size(100, 20)
-        Me.txtdata.TabIndex = 12
+        Me.ComboMedico.TabIndex = 5
         '
         'txthora
         '
-        Me.txthora.Location = New System.Drawing.Point(130, 116)
+        Me.txthora.Location = New System.Drawing.Point(395, 57)
+        Me.txthora.Mask = "00:00"
         Me.txthora.Name = "txthora"
-        Me.txthora.Size = New System.Drawing.Size(100, 20)
-        Me.txthora.TabIndex = 13
+        Me.txthora.Size = New System.Drawing.Size(36, 20)
+        Me.txthora.TabIndex = 6
+        Me.txthora.ValidatingType = GetType(Date)
         '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(16, 327)
+        Me.DataGridView1.Location = New System.Drawing.Point(30, 443)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(590, 150)
-        Me.DataGridView1.TabIndex = 44
+        Me.DataGridView1.Size = New System.Drawing.Size(620, 150)
+        Me.DataGridView1.TabIndex = 13
         '
         'Label1
         '
@@ -128,48 +133,49 @@ Partial Class FormConsulta
         '
         'txtcodConsulta
         '
+        Me.txtcodConsulta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtcodConsulta.Location = New System.Drawing.Point(130, 20)
         Me.txtcodConsulta.Name = "txtcodConsulta"
         Me.txtcodConsulta.Size = New System.Drawing.Size(65, 20)
-        Me.txtcodConsulta.TabIndex = 7
+        Me.txtcodConsulta.TabIndex = 0
         '
         'ComboTipoConsulta
         '
         Me.ComboTipoConsulta.FormattingEnabled = True
-        Me.ComboTipoConsulta.Location = New System.Drawing.Point(130, 182)
+        Me.ComboTipoConsulta.Location = New System.Drawing.Point(395, 88)
         Me.ComboTipoConsulta.Name = "ComboTipoConsulta"
         Me.ComboTipoConsulta.Size = New System.Drawing.Size(121, 21)
-        Me.ComboTipoConsulta.TabIndex = 104
+        Me.ComboTipoConsulta.TabIndex = 7
         '
-        'RadioButton2
+        'radioNao
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(218, 150)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(45, 17)
-        Me.RadioButton2.TabIndex = 106
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Não"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.radioNao.AutoSize = True
+        Me.radioNao.Location = New System.Drawing.Point(218, 91)
+        Me.radioNao.Name = "radioNao"
+        Me.radioNao.Size = New System.Drawing.Size(45, 17)
+        Me.radioNao.TabIndex = 3
+        Me.radioNao.TabStop = True
+        Me.radioNao.Text = "Não"
+        Me.radioNao.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'radioSim
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(130, 150)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(42, 17)
-        Me.RadioButton1.TabIndex = 105
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Sim"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.radioSim.AutoSize = True
+        Me.radioSim.Location = New System.Drawing.Point(130, 91)
+        Me.radioSim.Name = "radioSim"
+        Me.radioSim.Size = New System.Drawing.Size(42, 17)
+        Me.radioSim.TabIndex = 2
+        Me.radioSim.TabStop = True
+        Me.radioSim.Text = "Sim"
+        Me.radioSim.UseVisualStyleBackColor = True
         '
         'btexcluir
         '
         Me.btexcluir.Image = Global.SisVet.My.Resources.Resources.Button_Delete_icon32
-        Me.btexcluir.Location = New System.Drawing.Point(270, 250)
+        Me.btexcluir.Location = New System.Drawing.Point(284, 311)
         Me.btexcluir.Name = "btexcluir"
         Me.btexcluir.Size = New System.Drawing.Size(75, 66)
-        Me.btexcluir.TabIndex = 102
+        Me.btexcluir.TabIndex = 10
         Me.btexcluir.Text = "Excluir"
         Me.btexcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btexcluir.UseVisualStyleBackColor = True
@@ -177,10 +183,10 @@ Partial Class FormConsulta
         'btsalvar
         '
         Me.btsalvar.Image = Global.SisVet.My.Resources.Resources.informatica_3632_disquete13
-        Me.btsalvar.Location = New System.Drawing.Point(150, 250)
+        Me.btsalvar.Location = New System.Drawing.Point(164, 311)
         Me.btsalvar.Name = "btsalvar"
         Me.btsalvar.Size = New System.Drawing.Size(75, 66)
-        Me.btsalvar.TabIndex = 101
+        Me.btsalvar.TabIndex = 9
         Me.btsalvar.Text = "Salvar"
         Me.btsalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btsalvar.UseVisualStyleBackColor = True
@@ -188,28 +194,129 @@ Partial Class FormConsulta
         'btnovo
         '
         Me.btnovo.Image = Global.SisVet.My.Resources.Resources.Button_Add_icon32
-        Me.btnovo.Location = New System.Drawing.Point(395, 250)
+        Me.btnovo.Location = New System.Drawing.Point(409, 311)
         Me.btnovo.Name = "btnovo"
         Me.btnovo.Size = New System.Drawing.Size(75, 66)
-        Me.btnovo.TabIndex = 103
+        Me.btnovo.TabIndex = 11
         Me.btnovo.Text = "Novo"
         Me.btnovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnovo.UseVisualStyleBackColor = True
+        '
+        'comboPaciente
+        '
+        Me.comboPaciente.FormattingEnabled = True
+        Me.comboPaciente.Location = New System.Drawing.Point(130, 130)
+        Me.comboPaciente.Name = "comboPaciente"
+        Me.comboPaciente.Size = New System.Drawing.Size(121, 21)
+        Me.comboPaciente.TabIndex = 4
+        '
+        'txtprontuario
+        '
+        Me.txtprontuario.Location = New System.Drawing.Point(96, 174)
+        Me.txtprontuario.Multiline = True
+        Me.txtprontuario.Name = "txtprontuario"
+        Me.txtprontuario.Size = New System.Drawing.Size(482, 111)
+        Me.txtprontuario.TabIndex = 8
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(27, 133)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(52, 13)
+        Me.Label5.TabIndex = 109
+        Me.Label5.Text = "Paciente:"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(27, 181)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(52, 13)
+        Me.Label8.TabIndex = 110
+        Me.Label8.Text = "Protuario:"
+        '
+        'txtdata
+        '
+        Me.txtdata.Location = New System.Drawing.Point(130, 53)
+        Me.txtdata.Mask = "00/00/0000"
+        Me.txtdata.Name = "txtdata"
+        Me.txtdata.Size = New System.Drawing.Size(65, 20)
+        Me.txtdata.TabIndex = 1
+        Me.txtdata.ValidatingType = GetType(Date)
+        '
+        'btbusca
+        '
+        Me.btbusca.Location = New System.Drawing.Point(361, 12)
+        Me.btbusca.Name = "btbusca"
+        Me.btbusca.Size = New System.Drawing.Size(95, 23)
+        Me.btbusca.TabIndex = 0
+        Me.btbusca.Text = "Buscar"
+        Me.btbusca.UseVisualStyleBackColor = True
+        '
+        'GroupBox10
+        '
+        Me.GroupBox10.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox10.Controls.Add(Me.rbbuscaNome)
+        Me.GroupBox10.Controls.Add(Me.rbid)
+        Me.GroupBox10.Controls.Add(Me.txtbusca)
+        Me.GroupBox10.Controls.Add(Me.btbusca)
+        Me.GroupBox10.Location = New System.Drawing.Point(96, 397)
+        Me.GroupBox10.Name = "GroupBox10"
+        Me.GroupBox10.Size = New System.Drawing.Size(467, 40)
+        Me.GroupBox10.TabIndex = 12
+        Me.GroupBox10.TabStop = False
+        '
+        'rbbuscaNome
+        '
+        Me.rbbuscaNome.AutoSize = True
+        Me.rbbuscaNome.Location = New System.Drawing.Point(104, 15)
+        Me.rbbuscaNome.Name = "rbbuscaNome"
+        Me.rbbuscaNome.Size = New System.Drawing.Size(104, 17)
+        Me.rbbuscaNome.TabIndex = 2
+        Me.rbbuscaNome.TabStop = True
+        Me.rbbuscaNome.Text = "Busca por Nome"
+        Me.rbbuscaNome.UseVisualStyleBackColor = True
+        '
+        'rbid
+        '
+        Me.rbid.AutoSize = True
+        Me.rbid.Location = New System.Drawing.Point(11, 15)
+        Me.rbid.Name = "rbid"
+        Me.rbid.Size = New System.Drawing.Size(87, 17)
+        Me.rbid.TabIndex = 1
+        Me.rbid.TabStop = True
+        Me.rbid.Text = "Busca por ID"
+        Me.rbid.UseVisualStyleBackColor = True
+        '
+        'txtbusca
+        '
+        Me.txtbusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtbusca.Location = New System.Drawing.Point(214, 12)
+        Me.txtbusca.MaxLength = 7
+        Me.txtbusca.Name = "txtbusca"
+        Me.txtbusca.Size = New System.Drawing.Size(125, 20)
+        Me.txtbusca.TabIndex = 3
         '
         'FormConsulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(621, 491)
-        Me.Controls.Add(Me.RadioButton2)
-        Me.Controls.Add(Me.RadioButton1)
+        Me.ClientSize = New System.Drawing.Size(689, 605)
+        Me.Controls.Add(Me.GroupBox10)
+        Me.Controls.Add(Me.txtdata)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.txtprontuario)
+        Me.Controls.Add(Me.comboPaciente)
+        Me.Controls.Add(Me.radioNao)
+        Me.Controls.Add(Me.radioSim)
         Me.Controls.Add(Me.ComboTipoConsulta)
         Me.Controls.Add(Me.btexcluir)
         Me.Controls.Add(Me.btsalvar)
         Me.Controls.Add(Me.btnovo)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.txthora)
-        Me.Controls.Add(Me.txtdata)
         Me.Controls.Add(Me.ComboMedico)
         Me.Controls.Add(Me.txtcodConsulta)
         Me.Controls.Add(Me.Label7)
@@ -221,6 +328,8 @@ Partial Class FormConsulta
         Me.Name = "FormConsulta"
         Me.Text = "SisVet -  Cadastro de Consultas"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox10.ResumeLayout(False)
+        Me.GroupBox10.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -231,7 +340,6 @@ Partial Class FormConsulta
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents ComboMedico As System.Windows.Forms.ComboBox
-    Friend WithEvents txtdata As System.Windows.Forms.MaskedTextBox
     Friend WithEvents txthora As System.Windows.Forms.MaskedTextBox
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents btexcluir As System.Windows.Forms.Button
@@ -240,6 +348,16 @@ Partial Class FormConsulta
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtcodConsulta As System.Windows.Forms.TextBox
     Friend WithEvents ComboTipoConsulta As System.Windows.Forms.ComboBox
-    Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
+    Friend WithEvents radioNao As System.Windows.Forms.RadioButton
+    Friend WithEvents radioSim As System.Windows.Forms.RadioButton
+    Friend WithEvents comboPaciente As System.Windows.Forms.ComboBox
+    Friend WithEvents txtprontuario As System.Windows.Forms.TextBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents txtdata As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents btbusca As System.Windows.Forms.Button
+    Friend WithEvents GroupBox10 As System.Windows.Forms.GroupBox
+    Friend WithEvents rbbuscaNome As System.Windows.Forms.RadioButton
+    Friend WithEvents rbid As System.Windows.Forms.RadioButton
+    Friend WithEvents txtbusca As System.Windows.Forms.TextBox
 End Class

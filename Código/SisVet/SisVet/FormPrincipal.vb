@@ -64,4 +64,9 @@
         FormCirurgia.Show()
 
     End Sub
+
+    Private Sub TipoConsultaToolStripMenuItem_Click_1(sender As System.Object, e As System.EventArgs) Handles TipoConsultaToolStripMenuItem.Click
+        FormTipoConsulta.MdiParent = Me
+        FormTipoConsulta.Show()
+    End Sub
 End Class
