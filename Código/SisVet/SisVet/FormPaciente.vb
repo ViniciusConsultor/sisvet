@@ -27,7 +27,7 @@
 
                 sexo = "F"
             End If
-            Dim castrado
+            Dim castrado As Char
             If RadioSim.Checked = True Then
                 castrado = "S"
             ElseIf RadioNao.Checked = True Then
