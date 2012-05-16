@@ -15,15 +15,18 @@ CREATE OR REPLACE FUNCTION receber_dadosCliente(nomecliente varchar, datanascime
 	end;
  $$language plpgsql;
  
- -- add 
+ -- adicionar 
 CREATE OR REPLACE FUNCTION inserir_cliente(nomecliente varchar, datanascimentocliente date, enderecocliente varchar, rgcliente varchar, telefone char,
  exxpeditorrgcliente varchar, municipiocliente varchar, cpfcliente char) RETURNS integer AS $$
+ declare
+	cod integer;
  begin
 	insert into cliente (nome_cliente, data_nascimeto_cliente, endereco_cliente, rg_cliente, telefone_cliente, 
 	exxpedidor_rg_cliente, municipio_cliente, cpf_cliente) values (nomecliente, datanascimentocliente, enderecocliente, rgcliente, telefone, exxpeditorrgcliente, 
 	municipiocliente, cpfcliente);
 
-	return 1;
+	GET DIAGNOSTICS cod = RESULT_OID;
+	return cod;
  end;
 $$language plpgsql;
 
@@ -35,7 +38,7 @@ CREATE OR REPLACE FUNCTION atualizar_cliente(nomecliente varchar, datanascimento
 	rg_cliente = rgcliente, telefone_cliente = telefone, exxpedidor_rg_cliente = exxpeditorrgcliente, municipio_cliente = municipiocliente, 
 	cpf_cliente = cpfcliente where cod_cliente = codcliente;
 
-	return 1;
+	return codcliente;
  end;
 $$language plpgsql;
 
@@ -47,8 +50,8 @@ begin
 end;
 $$language plpgsql;	
 
--- select
-CREATE OR REPLACE FUNCTION fnGetCliente() RETURNS SETOF cliente AS $$
+-- Carregar grid
+CREATE OR REPLACE FUNCTION carregarGridCliente() RETURNS SETOF cliente AS $$
 DECLARE 
 	linha cliente%ROWTYPE;
 BEGIN
@@ -59,18 +62,17 @@ BEGIN
 END
 $$LANGUAGE PLPGSQL;
 
-select fnGetCliente();
-
-
-
-
-
-
-
-
-
-
-
+-- Carregar campos
+CREATE OR REPLACE FUNCTION carregarCamposCliente(cod int) RETURNS SETOF cliente AS $$
+	DECLARE 
+	linha record;
+BEGIN
+	FOR linha in  SELECT * FROM cliente where cod_cliente = cod LOOP
+		RETURN NEXT linha;
+	END LOOP;
+	RETURN;
+END
+$$language plpgsql;
 
 
 
@@ -92,15 +94,18 @@ CREATE OR REPLACE FUNCTION receber_dadosPaciente(codclientefk int, rghvpaciente 
 	end;
 $$language plpgsql;
 
--- add
+-- adicionar
 CREATE OR REPLACE FUNCTION inserir_paciente(codclientefk int, rghvpaciente varchar, especiepaciente varchar, racapaciente varchar, nascimentopaciente date,
 			pelagempaciente varchar, sexopaciente char, pacientecadastrado char, nomepaciente varchar) RETURNS integer AS $$
+	declare
+		cod integer;
 	begin
 		insert into paciente (cod_cliente_fk, rghv_paciente, especie_paciente, raca_paciente, nascimento_paciente, pelagem_paciente, 
 		sexo_paciente, paciente_castrado, nome_paciente) values (codclientefk, rghvpaciente, especiepaciente, racapaciente, 
 		nascimentopaciente, pelagempaciente, sexopaciente, pacientecadastrado, nomepaciente);
 
-		return 1;
+		GET DIAGNOSTICS cod = RESULT_OID;
+		return cod;
 
 	end;
 $$language plpgsql;
@@ -113,7 +118,7 @@ CREATE OR REPLACE FUNCTION atualizar_paciente(codclientefk int, rghvpaciente var
 		raca_paciente = racapaciente, nascimento_paciente = nascimentopaciente, pelagem_paciente = pelagempaciente, sexo_paciente = sexopaciente,
 		paciente_castrado = pacientecadastrado, nome_paciente = nomepaciente where cod_paciente = codpaciente;
 
-		return 1;
+		return codpaciente;
 	end;
 $$language plpgsql;
 
@@ -126,7 +131,7 @@ CREATE OR REPLACE FUNCTION deletar_paciente(codpaciente int) RETURNS integer AS 
 $$language plpgsql;
 
 -- select
-CREATE OR REPLACE FUNCTION fnGetPaciente() RETURNS SETOF paciente AS $$
+CREATE OR REPLACE FUNCTION carregarGridPaciente() RETURNS SETOF paciente AS $$
 DECLARE 
 	linha paciente%ROWTYPE;
 BEGIN
@@ -137,8 +142,17 @@ BEGIN
 END
 $$LANGUAGE PLPGSQL;
 
-
-
+-- carregar campos
+CREATE OR REPLACE FUNCTION carregarCamposPaciente(cod int) RETURNS SETOF paciente AS $$
+DECLARE 
+	linha record;
+BEGIN
+	FOR linha in  SELECT * FROM paciente where cod_paciente = cod LOOP
+		RETURN NEXT linha;
+	END LOOP;
+	RETURN;
+END
+$$LANGUAGE PLPGSQL;
 
 
 
@@ -156,13 +170,17 @@ CREATE OR REPLACE FUNCTION receber_dadosMedico(nomemedico varchar, especialidade
 	end;
 $$language plpgsql;
 
--- Add:
+-- adicionar:
 CREATE OR REPLACE FUNCTION inserir_medVet(nomemedico varchar, especialidade varchar, crmv varchar, telefone varchar) RETURNS integer AS $$
+	declare
+		cod integer;
 	begin
 	insert into medico_veterinario(nome_medico_veterinario, especialidade_veterinario, crmv_veterinario, telefone_veterinario) VALUES
 	(nomemedico, especialidade, crmv, telefone);
 
-	return 1;
+	GET DIAGNOSTICS cod = RESULT_OID;
+	return cod;	
+
 	end;
 $$language plpgsql;
 
@@ -172,7 +190,7 @@ CREATE OR REPLACE FUNCTION atualizar_medVet(codmedico int, nomemedico varchar, e
 	update medico_veterinario set nome_medico_veterinario = nomemedico, especialidade_veterinario = especialidade, 
 	crmv_veterinario = crmv, telefone_veterinario = telefone where codigo_medico_vet_pk = codmedico;
 
-	return 1;
+	return codmedico;
 	end;
 $$language plpgsql;
 
@@ -185,8 +203,8 @@ CREATE OR REPLACE FUNCTION deletar_medVet(codmedico int) RETURNS integer AS $$
 	end;
 $$language plpgsql;
 
--- Select
-CREATE OR REPLACE FUNCTION fnGetMedVet() RETURNS SETOF medico_veterinario AS $$
+-- carregar grid
+CREATE OR REPLACE FUNCTION carregarGridMedVet() RETURNS SETOF medico_veterinario AS $$
 DECLARE 
 	linha medico_veterinario%ROWTYPE;
 BEGIN
@@ -197,12 +215,17 @@ BEGIN
 END
 $$LANGUAGE PLPGSQL;
 
-
-
-
-
-
-
+-- carregar campos
+CREATE OR REPLACE FUNCTION carregarCamposMedVet(cod int) RETURNS SETOF medico_veterinario AS $$
+DECLARE 
+	linha record;
+BEGIN
+	FOR linha in  SELECT * FROM medico_veterinario where codigo_medico_vet_pk = cod LOOP
+		RETURN NEXT linha;
+	END LOOP;
+	RETURN;
+END
+$$LANGUAGE PLPGSQL;
 
 
 
@@ -210,7 +233,7 @@ $$LANGUAGE PLPGSQL;
 
 -- CONSULTA
 -- receber dados 
-CREATE OR REPLACE FUNCTION receber_dadosConsulta(verificar int, dataconsulta date, horaconsulta varchar, medicoveterinario int, codigotipo int,
+CREATE OR REPLACE FUNCTION receber_dadosConsulta(verificar int, dataconsulta date, horaconsulta time without time zone, medicoveterinario int, codigotipo int,
 	agendamento char, paciente int, prontuario text) RETURNS integer AS $$
 	begin
 		if (verificar = 0) then
@@ -222,40 +245,44 @@ CREATE OR REPLACE FUNCTION receber_dadosConsulta(verificar int, dataconsulta dat
 	end;
 $$language plpgsql;
 
--- Add:
-CREATE OR REPLACE FUNCTION inserir_consulta(dataconsulta date, horaconsulta varchar, medicoveterinario int, codigotipo int,
+-- Adicionar:
+CREATE OR REPLACE FUNCTION inserir_consulta(dataconsulta date, horaconsulta time without time zone, medicoveterinario int, codigotipo int,
 	agendamento char, paciente int, prontuario text) RETURNS integer AS $$
+	declare
+		cod integer;
 	begin
 	insert into consulta(data_consulta, hora_consutla, cod_medico_veterinario_fk, cod_tipo_consulta_fk, agendado, cod_paciente_fk,
 	prontuario_paciente) VALUES (dataconsulta, horaconsulta, medicoveterinario, codigotipo, agendamento, paciente, prontuario);
 
-	return 1;
+	GET DIAGNOSTICS cod = RESULT_OID;
+	return cod;
+	
 	end;
 $$language plpgsql; 
 
 -- Atualizar:
-CREATE OR REPLACE FUNCTION atualizar_consulta(codigoconsulta int, dataconsulta date, horaconsulta varchar, medicoveterinario int, codigotipo int,
+CREATE OR REPLACE FUNCTION atualizar_consulta(codigoconsulta int, dataconsulta date, horaconsulta time without time zone, medicoveterinario int, codigotipo int,
 	agendamento char, paciente int, prontuario text) RETURNS integer AS $$
 	begin
 	update consulta set data_consulta = dataconsulta, hora_consutla = horaconsulta, cod_medico_veterinario_fk = medicoveterinario, 
 	cod_tipo_consulta_fk = codigotipo, agendado = agendamento, cod_paciente_fk = paciente, prontuario_paciente = prontuario 
-	where codigo_consulta = codigoconsulta;
+	where cod_consulta = codigoconsulta;
 	
-	return 1;
+	return codigoconsulta;
 	end;
 $$language plpgsql; 
 
 -- Deletar:
 CREATE OR REPLACE FUNCTION deletar_consulta(codigoconsulta int) RETURNS integer AS $$
 	begin
-	delete from consulta where codigo_consulta = codigoconsulta;
+	delete from consulta where cod_consulta = codigoconsulta;
 
 	return 1;
 	end;
 $$language plpgsql;
 
--- Select:
-CREATE OR REPLACE FUNCTION fnGetConsulta() RETURNS SETOF consulta AS $$
+-- carregar grid:
+CREATE OR REPLACE FUNCTION carregarGridConsulta() RETURNS SETOF consulta AS $$
 DECLARE 
 	linha consulta%ROWTYPE;
 BEGIN
@@ -266,12 +293,17 @@ BEGIN
 END
 $$LANGUAGE PLPGSQL;
 
-
-
-
-
-
-
+-- carregar campos:
+CREATE OR REPLACE FUNCTION carregarCamposConsulta(cod int) RETURNS SETOF consulta AS $$
+DECLARE 
+	linha record;
+BEGIN
+	FOR linha in  SELECT * FROM consulta where cod_consulta = cod LOOP
+		RETURN NEXT linha;
+	END LOOP;
+	RETURN;
+END
+$$LANGUAGE PLPGSQL;
 
 
 
@@ -289,12 +321,15 @@ CREATE OR REPLACE FUNCTION receber_dadosTipoConsulta(verificar int, valorconsult
 	end;
 $$language plpgsql;
 
--- Add:
+-- Adicionar:
 CREATE OR REPLACE FUNCTION inserir_tipoConsulta(valorconsulta numeric) RETURNS integer AS $$
+	declare
+		cod integer;
 	begin
 		insert into tipo_consulta(valor_consulta) VALUES (valorconsulta);
+		GET DIAGNOSTICS cod = RESULT_OID;
 
-		return 1;
+		return cod;
 	end;
 $$language plpgsql;
 
@@ -303,7 +338,7 @@ CREATE OR REPLACE FUNCTION atualizar_tipoConsulta(codtipoconsulta int, valorcons
 	begin
 	update tipo_consulta set valor_consulta = valorconsulta where cod_tipo_consulta = codtipoconsulta;
 	
-	return 1;
+	return codtipoconsulta;
 	end;
 $$language plpgsql;
 
@@ -316,8 +351,8 @@ CREATE OR REPLACE FUNCTION deletar_tipoConsulta(codtipoconsulta int) RETURNS int
 	end;
 $$language plpgsql;
 
--- Select:
-CREATE OR REPLACE FUNCTION fnGetTipoConsulta() RETURNS SETOF tipo_consulta AS $$
+-- carregar grid:
+CREATE OR REPLACE FUNCTION carregarGridTipoConsulta() RETURNS SETOF tipo_consulta AS $$
 DECLARE 
 	linha tipo_consulta%ROWTYPE;
 BEGIN
@@ -328,10 +363,17 @@ BEGIN
 END
 $$LANGUAGE PLPGSQL;
 
-
-
-
-
+-- carregar campos:
+CREATE OR REPLACE FUNCTION carregarCamposTipoConsulta(cod int) RETURNS SETOF tipo_consulta AS $$
+DECLARE 
+	linha record;
+BEGIN
+	FOR linha in  SELECT * FROM tipo_consulta where cod_tipo_consulta = cod LOOP
+		RETURN NEXT linha;
+	END LOOP;
+	RETURN;
+END
+$$LANGUAGE PLPGSQL;
 
 
 
@@ -349,12 +391,15 @@ CREATE OR REPLACE FUNCTION receber_dadosCustos(verificar int, codconsulta int, v
 	end;
 $$language plpgsql;
 
--- Add:
+-- Adicionar:
 CREATE OR REPLACE FUNCTION inserir_custos(codconsulta int, valortotal numeric) RETURNS integer AS $$
+	declare
+		cod integer;
 	begin
 	insert into custos(cod_consulta_fk, valor_Total) VALUES (codconsulta, valortotal);
-
-	return 1;
+	GET DIAGNOSTICS cod = RESULT_OID;
+	return cod;
+	
 	end;
 $$language plpgsql;
 
@@ -363,16 +408,28 @@ CREATE OR REPLACE FUNCTION atualizar_custos(codcliente int, codconsulta int, val
 	begin
 	update custos set cod_consulta_fk = codconsulta, valor_Total = valortotal where cod_cliente_fk = codcliente;
 	
-	return 1;
+	return codcliente;
 	end;
 $$language plpgsql;
 
--- Select:
-CREATE OR REPLACE FUNCTION fnGetCustos() RETURNS SETOF custos AS $$
+-- carregar grid:
+CREATE OR REPLACE FUNCTION carregarGridCustos() RETURNS SETOF custos AS $$
 DECLARE 
 	linha custos%ROWTYPE;
 BEGIN
 	FOR linha in  SELECT * FROM custos LOOP
+		RETURN NEXT linha;
+	END LOOP;
+	RETURN;
+END
+$$LANGUAGE PLPGSQL;
+
+-- carregar campos:
+CREATE OR REPLACE FUNCTION carregarCamposCustos(cod int) RETURNS SETOF custos AS $$
+DECLARE 
+	linha record;
+BEGIN
+	FOR linha in  SELECT * FROM custos where cod_cliente_fk = cod LOOP
 		RETURN NEXT linha;
 	END LOOP;
 	RETURN;
