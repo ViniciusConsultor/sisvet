@@ -69,4 +69,10 @@
         FormTipoConsulta.MdiParent = Me
         FormTipoConsulta.Show()
     End Sub
+
+    Private Sub ContasAPagarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ContasAPagarToolStripMenuItem.Click
+        FormContasApagar.MdiParent = Me
+        FormContasApagar.Show()
+
+    End Sub
 End Class

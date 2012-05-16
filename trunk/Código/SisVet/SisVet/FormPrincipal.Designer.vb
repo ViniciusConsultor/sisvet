@@ -32,6 +32,7 @@ Partial Class FormPrincipal
         Me.PacienteToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaboratórioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MedicamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TipoConsultaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MarcarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -46,7 +47,7 @@ Partial Class FormPrincipal
         Me.AuxiliarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RelatóriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TipoConsultaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContasAPagarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -120,9 +121,15 @@ Partial Class FormPrincipal
         Me.MedicamentoToolStripMenuItem.Size = New System.Drawing.Size(175, 26)
         Me.MedicamentoToolStripMenuItem.Text = "Medicamento"
         '
+        'TipoConsultaToolStripMenuItem
+        '
+        Me.TipoConsultaToolStripMenuItem.Name = "TipoConsultaToolStripMenuItem"
+        Me.TipoConsultaToolStripMenuItem.Size = New System.Drawing.Size(175, 26)
+        Me.TipoConsultaToolStripMenuItem.Text = "Tipo Consulta"
+        '
         'ConsultaToolStripMenuItem1
         '
-        Me.ConsultaToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MarcarToolStripMenuItem, Me.ConsultarToolStripMenuItem, Me.ExameToolStripMenuItem, Me.CirurgiaToolStripMenuItem})
+        Me.ConsultaToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MarcarToolStripMenuItem, Me.ConsultarToolStripMenuItem, Me.ExameToolStripMenuItem, Me.CirurgiaToolStripMenuItem, Me.ContasAPagarToolStripMenuItem})
         Me.ConsultaToolStripMenuItem1.Name = "ConsultaToolStripMenuItem1"
         Me.ConsultaToolStripMenuItem1.Size = New System.Drawing.Size(112, 25)
         Me.ConsultaToolStripMenuItem1.Text = "Atendimento"
@@ -130,26 +137,26 @@ Partial Class FormPrincipal
         'MarcarToolStripMenuItem
         '
         Me.MarcarToolStripMenuItem.Name = "MarcarToolStripMenuItem"
-        Me.MarcarToolStripMenuItem.Size = New System.Drawing.Size(160, 26)
+        Me.MarcarToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
         Me.MarcarToolStripMenuItem.Text = "Tratamento"
         '
         'ConsultarToolStripMenuItem
         '
         Me.ConsultarToolStripMenuItem.Image = Global.SisVet.My.Resources.Resources.Medicina_e_Saude_5549_Medical_invoice_information_icon
         Me.ConsultarToolStripMenuItem.Name = "ConsultarToolStripMenuItem"
-        Me.ConsultarToolStripMenuItem.Size = New System.Drawing.Size(160, 26)
+        Me.ConsultarToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
         Me.ConsultarToolStripMenuItem.Text = "Consulta"
         '
         'ExameToolStripMenuItem
         '
         Me.ExameToolStripMenuItem.Name = "ExameToolStripMenuItem"
-        Me.ExameToolStripMenuItem.Size = New System.Drawing.Size(160, 26)
+        Me.ExameToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
         Me.ExameToolStripMenuItem.Text = "Exame"
         '
         'CirurgiaToolStripMenuItem
         '
         Me.CirurgiaToolStripMenuItem.Name = "CirurgiaToolStripMenuItem"
-        Me.CirurgiaToolStripMenuItem.Size = New System.Drawing.Size(160, 26)
+        Me.CirurgiaToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
         Me.CirurgiaToolStripMenuItem.Text = "Cirurgia"
         '
         'ArquivoToolStripMenuItem
@@ -210,11 +217,11 @@ Partial Class FormPrincipal
         Me.RelatóriosToolStripMenuItem.Size = New System.Drawing.Size(92, 25)
         Me.RelatóriosToolStripMenuItem.Text = "Relatórios"
         '
-        'TipoConsultaToolStripMenuItem
+        'ContasAPagarToolStripMenuItem
         '
-        Me.TipoConsultaToolStripMenuItem.Name = "TipoConsultaToolStripMenuItem"
-        Me.TipoConsultaToolStripMenuItem.Size = New System.Drawing.Size(175, 26)
-        Me.TipoConsultaToolStripMenuItem.Text = "Tipo Consulta"
+        Me.ContasAPagarToolStripMenuItem.Name = "ContasAPagarToolStripMenuItem"
+        Me.ContasAPagarToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
+        Me.ContasAPagarToolStripMenuItem.Text = "Contas a pagar"
         '
         'FormPrincipal
         '
@@ -262,5 +269,6 @@ Partial Class FormPrincipal
     Friend WithEvents ExameToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CirurgiaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TipoConsultaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ContasAPagarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
