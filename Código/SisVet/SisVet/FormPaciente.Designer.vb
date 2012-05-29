@@ -47,12 +47,11 @@ Partial Class FormPaciente
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.RadioFeminino = New System.Windows.Forms.RadioButton()
         Me.Radiomasculino = New System.Windows.Forms.RadioButton()
-        Me.masckDatanascimento = New System.Windows.Forms.MaskedTextBox()
         Me.btbusca = New System.Windows.Forms.Button()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
-        Me.rbbuscaNome = New System.Windows.Forms.RadioButton()
-        Me.rbid = New System.Windows.Forms.RadioButton()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.txtbusca = New System.Windows.Forms.TextBox()
+        Me.masckDatanascimento = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -290,15 +289,6 @@ Partial Class FormPaciente
         Me.Radiomasculino.Text = "Masculino"
         Me.Radiomasculino.UseVisualStyleBackColor = True
         '
-        'masckDatanascimento
-        '
-        Me.masckDatanascimento.Location = New System.Drawing.Point(127, 91)
-        Me.masckDatanascimento.Mask = "00/00/0000"
-        Me.masckDatanascimento.Name = "masckDatanascimento"
-        Me.masckDatanascimento.Size = New System.Drawing.Size(68, 20)
-        Me.masckDatanascimento.TabIndex = 2
-        Me.masckDatanascimento.ValidatingType = GetType(Date)
-        '
         'btbusca
         '
         Me.btbusca.Location = New System.Drawing.Point(361, 12)
@@ -311,8 +301,7 @@ Partial Class FormPaciente
         'GroupBox10
         '
         Me.GroupBox10.BackColor = System.Drawing.SystemColors.Control
-        Me.GroupBox10.Controls.Add(Me.rbbuscaNome)
-        Me.GroupBox10.Controls.Add(Me.rbid)
+        Me.GroupBox10.Controls.Add(Me.Label7)
         Me.GroupBox10.Controls.Add(Me.txtbusca)
         Me.GroupBox10.Controls.Add(Me.btbusca)
         Me.GroupBox10.Location = New System.Drawing.Point(83, 335)
@@ -321,27 +310,14 @@ Partial Class FormPaciente
         Me.GroupBox10.TabIndex = 108
         Me.GroupBox10.TabStop = False
         '
-        'rbbuscaNome
+        'Label7
         '
-        Me.rbbuscaNome.AutoSize = True
-        Me.rbbuscaNome.Location = New System.Drawing.Point(104, 15)
-        Me.rbbuscaNome.Name = "rbbuscaNome"
-        Me.rbbuscaNome.Size = New System.Drawing.Size(104, 17)
-        Me.rbbuscaNome.TabIndex = 2
-        Me.rbbuscaNome.TabStop = True
-        Me.rbbuscaNome.Text = "Busca por Nome"
-        Me.rbbuscaNome.UseVisualStyleBackColor = True
-        '
-        'rbid
-        '
-        Me.rbid.AutoSize = True
-        Me.rbid.Location = New System.Drawing.Point(11, 15)
-        Me.rbid.Name = "rbid"
-        Me.rbid.Size = New System.Drawing.Size(87, 17)
-        Me.rbid.TabIndex = 1
-        Me.rbid.TabStop = True
-        Me.rbid.Text = "Busca por ID"
-        Me.rbid.UseVisualStyleBackColor = True
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(41, 17)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(90, 13)
+        Me.Label7.TabIndex = 5
+        Me.Label7.Text = "Busca Por Nome:"
         '
         'txtbusca
         '
@@ -352,13 +328,20 @@ Partial Class FormPaciente
         Me.txtbusca.Size = New System.Drawing.Size(125, 20)
         Me.txtbusca.TabIndex = 3
         '
+        'masckDatanascimento
+        '
+        Me.masckDatanascimento.Location = New System.Drawing.Point(129, 91)
+        Me.masckDatanascimento.Name = "masckDatanascimento"
+        Me.masckDatanascimento.Size = New System.Drawing.Size(100, 20)
+        Me.masckDatanascimento.TabIndex = 109
+        '
         'FormPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(643, 529)
-        Me.Controls.Add(Me.GroupBox10)
         Me.Controls.Add(Me.masckDatanascimento)
+        Me.Controls.Add(Me.GroupBox10)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label10)
@@ -418,10 +401,9 @@ Partial Class FormPaciente
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents RadioFeminino As System.Windows.Forms.RadioButton
     Friend WithEvents Radiomasculino As System.Windows.Forms.RadioButton
-    Friend WithEvents masckDatanascimento As System.Windows.Forms.MaskedTextBox
     Friend WithEvents btbusca As System.Windows.Forms.Button
     Friend WithEvents GroupBox10 As System.Windows.Forms.GroupBox
-    Friend WithEvents rbbuscaNome As System.Windows.Forms.RadioButton
-    Friend WithEvents rbid As System.Windows.Forms.RadioButton
     Friend WithEvents txtbusca As System.Windows.Forms.TextBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents masckDatanascimento As System.Windows.Forms.TextBox
 End Class

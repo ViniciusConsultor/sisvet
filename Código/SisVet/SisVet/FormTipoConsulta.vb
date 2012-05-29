@@ -22,7 +22,7 @@
             If result >= 0 Then
 
                 MessageBox.Show("Cadastro Salvo com Sucesso!", "", MessageBoxButtons.OK)
-
+                txtcodigo.Visible = True
             Else
                 MsgBox("Erro!")
 
@@ -72,6 +72,10 @@
     End Sub
 
     Private Sub FormTipoConsulta_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub btbusca_Click(sender As System.Object, e As System.EventArgs) Handles btbusca.Click
 
     End Sub
 End Class

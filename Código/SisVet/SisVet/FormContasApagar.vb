@@ -4,7 +4,11 @@
 
     End Sub
 
-    Private Sub FormAuxiliar_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub FormContasApagar_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub btbusca_Click(sender As System.Object, e As System.EventArgs) Handles btbusca.Click
 
     End Sub
 End Class

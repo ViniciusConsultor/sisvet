@@ -49,6 +49,7 @@
             If result >= 0 Then
 
                 MessageBox.Show("Cadastro Salvo com Sucesso!", "", MessageBoxButtons.OK)
+                txtcodigo.Visible = True
 
             Else
                 MsgBox("Erro!")
@@ -97,6 +98,10 @@
         txtquantidade.Text = ""
         txtvalor.Text = ""
         Carregacombo()
+
+    End Sub
+
+    Private Sub btbusca_Click(sender As System.Object, e As System.EventArgs) Handles btbusca.Click
 
     End Sub
 End Class

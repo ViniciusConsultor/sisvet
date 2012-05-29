@@ -28,7 +28,6 @@ Partial Class FormConsulta
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.ComboMedico = New System.Windows.Forms.ComboBox()
-        Me.txthora = New System.Windows.Forms.MaskedTextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtcodConsulta = New System.Windows.Forms.TextBox()
@@ -42,12 +41,12 @@ Partial Class FormConsulta
         Me.txtprontuario = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.txtdata = New System.Windows.Forms.MaskedTextBox()
         Me.btbusca = New System.Windows.Forms.Button()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
-        Me.rbbuscaNome = New System.Windows.Forms.RadioButton()
-        Me.rbid = New System.Windows.Forms.RadioButton()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.txtbusca = New System.Windows.Forms.TextBox()
+        Me.txthora = New System.Windows.Forms.TextBox()
+        Me.txtdata = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox10.SuspendLayout()
         Me.SuspendLayout()
@@ -105,15 +104,6 @@ Partial Class FormConsulta
         Me.ComboMedico.Size = New System.Drawing.Size(274, 21)
         Me.ComboMedico.TabIndex = 5
         '
-        'txthora
-        '
-        Me.txthora.Location = New System.Drawing.Point(395, 57)
-        Me.txthora.Mask = "00:00"
-        Me.txthora.Name = "txthora"
-        Me.txthora.Size = New System.Drawing.Size(36, 20)
-        Me.txthora.TabIndex = 6
-        Me.txthora.ValidatingType = GetType(Date)
-        '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -138,6 +128,7 @@ Partial Class FormConsulta
         Me.txtcodConsulta.Name = "txtcodConsulta"
         Me.txtcodConsulta.Size = New System.Drawing.Size(65, 20)
         Me.txtcodConsulta.TabIndex = 0
+        Me.txtcodConsulta.Visible = False
         '
         'ComboTipoConsulta
         '
@@ -236,15 +227,6 @@ Partial Class FormConsulta
         Me.Label8.TabIndex = 110
         Me.Label8.Text = "Protuario:"
         '
-        'txtdata
-        '
-        Me.txtdata.Location = New System.Drawing.Point(130, 53)
-        Me.txtdata.Mask = "00/00/0000"
-        Me.txtdata.Name = "txtdata"
-        Me.txtdata.Size = New System.Drawing.Size(65, 20)
-        Me.txtdata.TabIndex = 1
-        Me.txtdata.ValidatingType = GetType(Date)
-        '
         'btbusca
         '
         Me.btbusca.Location = New System.Drawing.Point(361, 12)
@@ -257,8 +239,7 @@ Partial Class FormConsulta
         'GroupBox10
         '
         Me.GroupBox10.BackColor = System.Drawing.SystemColors.Control
-        Me.GroupBox10.Controls.Add(Me.rbbuscaNome)
-        Me.GroupBox10.Controls.Add(Me.rbid)
+        Me.GroupBox10.Controls.Add(Me.Label10)
         Me.GroupBox10.Controls.Add(Me.txtbusca)
         Me.GroupBox10.Controls.Add(Me.btbusca)
         Me.GroupBox10.Location = New System.Drawing.Point(96, 397)
@@ -267,27 +248,14 @@ Partial Class FormConsulta
         Me.GroupBox10.TabIndex = 12
         Me.GroupBox10.TabStop = False
         '
-        'rbbuscaNome
+        'Label10
         '
-        Me.rbbuscaNome.AutoSize = True
-        Me.rbbuscaNome.Location = New System.Drawing.Point(104, 15)
-        Me.rbbuscaNome.Name = "rbbuscaNome"
-        Me.rbbuscaNome.Size = New System.Drawing.Size(104, 17)
-        Me.rbbuscaNome.TabIndex = 2
-        Me.rbbuscaNome.TabStop = True
-        Me.rbbuscaNome.Text = "Busca por Nome"
-        Me.rbbuscaNome.UseVisualStyleBackColor = True
-        '
-        'rbid
-        '
-        Me.rbid.AutoSize = True
-        Me.rbid.Location = New System.Drawing.Point(11, 15)
-        Me.rbid.Name = "rbid"
-        Me.rbid.Size = New System.Drawing.Size(87, 17)
-        Me.rbid.TabIndex = 1
-        Me.rbid.TabStop = True
-        Me.rbid.Text = "Busca por ID"
-        Me.rbid.UseVisualStyleBackColor = True
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(43, 17)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(90, 13)
+        Me.Label10.TabIndex = 5
+        Me.Label10.Text = "Busca Por Nome:"
         '
         'txtbusca
         '
@@ -298,13 +266,28 @@ Partial Class FormConsulta
         Me.txtbusca.Size = New System.Drawing.Size(125, 20)
         Me.txtbusca.TabIndex = 3
         '
+        'txthora
+        '
+        Me.txthora.Location = New System.Drawing.Point(395, 57)
+        Me.txthora.Name = "txthora"
+        Me.txthora.Size = New System.Drawing.Size(38, 20)
+        Me.txthora.TabIndex = 111
+        '
+        'txtdata
+        '
+        Me.txtdata.Location = New System.Drawing.Point(130, 57)
+        Me.txtdata.Name = "txtdata"
+        Me.txtdata.Size = New System.Drawing.Size(100, 20)
+        Me.txtdata.TabIndex = 112
+        '
         'FormConsulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(689, 605)
-        Me.Controls.Add(Me.GroupBox10)
         Me.Controls.Add(Me.txtdata)
+        Me.Controls.Add(Me.txthora)
+        Me.Controls.Add(Me.GroupBox10)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txtprontuario)
@@ -316,7 +299,6 @@ Partial Class FormConsulta
         Me.Controls.Add(Me.btsalvar)
         Me.Controls.Add(Me.btnovo)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.txthora)
         Me.Controls.Add(Me.ComboMedico)
         Me.Controls.Add(Me.txtcodConsulta)
         Me.Controls.Add(Me.Label7)
@@ -340,7 +322,6 @@ Partial Class FormConsulta
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents ComboMedico As System.Windows.Forms.ComboBox
-    Friend WithEvents txthora As System.Windows.Forms.MaskedTextBox
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents btexcluir As System.Windows.Forms.Button
     Friend WithEvents btsalvar As System.Windows.Forms.Button
@@ -354,10 +335,10 @@ Partial Class FormConsulta
     Friend WithEvents txtprontuario As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents txtdata As System.Windows.Forms.MaskedTextBox
     Friend WithEvents btbusca As System.Windows.Forms.Button
     Friend WithEvents GroupBox10 As System.Windows.Forms.GroupBox
-    Friend WithEvents rbbuscaNome As System.Windows.Forms.RadioButton
-    Friend WithEvents rbid As System.Windows.Forms.RadioButton
     Friend WithEvents txtbusca As System.Windows.Forms.TextBox
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents txthora As System.Windows.Forms.TextBox
+    Friend WithEvents txtdata As System.Windows.Forms.TextBox
 End Class

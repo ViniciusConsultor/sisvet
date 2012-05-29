@@ -41,6 +41,7 @@
             If result >= 0 Then
 
                 MessageBox.Show("Cadastro Salvo com Sucesso!", "", MessageBoxButtons.OK)
+                txtcodigo.Visible = True
 
             Else
                 MsgBox("Erro!")
@@ -85,5 +86,9 @@
 
     Private Sub btnovo_Click(sender As System.Object, e As System.EventArgs) Handles btnovo.Click
     
+    End Sub
+
+    Private Sub btbusca_Click(sender As System.Object, e As System.EventArgs) Handles btbusca.Click
+
     End Sub
 End Class

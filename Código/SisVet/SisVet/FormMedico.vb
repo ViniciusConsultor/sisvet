@@ -78,8 +78,7 @@
         MessageBox.Show("Ainda não foi implementado")
         Try
             obj = New Sisvet.ClassBanco
-            If rbid.Checked = True Then
-
+ 
 
                 If String.IsNullOrEmpty(txtbusca.Text) Then
                     '       DataGridView1.DataSource = obj.lista()
@@ -89,13 +88,6 @@
 
                 End If
 
-
-            ElseIf rbbuscaNome.Checked = True Then
-
-                '    DataGridView1.DataSource = obj.lista("nome_medico_veterinario like '%" & txtbusca.Text & "%'")
-                '  carregaobjeto()
-
-            End If
         Catch ex As Exception
             MsgBox(ex.Message)
 

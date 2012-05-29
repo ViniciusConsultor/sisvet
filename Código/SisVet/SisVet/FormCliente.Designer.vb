@@ -42,14 +42,13 @@ Partial Class FormCliente
         Me.Button2 = New System.Windows.Forms.Button()
         Me.btnovo = New System.Windows.Forms.Button()
         Me.btpaciente = New System.Windows.Forms.Button()
-        Me.masckDatanascimento = New System.Windows.Forms.MaskedTextBox()
-        Me.txttelefone = New System.Windows.Forms.MaskedTextBox()
-        Me.txtcpf_cliente = New System.Windows.Forms.MaskedTextBox()
         Me.btbusca = New System.Windows.Forms.Button()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
-        Me.rbbuscaNome = New System.Windows.Forms.RadioButton()
-        Me.rbid = New System.Windows.Forms.RadioButton()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.txtbusca = New System.Windows.Forms.TextBox()
+        Me.masckDatanascimento = New System.Windows.Forms.TextBox()
+        Me.txtcpf_cliente = New System.Windows.Forms.TextBox()
+        Me.txttelefone = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox10.SuspendLayout()
         Me.SuspendLayout()
@@ -60,6 +59,7 @@ Partial Class FormCliente
         Me.txtcodcli.Name = "txtcodcli"
         Me.txtcodcli.Size = New System.Drawing.Size(59, 20)
         Me.txtcodcli.TabIndex = 0
+        Me.txtcodcli.Visible = False
         '
         'Label9
         '
@@ -73,28 +73,28 @@ Partial Class FormCliente
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(42, 429)
+        Me.DataGridView1.Location = New System.Drawing.Point(35, 301)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(590, 150)
+        Me.DataGridView1.Size = New System.Drawing.Size(950, 231)
         Me.DataGridView1.TabIndex = 12
         '
         'txtmunicipio
         '
-        Me.txtmunicipio.Location = New System.Drawing.Point(162, 275)
+        Me.txtmunicipio.Location = New System.Drawing.Point(701, 119)
         Me.txtmunicipio.Name = "txtmunicipio"
         Me.txtmunicipio.Size = New System.Drawing.Size(246, 20)
         Me.txtmunicipio.TabIndex = 8
         '
         'txtorgaoExpeditor
         '
-        Me.txtorgaoExpeditor.Location = New System.Drawing.Point(162, 208)
+        Me.txtorgaoExpeditor.Location = New System.Drawing.Point(701, 52)
         Me.txtorgaoExpeditor.Name = "txtorgaoExpeditor"
         Me.txtorgaoExpeditor.Size = New System.Drawing.Size(59, 20)
         Me.txtorgaoExpeditor.TabIndex = 6
         '
         'txtrg
         '
-        Me.txtrg.Location = New System.Drawing.Point(162, 172)
+        Me.txtrg.Location = New System.Drawing.Point(701, 16)
         Me.txtrg.Name = "txtrg"
         Me.txtrg.Size = New System.Drawing.Size(100, 20)
         Me.txtrg.TabIndex = 5
@@ -116,7 +116,7 @@ Partial Class FormCliente
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(58, 282)
+        Me.Label8.Location = New System.Drawing.Point(597, 126)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(57, 13)
         Me.Label8.TabIndex = 65
@@ -125,7 +125,7 @@ Partial Class FormCliente
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(58, 249)
+        Me.Label7.Location = New System.Drawing.Point(597, 93)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(30, 13)
         Me.Label7.TabIndex = 64
@@ -134,7 +134,7 @@ Partial Class FormCliente
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(58, 215)
+        Me.Label6.Location = New System.Drawing.Point(597, 59)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(86, 13)
         Me.Label6.TabIndex = 63
@@ -143,7 +143,7 @@ Partial Class FormCliente
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(58, 179)
+        Me.Label5.Location = New System.Drawing.Point(597, 23)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(26, 13)
         Me.Label5.TabIndex = 62
@@ -188,7 +188,7 @@ Partial Class FormCliente
         'Button1
         '
         Me.Button1.Image = Global.SisVet.My.Resources.Resources.Button_Delete_icon32
-        Me.Button1.Location = New System.Drawing.Point(302, 300)
+        Me.Button1.Location = New System.Drawing.Point(180, 220)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 66)
         Me.Button1.TabIndex = 10
@@ -199,7 +199,7 @@ Partial Class FormCliente
         'Button2
         '
         Me.Button2.Image = Global.SisVet.My.Resources.Resources.informatica_3632_disquete13
-        Me.Button2.Location = New System.Drawing.Point(182, 300)
+        Me.Button2.Location = New System.Drawing.Point(60, 220)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 66)
         Me.Button2.TabIndex = 9
@@ -210,7 +210,7 @@ Partial Class FormCliente
         'btnovo
         '
         Me.btnovo.Image = Global.SisVet.My.Resources.Resources.Button_Add_icon32
-        Me.btnovo.Location = New System.Drawing.Point(427, 300)
+        Me.btnovo.Location = New System.Drawing.Point(305, 220)
         Me.btnovo.Name = "btnovo"
         Me.btnovo.Size = New System.Drawing.Size(75, 66)
         Me.btnovo.TabIndex = 11
@@ -221,38 +221,13 @@ Partial Class FormCliente
         'btpaciente
         '
         Me.btpaciente.Image = Global.SisVet.My.Resources.Resources.cattle
-        Me.btpaciente.Location = New System.Drawing.Point(516, 145)
+        Me.btpaciente.Location = New System.Drawing.Point(910, 23)
         Me.btpaciente.Name = "btpaciente"
         Me.btpaciente.Size = New System.Drawing.Size(75, 77)
         Me.btpaciente.TabIndex = 13
         Me.btpaciente.Text = "Paciente"
         Me.btpaciente.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btpaciente.UseVisualStyleBackColor = True
-        '
-        'masckDatanascimento
-        '
-        Me.masckDatanascimento.Location = New System.Drawing.Point(162, 81)
-        Me.masckDatanascimento.Mask = "00/00/0000"
-        Me.masckDatanascimento.Name = "masckDatanascimento"
-        Me.masckDatanascimento.Size = New System.Drawing.Size(68, 20)
-        Me.masckDatanascimento.TabIndex = 2
-        Me.masckDatanascimento.ValidatingType = GetType(Date)
-        '
-        'txttelefone
-        '
-        Me.txttelefone.Location = New System.Drawing.Point(162, 138)
-        Me.txttelefone.Mask = "(00)0000-0000"
-        Me.txttelefone.Name = "txttelefone"
-        Me.txttelefone.Size = New System.Drawing.Size(75, 20)
-        Me.txttelefone.TabIndex = 4
-        '
-        'txtcpf_cliente
-        '
-        Me.txtcpf_cliente.Location = New System.Drawing.Point(162, 242)
-        Me.txtcpf_cliente.Mask = "000 000 000-00"
-        Me.txtcpf_cliente.Name = "txtcpf_cliente"
-        Me.txtcpf_cliente.Size = New System.Drawing.Size(84, 20)
-        Me.txtcpf_cliente.TabIndex = 7
         '
         'btbusca
         '
@@ -266,37 +241,23 @@ Partial Class FormCliente
         'GroupBox10
         '
         Me.GroupBox10.BackColor = System.Drawing.SystemColors.Control
-        Me.GroupBox10.Controls.Add(Me.rbbuscaNome)
-        Me.GroupBox10.Controls.Add(Me.rbid)
+        Me.GroupBox10.Controls.Add(Me.Label10)
         Me.GroupBox10.Controls.Add(Me.txtbusca)
         Me.GroupBox10.Controls.Add(Me.btbusca)
-        Me.GroupBox10.Location = New System.Drawing.Point(102, 383)
+        Me.GroupBox10.Location = New System.Drawing.Point(480, 246)
         Me.GroupBox10.Name = "GroupBox10"
         Me.GroupBox10.Size = New System.Drawing.Size(467, 40)
         Me.GroupBox10.TabIndex = 77
         Me.GroupBox10.TabStop = False
         '
-        'rbbuscaNome
+        'Label10
         '
-        Me.rbbuscaNome.AutoSize = True
-        Me.rbbuscaNome.Location = New System.Drawing.Point(104, 15)
-        Me.rbbuscaNome.Name = "rbbuscaNome"
-        Me.rbbuscaNome.Size = New System.Drawing.Size(104, 17)
-        Me.rbbuscaNome.TabIndex = 2
-        Me.rbbuscaNome.TabStop = True
-        Me.rbbuscaNome.Text = "Busca por Nome"
-        Me.rbbuscaNome.UseVisualStyleBackColor = True
-        '
-        'rbid
-        '
-        Me.rbid.AutoSize = True
-        Me.rbid.Location = New System.Drawing.Point(11, 15)
-        Me.rbid.Name = "rbid"
-        Me.rbid.Size = New System.Drawing.Size(87, 17)
-        Me.rbid.TabIndex = 1
-        Me.rbid.TabStop = True
-        Me.rbid.Text = "Busca por ID"
-        Me.rbid.UseVisualStyleBackColor = True
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(33, 19)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(90, 13)
+        Me.Label10.TabIndex = 4
+        Me.Label10.Text = "Busca Por Nome:"
         '
         'txtbusca
         '
@@ -307,15 +268,36 @@ Partial Class FormCliente
         Me.txtbusca.Size = New System.Drawing.Size(125, 20)
         Me.txtbusca.TabIndex = 3
         '
+        'masckDatanascimento
+        '
+        Me.masckDatanascimento.Location = New System.Drawing.Point(162, 77)
+        Me.masckDatanascimento.Name = "masckDatanascimento"
+        Me.masckDatanascimento.Size = New System.Drawing.Size(100, 20)
+        Me.masckDatanascimento.TabIndex = 78
+        '
+        'txtcpf_cliente
+        '
+        Me.txtcpf_cliente.Location = New System.Drawing.Point(701, 86)
+        Me.txtcpf_cliente.Name = "txtcpf_cliente"
+        Me.txtcpf_cliente.Size = New System.Drawing.Size(100, 20)
+        Me.txtcpf_cliente.TabIndex = 79
+        '
+        'txttelefone
+        '
+        Me.txttelefone.Location = New System.Drawing.Point(162, 138)
+        Me.txttelefone.Name = "txttelefone"
+        Me.txttelefone.Size = New System.Drawing.Size(100, 20)
+        Me.txttelefone.TabIndex = 80
+        '
         'FormCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(677, 583)
-        Me.Controls.Add(Me.GroupBox10)
-        Me.Controls.Add(Me.txtcpf_cliente)
+        Me.ClientSize = New System.Drawing.Size(1018, 542)
         Me.Controls.Add(Me.txttelefone)
+        Me.Controls.Add(Me.txtcpf_cliente)
         Me.Controls.Add(Me.masckDatanascimento)
+        Me.Controls.Add(Me.GroupBox10)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.btnovo)
@@ -365,12 +347,11 @@ Partial Class FormCliente
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents masckDatanascimento As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents txttelefone As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents txtcpf_cliente As System.Windows.Forms.MaskedTextBox
     Friend WithEvents btbusca As System.Windows.Forms.Button
     Friend WithEvents GroupBox10 As System.Windows.Forms.GroupBox
-    Friend WithEvents rbbuscaNome As System.Windows.Forms.RadioButton
-    Friend WithEvents rbid As System.Windows.Forms.RadioButton
     Friend WithEvents txtbusca As System.Windows.Forms.TextBox
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents masckDatanascimento As System.Windows.Forms.TextBox
+    Friend WithEvents txtcpf_cliente As System.Windows.Forms.TextBox
+    Friend WithEvents txttelefone As System.Windows.Forms.TextBox
 End Class

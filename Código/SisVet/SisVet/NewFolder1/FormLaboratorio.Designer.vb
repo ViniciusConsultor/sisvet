@@ -35,12 +35,11 @@ Partial Class FormLaboratorio
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.txttelefone = New System.Windows.Forms.MaskedTextBox()
         Me.btbusca = New System.Windows.Forms.Button()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
-        Me.rbbuscaNome = New System.Windows.Forms.RadioButton()
-        Me.rbid = New System.Windows.Forms.RadioButton()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.txtbusca = New System.Windows.Forms.TextBox()
+        Me.txttelefone = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox10.SuspendLayout()
         Me.SuspendLayout()
@@ -66,6 +65,7 @@ Partial Class FormLaboratorio
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(100, 20)
         Me.txtcodigo.TabIndex = 0
+        Me.txtcodigo.Visible = False
         '
         'Label7
         '
@@ -159,14 +159,6 @@ Partial Class FormLaboratorio
         Me.Button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'txttelefone
-        '
-        Me.txttelefone.Location = New System.Drawing.Point(135, 103)
-        Me.txttelefone.Mask = "(00)0000-0000"
-        Me.txttelefone.Name = "txttelefone"
-        Me.txttelefone.Size = New System.Drawing.Size(75, 20)
-        Me.txttelefone.TabIndex = 2
-        '
         'btbusca
         '
         Me.btbusca.Location = New System.Drawing.Point(361, 12)
@@ -179,8 +171,7 @@ Partial Class FormLaboratorio
         'GroupBox10
         '
         Me.GroupBox10.BackColor = System.Drawing.SystemColors.Control
-        Me.GroupBox10.Controls.Add(Me.rbbuscaNome)
-        Me.GroupBox10.Controls.Add(Me.rbid)
+        Me.GroupBox10.Controls.Add(Me.Label10)
         Me.GroupBox10.Controls.Add(Me.txtbusca)
         Me.GroupBox10.Controls.Add(Me.btbusca)
         Me.GroupBox10.Location = New System.Drawing.Point(80, 330)
@@ -189,27 +180,14 @@ Partial Class FormLaboratorio
         Me.GroupBox10.TabIndex = 96
         Me.GroupBox10.TabStop = False
         '
-        'rbbuscaNome
+        'Label10
         '
-        Me.rbbuscaNome.AutoSize = True
-        Me.rbbuscaNome.Location = New System.Drawing.Point(104, 15)
-        Me.rbbuscaNome.Name = "rbbuscaNome"
-        Me.rbbuscaNome.Size = New System.Drawing.Size(104, 17)
-        Me.rbbuscaNome.TabIndex = 2
-        Me.rbbuscaNome.TabStop = True
-        Me.rbbuscaNome.Text = "Busca por Nome"
-        Me.rbbuscaNome.UseVisualStyleBackColor = True
-        '
-        'rbid
-        '
-        Me.rbid.AutoSize = True
-        Me.rbid.Location = New System.Drawing.Point(11, 15)
-        Me.rbid.Name = "rbid"
-        Me.rbid.Size = New System.Drawing.Size(87, 17)
-        Me.rbid.TabIndex = 1
-        Me.rbid.TabStop = True
-        Me.rbid.Text = "Busca por ID"
-        Me.rbid.UseVisualStyleBackColor = True
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(52, 19)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(90, 13)
+        Me.Label10.TabIndex = 5
+        Me.Label10.Text = "Busca Por Nome:"
         '
         'txtbusca
         '
@@ -220,13 +198,20 @@ Partial Class FormLaboratorio
         Me.txtbusca.Size = New System.Drawing.Size(125, 20)
         Me.txtbusca.TabIndex = 3
         '
+        'txttelefone
+        '
+        Me.txttelefone.Location = New System.Drawing.Point(135, 103)
+        Me.txttelefone.Name = "txttelefone"
+        Me.txttelefone.Size = New System.Drawing.Size(100, 20)
+        Me.txttelefone.TabIndex = 97
+        '
         'FormLaboratorio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(622, 538)
-        Me.Controls.Add(Me.GroupBox10)
         Me.Controls.Add(Me.txttelefone)
+        Me.Controls.Add(Me.GroupBox10)
         Me.Controls.Add(Me.txtmunicipio)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -262,10 +247,9 @@ Partial Class FormLaboratorio
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents txtmunicipio As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents txttelefone As System.Windows.Forms.MaskedTextBox
     Friend WithEvents btbusca As System.Windows.Forms.Button
     Friend WithEvents GroupBox10 As System.Windows.Forms.GroupBox
-    Friend WithEvents rbbuscaNome As System.Windows.Forms.RadioButton
-    Friend WithEvents rbid As System.Windows.Forms.RadioButton
     Friend WithEvents txtbusca As System.Windows.Forms.TextBox
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents txttelefone As System.Windows.Forms.TextBox
 End Class
