@@ -33,8 +33,13 @@ Partial Class FormContasApagar
         Me.btsalvar = New System.Windows.Forms.Button()
         Me.btnovo = New System.Windows.Forms.Button()
         Me.combocliente = New System.Windows.Forms.ComboBox()
-        Me.txtdata = New System.Windows.Forms.MaskedTextBox()
+        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtbusca = New System.Windows.Forms.TextBox()
+        Me.btbusca = New System.Windows.Forms.Button()
+        Me.txtdata = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox10.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtcodAux
@@ -43,6 +48,7 @@ Partial Class FormContasApagar
         Me.txtcodAux.Name = "txtcodAux"
         Me.txtcodAux.Size = New System.Drawing.Size(97, 20)
         Me.txtcodAux.TabIndex = 0
+        Me.txtcodAux.Visible = False
         '
         'Label9
         '
@@ -56,7 +62,7 @@ Partial Class FormContasApagar
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(14, 241)
+        Me.DataGridView1.Location = New System.Drawing.Point(23, 309)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(590, 150)
         Me.DataGridView1.TabIndex = 7
@@ -136,21 +142,59 @@ Partial Class FormContasApagar
         Me.combocliente.Size = New System.Drawing.Size(290, 21)
         Me.combocliente.TabIndex = 57
         '
+        'GroupBox10
+        '
+        Me.GroupBox10.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox10.Controls.Add(Me.Label10)
+        Me.GroupBox10.Controls.Add(Me.txtbusca)
+        Me.GroupBox10.Controls.Add(Me.btbusca)
+        Me.GroupBox10.Location = New System.Drawing.Point(67, 263)
+        Me.GroupBox10.Name = "GroupBox10"
+        Me.GroupBox10.Size = New System.Drawing.Size(467, 40)
+        Me.GroupBox10.TabIndex = 59
+        Me.GroupBox10.TabStop = False
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(40, 19)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(90, 13)
+        Me.Label10.TabIndex = 5
+        Me.Label10.Text = "Busca Por Nome:"
+        '
+        'txtbusca
+        '
+        Me.txtbusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtbusca.Location = New System.Drawing.Point(214, 12)
+        Me.txtbusca.MaxLength = 7
+        Me.txtbusca.Name = "txtbusca"
+        Me.txtbusca.Size = New System.Drawing.Size(125, 20)
+        Me.txtbusca.TabIndex = 3
+        '
+        'btbusca
+        '
+        Me.btbusca.Location = New System.Drawing.Point(361, 12)
+        Me.btbusca.Name = "btbusca"
+        Me.btbusca.Size = New System.Drawing.Size(95, 23)
+        Me.btbusca.TabIndex = 0
+        Me.btbusca.Text = "Buscar"
+        Me.btbusca.UseVisualStyleBackColor = True
+        '
         'txtdata
         '
         Me.txtdata.Location = New System.Drawing.Point(133, 87)
-        Me.txtdata.Mask = "00/00/0000"
         Me.txtdata.Name = "txtdata"
         Me.txtdata.Size = New System.Drawing.Size(100, 20)
-        Me.txtdata.TabIndex = 58
-        Me.txtdata.ValidatingType = GetType(Date)
+        Me.txtdata.TabIndex = 60
         '
         'FormContasApagar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(625, 406)
+        Me.ClientSize = New System.Drawing.Size(625, 477)
         Me.Controls.Add(Me.txtdata)
+        Me.Controls.Add(Me.GroupBox10)
         Me.Controls.Add(Me.combocliente)
         Me.Controls.Add(Me.btexcluir)
         Me.Controls.Add(Me.btsalvar)
@@ -165,6 +209,8 @@ Partial Class FormContasApagar
         Me.Name = "FormContasApagar"
         Me.Text = "SisVet - Cadastro de Contas a Pagar"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox10.ResumeLayout(False)
+        Me.GroupBox10.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -180,5 +226,9 @@ Partial Class FormContasApagar
     Friend WithEvents btsalvar As System.Windows.Forms.Button
     Friend WithEvents btnovo As System.Windows.Forms.Button
     Friend WithEvents combocliente As System.Windows.Forms.ComboBox
-    Friend WithEvents txtdata As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents GroupBox10 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents txtbusca As System.Windows.Forms.TextBox
+    Friend WithEvents btbusca As System.Windows.Forms.Button
+    Friend WithEvents txtdata As System.Windows.Forms.TextBox
 End Class

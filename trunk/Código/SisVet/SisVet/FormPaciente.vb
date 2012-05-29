@@ -37,13 +37,14 @@
 
             Dim result As Integer
             Dim sql As String
-            sql = "Select inserir_paciente(" & idCli & ",'" & txtrghv.Text & "','" & txtespecie.Text & "','" & txtraça.Text & "','" & masckDatanascimento.Text & "','" & txtpelagem.Text & "','" & sexo & "','" & castrado & "','" & txtnomepaciente.Text & "')"
+            sql = "Select receber_dadospaciente(" & idCli & ",'" & txtrghv.Text & "','" & txtespecie.Text & "','" & txtraça.Text & "','" & masckDatanascimento.Text & "','" & txtpelagem.Text & "','" & sexo & "','" & castrado & "','" & txtnomepaciente.Text & "'," & cod & ")"
 
             result = objpac.executasql(sql)
             txtcodigo.Text = result
             If result >= 0 Then
 
                 MessageBox.Show("Cadastro Salvo com Sucesso!", "", MessageBoxButtons.OK)
+                txtcodigo.Visible = True
 
             Else
                 MsgBox("Erro!")
@@ -128,8 +129,7 @@
         MessageBox.Show("Ainda não foi implementado")
         Try
             obj = New Sisvet.ClassBanco
-            If rbid.Checked = True Then
-
+        
 
                 If String.IsNullOrEmpty(txtbusca.Text) Then
                     '       DataGridView1.DataSource = obj.lista()
@@ -139,13 +139,6 @@
 
                 End If
 
-
-            ElseIf rbbuscaNome.Checked = True Then
-
-                '    DataGridView1.DataSource = obj.lista("nome_paciente like '%" & txtbusca.Text & "%'")
-                '  carregaobjeto()
-
-            End If
         Catch ex As Exception
             MsgBox(ex.Message)
 

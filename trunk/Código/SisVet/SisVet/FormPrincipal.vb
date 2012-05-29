@@ -70,9 +70,13 @@
         FormTipoConsulta.Show()
     End Sub
 
-    Private Sub ContasAPagarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ContasAPagarToolStripMenuItem.Click
+    Private Sub ContasAPagarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ContasAPagarToolStripMenuItem.Click
         FormContasApagar.MdiParent = Me
         FormContasApagar.Show()
+
+    End Sub
+
+    Private Sub PagamentoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles PagamentoToolStripMenuItem.Click
 
     End Sub
 End Class

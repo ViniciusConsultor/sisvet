@@ -23,8 +23,7 @@ Partial Class FormTipoConsulta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
-        Me.rbbuscaNome = New System.Windows.Forms.RadioButton()
-        Me.rbid = New System.Windows.Forms.RadioButton()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.txtbusca = New System.Windows.Forms.TextBox()
         Me.btbusca = New System.Windows.Forms.Button()
         Me.btexcluir = New System.Windows.Forms.Button()
@@ -44,8 +43,7 @@ Partial Class FormTipoConsulta
         'GroupBox10
         '
         Me.GroupBox10.BackColor = System.Drawing.SystemColors.Control
-        Me.GroupBox10.Controls.Add(Me.rbbuscaNome)
-        Me.GroupBox10.Controls.Add(Me.rbid)
+        Me.GroupBox10.Controls.Add(Me.Label10)
         Me.GroupBox10.Controls.Add(Me.txtbusca)
         Me.GroupBox10.Controls.Add(Me.btbusca)
         Me.GroupBox10.Location = New System.Drawing.Point(103, 235)
@@ -54,27 +52,14 @@ Partial Class FormTipoConsulta
         Me.GroupBox10.TabIndex = 6
         Me.GroupBox10.TabStop = False
         '
-        'rbbuscaNome
+        'Label10
         '
-        Me.rbbuscaNome.AutoSize = True
-        Me.rbbuscaNome.Location = New System.Drawing.Point(104, 15)
-        Me.rbbuscaNome.Name = "rbbuscaNome"
-        Me.rbbuscaNome.Size = New System.Drawing.Size(104, 17)
-        Me.rbbuscaNome.TabIndex = 2
-        Me.rbbuscaNome.TabStop = True
-        Me.rbbuscaNome.Text = "Busca por Nome"
-        Me.rbbuscaNome.UseVisualStyleBackColor = True
-        '
-        'rbid
-        '
-        Me.rbid.AutoSize = True
-        Me.rbid.Location = New System.Drawing.Point(11, 15)
-        Me.rbid.Name = "rbid"
-        Me.rbid.Size = New System.Drawing.Size(87, 17)
-        Me.rbid.TabIndex = 1
-        Me.rbid.TabStop = True
-        Me.rbid.Text = "Busca por ID"
-        Me.rbid.UseVisualStyleBackColor = True
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(44, 19)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(90, 13)
+        Me.Label10.TabIndex = 5
+        Me.Label10.Text = "Busca Por Nome:"
         '
         'txtbusca
         '
@@ -148,6 +133,7 @@ Partial Class FormTipoConsulta
         Me.txtcodigo.Name = "txtcodigo"
         Me.txtcodigo.Size = New System.Drawing.Size(133, 20)
         Me.txtcodigo.TabIndex = 0
+        Me.txtcodigo.Visible = False
         '
         'Label4
         '
@@ -209,8 +195,6 @@ Partial Class FormTipoConsulta
 
     End Sub
     Friend WithEvents GroupBox10 As System.Windows.Forms.GroupBox
-    Friend WithEvents rbbuscaNome As System.Windows.Forms.RadioButton
-    Friend WithEvents rbid As System.Windows.Forms.RadioButton
     Friend WithEvents txtbusca As System.Windows.Forms.TextBox
     Friend WithEvents btbusca As System.Windows.Forms.Button
     Friend WithEvents btexcluir As System.Windows.Forms.Button
@@ -223,4 +207,5 @@ Partial Class FormTipoConsulta
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents txtvalor As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
 End Class

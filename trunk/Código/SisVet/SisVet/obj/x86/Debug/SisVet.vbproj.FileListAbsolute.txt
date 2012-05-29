@@ -2,7 +2,6 @@ C:\Users\usuario\documents\visual studio 2010\Projects\SisVet\SisVet\bin\Debug\S
 C:\Users\usuario\documents\visual studio 2010\Projects\SisVet\SisVet\bin\Debug\SisVet.pdb
 C:\Users\usuario\documents\visual studio 2010\Projects\SisVet\SisVet\bin\Debug\SisVet.xml
 C:\Users\usuario\documents\visual studio 2010\Projects\SisVet\SisVet\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\usuario\documents\visual studio 2010\Projects\SisVet\SisVet\obj\x86\Debug\SisVet.FormAuxiliar.resources
 C:\Users\usuario\documents\visual studio 2010\Projects\SisVet\SisVet\obj\x86\Debug\SisVet.FormCliente.resources
 C:\Users\usuario\documents\visual studio 2010\Projects\SisVet\SisVet\obj\x86\Debug\SisVet.FormConsulta.resources
 C:\Users\usuario\documents\visual studio 2010\Projects\SisVet\SisVet\obj\x86\Debug\SisVet.FormMedico.resources
@@ -21,16 +20,6 @@ C:\Users\usuario\documents\visual studio 2010\Projects\SisVet\SisVet\obj\x86\Deb
 C:\Users\usuario\documents\visual studio 2010\Projects\SisVet\SisVet\obj\x86\Debug\SisVet.SplashScreen2.resources
 C:\Users\usuario\documents\visual studio 2010\Projects\SisVet\SisVet\obj\x86\Debug\SisVet.FormMedicamento.resources
 C:\Users\usuario\documents\visual studio 2010\Projects\SisVet\SisVet\obj\x86\Debug\SisVet.FormMedicacao.resources
-<<<<<<< .mine
-C:\Users\usuario\Documents\Visual Studio 2010\SisVet2\SisVet\obj\x86\Debug\SisVet.exe
-C:\Users\usuario\Documents\Visual Studio 2010\SisVet2\SisVet\obj\x86\Debug\SisVet.xml
-C:\Users\usuario\Documents\Visual Studio 2010\SisVet2\SisVet\obj\x86\Debug\SisVet.pdb
->>>>>>> .r86
-C:\Users\usuario\Documents\FACULDADE\5º Semestre\Sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.exe
-C:\Users\usuario\Documents\FACULDADE\5º Semestre\Sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.xml
-C:\Users\usuario\Documents\FACULDADE\5º Semestre\Sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.pdb
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormMedicacao.resources
-=======
 C:\Users\usuario\Documents\Visual Studio 2010\Projects\SisVet - Cópia\SisVet\obj\x86\Debug\SisVet.exe
 C:\Users\usuario\Documents\Visual Studio 2010\Projects\SisVet - Cópia\SisVet\obj\x86\Debug\SisVet.xml
 C:\Users\usuario\Documents\Visual Studio 2010\Projects\SisVet - Cópia\SisVet\obj\x86\Debug\SisVet.pdb
@@ -55,28 +44,5 @@ C:\Users\usuario\Documents\Visual Studio 2010\Projects\SisVet - Cópia\SisVet\ob
 C:\Users\usuario\Documents\Visual Studio 2010\Projects\SisVet - Cópia\SisVet\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\usuario\Documents\Visual Studio 2010\Projects\SisVet - Cópia\SisVet\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\usuario\Documents\Visual Studio 2010\Projects\SisVet - Cópia\SisVet\obj\x86\Debug\SisVet.FormTipoConsulta.resources
->>>>>>> .r97
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.exe
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.xml
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.pdb
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\bin\Debug\SisVet.exe
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\bin\Debug\SisVet.pdb
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\bin\Debug\SisVet.xml
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\ResolveAssemblyReference.cache
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormAuxiliar.resources
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormPrincipal.resources
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormConsulta.resources
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormMedico.resources
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormPaciente.resources
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.Resources.resources
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormCirurgia.resources
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormCliente.resources
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormExame.resources
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormLaboratorio.resources
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormMedicamento.resources
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormTratamento.resources
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormTipoConsulta.resources
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.SplashScreen2.resources
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\GenerateResource.read.1.tlog
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\GenerateResource.write.1.tlog
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormContasApagar.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SisVet\SisVet\obj\x86\Debug\SisVet.FormContasApagar.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SisVet\SisVet\obj\x86\Debug\SisVet.FormTipoConsulta.resources
