@@ -27,8 +27,7 @@
                 MsgBox("Erro!")
 
             End If
-            DataGridView1.DataSource = objpac.executasql("Select * from tipo_consulta")
-            DataGridView1.Refresh()
+            PreencheGrid()
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -38,7 +37,6 @@
     End Sub
 
     Private Sub btexcluir_Click(sender As System.Object, e As System.EventArgs) Handles btexcluir.Click
-        '      txtcodigo.Text = 12
         If txtcodigo.Text = "" Then
             MessageBox.Show("Não há Nenhum Id Selecionado Para Excluir")
         Else
@@ -57,9 +55,7 @@
             Else
 
             End If
-            '   limpaobjeto()
-            ' DataGridView1.DataSource = obj.lista
-            DataGridView1.Refresh()
+
         End If
     End Sub
 
@@ -72,10 +68,67 @@
     End Sub
 
     Private Sub FormTipoConsulta_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        PreencheGrid()
 
     End Sub
 
     Private Sub btbusca_Click(sender As System.Object, e As System.EventArgs) Handles btbusca.Click
+        txtcodigo.Visible = False
+        Dim obj As New Sisvet.ClassBanco
+        Try
+            obj = New Sisvet.ClassBanco
+
+            If String.IsNullOrEmpty(txtbusca.Text) Then
+                PreencheGrid()
+            Else
+
+                PreencheGrid("'%" & txtbusca.Text & "%'")
+
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+
+        End Try
+    End Sub
+
+    Private Sub PreencheGrid()
+        Dim obj As New Sisvet.ClassBanco
+
+        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornatipo() AS (CODIGO INTEGER,VALOR NUMERIC, NOME VARCHAR)")
+
+    End Sub
+
+    Private Sub PreencheGrid(cod As String)
+        Dim obj As New Sisvet.ClassBanco
+
+        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornatipo(" & cod & ") AS (CODIGO INTEGER,VALOR NUMERIC, NOME VARCHAR)")
+
+    End Sub
+
+
+   
+    Private Sub CarregaCampos()
+
+        If (DataGridView1.Rows.Count > 0) Then
+
+            Dim obj As New Sisvet.ClassBanco
+            Dim id As Integer
+
+            id = DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value
+
+            PreencheGrid(id)
+
+            txtcodigo.Visible = True
+            txtcodigo.Text = DataGridView1(0, DataGridView1.CurrentCell.RowIndex).Value
+            txttipo.Text = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value
+            txtvalor.Text = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value
+        End If
+    End Sub
+ 
+
+    Private Sub DataGridView1_DoubleClick(sender As Object, e As System.EventArgs) Handles DataGridView1.DoubleClick
+        CarregaCampos()
 
     End Sub
 End Class

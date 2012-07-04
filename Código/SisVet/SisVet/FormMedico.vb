@@ -1,6 +1,7 @@
 ﻿Public Class FormMedico
 
     Private Sub btnovo_Click(sender As System.Object, e As System.EventArgs) Handles btnovo.Click
+        txtcodMed.Visible = False
         txtbusca.Text = ""
         txtcodMed.Text = ""
         txtcrmv.Text = ""
@@ -37,8 +38,7 @@
                 MsgBox("Erro!")
 
             End If
-            DataGridView1.DataSource = objpac.executasql("Select * from medico_veterinario")
-            DataGridView1.Refresh()
+            PreencheGrid()
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -46,9 +46,20 @@
         End Try
 
     End Sub
+    Private Sub PreencheGrid(cod As String)
+        Dim obj As New Sisvet.ClassBanco
+
+        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornamed(" & cod & ") AS (CODIGO INTEGER, NOME VARCHAR(50),ESPECIALIDADE VARCHAR(50), CRMV VARCHAR(10), TELEFONE VARCHAR(13))")
+
+    End Sub
+    Private Sub PreencheGrid()
+        Dim obj As New Sisvet.ClassBanco
+
+        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornamed() AS (CODIGO INTEGER, NOME VARCHAR(50),ESPECIALIDADE VARCHAR(50), CRMV VARCHAR(10), TELEFONE VARCHAR(13))")
+
+    End Sub
 
     Private Sub btexcluir_Click(sender As System.Object, e As System.EventArgs) Handles btexcluir.Click
-        '      txtcodigo.Text = 12
         If txtcodMed.Text = "" Then
             MessageBox.Show("Não há Nenhum Id Selecionado Para Excluir")
         Else
@@ -67,26 +78,23 @@
             Else
 
             End If
-            '   limpaobjeto()
-            ' DataGridView1.DataSource = obj.lista
-            DataGridView1.Refresh()
+
         End If
     End Sub
 
     Private Sub btbusca_Click(sender As System.Object, e As System.EventArgs) Handles btbusca.Click
+        txtcodMed.Visible = False
         Dim obj As New Sisvet.ClassBanco
-        MessageBox.Show("Ainda não foi implementado")
         Try
             obj = New Sisvet.ClassBanco
- 
 
-                If String.IsNullOrEmpty(txtbusca.Text) Then
-                    '       DataGridView1.DataSource = obj.lista()
-                Else
-                    '      DataGridView1.DataSource = obj.lista("codigo_medico_vet_pk = " & txtbusca.Text)
-                    '  carregaobjeto()
+            If String.IsNullOrEmpty(txtbusca.Text) Then
+                PreencheGrid()
+            Else
 
-                End If
+                PreencheGrid("'%" & txtbusca.Text & "%'")
+
+            End If
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -94,4 +102,34 @@
         End Try
 
     End Sub
+
+    Private Sub FormMedico_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        PreencheGrid()
+
+    End Sub
+
+    Private Sub DataGridView1_DoubleClick(sender As Object, e As System.EventArgs) Handles DataGridView1.DoubleClick
+        CarregaCampos()
+    End Sub
+    Private Sub CarregaCampos()
+
+        If (DataGridView1.Rows.Count > 0) Then
+
+            Dim obj As New Sisvet.ClassBanco
+            Dim id As Integer
+
+            id = DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value
+
+            PreencheGrid(id)
+
+            txtcodMed.Visible = True
+            txtcodMed.Text = DataGridView1(0, DataGridView1.CurrentCell.RowIndex).Value
+            txtnomeMed.Text = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value
+            txtespecialidade.Text = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value
+            txtcrmv.Text = DataGridView1.Item(3, DataGridView1.CurrentCell.RowIndex).Value
+            txttelefone.Text = DataGridView1.Item(4, DataGridView1.CurrentCell.RowIndex).Value
+
+        End If
+
+        End Sub
 End Class
