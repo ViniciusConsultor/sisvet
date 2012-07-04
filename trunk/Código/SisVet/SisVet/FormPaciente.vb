@@ -15,8 +15,8 @@
             End If
 
             Dim idCli As Integer
-            ComboBox1.DisplayMember = "nome_cliente"
-            ComboBox1.ValueMember = "cod_cliente"
+            ComboBox1.DisplayMember = "NOME"
+            ComboBox1.ValueMember = "CODIGO"
             idCli = ComboBox1.SelectedValue
 
             Dim sexo As Char
@@ -50,8 +50,7 @@
                 MsgBox("Erro!")
 
             End If
-            DataGridView1.DataSource = objpac.executasql("Select * from paciente")
-            DataGridView1.Refresh()
+            PreencheGrid()
 
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -61,10 +60,8 @@
     End Sub
 
     Private Sub FormPaciente_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        Dim obj As New Sisvet.ClassBanco
-        DataGridView1.DataSource = obj.executasql(("select *from paciente"))
-        '  DataGridView1.DataSource = obj.executasql(("Select fngetpaciente()"))
-        DataGridView1.Refresh()
+
+        PreencheGrid()
         Carregacombo()
 
       
@@ -72,15 +69,17 @@
     Public Sub Carregacombo()
         Dim obj As New Sisvet.ClassBanco
 
-        ComboBox1.DisplayMember = "nome_cliente"
-        ComboBox1.ValueMember = "cod_cliente"
-        ComboBox1.DataSource = obj.retornaDataTable("Select *from cliente")
+        ComboBox1.DisplayMember = "NOME"
+        ComboBox1.ValueMember = "CODIGO"
+        '  ComboBox1.DataSource = obj.retornaDataTable("Select *from cliente")
+        ComboBox1.DataSource = obj.retornaDataTable(" select * FROM  retornacli() AS (CODIGO INTEGER, NOME VARCHAR, DATA_NASCIMENTO date, ENDERECO VARCHAR, RG VARCHAR, TELEFONE CHAR(13), ORGAO_EXP CHAR(5), MUNICIPIO VARCHAR, CPF CHAR(14))")
 
 
     End Sub
+ 
 
     Private Sub btexcluir_Click(sender As System.Object, e As System.EventArgs) Handles btexcluir.Click
-        '      txtcodigo.Text = 12
+
         If txtcodigo.Text = "" Then
             MessageBox.Show("Não há Nenhum Id Selecionado Para Excluir")
         Else
@@ -105,15 +104,17 @@
         End If
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-        Dim obj As New Sisvet.ClassBanco
+    'Private Sub DataGridView1_CellContentClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+    '    Dim obj As New Sisvet.ClassBanco
+    '    PreencheGrid()
 
-        DataGridView1.DataSource = obj.executasql(("Select *from paciente"))
-        DataGridView1.Refresh()
+    '    'DataGridView1.DataSource = obj.executasql(("Select *from paciente"))
+    '    'DataGridView1.Refresh()
 
-    End Sub
+    'End Sub
 
     Private Sub btnovo_Click(sender As System.Object, e As System.EventArgs) Handles btnovo.Click
+        txtcodigo.Visible = False
         txtcodigo.Text = ""
         txtespecie.Text = ""
         txtnomepaciente.Text = ""
@@ -125,54 +126,83 @@
     End Sub
 
     Private Sub btbusca_Click(sender As System.Object, e As System.EventArgs) Handles btbusca.Click
+        txtcodigo.Visible = False
         Dim obj As New Sisvet.ClassBanco
-        MessageBox.Show("Ainda não foi implementado")
         Try
             obj = New Sisvet.ClassBanco
-        
 
-                If String.IsNullOrEmpty(txtbusca.Text) Then
-                    '       DataGridView1.DataSource = obj.lista()
-                Else
-                    '      DataGridView1.DataSource = obj.lista("cod_paciente = " & txtbusca.Text)
-                    '  carregaobjeto()
+            If String.IsNullOrEmpty(txtbusca.Text) Then
+                PreencheGrid()
+            Else
 
-                End If
+                PreencheGrid("'%" & txtbusca.Text & "%'")
+
+            End If
 
         Catch ex As Exception
             MsgBox(ex.Message)
 
         End Try
+    End Sub
+
+    Private Sub PreencheGrid()
+        Dim obj As New Sisvet.ClassBanco
+
+        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornapac() AS (CODIGO INTEGER, NOME VARCHAR, DATA_NASCIMENTO date, RGHV VARCHAR(10), ESPECIE VARCHAR(50), RACA VARCHAR(25), PELAGEM VARCHAR, SEXO CHAR(1), CASTRADO CHAR(1), CLIENTE VARCHAR)")
+
+    End Sub
+    Private Sub PreencheGrid(cod As String)
+        Dim obj As New Sisvet.ClassBanco
+
+        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornapac(" & cod & ") AS (CODIGO INTEGER, NOME VARCHAR, DATA_NASCIMENTO date, RGHV VARCHAR(10), ESPECIE VARCHAR(50), RACA VARCHAR(25), PELAGEM VARCHAR, SEXO CHAR(1), CASTRADO CHAR(1), CLIENTE VARCHAR)")
 
     End Sub
 
-    'Private Sub carregaobjeto()
-    '    If DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value.Equals(DBNull.Value) Then
 
-    '    Else
-    '        Dim chave As Integer
-    '        chave = DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value
-    '        Dim obj As New Sisvet.ClassBanco(chave)
-    '        Id_ClienteTextBox.Visible = True
-    '        Id_ClienteTextBox.Enabled = False
-    '        Id_ClienteTextBox.Text = obj.id
-    '        obj.recupera()
-    '        Nome_ClienteTextBox.Text = obj.nome
-    '        masckDatanascimento.Text = obj.datanasc
+    Private Sub DataGridView1_DoubleClick(sender As Object, e As System.EventArgs) Handles DataGridView1.DoubleClick
+        CarregaCampos()
+    End Sub
+    Private Sub CarregaCampos()
 
-    '        txtparentesco.Text = obj.parentesco
-    '        txttrabalho.Text = obj.trabalho
-    '        txtsalario.Text = obj.salario
-    '        txtescolaridade.Text = obj.escolaridade
-    '        txtreligiao.Text = obj.religiao
-    '        txtestuda.Text = obj.estuda
-    '        txtrg.Text = obj.rg
-    '        masckcpfdependente.Text = obj.cpf
-    '        txtctps.Text = obj.cpf
-    '        txttitulo.Text = obj.titulo
-    '        txtzona.Text = obj.zona
-    '        txtsecao.Text = obj.secao
+        If (DataGridView1.Rows.Count > 0) Then
 
-    '    End If
-    ' End Sub
+            Dim obj As New Sisvet.ClassBanco
+            Dim id As Integer
+
+            id = DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value
+
+            PreencheGrid(id)
+
+            txtcodigo.Visible = True
+            txtcodigo.Text = DataGridView1(0, DataGridView1.CurrentCell.RowIndex).Value
+            txtnomepaciente.Text = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value
+            masckDatanascimento.Text = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value
+            txtespecie.Text = DataGridView1.Item(4, DataGridView1.CurrentCell.RowIndex).Value
+            txtrghv.Text = DataGridView1.Item(3, DataGridView1.CurrentCell.RowIndex).Value
+            txtpelagem.Text = DataGridView1.Item(6, DataGridView1.CurrentCell.RowIndex).Value
+            txtraça.Text = DataGridView1.Item(5, DataGridView1.CurrentCell.RowIndex).Value
+            ComboBox1.Text = DataGridView1.Item(9, DataGridView1.CurrentCell.RowIndex).Value
+
+
+            If (DataGridView1.Item(7, DataGridView1.CurrentCell.RowIndex).Value = "F") Then
+                RadioFeminino.Checked = True
+                Radiomasculino.Checked = False
+            Else
+                Radiomasculino.Checked = True
+                RadioFeminino.Checked = False
+
+            End If
+
+            If (DataGridView1.Item(8, DataGridView1.CurrentCell.RowIndex).Value = "S") Then
+                RadioSim.Checked = True
+                RadioNao.Checked = False
+            Else
+                RadioNao.Checked = True
+                RadioSim.Checked = False
+
+            End If
+
+        End If
+    End Sub
+
 End Class

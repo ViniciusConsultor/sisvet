@@ -4,7 +4,6 @@ Public Class FormCliente
     Private Sub btpaciente_Click(sender As System.Object, e As System.EventArgs) Handles btpaciente.Click
         FormPaciente.Show()
 
-
     End Sub
 
     Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
@@ -41,32 +40,41 @@ Public Class FormCliente
             MsgBox(ex.Message)
 
         End Try
-
-
-
-
-
     End Sub
 
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
 
-        Dim obj As New Sisvet.ClassBanco
-        Dim sql As String
-        sql = obj.executasql(" Select deletar_cliente(" & txtcodcli.Text & ")")
+      If txtcodcli.Text = "" Then
+            MessageBox.Show("Não há Nenhum Id Selecionado Para Excluir")
+        Else
+
+            Dim obj As New Sisvet.ClassBanco
+
+            If MsgBox("Tem Certeza Que Deseja Excluir?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Excluir") = MsgBoxResult.Yes Then
+                If obj.executasql("Select deletar_cliente(" & txtcodcli.Text & ")") >= 1 Then
+                    MessageBox.Show("Excluido com Sucesso")
+
+                Else
+                    MessageBox.Show("O Registro não Pode Ser Excluido")
+                End If
+            Else
+
+            End If
+        End If
     End Sub
 
 
     Private Sub btbusca_Click(sender As System.Object, e As System.EventArgs) Handles btbusca.Click
+        txtcodcli.Visible = False
         Dim obj As New Sisvet.ClassBanco
-        MessageBox.Show("Ainda não foi implementado")
         Try
             obj = New Sisvet.ClassBanco
 
             If String.IsNullOrEmpty(txtbusca.Text) Then
-                DataGridView1.DataSource = obj.retornaDataTable(" Select *from cliente")
+                PreencheGrid()
             Else
-                DataGridView1.DataSource = obj.retornaDataTable(" Select *from cliente where nome_cliente =" & txtbusca.Text)
-                '  carregaobjeto()
+
+                PreencheGrid("'%" & txtbusca.Text & "%'")
 
             End If
 
@@ -78,13 +86,14 @@ Public Class FormCliente
     End Sub
 
     Private Sub FormCliente_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        Dim obj As New Sisvet.ClassBanco
-         PreencheGrid()
+        PreencheGrid()
 
-        DataGridView1.Refresh()
+
     End Sub
 
     Private Sub btnovo_Click(sender As System.Object, e As System.EventArgs) Handles btnovo.Click
+        txtcodcli.Visible = False
+
         txtbusca.Text = ""
         txtcodcli.Text = ""
         txtcpf_cliente.Text = ""
@@ -105,45 +114,44 @@ Public Class FormCliente
 
         If (DataGridView1.Rows.Count > 0) Then
 
+            Dim obj As New Sisvet.ClassBanco
+            Dim id As Integer
 
+            id = DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value
 
-            txtnome.Text = DataGridView1.CurrentRow.Index
+            PreencheGrid(id)
 
+            txtcodcli.Visible = True
+            txtcodcli.Text = DataGridView1(0, DataGridView1.CurrentCell.RowIndex).Value
+            txtnome.Text = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value
+            masckDatanascimento.Text = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value
+            txtendereco.Text = DataGridView1.Item(3, DataGridView1.CurrentCell.RowIndex).Value
+            txtrg.Text = DataGridView1.Item(4, DataGridView1.CurrentCell.RowIndex).Value
+            txttelefone.Text = DataGridView1.Item(5, DataGridView1.CurrentCell.RowIndex).Value
+            txtorgaoExpeditor.Text = DataGridView1.Item(6, DataGridView1.CurrentCell.RowIndex).Value
+            txtmunicipio.Text = DataGridView1.Item(7, DataGridView1.CurrentCell.RowIndex).Value
+            txtcpf_cliente.Text = DataGridView1.Item(8, DataGridView1.CurrentCell.RowIndex).Value
 
-            '         txtcodcli.Text = DataGridView1.CurrentRow.InheritedStyle
-
-            '      Row[DataGridView1].CurrentRow.Index].Cells[posicao].Value.ToString();
-
-            '  this.txtCPF.Text = GetValorColuna(2);
-            '  this.txtRG.Text = GetValorColuna(3
-            '  this.txtEndereco.Text = GetValorColuna(4);
-            '}
         End If
     End Sub
     Private Sub PreencheGrid()
         Dim obj As New Sisvet.ClassBanco
-        '        DataGridView1.DataSource = obj.executasql(("select *from cliente"))
-        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  vw_cliente as cod_cliente;")
-        ' DataGridView1.DataSource = obj.retornaDataTable(" Select carregargridcliente2() as  (cod_cliente integer  , varchar nome_cliente  ,date data_nascimeto_cliente,varchar endereco_cliente,varchar rg_cliente,char telefone_cliente,varchar exxpedidor_rg_cliente, varchar minicipio_cliente, varchar cpf_cliente)")
 
-        '  obj.retornaDataTable("select *from cliente")
-        '  DataGridView1.Rows.Clear()
-        ' DataGridView1.Columns.Clear()
-
+        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornacli() AS (CODIGO INTEGER, NOME VARCHAR, DATA_NASCIMENTO date, ENDERECO VARCHAR, RG VARCHAR, TELEFONE CHAR(13), ORGAO_EXP CHAR(5), MUNICIPIO VARCHAR, CPF CHAR(14))")
 
     End Sub
-    '           private Sub  CarregarGrid(params string[] valores)
-    '                clsUtil.TrazerDados(estoqueConnStr, "fnGetFuncionarios", ref this.Grid, valores);
 
+    Private Sub PreencheGrid(cod As String)
+        Dim obj As New Sisvet.ClassBanco
 
-    '    End Sub
-    '            private string GetValorColuna(int posicao)
-    '            {
-    '                return this.Grid.Rows[Grid.CurrentRow.Index].Cells[posicao].Value.ToString();
-    '            }
-    '            private string GetValorColuna(string coluna)
-    '    '        {
-    '                return this.Grid.Rows[Grid.CurrentRow.Index].Cells[coluna].Value.ToString();
-    '            }
-    '#End Region
+        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornacli(" & cod & ") AS (CODIGO INTEGER, NOME VARCHAR, DATA_NASCIMENTO date, ENDERECO VARCHAR, RG VARCHAR, TELEFONE CHAR(13), ORGAO_EXP CHAR(5), MUNICIPIO VARCHAR, CPF CHAR(14))")
+
+    End Sub
+    Private Sub PreencheGrid(cod As Integer)
+        Dim obj As New Sisvet.ClassBanco
+
+        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornacli(" & cod & ") AS (CODIGO INTEGER, NOME VARCHAR, DATA_NASCIMENTO date, ENDERECO VARCHAR, RG VARCHAR, TELEFONE CHAR(13), ORGAO_EXP CHAR(5), MUNICIPIO VARCHAR, CPF CHAR(14))")
+
+    End Sub
+
 End Class

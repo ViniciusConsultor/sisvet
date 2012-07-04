@@ -70,9 +70,7 @@
     Private Sub FormConsulta_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         Dim obj As New Sisvet.ClassBanco
 
-
-        '  DataGridView1.DataSource = obj.lista
-        DataGridView1.Refresh()
+        PreencheGrid()
         Carregacombo()
     End Sub
 

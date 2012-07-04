@@ -76,7 +76,7 @@ Partial Class FormCliente
         Me.DataGridView1.Location = New System.Drawing.Point(35, 301)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(950, 231)
-        Me.DataGridView1.TabIndex = 12
+        Me.DataGridView1.TabIndex = 14
         '
         'txtmunicipio
         '
@@ -247,7 +247,7 @@ Partial Class FormCliente
         Me.GroupBox10.Location = New System.Drawing.Point(480, 246)
         Me.GroupBox10.Name = "GroupBox10"
         Me.GroupBox10.Size = New System.Drawing.Size(467, 40)
-        Me.GroupBox10.TabIndex = 77
+        Me.GroupBox10.TabIndex = 12
         Me.GroupBox10.TabStop = False
         '
         'Label10
@@ -263,7 +263,7 @@ Partial Class FormCliente
         '
         Me.txtbusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtbusca.Location = New System.Drawing.Point(214, 12)
-        Me.txtbusca.MaxLength = 7
+        Me.txtbusca.MaxLength = 50
         Me.txtbusca.Name = "txtbusca"
         Me.txtbusca.Size = New System.Drawing.Size(125, 20)
         Me.txtbusca.TabIndex = 3
@@ -273,21 +273,21 @@ Partial Class FormCliente
         Me.masckDatanascimento.Location = New System.Drawing.Point(162, 77)
         Me.masckDatanascimento.Name = "masckDatanascimento"
         Me.masckDatanascimento.Size = New System.Drawing.Size(100, 20)
-        Me.masckDatanascimento.TabIndex = 78
+        Me.masckDatanascimento.TabIndex = 2
         '
         'txtcpf_cliente
         '
         Me.txtcpf_cliente.Location = New System.Drawing.Point(701, 86)
         Me.txtcpf_cliente.Name = "txtcpf_cliente"
         Me.txtcpf_cliente.Size = New System.Drawing.Size(100, 20)
-        Me.txtcpf_cliente.TabIndex = 79
+        Me.txtcpf_cliente.TabIndex = 7
         '
         'txttelefone
         '
         Me.txttelefone.Location = New System.Drawing.Point(162, 138)
         Me.txttelefone.Name = "txttelefone"
         Me.txttelefone.Size = New System.Drawing.Size(100, 20)
-        Me.txttelefone.TabIndex = 80
+        Me.txttelefone.TabIndex = 4
         '
         'FormCliente
         '

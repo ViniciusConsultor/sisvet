@@ -50,7 +50,7 @@ Partial Class FormLaboratorio
         Me.DataGridView1.Location = New System.Drawing.Point(12, 376)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(590, 150)
-        Me.DataGridView1.TabIndex = 8
+        Me.DataGridView1.TabIndex = 9
         '
         'txtnome
         '
@@ -177,7 +177,7 @@ Partial Class FormLaboratorio
         Me.GroupBox10.Location = New System.Drawing.Point(80, 330)
         Me.GroupBox10.Name = "GroupBox10"
         Me.GroupBox10.Size = New System.Drawing.Size(467, 40)
-        Me.GroupBox10.TabIndex = 96
+        Me.GroupBox10.TabIndex = 8
         Me.GroupBox10.TabStop = False
         '
         'Label10
@@ -203,7 +203,7 @@ Partial Class FormLaboratorio
         Me.txttelefone.Location = New System.Drawing.Point(135, 103)
         Me.txttelefone.Name = "txttelefone"
         Me.txttelefone.Size = New System.Drawing.Size(100, 20)
-        Me.txttelefone.TabIndex = 97
+        Me.txttelefone.TabIndex = 2
         '
         'FormLaboratorio
         '

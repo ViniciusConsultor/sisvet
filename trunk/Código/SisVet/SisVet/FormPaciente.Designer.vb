@@ -61,9 +61,9 @@ Partial Class FormPaciente
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(14, 381)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 336)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(590, 136)
+        Me.DataGridView1.Size = New System.Drawing.Size(959, 223)
         Me.DataGridView1.TabIndex = 13
         '
         'txtpelagem
@@ -176,7 +176,7 @@ Partial Class FormPaciente
         'btexcluir
         '
         Me.btexcluir.Image = Global.SisVet.My.Resources.Resources.Button_Delete_icon32
-        Me.btexcluir.Location = New System.Drawing.Point(262, 255)
+        Me.btexcluir.Location = New System.Drawing.Point(432, 197)
         Me.btexcluir.Name = "btexcluir"
         Me.btexcluir.Size = New System.Drawing.Size(75, 66)
         Me.btexcluir.TabIndex = 11
@@ -187,7 +187,7 @@ Partial Class FormPaciente
         'btsalvar
         '
         Me.btsalvar.Image = Global.SisVet.My.Resources.Resources.informatica_3632_disquete13
-        Me.btsalvar.Location = New System.Drawing.Point(142, 255)
+        Me.btsalvar.Location = New System.Drawing.Point(312, 197)
         Me.btsalvar.Name = "btsalvar"
         Me.btsalvar.Size = New System.Drawing.Size(75, 66)
         Me.btsalvar.TabIndex = 10
@@ -198,7 +198,7 @@ Partial Class FormPaciente
         'btnovo
         '
         Me.btnovo.Image = Global.SisVet.My.Resources.Resources.Button_Add_icon32
-        Me.btnovo.Location = New System.Drawing.Point(387, 255)
+        Me.btnovo.Location = New System.Drawing.Point(557, 197)
         Me.btnovo.Name = "btnovo"
         Me.btnovo.Size = New System.Drawing.Size(75, 66)
         Me.btnovo.TabIndex = 12
@@ -227,7 +227,7 @@ Partial Class FormPaciente
         '
         Me.GroupBox1.Controls.Add(Me.RadioNao)
         Me.GroupBox1.Controls.Add(Me.RadioSim)
-        Me.GroupBox1.Location = New System.Drawing.Point(340, 204)
+        Me.GroupBox1.Location = New System.Drawing.Point(686, 103)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(201, 45)
         Me.GroupBox1.TabIndex = 9
@@ -260,7 +260,7 @@ Partial Class FormPaciente
         '
         Me.GroupBox2.Controls.Add(Me.RadioFeminino)
         Me.GroupBox2.Controls.Add(Me.Radiomasculino)
-        Me.GroupBox2.Location = New System.Drawing.Point(60, 204)
+        Me.GroupBox2.Location = New System.Drawing.Point(686, 38)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(200, 42)
         Me.GroupBox2.TabIndex = 8
@@ -304,7 +304,7 @@ Partial Class FormPaciente
         Me.GroupBox10.Controls.Add(Me.Label7)
         Me.GroupBox10.Controls.Add(Me.txtbusca)
         Me.GroupBox10.Controls.Add(Me.btbusca)
-        Me.GroupBox10.Location = New System.Drawing.Point(83, 335)
+        Me.GroupBox10.Location = New System.Drawing.Point(246, 290)
         Me.GroupBox10.Name = "GroupBox10"
         Me.GroupBox10.Size = New System.Drawing.Size(467, 40)
         Me.GroupBox10.TabIndex = 108
@@ -333,13 +333,13 @@ Partial Class FormPaciente
         Me.masckDatanascimento.Location = New System.Drawing.Point(129, 91)
         Me.masckDatanascimento.Name = "masckDatanascimento"
         Me.masckDatanascimento.Size = New System.Drawing.Size(100, 20)
-        Me.masckDatanascimento.TabIndex = 109
+        Me.masckDatanascimento.TabIndex = 2
         '
         'FormPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(643, 529)
+        Me.ClientSize = New System.Drawing.Size(983, 571)
         Me.Controls.Add(Me.masckDatanascimento)
         Me.Controls.Add(Me.GroupBox10)
         Me.Controls.Add(Me.GroupBox2)
