@@ -39,7 +39,7 @@
 
             Dim result As Integer
             Dim sql As String
-            sql = "Select receber_dadoscirurgia('" & txtDescrição.Text & "'," & id & "," & cod & ")"
+            sql = "Select receber_dadoscirurgia('" & txtdescricao.Text & "'," & id & "," & cod & ")"
 
             result = objpac.executasql(sql)
             txtcodigo.Text = result
@@ -101,7 +101,7 @@
     Private Sub btnovo_Click(sender As System.Object, e As System.EventArgs) Handles btnovo.Click
         txtcodigo.Visible = False
         txtcodigo.Text = ""
-        txtDescrição.Text = ""
+        txtdescricao.Text = ""
 
     End Sub
 
@@ -142,7 +142,7 @@
 
             txtcodigo.Visible = True
             txtcodigo.Text = DataGridView1(0, DataGridView1.CurrentCell.RowIndex).Value
-            txtDescrição.Text = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value
+            txtdescricao.Text = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value
             ComboMedico.Text = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value
 
         End If

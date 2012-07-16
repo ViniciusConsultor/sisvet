@@ -23,7 +23,7 @@ Partial Class FormCirurgia
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.txtDescrição = New System.Windows.Forms.TextBox()
+        Me.txtdescricao = New System.Windows.Forms.TextBox()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -48,12 +48,12 @@ Partial Class FormCirurgia
         Me.DataGridView1.Size = New System.Drawing.Size(590, 150)
         Me.DataGridView1.TabIndex = 6
         '
-        'txtDescrição
+        'txtdescricao
         '
-        Me.txtDescrição.Location = New System.Drawing.Point(134, 66)
-        Me.txtDescrição.Name = "txtDescrição"
-        Me.txtDescrição.Size = New System.Drawing.Size(269, 20)
-        Me.txtDescrição.TabIndex = 1
+        Me.txtdescricao.Location = New System.Drawing.Point(134, 66)
+        Me.txtdescricao.Name = "txtdescricao"
+        Me.txtdescricao.Size = New System.Drawing.Size(269, 20)
+        Me.txtdescricao.TabIndex = 1
         '
         'txtcodigo
         '
@@ -182,7 +182,7 @@ Partial Class FormCirurgia
         Me.Controls.Add(Me.btsalvar)
         Me.Controls.Add(Me.btnovo)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.txtDescrição)
+        Me.Controls.Add(Me.txtdescricao)
         Me.Controls.Add(Me.txtcodigo)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
@@ -199,7 +199,7 @@ Partial Class FormCirurgia
     Friend WithEvents btsalvar As System.Windows.Forms.Button
     Friend WithEvents btnovo As System.Windows.Forms.Button
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents txtDescrição As System.Windows.Forms.TextBox
+    Friend WithEvents txtdescricao As System.Windows.Forms.TextBox
     Friend WithEvents txtcodigo As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label

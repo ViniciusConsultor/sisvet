@@ -22,11 +22,9 @@ Partial Class FormMedicacao
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ComboResponsavel = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.txtcodigo = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btexcluir = New System.Windows.Forms.Button()
@@ -40,17 +38,12 @@ Partial Class FormMedicacao
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtbusca = New System.Windows.Forms.TextBox()
+        Me.ComboTratamento = New System.Windows.Forms.ComboBox()
+        Me.txtcodigo = New System.Windows.Forms.TextBox()
+        Me.ComboResponsavel = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox10.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'ComboResponsavel
-        '
-        Me.ComboResponsavel.FormattingEnabled = True
-        Me.ComboResponsavel.Location = New System.Drawing.Point(152, 141)
-        Me.ComboResponsavel.Name = "ComboResponsavel"
-        Me.ComboResponsavel.Size = New System.Drawing.Size(241, 21)
-        Me.ComboResponsavel.TabIndex = 3
         '
         'Label1
         '
@@ -76,15 +69,7 @@ Partial Class FormMedicacao
         Me.DataGridView1.Location = New System.Drawing.Point(44, 394)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(590, 150)
-        Me.DataGridView1.TabIndex = 8
-        '
-        'txtcodigo
-        '
-        Me.txtcodigo.Location = New System.Drawing.Point(152, 32)
-        Me.txtcodigo.Name = "txtcodigo"
-        Me.txtcodigo.Size = New System.Drawing.Size(100, 20)
-        Me.txtcodigo.TabIndex = 0
-        Me.txtcodigo.Visible = False
+        Me.DataGridView1.TabIndex = 10
         '
         'Label7
         '
@@ -100,9 +85,9 @@ Partial Class FormMedicacao
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(41, 39)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(43, 13)
+        Me.Label6.Size = New System.Drawing.Size(64, 13)
         Me.Label6.TabIndex = 105
-        Me.Label6.Text = "Código:"
+        Me.Label6.Text = "Tratamento:"
         '
         'btexcluir
         '
@@ -186,7 +171,7 @@ Partial Class FormMedicacao
         Me.GroupBox10.Location = New System.Drawing.Point(105, 348)
         Me.GroupBox10.Name = "GroupBox10"
         Me.GroupBox10.Size = New System.Drawing.Size(467, 40)
-        Me.GroupBox10.TabIndex = 118
+        Me.GroupBox10.TabIndex = 9
         Me.GroupBox10.TabStop = False
         '
         'Label10
@@ -207,24 +192,48 @@ Partial Class FormMedicacao
         Me.txtbusca.Size = New System.Drawing.Size(125, 20)
         Me.txtbusca.TabIndex = 3
         '
+        'ComboTratamento
+        '
+        Me.ComboTratamento.FormattingEnabled = True
+        Me.ComboTratamento.Location = New System.Drawing.Point(152, 31)
+        Me.ComboTratamento.Name = "ComboTratamento"
+        Me.ComboTratamento.Size = New System.Drawing.Size(241, 21)
+        Me.ComboTratamento.TabIndex = 0
+        '
+        'txtcodigo
+        '
+        Me.txtcodigo.Location = New System.Drawing.Point(677, 32)
+        Me.txtcodigo.Name = "txtcodigo"
+        Me.txtcodigo.Size = New System.Drawing.Size(100, 20)
+        Me.txtcodigo.TabIndex = 8
+        Me.txtcodigo.Visible = False
+        '
+        'ComboResponsavel
+        '
+        Me.ComboResponsavel.Location = New System.Drawing.Point(152, 137)
+        Me.ComboResponsavel.Name = "ComboResponsavel"
+        Me.ComboResponsavel.Size = New System.Drawing.Size(241, 20)
+        Me.ComboResponsavel.TabIndex = 3
+        '
         'FormMedicacao
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(694, 576)
+        Me.ClientSize = New System.Drawing.Size(921, 576)
+        Me.Controls.Add(Me.ComboResponsavel)
+        Me.Controls.Add(Me.txtcodigo)
+        Me.Controls.Add(Me.ComboTratamento)
         Me.Controls.Add(Me.GroupBox10)
         Me.Controls.Add(Me.Comboremedio)
         Me.Controls.Add(Me.txtquantidade)
         Me.Controls.Add(Me.txtvalor)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.ComboResponsavel)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btexcluir)
         Me.Controls.Add(Me.btsalvar)
         Me.Controls.Add(Me.btnovo)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.txtcodigo)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Name = "FormMedicacao"
@@ -236,14 +245,12 @@ Partial Class FormMedicacao
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents ComboResponsavel As System.Windows.Forms.ComboBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents btexcluir As System.Windows.Forms.Button
     Friend WithEvents btsalvar As System.Windows.Forms.Button
     Friend WithEvents btnovo As System.Windows.Forms.Button
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents txtcodigo As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents txtvalor As System.Windows.Forms.TextBox
@@ -254,4 +261,7 @@ Partial Class FormMedicacao
     Friend WithEvents GroupBox10 As System.Windows.Forms.GroupBox
     Friend WithEvents txtbusca As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents ComboTratamento As System.Windows.Forms.ComboBox
+    Friend WithEvents txtcodigo As System.Windows.Forms.TextBox
+    Friend WithEvents ComboResponsavel As System.Windows.Forms.TextBox
 End Class

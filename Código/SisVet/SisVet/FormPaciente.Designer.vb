@@ -323,7 +323,7 @@ Partial Class FormPaciente
         '
         Me.txtbusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtbusca.Location = New System.Drawing.Point(214, 12)
-        Me.txtbusca.MaxLength = 7
+        Me.txtbusca.MaxLength = 20
         Me.txtbusca.Name = "txtbusca"
         Me.txtbusca.Size = New System.Drawing.Size(125, 20)
         Me.txtbusca.TabIndex = 3

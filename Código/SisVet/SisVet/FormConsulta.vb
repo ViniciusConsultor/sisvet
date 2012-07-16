@@ -2,26 +2,7 @@
     '
 
     Private Sub btsalvar_Click(sender As System.Object, e As System.EventArgs) Handles btsalvar.Click
-        'Dim obj As New Sisvet.ClassBanco
-        'Dim data As String = txtdata.Text
-        'Dim hora As String = txthora.Text
-        'Dim medico As String = ComboMedico.SelectedValue.ToString
-        'Dim cod As String = txtcodConsulta.Text
-        'Dim paciente As String = comboPaciente.SelectedValue.ToString
-        'Dim prontuario As String = txtprontuario.Text
-
-        'Dim agendamento As String = " "
-        'If radioSim.Checked = True Then
-        '    agendamento = "S"
-
-        'ElseIf radioNao.Checked = True Then
-        '    agendamento = "N"
-        'End If
-
-        'Dim sql As String
-        ''sql = obj.executasql("Select inserir_cliente(" & cod & ",'" & data & "','" & hora & "'," & medico & "," & cod & ",'" & agendamento & "'," & paciente & ",'" & txtprontuario.Text & "')")
-        'sql = obj.executasql("Select inserir_consulta('" & data & "','" & hora & "'," & medico & "," & cod & ",'" & agendamento & "'," & paciente & ",'" & txtprontuario.Text & "')")
-
+        
 
         Dim cod As Integer
         If txtcodConsulta.Visible = False Then
@@ -77,20 +58,20 @@
     Public Sub Carregacombo()
         Dim obj As New Sisvet.ClassBanco
 
-        ComboMedico.DisplayMember = "nome_medico_veterinario"
-        ComboMedico.ValueMember = "codigo_medico_vet_pk"
-        ComboMedico.DataSource = obj.retornaDataTable("Select *from medico_veterinario")
+        ComboMedico.DisplayMember = "NOME"
+        ComboMedico.ValueMember = "CODIGO"
+        ComboMedico.DataSource = obj.retornaDataTable(" select * FROM  retornamed() AS (CODIGO INTEGER, NOME VARCHAR(50),ESPECIALIDADE VARCHAR(50), CRMV VARCHAR(10), TELEFONE VARCHAR(13))")
 
 
-        comboPaciente.DisplayMember = "nome_paciente"
-        comboPaciente.ValueMember = "cod_paciente"
-        comboPaciente.DataSource = obj.retornaDataTable("Select *from paciente")
+        comboPaciente.DisplayMember = "NOMEpac"
+        comboPaciente.ValueMember = "CODIGOpac"
+        comboPaciente.DataSource = obj.retornaDataTable(" select * FROM  retornapac() AS (CODIGOpac INTEGER, NOMEpac VARCHAR, DATA_NASCIMENTO date, RGHV VARCHAR(10), ESPECIE VARCHAR(50), RACA VARCHAR(25), PELAGEM VARCHAR, SEXO CHAR(1), CASTRADO CHAR(1), CLIENTE VARCHAR)")
 
 
 
-        ComboTipoConsulta.DisplayMember = "valor_consulta"
-        ComboTipoConsulta.ValueMember = "cod_tipo_cnsulta"
-        ComboTipoConsulta.DataSource = obj.retornaDataTable("Select *from tipo_consulta")
+        ComboTipoConsulta.DisplayMember = "NOMEtc"
+        ComboTipoConsulta.ValueMember = "CODIGOtc"
+        ComboTipoConsulta.DataSource = obj.retornaDataTable(" select * FROM  retornatipo() AS (CODIGOtc INTEGER,VALOR NUMERIC, NOMEtc VARCHAR)")
 
     End Sub
 
@@ -127,19 +108,83 @@
     Private Sub btnovo_Click(sender As System.Object, e As System.EventArgs) Handles btnovo.Click
         txtbusca.Text = ""
         txtcodConsulta.Text = ""
+        txtcodConsulta.Visible = False
         txtdata.Text = ""
         txtprontuario.Text = ""
         txthora.Text = ""
 
     End Sub
+ 
     Private Sub PreencheGrid()
         Dim obj As New Sisvet.ClassBanco
 
-        DataGridView1.DataSource = obj.executasql("Select * from consulta")
-        DataGridView1.Refresh()
+        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornaConsulta() AS (CODIGO INTEGER, DATA DATE, HORA TIME, VETERINARIO VARCHAR, TIPO_CONSULTA VARCHAR, AGENDADO CHAR,PACIENTE VARCHAR, PRONTUARIO TEXT)")
 
     End Sub
+    Private Sub PreencheGrid(cod As String)
+        Dim obj As New Sisvet.ClassBanco
+
+        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornaconsulta(" & cod & ") AS(CODIGO INTEGER, DATA DATE, HORA TIME, VETERINARIO VARCHAR, TIPO_CONSULTA VARCHAR, AGENDADO CHAR,PACIENTE VARCHAR, PRONTUARIO TEXT)")
+    End Sub
+ 
     Private Sub btbusca_Click(sender As System.Object, e As System.EventArgs) Handles btbusca.Click
 
+        txtcodConsulta.Visible = False
+        Dim obj As New Sisvet.ClassBanco
+        Try
+            obj = New Sisvet.ClassBanco
+
+            If String.IsNullOrEmpty(txtbusca.Text) Then
+                PreencheGrid()
+            Else
+
+                PreencheGrid("'%" & txtbusca.Text & "%'")
+
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+
+        End Try
     End Sub
+
+
+    Private Sub DataGridView1_DoubleClick(sender As Object, e As System.EventArgs) Handles DataGridView1.DoubleClick
+        CarregaCampos()
+    End Sub
+    Private Sub CarregaCampos()
+
+        If (DataGridView1.Rows.Count > 0) Then
+
+            Dim obj As New Sisvet.ClassBanco
+            Dim id As Integer
+
+            id = DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value
+
+            PreencheGrid(id)
+
+            txtcodConsulta.Visible = True
+            txtcodConsulta.Text = DataGridView1(0, DataGridView1.CurrentCell.RowIndex).Value
+            txtdata.Text = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value
+            txthora.Text = Convert.ToString(DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value)
+            ComboMedico.Text = DataGridView1.Item(3, DataGridView1.CurrentCell.RowIndex).Value
+            ComboTipoConsulta.Text = DataGridView1.Item(4, DataGridView1.CurrentCell.RowIndex).Value
+
+            If DataGridView1.Item(5, DataGridView1.CurrentCell.RowIndex).Value = "N" Then
+                radioNao.Checked = True
+                radioSim.Checked = False
+
+            Else
+                radioSim.Checked = True
+                radioNao.Checked = False
+
+            End If
+
+            comboPaciente.Text = DataGridView1.Item(6, DataGridView1.CurrentCell.RowIndex).Value
+            txtprontuario.Text = DataGridView1.Item(7, DataGridView1.CurrentCell.RowIndex).Value
+
+        End If
+
+    End Sub
+
 End Class
