@@ -107,9 +107,9 @@ Partial Class FormConsulta
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(30, 443)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 443)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(620, 150)
+        Me.DataGridView1.Size = New System.Drawing.Size(844, 150)
         Me.DataGridView1.TabIndex = 13
         '
         'Label1
@@ -261,7 +261,7 @@ Partial Class FormConsulta
         '
         Me.txtbusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtbusca.Location = New System.Drawing.Point(214, 12)
-        Me.txtbusca.MaxLength = 7
+        Me.txtbusca.MaxLength = 20
         Me.txtbusca.Name = "txtbusca"
         Me.txtbusca.Size = New System.Drawing.Size(125, 20)
         Me.txtbusca.TabIndex = 3
@@ -270,7 +270,7 @@ Partial Class FormConsulta
         '
         Me.txthora.Location = New System.Drawing.Point(395, 57)
         Me.txthora.Name = "txthora"
-        Me.txthora.Size = New System.Drawing.Size(38, 20)
+        Me.txthora.Size = New System.Drawing.Size(58, 20)
         Me.txthora.TabIndex = 111
         '
         'txtdata
@@ -284,7 +284,7 @@ Partial Class FormConsulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(689, 605)
+        Me.ClientSize = New System.Drawing.Size(868, 605)
         Me.Controls.Add(Me.txtdata)
         Me.Controls.Add(Me.txthora)
         Me.Controls.Add(Me.GroupBox10)

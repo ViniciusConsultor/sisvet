@@ -17,7 +17,7 @@
 
     End Sub
 
-    Private Sub AuxiliarToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles AuxiliarToolStripMenuItem1.Click
+    Private Sub AuxiliarToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs)
         FormContasApagar.MdiParent = Me
         FormContasApagar.Show()
 
@@ -70,13 +70,19 @@
         FormTipoConsulta.Show()
     End Sub
 
-    Private Sub ContasAPagarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ContasAPagarToolStripMenuItem.Click
+
+    Private Sub AuxiliarToolStripMenuItem1_Click_1(sender As System.Object, e As System.EventArgs) Handles AuxiliarToolStripMenuItem1.Click
         FormContasApagar.MdiParent = Me
         FormContasApagar.Show()
+    End Sub
+
+    Private Sub PagamentoToolStripMenuItem_Click_1(sender As System.Object, e As System.EventArgs) Handles PagamentoToolStripMenuItem.Click
 
     End Sub
 
-    Private Sub PagamentoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles PagamentoToolStripMenuItem.Click
+    Private Sub MedicaçãoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles MedicaçãoToolStripMenuItem.Click
+        FormMedicacao.MdiParent = Me
+        FormMedicacao.Show()
 
     End Sub
 End Class
