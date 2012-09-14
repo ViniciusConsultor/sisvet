@@ -106,9 +106,16 @@ Partial Class FormConsulta
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AllowUserToResizeRows = False
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(12, 443)
+        Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(844, 150)
         Me.DataGridView1.TabIndex = 13
         '
@@ -253,9 +260,9 @@ Partial Class FormConsulta
         Me.Label10.AutoSize = True
         Me.Label10.Location = New System.Drawing.Point(43, 17)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(90, 13)
+        Me.Label10.Size = New System.Drawing.Size(147, 13)
         Me.Label10.TabIndex = 5
-        Me.Label10.Text = "Busca Por Nome:"
+        Me.Label10.Text = "Busca por nome do Paciente:"
         '
         'txtbusca
         '

@@ -22,6 +22,7 @@ Partial Class FormCliente
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtcodcli = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -49,6 +50,8 @@ Partial Class FormCliente
         Me.masckDatanascimento = New System.Windows.Forms.TextBox()
         Me.txtcpf_cliente = New System.Windows.Forms.TextBox()
         Me.txttelefone = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox10.SuspendLayout()
         Me.SuspendLayout()
@@ -72,9 +75,24 @@ Partial Class FormCliente
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AllowUserToResizeRows = False
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(35, 301)
+        Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(950, 231)
         Me.DataGridView1.TabIndex = 14
         '
@@ -221,7 +239,7 @@ Partial Class FormCliente
         'btpaciente
         '
         Me.btpaciente.Image = Global.SisVet.My.Resources.Resources.cattle
-        Me.btpaciente.Location = New System.Drawing.Point(910, 23)
+        Me.btpaciente.Location = New System.Drawing.Point(916, 23)
         Me.btpaciente.Name = "btpaciente"
         Me.btpaciente.Size = New System.Drawing.Size(75, 77)
         Me.btpaciente.TabIndex = 13
@@ -289,11 +307,31 @@ Partial Class FormCliente
         Me.txttelefone.Size = New System.Drawing.Size(100, 20)
         Me.txttelefone.TabIndex = 4
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(801, 93)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(113, 13)
+        Me.Label11.TabIndex = 77
+        Me.Label11.Text = "Formato:( ***.***.***-** )"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(282, 145)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(96, 13)
+        Me.Label12.TabIndex = 78
+        Me.Label12.Text = "Formato: [ (**)**-** ]"
+        '
         'FormCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1018, 542)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.txttelefone)
         Me.Controls.Add(Me.txtcpf_cliente)
         Me.Controls.Add(Me.masckDatanascimento)
@@ -354,4 +392,6 @@ Partial Class FormCliente
     Friend WithEvents masckDatanascimento As System.Windows.Forms.TextBox
     Friend WithEvents txtcpf_cliente As System.Windows.Forms.TextBox
     Friend WithEvents txttelefone As System.Windows.Forms.TextBox
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Label12 As System.Windows.Forms.Label
 End Class

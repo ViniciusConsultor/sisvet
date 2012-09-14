@@ -148,13 +148,13 @@
     Private Sub PreencheGrid()
         Dim obj As New Sisvet.ClassBanco
 
-        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornapac() AS (CODIGO INTEGER, NOME VARCHAR, DATA_NASCIMENTO date, RGHV VARCHAR(10), ESPECIE VARCHAR(50), RACA VARCHAR(25), PELAGEM VARCHAR, SEXO CHAR(1), CASTRADO CHAR(1), CLIENTE VARCHAR)")
+        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornapac() AS (CODIGO INTEGER, NOME VARCHAR, DATA_NASCIMENTO date, RGHV VARCHAR(11), ESPECIE VARCHAR(50), RACA VARCHAR(25), PELAGEM VARCHAR, SEXO CHAR(1), CASTRADO CHAR(1), CLIENTE VARCHAR)")
 
     End Sub
     Private Sub PreencheGrid(cod As String)
         Dim obj As New Sisvet.ClassBanco
 
-        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornapac(" & cod & ") AS (CODIGO INTEGER, NOME VARCHAR, DATA_NASCIMENTO date, RGHV VARCHAR(10), ESPECIE VARCHAR(50), RACA VARCHAR(25), PELAGEM VARCHAR, SEXO CHAR(1), CASTRADO CHAR(1), CLIENTE VARCHAR)")
+        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornapac(" & cod & ") AS (CODIGO INTEGER, NOME VARCHAR, DATA_NASCIMENTO date, RGHV VARCHAR(11), ESPECIE VARCHAR(50), RACA VARCHAR(25), PELAGEM VARCHAR, SEXO CHAR(1), CASTRADO CHAR(1), CLIENTE VARCHAR)")
 
     End Sub
 

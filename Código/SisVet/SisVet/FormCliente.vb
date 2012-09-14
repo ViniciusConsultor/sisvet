@@ -33,8 +33,7 @@ Public Class FormCliente
                 MsgBox("Erro!")
 
             End If
-            DataGridView1.DataSource = obj.executasql("Select * from cliente")
-            DataGridView1.Refresh()
+            PreencheGrid()
 
         Catch ex As Exception
             MsgBox(ex.Message)
