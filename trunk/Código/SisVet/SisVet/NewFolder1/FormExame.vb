@@ -89,13 +89,13 @@
     Private Sub PreencheGrid()
         Dim obj As New Sisvet.ClassBanco
 
-        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornaexame() AS (  CODIGO INTEGER, NOME VARCHAR, LABORATORIO INTEGER)")
+        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornaexame() AS (  CODIGO INTEGER, NOME TEXT, LABORATORIO VARCHAR)")
 
     End Sub
     Private Sub PreencheGrid(cod As String)
         Dim obj As New Sisvet.ClassBanco
 
-        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornaexame(" & cod & ") AS ( CODIGO INTEGER, NOME VARCHAR, LABORATORIO INTEGER)")
+        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornaexame(" & cod & ") AS ( CODIGO INTEGER, NOME TEXT, LABORATORIO VARCHAR)")
 
     End Sub
 

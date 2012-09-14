@@ -27,13 +27,13 @@
     Private Sub PreencheGrid()
         Dim obj As New Sisvet.ClassBanco
 
-        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornamedicacao() AS (CODIGO VARCHAR, NOME VARCHAR, QTD_ESTOQUE VARCHAR, RESPONSAVEL VARCHAR, VALOR NUMERIC)")
+        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornamedicacao() AS ( NOMETRAT TEXT, NOMEREM TEXT, QTD_ESTOQUE VARCHAR, RESPONSAVEL VARCHAR, VALOR NUMERIC)")
 
     End Sub
     Private Sub PreencheGrid(cod As String)
         Dim obj As New Sisvet.ClassBanco
 
-        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornamedicacao(" & cod & ") AS (CODIGO VARCHAR, NOME VARCHAR, QTD_ESTOQUE VARCHAR, RESPONSAVEL VARCHAR, VALOR NUMERIC)")
+        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornamedicacao(" & cod & ") AS ( NOMETRAT, NOMEREM TEXT, QTD_ESTOQUE VARCHAR, RESPONSAVEL VARCHAR, VALOR NUMERIC)")
 
     End Sub
     Private Sub btsalvar_Click(sender As System.Object, e As System.EventArgs) Handles btsalvar.Click
@@ -159,6 +159,7 @@
             Dim id As Integer
 
             id = DataGridView1.Item(0, DataGridView1.CurrentCell.RowIndex).Value
+
 
             PreencheGrid(id)
 

@@ -17,7 +17,7 @@
 
         ComboPaciente.DisplayMember = "NOMEpac"
         ComboPaciente.ValueMember = "CODIGOpac"
-        ComboPaciente.DataSource = obj.retornaDataTable(" select * FROM  retornapac() AS (CODIGOpac INTEGER, NOMEpac VARCHAR, DATA_NASCIMENTO date, RGHV VARCHAR(10), ESPECIE VARCHAR(50), RACA VARCHAR(25), PELAGEM VARCHAR, SEXO CHAR(1), CASTRADO CHAR(1), CLIENTE VARCHAR)")
+        ComboPaciente.DataSource = obj.retornaDataTable(" select * FROM  retornapac() AS (CODIGOpac INTEGER, NOMEpac VARCHAR, DATA_NASCIMENTO date, RGHV VARCHAR(11), ESPECIE VARCHAR(50), RACA VARCHAR(25), PELAGEM VARCHAR, SEXO CHAR(1), CASTRADO CHAR(1), CLIENTE VARCHAR)")
 
 
     End Sub
@@ -117,7 +117,7 @@
     Private Sub PreencheGrid()
         Dim obj As New Sisvet.ClassBanco
 
-        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornatratamento() AS (CODIGO INTEGER, NOME VARCHAR, PAC VARCHAR, MEDICO VARCHAR)")
+        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornatratamento() AS (CODIGO INTEGER, NOME TEXT, PAC VARCHAR, MEDICO VARCHAR)")
 
     End Sub
     Private Sub PreencheGrid(cod As String)
