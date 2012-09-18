@@ -22,6 +22,7 @@ Partial Class FormLaboratorio
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormLaboratorio))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.txtnome = New System.Windows.Forms.TextBox()
         Me.txtcodigo = New System.Windows.Forms.TextBox()
@@ -51,7 +52,7 @@ Partial Class FormLaboratorio
         Me.DataGridView1.AllowUserToResizeRows = False
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 376)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 346)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
@@ -135,6 +136,8 @@ Partial Class FormLaboratorio
         '
         'Button1
         '
+        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.Image = Global.SisVet.My.Resources.Resources.Button_Delete_icon32
         Me.Button1.Location = New System.Drawing.Point(273, 215)
         Me.Button1.Name = "Button1"
@@ -146,6 +149,8 @@ Partial Class FormLaboratorio
         '
         'Button2
         '
+        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button2.Image = Global.SisVet.My.Resources.Resources.informatica_3632_disquete13
         Me.Button2.Location = New System.Drawing.Point(153, 215)
         Me.Button2.Name = "Button2"
@@ -157,6 +162,8 @@ Partial Class FormLaboratorio
         '
         'Button3
         '
+        Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button3.Image = Global.SisVet.My.Resources.Resources.Button_Add_icon32
         Me.Button3.Location = New System.Drawing.Point(398, 215)
         Me.Button3.Name = "Button3"
@@ -168,6 +175,8 @@ Partial Class FormLaboratorio
         '
         'btbusca
         '
+        Me.btbusca.BackgroundImage = CType(resources.GetObject("btbusca.BackgroundImage"), System.Drawing.Image)
+        Me.btbusca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btbusca.Location = New System.Drawing.Point(361, 12)
         Me.btbusca.Name = "btbusca"
         Me.btbusca.Size = New System.Drawing.Size(95, 23)
@@ -178,12 +187,14 @@ Partial Class FormLaboratorio
         'GroupBox10
         '
         Me.GroupBox10.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox10.BackgroundImage = CType(resources.GetObject("GroupBox10.BackgroundImage"), System.Drawing.Image)
+        Me.GroupBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox10.Controls.Add(Me.Label10)
         Me.GroupBox10.Controls.Add(Me.txtbusca)
         Me.GroupBox10.Controls.Add(Me.btbusca)
-        Me.GroupBox10.Location = New System.Drawing.Point(80, 330)
+        Me.GroupBox10.Location = New System.Drawing.Point(82, 298)
         Me.GroupBox10.Name = "GroupBox10"
-        Me.GroupBox10.Size = New System.Drawing.Size(467, 40)
+        Me.GroupBox10.Size = New System.Drawing.Size(461, 42)
         Me.GroupBox10.TabIndex = 8
         Me.GroupBox10.TabStop = False
         '
@@ -216,7 +227,9 @@ Partial Class FormLaboratorio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(622, 538)
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(622, 504)
         Me.Controls.Add(Me.txttelefone)
         Me.Controls.Add(Me.GroupBox10)
         Me.Controls.Add(Me.txtmunicipio)
@@ -232,7 +245,9 @@ Partial Class FormLaboratorio
         Me.Controls.Add(Me.txtcodigo)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormLaboratorio"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SisVet - Cadastro de Laboratório"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox10.ResumeLayout(False)

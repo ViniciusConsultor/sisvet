@@ -1,7 +1,7 @@
 ﻿
 Public Class FormCliente
 
-    Private Sub btpaciente_Click(sender As System.Object, e As System.EventArgs) Handles btpaciente.Click
+    Private Sub btpaciente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         FormPaciente.Show()
 
     End Sub

@@ -46,3 +46,27 @@ C:\Users\usuario\Documents\Visual Studio 2010\Projects\SisVet - Cópia\SisVet\ob
 C:\Users\usuario\Documents\Visual Studio 2010\Projects\SisVet - Cópia\SisVet\obj\x86\Debug\SisVet.FormTipoConsulta.resources
 C:\Users\usuario\Documents\Visual Studio 2010\Projects\SisVet\SisVet\obj\x86\Debug\SisVet.FormContasApagar.resources
 C:\Users\usuario\Documents\Visual Studio 2010\Projects\SisVet\SisVet\obj\x86\Debug\SisVet.FormTipoConsulta.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.exe
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.xml
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.pdb
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\bin\Debug\SisVet.exe
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\bin\Debug\SisVet.pdb
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\bin\Debug\SisVet.xml
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormContasApagar.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormMedicacao.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormPrincipal.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormConsulta.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormMedico.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormPaciente.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.Resources.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormCirurgia.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormCliente.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormExame.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormLaboratorio.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormMedicamento.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormTratamento.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormTipoConsulta.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.SplashScreen2.resources
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\GenerateResource.write.1.tlog
