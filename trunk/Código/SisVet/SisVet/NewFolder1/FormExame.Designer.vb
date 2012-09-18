@@ -58,52 +58,58 @@ Partial Class FormExame
         '
         'txtdescricao
         '
+        Me.txtdescricao.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtdescricao.Location = New System.Drawing.Point(134, 65)
         Me.txtdescricao.Name = "txtdescricao"
-        Me.txtdescricao.Size = New System.Drawing.Size(269, 20)
+        Me.txtdescricao.Size = New System.Drawing.Size(269, 22)
         Me.txtdescricao.TabIndex = 1
         '
         'txtcodigo
         '
+        Me.txtcodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcodigo.Location = New System.Drawing.Point(134, 31)
         Me.txtcodigo.Name = "txtcodigo"
-        Me.txtcodigo.Size = New System.Drawing.Size(100, 20)
+        Me.txtcodigo.Size = New System.Drawing.Size(100, 22)
         Me.txtcodigo.TabIndex = 0
         Me.txtcodigo.Visible = False
         '
         'Label8
         '
         Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(30, 105)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(63, 13)
+        Me.Label8.Size = New System.Drawing.Size(80, 16)
         Me.Label8.TabIndex = 83
         Me.Label8.Text = "Laboratório:"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(30, 72)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(58, 13)
+        Me.Label7.Size = New System.Drawing.Size(73, 16)
         Me.Label7.TabIndex = 82
         Me.Label7.Text = "Descrição:"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(30, 38)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(43, 13)
+        Me.Label6.Size = New System.Drawing.Size(55, 16)
         Me.Label6.TabIndex = 81
         Me.Label6.Text = "Código:"
         '
         'ComboLaboratorio
         '
+        Me.ComboLaboratorio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboLaboratorio.FormattingEnabled = True
         Me.ComboLaboratorio.Location = New System.Drawing.Point(134, 97)
         Me.ComboLaboratorio.Name = "ComboLaboratorio"
-        Me.ComboLaboratorio.Size = New System.Drawing.Size(269, 21)
+        Me.ComboLaboratorio.Size = New System.Drawing.Size(384, 24)
         Me.ComboLaboratorio.TabIndex = 2
         '
         'btexcluir
@@ -147,6 +153,7 @@ Partial Class FormExame
         '
         'btbusca
         '
+        Me.btbusca.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btbusca.Location = New System.Drawing.Point(361, 12)
         Me.btbusca.Name = "btbusca"
         Me.btbusca.Size = New System.Drawing.Size(95, 23)
@@ -162,7 +169,7 @@ Partial Class FormExame
         Me.GroupBox10.Controls.Add(Me.Label10)
         Me.GroupBox10.Controls.Add(Me.txtbusca)
         Me.GroupBox10.Controls.Add(Me.btbusca)
-        Me.GroupBox10.Location = New System.Drawing.Point(74, 226)
+        Me.GroupBox10.Location = New System.Drawing.Point(74, 218)
         Me.GroupBox10.Name = "GroupBox10"
         Me.GroupBox10.Size = New System.Drawing.Size(467, 40)
         Me.GroupBox10.TabIndex = 84
@@ -171,19 +178,21 @@ Partial Class FormExame
         'Label10
         '
         Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(57, 17)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(90, 13)
+        Me.Label10.Size = New System.Drawing.Size(113, 16)
         Me.Label10.TabIndex = 5
         Me.Label10.Text = "Busca Por Nome:"
         '
         'txtbusca
         '
         Me.txtbusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtbusca.Location = New System.Drawing.Point(214, 12)
+        Me.txtbusca.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtbusca.Location = New System.Drawing.Point(176, 13)
         Me.txtbusca.MaxLength = 7
         Me.txtbusca.Name = "txtbusca"
-        Me.txtbusca.Size = New System.Drawing.Size(125, 20)
+        Me.txtbusca.Size = New System.Drawing.Size(168, 22)
         Me.txtbusca.TabIndex = 3
         '
         'FormExame
@@ -204,6 +213,7 @@ Partial Class FormExame
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
+        Me.DoubleBuffered = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormExame"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

@@ -45,18 +45,20 @@ Partial Class FormContasApagar
         '
         'txtcodAux
         '
-        Me.txtcodAux.Location = New System.Drawing.Point(133, 26)
+        Me.txtcodAux.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcodAux.Location = New System.Drawing.Point(125, 26)
         Me.txtcodAux.Name = "txtcodAux"
-        Me.txtcodAux.Size = New System.Drawing.Size(97, 20)
+        Me.txtcodAux.Size = New System.Drawing.Size(97, 22)
         Me.txtcodAux.TabIndex = 0
         Me.txtcodAux.Visible = False
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(29, 33)
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(21, 33)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(43, 13)
+        Me.Label9.Size = New System.Drawing.Size(55, 16)
         Me.Label9.TabIndex = 56
         Me.Label9.Text = "Código:"
         '
@@ -67,45 +69,49 @@ Partial Class FormContasApagar
         Me.DataGridView1.AllowUserToResizeRows = False
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(23, 309)
+        Me.DataGridView1.Location = New System.Drawing.Point(15, 264)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(590, 150)
+        Me.DataGridView1.Size = New System.Drawing.Size(590, 195)
         Me.DataGridView1.TabIndex = 7
         '
         'txtvalor
         '
-        Me.txtvalor.Location = New System.Drawing.Point(133, 117)
+        Me.txtvalor.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtvalor.Location = New System.Drawing.Point(125, 117)
         Me.txtvalor.Name = "txtvalor"
-        Me.txtvalor.Size = New System.Drawing.Size(128, 20)
+        Me.txtvalor.Size = New System.Drawing.Size(128, 22)
         Me.txtvalor.TabIndex = 3
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(29, 124)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(21, 124)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(34, 13)
+        Me.Label3.Size = New System.Drawing.Size(43, 16)
         Me.Label3.TabIndex = 48
         Me.Label3.Text = "Valor:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(29, 94)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(21, 94)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(33, 13)
+        Me.Label2.Size = New System.Drawing.Size(40, 16)
         Me.Label2.TabIndex = 47
         Me.Label2.Text = "Data:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(29, 63)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(21, 63)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.Size = New System.Drawing.Size(49, 16)
         Me.Label1.TabIndex = 46
         Me.Label1.Text = "Cliente"
         '
@@ -114,7 +120,7 @@ Partial Class FormContasApagar
         Me.btexcluir.BackgroundImage = CType(resources.GetObject("btexcluir.BackgroundImage"), System.Drawing.Image)
         Me.btexcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btexcluir.Image = Global.SisVet.My.Resources.Resources.Button_Delete_icon32
-        Me.btexcluir.Location = New System.Drawing.Point(272, 164)
+        Me.btexcluir.Location = New System.Drawing.Point(405, 117)
         Me.btexcluir.Name = "btexcluir"
         Me.btexcluir.Size = New System.Drawing.Size(75, 66)
         Me.btexcluir.TabIndex = 5
@@ -127,7 +133,7 @@ Partial Class FormContasApagar
         Me.btsalvar.BackgroundImage = CType(resources.GetObject("btsalvar.BackgroundImage"), System.Drawing.Image)
         Me.btsalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btsalvar.Image = Global.SisVet.My.Resources.Resources.informatica_3632_disquete13
-        Me.btsalvar.Location = New System.Drawing.Point(152, 164)
+        Me.btsalvar.Location = New System.Drawing.Point(285, 117)
         Me.btsalvar.Name = "btsalvar"
         Me.btsalvar.Size = New System.Drawing.Size(75, 66)
         Me.btsalvar.TabIndex = 4
@@ -140,7 +146,7 @@ Partial Class FormContasApagar
         Me.btnovo.BackgroundImage = CType(resources.GetObject("btnovo.BackgroundImage"), System.Drawing.Image)
         Me.btnovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnovo.Image = Global.SisVet.My.Resources.Resources.Button_Add_icon32
-        Me.btnovo.Location = New System.Drawing.Point(397, 164)
+        Me.btnovo.Location = New System.Drawing.Point(530, 117)
         Me.btnovo.Name = "btnovo"
         Me.btnovo.Size = New System.Drawing.Size(75, 66)
         Me.btnovo.TabIndex = 6
@@ -150,10 +156,11 @@ Partial Class FormContasApagar
         '
         'combocliente
         '
+        Me.combocliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.combocliente.FormattingEnabled = True
-        Me.combocliente.Location = New System.Drawing.Point(133, 55)
+        Me.combocliente.Location = New System.Drawing.Point(125, 55)
         Me.combocliente.Name = "combocliente"
-        Me.combocliente.Size = New System.Drawing.Size(290, 21)
+        Me.combocliente.Size = New System.Drawing.Size(290, 24)
         Me.combocliente.TabIndex = 57
         '
         'GroupBox10
@@ -164,7 +171,7 @@ Partial Class FormContasApagar
         Me.GroupBox10.Controls.Add(Me.Label10)
         Me.GroupBox10.Controls.Add(Me.txtbusca)
         Me.GroupBox10.Controls.Add(Me.btbusca)
-        Me.GroupBox10.Location = New System.Drawing.Point(67, 263)
+        Me.GroupBox10.Location = New System.Drawing.Point(74, 203)
         Me.GroupBox10.Name = "GroupBox10"
         Me.GroupBox10.Size = New System.Drawing.Size(467, 40)
         Me.GroupBox10.TabIndex = 59
@@ -173,25 +180,28 @@ Partial Class FormContasApagar
         'Label10
         '
         Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(40, 19)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(90, 13)
+        Me.Label10.Size = New System.Drawing.Size(113, 16)
         Me.Label10.TabIndex = 5
         Me.Label10.Text = "Busca Por Nome:"
         '
         'txtbusca
         '
         Me.txtbusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtbusca.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbusca.Location = New System.Drawing.Point(214, 12)
         Me.txtbusca.MaxLength = 20
         Me.txtbusca.Name = "txtbusca"
-        Me.txtbusca.Size = New System.Drawing.Size(125, 20)
+        Me.txtbusca.Size = New System.Drawing.Size(125, 22)
         Me.txtbusca.TabIndex = 3
         '
         'btbusca
         '
         Me.btbusca.BackgroundImage = CType(resources.GetObject("btbusca.BackgroundImage"), System.Drawing.Image)
         Me.btbusca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btbusca.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btbusca.Location = New System.Drawing.Point(361, 12)
         Me.btbusca.Name = "btbusca"
         Me.btbusca.Size = New System.Drawing.Size(95, 23)
@@ -201,9 +211,10 @@ Partial Class FormContasApagar
         '
         'txtdata
         '
-        Me.txtdata.Location = New System.Drawing.Point(133, 87)
+        Me.txtdata.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtdata.Location = New System.Drawing.Point(125, 87)
         Me.txtdata.Name = "txtdata"
-        Me.txtdata.Size = New System.Drawing.Size(100, 20)
+        Me.txtdata.Size = New System.Drawing.Size(100, 22)
         Me.txtdata.TabIndex = 60
         '
         'FormContasApagar
@@ -212,7 +223,7 @@ Partial Class FormContasApagar
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(625, 477)
+        Me.ClientSize = New System.Drawing.Size(620, 477)
         Me.Controls.Add(Me.txtdata)
         Me.Controls.Add(Me.GroupBox10)
         Me.Controls.Add(Me.combocliente)
@@ -226,6 +237,7 @@ Partial Class FormContasApagar
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.DoubleBuffered = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormContasApagar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
