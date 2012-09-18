@@ -22,7 +22,8 @@ Partial Class FormCliente
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormCliente))
         Me.txtcodcli = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -42,7 +43,6 @@ Partial Class FormCliente
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.btnovo = New System.Windows.Forms.Button()
-        Me.btpaciente = New System.Windows.Forms.Button()
         Me.btbusca = New System.Windows.Forms.Button()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -79,14 +79,14 @@ Partial Class FormCliente
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AllowUserToResizeRows = False
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(35, 301)
         Me.DataGridView1.MultiSelect = False
@@ -205,6 +205,8 @@ Partial Class FormCliente
         '
         'Button1
         '
+        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button1.Image = Global.SisVet.My.Resources.Resources.Button_Delete_icon32
         Me.Button1.Location = New System.Drawing.Point(180, 220)
         Me.Button1.Name = "Button1"
@@ -216,6 +218,8 @@ Partial Class FormCliente
         '
         'Button2
         '
+        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button2.Image = Global.SisVet.My.Resources.Resources.informatica_3632_disquete13
         Me.Button2.Location = New System.Drawing.Point(60, 220)
         Me.Button2.Name = "Button2"
@@ -227,6 +231,8 @@ Partial Class FormCliente
         '
         'btnovo
         '
+        Me.btnovo.BackgroundImage = CType(resources.GetObject("btnovo.BackgroundImage"), System.Drawing.Image)
+        Me.btnovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnovo.Image = Global.SisVet.My.Resources.Resources.Button_Add_icon32
         Me.btnovo.Location = New System.Drawing.Point(305, 220)
         Me.btnovo.Name = "btnovo"
@@ -236,19 +242,10 @@ Partial Class FormCliente
         Me.btnovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnovo.UseVisualStyleBackColor = True
         '
-        'btpaciente
-        '
-        Me.btpaciente.Image = Global.SisVet.My.Resources.Resources.cattle
-        Me.btpaciente.Location = New System.Drawing.Point(916, 23)
-        Me.btpaciente.Name = "btpaciente"
-        Me.btpaciente.Size = New System.Drawing.Size(75, 77)
-        Me.btpaciente.TabIndex = 13
-        Me.btpaciente.Text = "Paciente"
-        Me.btpaciente.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btpaciente.UseVisualStyleBackColor = True
-        '
         'btbusca
         '
+        Me.btbusca.BackgroundImage = CType(resources.GetObject("btbusca.BackgroundImage"), System.Drawing.Image)
+        Me.btbusca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btbusca.Location = New System.Drawing.Point(361, 12)
         Me.btbusca.Name = "btbusca"
         Me.btbusca.Size = New System.Drawing.Size(95, 23)
@@ -259,6 +256,8 @@ Partial Class FormCliente
         'GroupBox10
         '
         Me.GroupBox10.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox10.BackgroundImage = CType(resources.GetObject("GroupBox10.BackgroundImage"), System.Drawing.Image)
+        Me.GroupBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox10.Controls.Add(Me.Label10)
         Me.GroupBox10.Controls.Add(Me.txtbusca)
         Me.GroupBox10.Controls.Add(Me.btbusca)
@@ -329,6 +328,8 @@ Partial Class FormCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1018, 542)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label11)
@@ -341,7 +342,6 @@ Partial Class FormCliente
         Me.Controls.Add(Me.btnovo)
         Me.Controls.Add(Me.txtcodcli)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.btpaciente)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.txtmunicipio)
         Me.Controls.Add(Me.txtorgaoExpeditor)
@@ -356,7 +356,10 @@ Partial Class FormCliente
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.DoubleBuffered = True
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormCliente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SisVet - Cadastro de Clientes:"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox10.ResumeLayout(False)
@@ -370,7 +373,6 @@ Partial Class FormCliente
     Friend WithEvents btnovo As System.Windows.Forms.Button
     Friend WithEvents txtcodcli As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents btpaciente As System.Windows.Forms.Button
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents txtmunicipio As System.Windows.Forms.TextBox
     Friend WithEvents txtorgaoExpeditor As System.Windows.Forms.TextBox

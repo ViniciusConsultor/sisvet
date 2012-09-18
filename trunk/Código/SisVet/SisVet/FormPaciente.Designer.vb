@@ -22,6 +22,7 @@ Partial Class FormPaciente
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPaciente))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.txtpelagem = New System.Windows.Forms.TextBox()
         Me.txtrghv = New System.Windows.Forms.TextBox()
@@ -182,6 +183,8 @@ Partial Class FormPaciente
         '
         'btexcluir
         '
+        Me.btexcluir.BackgroundImage = CType(resources.GetObject("btexcluir.BackgroundImage"), System.Drawing.Image)
+        Me.btexcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btexcluir.Image = Global.SisVet.My.Resources.Resources.Button_Delete_icon32
         Me.btexcluir.Location = New System.Drawing.Point(432, 197)
         Me.btexcluir.Name = "btexcluir"
@@ -193,6 +196,8 @@ Partial Class FormPaciente
         '
         'btsalvar
         '
+        Me.btsalvar.BackgroundImage = CType(resources.GetObject("btsalvar.BackgroundImage"), System.Drawing.Image)
+        Me.btsalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btsalvar.Image = Global.SisVet.My.Resources.Resources.informatica_3632_disquete13
         Me.btsalvar.Location = New System.Drawing.Point(312, 197)
         Me.btsalvar.Name = "btsalvar"
@@ -204,6 +209,8 @@ Partial Class FormPaciente
         '
         'btnovo
         '
+        Me.btnovo.BackgroundImage = CType(resources.GetObject("btnovo.BackgroundImage"), System.Drawing.Image)
+        Me.btnovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnovo.Image = Global.SisVet.My.Resources.Resources.Button_Add_icon32
         Me.btnovo.Location = New System.Drawing.Point(557, 197)
         Me.btnovo.Name = "btnovo"
@@ -298,6 +305,8 @@ Partial Class FormPaciente
         '
         'btbusca
         '
+        Me.btbusca.BackgroundImage = CType(resources.GetObject("btbusca.BackgroundImage"), System.Drawing.Image)
+        Me.btbusca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btbusca.Location = New System.Drawing.Point(361, 12)
         Me.btbusca.Name = "btbusca"
         Me.btbusca.Size = New System.Drawing.Size(95, 23)
@@ -308,6 +317,8 @@ Partial Class FormPaciente
         'GroupBox10
         '
         Me.GroupBox10.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox10.BackgroundImage = CType(resources.GetObject("GroupBox10.BackgroundImage"), System.Drawing.Image)
+        Me.GroupBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox10.Controls.Add(Me.Label7)
         Me.GroupBox10.Controls.Add(Me.txtbusca)
         Me.GroupBox10.Controls.Add(Me.btbusca)
@@ -346,6 +357,8 @@ Partial Class FormPaciente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(983, 571)
         Me.Controls.Add(Me.masckDatanascimento)
         Me.Controls.Add(Me.GroupBox10)
@@ -370,7 +383,9 @@ Partial Class FormPaciente
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormPaciente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SisVet - Cadastro de Pacientes"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)

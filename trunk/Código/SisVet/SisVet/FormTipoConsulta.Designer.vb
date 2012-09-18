@@ -22,6 +22,7 @@ Partial Class FormTipoConsulta
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormTipoConsulta))
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtbusca = New System.Windows.Forms.TextBox()
@@ -43,6 +44,8 @@ Partial Class FormTipoConsulta
         'GroupBox10
         '
         Me.GroupBox10.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox10.BackgroundImage = CType(resources.GetObject("GroupBox10.BackgroundImage"), System.Drawing.Image)
+        Me.GroupBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox10.Controls.Add(Me.Label10)
         Me.GroupBox10.Controls.Add(Me.txtbusca)
         Me.GroupBox10.Controls.Add(Me.btbusca)
@@ -72,6 +75,8 @@ Partial Class FormTipoConsulta
         '
         'btbusca
         '
+        Me.btbusca.BackgroundImage = CType(resources.GetObject("btbusca.BackgroundImage"), System.Drawing.Image)
+        Me.btbusca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btbusca.Location = New System.Drawing.Point(361, 12)
         Me.btbusca.Name = "btbusca"
         Me.btbusca.Size = New System.Drawing.Size(95, 23)
@@ -81,6 +86,8 @@ Partial Class FormTipoConsulta
         '
         'btexcluir
         '
+        Me.btexcluir.BackgroundImage = CType(resources.GetObject("btexcluir.BackgroundImage"), System.Drawing.Image)
+        Me.btexcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btexcluir.Image = Global.SisVet.My.Resources.Resources.Button_Delete_icon32
         Me.btexcluir.Location = New System.Drawing.Point(282, 155)
         Me.btexcluir.Name = "btexcluir"
@@ -92,6 +99,8 @@ Partial Class FormTipoConsulta
         '
         'btsalvar
         '
+        Me.btsalvar.BackgroundImage = CType(resources.GetObject("btsalvar.BackgroundImage"), System.Drawing.Image)
+        Me.btsalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btsalvar.Image = Global.SisVet.My.Resources.Resources.informatica_3632_disquete13
         Me.btsalvar.Location = New System.Drawing.Point(162, 155)
         Me.btsalvar.Name = "btsalvar"
@@ -103,6 +112,8 @@ Partial Class FormTipoConsulta
         '
         'btnovo
         '
+        Me.btnovo.BackgroundImage = CType(resources.GetObject("btnovo.BackgroundImage"), System.Drawing.Image)
+        Me.btnovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnovo.Image = Global.SisVet.My.Resources.Resources.Button_Add_icon32
         Me.btnovo.Location = New System.Drawing.Point(407, 155)
         Me.btnovo.Name = "btnovo"
@@ -180,6 +191,8 @@ Partial Class FormTipoConsulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(654, 440)
         Me.Controls.Add(Me.txtvalor)
         Me.Controls.Add(Me.Label1)
@@ -192,7 +205,9 @@ Partial Class FormTipoConsulta
         Me.Controls.Add(Me.txtcodigo)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormTipoConsulta"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormTipoConsulta"
         Me.GroupBox10.ResumeLayout(False)
         Me.GroupBox10.PerformLayout()
