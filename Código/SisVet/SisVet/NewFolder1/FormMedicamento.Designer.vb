@@ -50,7 +50,7 @@ Partial Class FormMedicamento
         Me.btexcluir.BackgroundImage = CType(resources.GetObject("btexcluir.BackgroundImage"), System.Drawing.Image)
         Me.btexcluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btexcluir.Image = Global.SisVet.My.Resources.Resources.Button_Delete_icon32
-        Me.btexcluir.Location = New System.Drawing.Point(402, 127)
+        Me.btexcluir.Location = New System.Drawing.Point(274, 151)
         Me.btexcluir.Name = "btexcluir"
         Me.btexcluir.Size = New System.Drawing.Size(75, 66)
         Me.btexcluir.TabIndex = 6
@@ -63,7 +63,7 @@ Partial Class FormMedicamento
         Me.btsalvar.BackgroundImage = CType(resources.GetObject("btsalvar.BackgroundImage"), System.Drawing.Image)
         Me.btsalvar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btsalvar.Image = Global.SisVet.My.Resources.Resources.informatica_3632_disquete13
-        Me.btsalvar.Location = New System.Drawing.Point(282, 127)
+        Me.btsalvar.Location = New System.Drawing.Point(154, 151)
         Me.btsalvar.Name = "btsalvar"
         Me.btsalvar.Size = New System.Drawing.Size(75, 66)
         Me.btsalvar.TabIndex = 5
@@ -76,7 +76,7 @@ Partial Class FormMedicamento
         Me.btnovo.BackgroundImage = CType(resources.GetObject("btnovo.BackgroundImage"), System.Drawing.Image)
         Me.btnovo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnovo.Image = Global.SisVet.My.Resources.Resources.Button_Add_icon32
-        Me.btnovo.Location = New System.Drawing.Point(527, 127)
+        Me.btnovo.Location = New System.Drawing.Point(399, 151)
         Me.btnovo.Name = "btnovo"
         Me.btnovo.Size = New System.Drawing.Size(75, 66)
         Me.btnovo.TabIndex = 7
@@ -101,89 +101,100 @@ Partial Class FormMedicamento
         '
         'txtestoque
         '
-        Me.txtestoque.Location = New System.Drawing.Point(148, 99)
+        Me.txtestoque.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtestoque.Location = New System.Drawing.Point(114, 74)
         Me.txtestoque.Name = "txtestoque"
-        Me.txtestoque.Size = New System.Drawing.Size(100, 20)
+        Me.txtestoque.Size = New System.Drawing.Size(100, 22)
         Me.txtestoque.TabIndex = 2
         '
         'txtnome
         '
-        Me.txtnome.Location = New System.Drawing.Point(148, 66)
+        Me.txtnome.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtnome.Location = New System.Drawing.Point(290, 36)
         Me.txtnome.Name = "txtnome"
-        Me.txtnome.Size = New System.Drawing.Size(269, 20)
+        Me.txtnome.Size = New System.Drawing.Size(269, 22)
         Me.txtnome.TabIndex = 1
         '
         'txtcodigo
         '
-        Me.txtcodigo.Location = New System.Drawing.Point(148, 32)
+        Me.txtcodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcodigo.Location = New System.Drawing.Point(93, 36)
         Me.txtcodigo.Name = "txtcodigo"
-        Me.txtcodigo.Size = New System.Drawing.Size(100, 20)
+        Me.txtcodigo.Size = New System.Drawing.Size(100, 22)
         Me.txtcodigo.TabIndex = 0
         Me.txtcodigo.Visible = False
         '
         'tt
         '
         Me.tt.AutoSize = True
-        Me.tt.Location = New System.Drawing.Point(30, 106)
+        Me.tt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tt.Location = New System.Drawing.Point(30, 78)
         Me.tt.Name = "tt"
-        Me.tt.Size = New System.Drawing.Size(49, 13)
+        Me.tt.Size = New System.Drawing.Size(61, 16)
         Me.tt.TabIndex = 105
         Me.tt.Text = "Estoque:"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(30, 73)
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(224, 39)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(38, 13)
+        Me.Label7.Size = New System.Drawing.Size(48, 16)
         Me.Label7.TabIndex = 104
         Me.Label7.Text = "Nome:"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(30, 39)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(43, 13)
+        Me.Label6.Size = New System.Drawing.Size(55, 16)
         Me.Label6.TabIndex = 103
         Me.Label6.Text = "Código:"
         '
         'txtvalor
         '
-        Me.txtvalor.Location = New System.Drawing.Point(148, 135)
+        Me.txtvalor.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtvalor.Location = New System.Drawing.Point(334, 72)
         Me.txtvalor.Name = "txtvalor"
-        Me.txtvalor.Size = New System.Drawing.Size(100, 20)
+        Me.txtvalor.Size = New System.Drawing.Size(100, 22)
         Me.txtvalor.TabIndex = 3
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(30, 142)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(268, 78)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(34, 13)
+        Me.Label2.Size = New System.Drawing.Size(43, 16)
         Me.Label2.TabIndex = 115
         Me.Label2.Text = "Valor:"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(30, 176)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(30, 115)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(113, 13)
+        Me.Label3.Size = New System.Drawing.Size(143, 16)
         Me.Label3.TabIndex = 118
         Me.Label3.Text = "Tipo do Medicamento:"
         '
         'txttipo
         '
-        Me.txttipo.Location = New System.Drawing.Point(148, 169)
+        Me.txttipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txttipo.Location = New System.Drawing.Point(189, 111)
         Me.txttipo.Name = "txttipo"
-        Me.txttipo.Size = New System.Drawing.Size(100, 20)
+        Me.txttipo.Size = New System.Drawing.Size(311, 22)
         Me.txttipo.TabIndex = 4
         '
         'btbusca
         '
         Me.btbusca.BackgroundImage = CType(resources.GetObject("btbusca.BackgroundImage"), System.Drawing.Image)
         Me.btbusca.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btbusca.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btbusca.Location = New System.Drawing.Point(361, 12)
         Me.btbusca.Name = "btbusca"
         Me.btbusca.Size = New System.Drawing.Size(95, 23)
@@ -208,19 +219,21 @@ Partial Class FormMedicamento
         'Label10
         '
         Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(69, 17)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(90, 13)
+        Me.Label10.Size = New System.Drawing.Size(113, 16)
         Me.Label10.TabIndex = 5
         Me.Label10.Text = "Busca Por Nome:"
         '
         'txtbusca
         '
         Me.txtbusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtbusca.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbusca.Location = New System.Drawing.Point(214, 12)
         Me.txtbusca.MaxLength = 7
         Me.txtbusca.Name = "txtbusca"
-        Me.txtbusca.Size = New System.Drawing.Size(125, 20)
+        Me.txtbusca.Size = New System.Drawing.Size(125, 22)
         Me.txtbusca.TabIndex = 3
         '
         'FormMedicamento
@@ -245,6 +258,7 @@ Partial Class FormMedicamento
         Me.Controls.Add(Me.tt)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
+        Me.DoubleBuffered = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormMedicamento"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
