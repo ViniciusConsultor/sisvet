@@ -117,6 +117,7 @@ Partial Class FormPaciente
         'Label6
         '
         Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(604, 82)
         Me.Label6.Name = "Label6"
@@ -127,6 +128,7 @@ Partial Class FormPaciente
         'Label5
         '
         Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(254, 33)
         Me.Label5.Name = "Label5"
@@ -137,6 +139,7 @@ Partial Class FormPaciente
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(325, 82)
         Me.Label4.Name = "Label4"
@@ -147,6 +150,7 @@ Partial Class FormPaciente
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(53, 124)
         Me.Label3.Name = "Label3"
@@ -157,6 +161,7 @@ Partial Class FormPaciente
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(53, 82)
         Me.Label2.Name = "Label2"
@@ -167,6 +172,7 @@ Partial Class FormPaciente
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(498, 33)
         Me.Label1.Name = "Label1"
@@ -187,6 +193,7 @@ Partial Class FormPaciente
         'Label9
         '
         Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(53, 33)
         Me.Label9.Name = "Label9"
@@ -245,6 +252,7 @@ Partial Class FormPaciente
         'Label10
         '
         Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(50, 209)
         Me.Label10.Name = "Label10"
@@ -254,7 +262,7 @@ Partial Class FormPaciente
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackgroundImage = CType(resources.GetObject("GroupBox1.BackgroundImage"), System.Drawing.Image)
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox1.Controls.Add(Me.RadioNao)
         Me.GroupBox1.Controls.Add(Me.RadioSim)
@@ -269,28 +277,30 @@ Partial Class FormPaciente
         'RadioNao
         '
         Me.RadioNao.AutoSize = True
+        Me.RadioNao.BackColor = System.Drawing.Color.Transparent
         Me.RadioNao.Location = New System.Drawing.Point(103, 19)
         Me.RadioNao.Name = "RadioNao"
         Me.RadioNao.Size = New System.Drawing.Size(52, 20)
         Me.RadioNao.TabIndex = 1
         Me.RadioNao.TabStop = True
         Me.RadioNao.Text = "Não"
-        Me.RadioNao.UseVisualStyleBackColor = True
+        Me.RadioNao.UseVisualStyleBackColor = False
         '
         'RadioSim
         '
         Me.RadioSim.AutoSize = True
+        Me.RadioSim.BackColor = System.Drawing.Color.Transparent
         Me.RadioSim.Location = New System.Drawing.Point(7, 22)
         Me.RadioSim.Name = "RadioSim"
         Me.RadioSim.Size = New System.Drawing.Size(49, 20)
         Me.RadioSim.TabIndex = 0
         Me.RadioSim.TabStop = True
         Me.RadioSim.Text = "Sim"
-        Me.RadioSim.UseVisualStyleBackColor = True
+        Me.RadioSim.UseVisualStyleBackColor = False
         '
         'GroupBox2
         '
-        Me.GroupBox2.BackgroundImage = CType(resources.GetObject("GroupBox2.BackgroundImage"), System.Drawing.Image)
+        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox2.Controls.Add(Me.RadioFeminino)
         Me.GroupBox2.Controls.Add(Me.Radiomasculino)
@@ -305,24 +315,26 @@ Partial Class FormPaciente
         'RadioFeminino
         '
         Me.RadioFeminino.AutoSize = True
+        Me.RadioFeminino.BackColor = System.Drawing.Color.Transparent
         Me.RadioFeminino.Location = New System.Drawing.Point(102, 19)
         Me.RadioFeminino.Name = "RadioFeminino"
         Me.RadioFeminino.Size = New System.Drawing.Size(81, 20)
         Me.RadioFeminino.TabIndex = 1
         Me.RadioFeminino.TabStop = True
         Me.RadioFeminino.Text = "Feminino"
-        Me.RadioFeminino.UseVisualStyleBackColor = True
+        Me.RadioFeminino.UseVisualStyleBackColor = False
         '
         'Radiomasculino
         '
         Me.Radiomasculino.AutoSize = True
+        Me.Radiomasculino.BackColor = System.Drawing.Color.Transparent
         Me.Radiomasculino.Location = New System.Drawing.Point(6, 19)
         Me.Radiomasculino.Name = "Radiomasculino"
         Me.Radiomasculino.Size = New System.Drawing.Size(87, 20)
         Me.Radiomasculino.TabIndex = 0
         Me.Radiomasculino.TabStop = True
         Me.Radiomasculino.Text = "Masculino"
-        Me.Radiomasculino.UseVisualStyleBackColor = True
+        Me.Radiomasculino.UseVisualStyleBackColor = False
         '
         'btbusca
         '
@@ -338,8 +350,7 @@ Partial Class FormPaciente
         '
         'GroupBox10
         '
-        Me.GroupBox10.BackColor = System.Drawing.SystemColors.Control
-        Me.GroupBox10.BackgroundImage = CType(resources.GetObject("GroupBox10.BackgroundImage"), System.Drawing.Image)
+        Me.GroupBox10.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox10.Controls.Add(Me.Label7)
         Me.GroupBox10.Controls.Add(Me.txtbusca)
@@ -353,6 +364,7 @@ Partial Class FormPaciente
         'Label7
         '
         Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(41, 17)
         Me.Label7.Name = "Label7"
