@@ -76,6 +76,7 @@ Partial Class FormCirurgia
         'Label7
         '
         Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(217, 40)
         Me.Label7.Name = "Label7"
@@ -86,6 +87,7 @@ Partial Class FormCirurgia
         'Label6
         '
         Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(30, 39)
         Me.Label6.Name = "Label6"
@@ -96,6 +98,7 @@ Partial Class FormCirurgia
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(29, 79)
         Me.Label1.Name = "Label1"
@@ -165,8 +168,7 @@ Partial Class FormCirurgia
         '
         'GroupBox10
         '
-        Me.GroupBox10.BackColor = System.Drawing.SystemColors.Control
-        Me.GroupBox10.BackgroundImage = CType(resources.GetObject("GroupBox10.BackgroundImage"), System.Drawing.Image)
+        Me.GroupBox10.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox10.Controls.Add(Me.Label10)
         Me.GroupBox10.Controls.Add(Me.txtbusca)
@@ -180,6 +182,7 @@ Partial Class FormCirurgia
         'Label10
         '
         Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(55, 16)
         Me.Label10.Name = "Label10"

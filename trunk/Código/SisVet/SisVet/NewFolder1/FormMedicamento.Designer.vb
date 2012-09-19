@@ -127,6 +127,7 @@ Partial Class FormMedicamento
         'tt
         '
         Me.tt.AutoSize = True
+        Me.tt.BackColor = System.Drawing.Color.Transparent
         Me.tt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tt.Location = New System.Drawing.Point(30, 78)
         Me.tt.Name = "tt"
@@ -137,6 +138,7 @@ Partial Class FormMedicamento
         'Label7
         '
         Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(224, 39)
         Me.Label7.Name = "Label7"
@@ -147,6 +149,7 @@ Partial Class FormMedicamento
         'Label6
         '
         Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(30, 39)
         Me.Label6.Name = "Label6"
@@ -165,6 +168,7 @@ Partial Class FormMedicamento
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(268, 78)
         Me.Label2.Name = "Label2"
@@ -175,6 +179,7 @@ Partial Class FormMedicamento
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(30, 115)
         Me.Label3.Name = "Label3"
@@ -204,8 +209,7 @@ Partial Class FormMedicamento
         '
         'GroupBox10
         '
-        Me.GroupBox10.BackColor = System.Drawing.SystemColors.Control
-        Me.GroupBox10.BackgroundImage = CType(resources.GetObject("GroupBox10.BackgroundImage"), System.Drawing.Image)
+        Me.GroupBox10.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox10.Controls.Add(Me.Label10)
         Me.GroupBox10.Controls.Add(Me.txtbusca)
@@ -219,6 +223,7 @@ Partial Class FormMedicamento
         'Label10
         '
         Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(69, 17)
         Me.Label10.Name = "Label10"
