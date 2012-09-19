@@ -56,6 +56,7 @@ Partial Class FormConsulta
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(247, 27)
         Me.Label2.Name = "Label2"
@@ -66,6 +67,7 @@ Partial Class FormConsulta
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(20, 60)
         Me.Label3.Name = "Label3"
@@ -76,6 +78,7 @@ Partial Class FormConsulta
         'Label4
         '
         Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(403, 60)
         Me.Label4.Name = "Label4"
@@ -86,6 +89,7 @@ Partial Class FormConsulta
         'Label7
         '
         Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(20, 95)
         Me.Label7.Name = "Label7"
@@ -120,6 +124,7 @@ Partial Class FormConsulta
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(20, 27)
         Me.Label1.Name = "Label1"
@@ -230,6 +235,7 @@ Partial Class FormConsulta
         'Label5
         '
         Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(338, 100)
         Me.Label5.Name = "Label5"
@@ -240,6 +246,7 @@ Partial Class FormConsulta
         'Label8
         '
         Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(238, 139)
         Me.Label8.Name = "Label8"
@@ -261,8 +268,7 @@ Partial Class FormConsulta
         '
         'GroupBox10
         '
-        Me.GroupBox10.BackColor = System.Drawing.SystemColors.Control
-        Me.GroupBox10.BackgroundImage = CType(resources.GetObject("GroupBox10.BackgroundImage"), System.Drawing.Image)
+        Me.GroupBox10.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox10.Controls.Add(Me.Label10)
         Me.GroupBox10.Controls.Add(Me.txtbusca)
@@ -276,6 +282,7 @@ Partial Class FormConsulta
         'Label10
         '
         Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(21, 17)
         Me.Label10.Name = "Label10"
@@ -311,7 +318,7 @@ Partial Class FormConsulta
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackgroundImage = CType(resources.GetObject("GroupBox1.BackgroundImage"), System.Drawing.Image)
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox1.Controls.Add(Me.radioSim)
         Me.GroupBox1.Controls.Add(Me.radioNao)

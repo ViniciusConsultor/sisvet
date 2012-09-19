@@ -55,8 +55,9 @@ Partial Class FormContasApagar
         'Label9
         '
         Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(21, 33)
+        Me.Label9.Location = New System.Drawing.Point(52, 28)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(55, 16)
         Me.Label9.TabIndex = 56
@@ -88,8 +89,9 @@ Partial Class FormContasApagar
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(21, 124)
+        Me.Label3.Location = New System.Drawing.Point(52, 119)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(43, 16)
         Me.Label3.TabIndex = 48
@@ -98,8 +100,9 @@ Partial Class FormContasApagar
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(21, 94)
+        Me.Label2.Location = New System.Drawing.Point(52, 89)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(40, 16)
         Me.Label2.TabIndex = 47
@@ -108,12 +111,13 @@ Partial Class FormContasApagar
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(21, 63)
+        Me.Label1.Location = New System.Drawing.Point(52, 58)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(49, 16)
+        Me.Label1.Size = New System.Drawing.Size(52, 16)
         Me.Label1.TabIndex = 46
-        Me.Label1.Text = "Cliente"
+        Me.Label1.Text = "Cliente:"
         '
         'btexcluir
         '
@@ -165,8 +169,7 @@ Partial Class FormContasApagar
         '
         'GroupBox10
         '
-        Me.GroupBox10.BackColor = System.Drawing.SystemColors.Control
-        Me.GroupBox10.BackgroundImage = CType(resources.GetObject("GroupBox10.BackgroundImage"), System.Drawing.Image)
+        Me.GroupBox10.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox10.Controls.Add(Me.Label10)
         Me.GroupBox10.Controls.Add(Me.txtbusca)
@@ -180,6 +183,7 @@ Partial Class FormContasApagar
         'Label10
         '
         Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(40, 19)
         Me.Label10.Name = "Label10"
