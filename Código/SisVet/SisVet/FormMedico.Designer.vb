@@ -86,7 +86,7 @@ Partial Class FormMedico
         Me.txtcrmv.Location = New System.Drawing.Point(90, 68)
         Me.txtcrmv.Name = "txtcrmv"
         Me.txtcrmv.Size = New System.Drawing.Size(100, 22)
-        Me.txtcrmv.TabIndex = 3
+        Me.txtcrmv.TabIndex = 2
         '
         'txtespecialidade
         '
@@ -94,7 +94,7 @@ Partial Class FormMedico
         Me.txtespecialidade.Location = New System.Drawing.Point(313, 68)
         Me.txtespecialidade.Name = "txtespecialidade"
         Me.txtespecialidade.Size = New System.Drawing.Size(100, 22)
-        Me.txtespecialidade.TabIndex = 2
+        Me.txtespecialidade.TabIndex = 3
         '
         'txtnomeMed
         '
@@ -239,7 +239,7 @@ Partial Class FormMedico
         Me.txttelefone.Location = New System.Drawing.Point(109, 110)
         Me.txttelefone.Name = "txttelefone"
         Me.txttelefone.Size = New System.Drawing.Size(100, 22)
-        Me.txttelefone.TabIndex = 105
+        Me.txttelefone.TabIndex = 4
         '
         'FormMedico
         '

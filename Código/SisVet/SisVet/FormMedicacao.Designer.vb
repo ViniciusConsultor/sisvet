@@ -81,7 +81,7 @@ Partial Class FormMedicacao
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(590, 150)
-        Me.DataGridView1.TabIndex = 10
+        Me.DataGridView1.TabIndex = 9
         '
         'Label7
         '
@@ -150,7 +150,7 @@ Partial Class FormMedicacao
         Me.txtvalor.Location = New System.Drawing.Point(358, 107)
         Me.txtvalor.Name = "txtvalor"
         Me.txtvalor.Size = New System.Drawing.Size(100, 22)
-        Me.txtvalor.TabIndex = 4
+        Me.txtvalor.TabIndex = 3
         '
         'Label3
         '
@@ -202,7 +202,7 @@ Partial Class FormMedicacao
         Me.GroupBox10.Location = New System.Drawing.Point(78, 264)
         Me.GroupBox10.Name = "GroupBox10"
         Me.GroupBox10.Size = New System.Drawing.Size(467, 40)
-        Me.GroupBox10.TabIndex = 9
+        Me.GroupBox10.TabIndex = 8
         Me.GroupBox10.TabStop = False
         '
         'Label10
@@ -241,7 +241,7 @@ Partial Class FormMedicacao
         Me.ComboResponsavel.Location = New System.Drawing.Point(131, 137)
         Me.ComboResponsavel.Name = "ComboResponsavel"
         Me.ComboResponsavel.Size = New System.Drawing.Size(241, 22)
-        Me.ComboResponsavel.TabIndex = 3
+        Me.ComboResponsavel.TabIndex = 4
         '
         'txtcodigo
         '

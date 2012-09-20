@@ -54,7 +54,7 @@ Partial Class FormCirurgia
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(590, 160)
-        Me.DataGridView1.TabIndex = 6
+        Me.DataGridView1.TabIndex = 7
         '
         'txtdescricao
         '
@@ -176,7 +176,7 @@ Partial Class FormCirurgia
         Me.GroupBox10.Location = New System.Drawing.Point(68, 214)
         Me.GroupBox10.Name = "GroupBox10"
         Me.GroupBox10.Size = New System.Drawing.Size(467, 40)
-        Me.GroupBox10.TabIndex = 102
+        Me.GroupBox10.TabIndex = 6
         Me.GroupBox10.TabStop = False
         '
         'Label10

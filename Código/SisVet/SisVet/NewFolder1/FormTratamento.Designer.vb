@@ -95,7 +95,7 @@ Partial Class FormTratamento
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(590, 150)
-        Me.DataGridView1.TabIndex = 7
+        Me.DataGridView1.TabIndex = 8
         '
         'txtdescricao
         '
@@ -198,7 +198,7 @@ Partial Class FormTratamento
         Me.GroupBox10.Location = New System.Drawing.Point(100, 211)
         Me.GroupBox10.Name = "GroupBox10"
         Me.GroupBox10.Size = New System.Drawing.Size(467, 40)
-        Me.GroupBox10.TabIndex = 103
+        Me.GroupBox10.TabIndex = 7
         Me.GroupBox10.TabStop = False
         '
         'Label10
