@@ -72,7 +72,7 @@ Partial Class FormPaciente
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(872, 176)
-        Me.DataGridView1.TabIndex = 13
+        Me.DataGridView1.TabIndex = 14
         '
         'txtpelagem
         '
@@ -80,7 +80,7 @@ Partial Class FormPaciente
         Me.txtpelagem.Location = New System.Drawing.Point(691, 79)
         Me.txtpelagem.Name = "txtpelagem"
         Me.txtpelagem.Size = New System.Drawing.Size(147, 22)
-        Me.txtpelagem.TabIndex = 6
+        Me.txtpelagem.TabIndex = 5
         '
         'txtrghv
         '
@@ -88,7 +88,7 @@ Partial Class FormPaciente
         Me.txtrghv.Location = New System.Drawing.Point(328, 30)
         Me.txtrghv.Name = "txtrghv"
         Me.txtrghv.Size = New System.Drawing.Size(147, 22)
-        Me.txtrghv.TabIndex = 5
+        Me.txtrghv.TabIndex = 1
         '
         'txtraça
         '
@@ -96,7 +96,7 @@ Partial Class FormPaciente
         Me.txtraça.Location = New System.Drawing.Point(392, 79)
         Me.txtraça.Name = "txtraça"
         Me.txtraça.Size = New System.Drawing.Size(181, 22)
-        Me.txtraça.TabIndex = 7
+        Me.txtraça.TabIndex = 4
         '
         'txtespecie
         '
@@ -104,7 +104,7 @@ Partial Class FormPaciente
         Me.txtespecie.Location = New System.Drawing.Point(126, 121)
         Me.txtespecie.Name = "txtespecie"
         Me.txtespecie.Size = New System.Drawing.Size(133, 22)
-        Me.txtespecie.TabIndex = 3
+        Me.txtespecie.TabIndex = 6
         '
         'txtnomepaciente
         '
@@ -112,7 +112,7 @@ Partial Class FormPaciente
         Me.txtnomepaciente.Location = New System.Drawing.Point(638, 28)
         Me.txtnomepaciente.Name = "txtnomepaciente"
         Me.txtnomepaciente.Size = New System.Drawing.Size(246, 22)
-        Me.txtnomepaciente.TabIndex = 1
+        Me.txtnomepaciente.TabIndex = 2
         '
         'Label6
         '
@@ -247,7 +247,7 @@ Partial Class FormPaciente
         Me.ComboBox1.Location = New System.Drawing.Point(167, 203)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(246, 24)
-        Me.ComboBox1.TabIndex = 4
+        Me.ComboBox1.TabIndex = 9
         '
         'Label10
         '
@@ -270,7 +270,7 @@ Partial Class FormPaciente
         Me.GroupBox1.Location = New System.Drawing.Point(587, 115)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(201, 45)
-        Me.GroupBox1.TabIndex = 9
+        Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Castrado?"
         '
@@ -308,7 +308,7 @@ Partial Class FormPaciente
         Me.GroupBox2.Location = New System.Drawing.Point(299, 118)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(200, 42)
-        Me.GroupBox2.TabIndex = 8
+        Me.GroupBox2.TabIndex = 7
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Sexo:"
         '
@@ -358,7 +358,7 @@ Partial Class FormPaciente
         Me.GroupBox10.Location = New System.Drawing.Point(226, 270)
         Me.GroupBox10.Name = "GroupBox10"
         Me.GroupBox10.Size = New System.Drawing.Size(467, 40)
-        Me.GroupBox10.TabIndex = 108
+        Me.GroupBox10.TabIndex = 13
         Me.GroupBox10.TabStop = False
         '
         'Label7
@@ -388,7 +388,7 @@ Partial Class FormPaciente
         Me.masckDatanascimento.Location = New System.Drawing.Point(179, 79)
         Me.masckDatanascimento.Name = "masckDatanascimento"
         Me.masckDatanascimento.Size = New System.Drawing.Size(100, 22)
-        Me.masckDatanascimento.TabIndex = 2
+        Me.masckDatanascimento.TabIndex = 3
         '
         'FormPaciente
         '

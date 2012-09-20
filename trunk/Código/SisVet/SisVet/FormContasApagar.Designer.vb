@@ -76,7 +76,7 @@ Partial Class FormContasApagar
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(590, 195)
-        Me.DataGridView1.TabIndex = 7
+        Me.DataGridView1.TabIndex = 8
         '
         'txtvalor
         '
@@ -165,7 +165,7 @@ Partial Class FormContasApagar
         Me.combocliente.Location = New System.Drawing.Point(125, 55)
         Me.combocliente.Name = "combocliente"
         Me.combocliente.Size = New System.Drawing.Size(290, 24)
-        Me.combocliente.TabIndex = 57
+        Me.combocliente.TabIndex = 1
         '
         'GroupBox10
         '
@@ -177,7 +177,7 @@ Partial Class FormContasApagar
         Me.GroupBox10.Location = New System.Drawing.Point(74, 203)
         Me.GroupBox10.Name = "GroupBox10"
         Me.GroupBox10.Size = New System.Drawing.Size(467, 40)
-        Me.GroupBox10.TabIndex = 59
+        Me.GroupBox10.TabIndex = 7
         Me.GroupBox10.TabStop = False
         '
         'Label10
@@ -219,7 +219,7 @@ Partial Class FormContasApagar
         Me.txtdata.Location = New System.Drawing.Point(125, 87)
         Me.txtdata.Name = "txtdata"
         Me.txtdata.Size = New System.Drawing.Size(100, 22)
-        Me.txtdata.TabIndex = 60
+        Me.txtdata.TabIndex = 2
         '
         'FormContasApagar
         '

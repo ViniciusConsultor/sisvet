@@ -104,7 +104,7 @@ Partial Class FormConsulta
         Me.ComboMedico.Location = New System.Drawing.Point(325, 22)
         Me.ComboMedico.Name = "ComboMedico"
         Me.ComboMedico.Size = New System.Drawing.Size(287, 24)
-        Me.ComboMedico.TabIndex = 5
+        Me.ComboMedico.TabIndex = 1
         '
         'DataGridView1
         '
@@ -119,7 +119,7 @@ Partial Class FormConsulta
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(811, 150)
-        Me.DataGridView1.TabIndex = 13
+        Me.DataGridView1.TabIndex = 12
         '
         'Label1
         '
@@ -149,7 +149,7 @@ Partial Class FormConsulta
         Me.ComboTipoConsulta.Location = New System.Drawing.Point(156, 92)
         Me.ComboTipoConsulta.Name = "ComboTipoConsulta"
         Me.ComboTipoConsulta.Size = New System.Drawing.Size(161, 24)
-        Me.ComboTipoConsulta.TabIndex = 7
+        Me.ComboTipoConsulta.TabIndex = 4
         '
         'radioNao
         '
@@ -183,7 +183,7 @@ Partial Class FormConsulta
         Me.btexcluir.Location = New System.Drawing.Point(139, 256)
         Me.btexcluir.Name = "btexcluir"
         Me.btexcluir.Size = New System.Drawing.Size(75, 66)
-        Me.btexcluir.TabIndex = 10
+        Me.btexcluir.TabIndex = 9
         Me.btexcluir.Text = "Excluir"
         Me.btexcluir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btexcluir.UseVisualStyleBackColor = True
@@ -196,7 +196,7 @@ Partial Class FormConsulta
         Me.btsalvar.Location = New System.Drawing.Point(19, 256)
         Me.btsalvar.Name = "btsalvar"
         Me.btsalvar.Size = New System.Drawing.Size(75, 66)
-        Me.btsalvar.TabIndex = 9
+        Me.btsalvar.TabIndex = 8
         Me.btsalvar.Text = "Salvar"
         Me.btsalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btsalvar.UseVisualStyleBackColor = True
@@ -209,7 +209,7 @@ Partial Class FormConsulta
         Me.btnovo.Location = New System.Drawing.Point(264, 256)
         Me.btnovo.Name = "btnovo"
         Me.btnovo.Size = New System.Drawing.Size(75, 66)
-        Me.btnovo.TabIndex = 11
+        Me.btnovo.TabIndex = 10
         Me.btnovo.Text = "Novo"
         Me.btnovo.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.btnovo.UseVisualStyleBackColor = True
@@ -221,7 +221,7 @@ Partial Class FormConsulta
         Me.comboPaciente.Location = New System.Drawing.Point(431, 92)
         Me.comboPaciente.Name = "comboPaciente"
         Me.comboPaciente.Size = New System.Drawing.Size(220, 24)
-        Me.comboPaciente.TabIndex = 4
+        Me.comboPaciente.TabIndex = 5
         '
         'txtprontuario
         '
@@ -230,7 +230,7 @@ Partial Class FormConsulta
         Me.txtprontuario.Multiline = True
         Me.txtprontuario.Name = "txtprontuario"
         Me.txtprontuario.Size = New System.Drawing.Size(514, 111)
-        Me.txtprontuario.TabIndex = 8
+        Me.txtprontuario.TabIndex = 7
         '
         'Label5
         '
@@ -276,7 +276,7 @@ Partial Class FormConsulta
         Me.GroupBox10.Location = New System.Drawing.Point(364, 282)
         Me.GroupBox10.Name = "GroupBox10"
         Me.GroupBox10.Size = New System.Drawing.Size(467, 40)
-        Me.GroupBox10.TabIndex = 12
+        Me.GroupBox10.TabIndex = 11
         Me.GroupBox10.TabStop = False
         '
         'Label10
@@ -306,7 +306,7 @@ Partial Class FormConsulta
         Me.txthora.Location = New System.Drawing.Point(521, 57)
         Me.txthora.Name = "txthora"
         Me.txthora.Size = New System.Drawing.Size(91, 22)
-        Me.txthora.TabIndex = 111
+        Me.txthora.TabIndex = 3
         '
         'txtdata
         '
@@ -314,7 +314,7 @@ Partial Class FormConsulta
         Me.txtdata.Location = New System.Drawing.Point(121, 57)
         Me.txtdata.Name = "txtdata"
         Me.txtdata.Size = New System.Drawing.Size(100, 22)
-        Me.txtdata.TabIndex = 112
+        Me.txtdata.TabIndex = 2
         '
         'GroupBox1
         '
@@ -326,7 +326,7 @@ Partial Class FormConsulta
         Me.GroupBox1.Location = New System.Drawing.Point(23, 157)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(153, 79)
-        Me.GroupBox1.TabIndex = 113
+        Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Agendado"
         '
