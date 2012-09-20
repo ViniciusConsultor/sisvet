@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{39BC41B8-B096-477C-B0B0-87750AD7FF24}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SisVet.My.MyApplication</StartupObject>
+    <RootNamespace>SisVet</RootNamespace>
+    <AssemblyName>SisVet</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SisVet.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SisVet.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClassBanco.vb" />
+    <Compile Include="FormContasApagar.Designer.vb">
+      <DependentUpon>FormContasApagar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormContasApagar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMedicacao.Designer.vb">
+      <DependentUpon>FormMedicacao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormMedicacao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewFolder1\FormCirurgia.Designer.vb">
+      <DependentUpon>FormCirurgia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\FormCirurgia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.Designer.vb">
+      <DependentUpon>FormPrincipal.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsulta.Designer.vb">
+      <DependentUpon>FormConsulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormConsulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCliente.Designer.vb">
+      <DependentUpon>FormCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewFolder1\FormExame.Designer.vb">
+      <DependentUpon>FormExame.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\FormExame.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewFolder1\FormLaboratorio.Designer.vb">
+      <DependentUpon>FormLaboratorio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\FormLaboratorio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMedico.Designer.vb">
+      <DependentUpon>FormMedico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormMedico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPaciente.Designer.vb">
+      <DependentUpon>FormPaciente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPaciente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewFolder1\FormMedicamento.Designer.vb">
+      <DependentUpon>FormMedicamento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\FormMedicamento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewFolder1\FormTratamento.Designer.vb">
+      <DependentUpon>FormTratamento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewFolder1\FormTratamento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FormTipoConsulta.Designer.vb">
+      <DependentUpon>FormTipoConsulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormTipoConsulta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen2.Designer.vb">
+      <DependentUpon>SplashScreen2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormContasApagar.resx">
+      <DependentUpon>FormContasApagar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMedicacao.resx">
+      <DependentUpon>FormMedicacao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsulta.resx">
+      <DependentUpon>FormConsulta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMedico.resx">
+      <DependentUpon>FormMedico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPaciente.resx">
+      <DependentUpon>FormPaciente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewFolder1\FormCirurgia.resx">
+      <DependentUpon>FormCirurgia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCliente.resx">
+      <DependentUpon>FormCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewFolder1\FormExame.resx">
+      <DependentUpon>FormExame.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewFolder1\FormLaboratorio.resx">
+      <DependentUpon>FormLaboratorio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewFolder1\FormMedicamento.resx">
+      <DependentUpon>FormMedicamento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewFolder1\FormTratamento.resx">
+      <DependentUpon>FormTratamento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTipoConsulta.resx">
+      <DependentUpon>FormTipoConsulta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen2.resx">
+      <DependentUpon>SplashScreen2.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Delete-icon32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Add-icon32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Info-icon32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Next-icon32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Previous-icon32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Refresh-icon32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button-Reload-icon32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Medicina_e_Saude_5548_Stomatologist_icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Medicina_e_Saude_5552_surgeon_icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Medicina_e_Saude_5556_patient_icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Medicina_e_Saude_5557_nurse_icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Medicina_e_Saude_5558_Head_physician_icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Medicina_e_Saude_5549_Medical_invoice_information_icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aesthetica_5022_users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\big_1255693056_11235.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cattle.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aesthetica_5127_accept1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\informatica_3632_disquete13.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MainLayoutPanel.BackgroundImage.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Medicina_e_Saude_5557_symbol_icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accept.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16-3-164.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
