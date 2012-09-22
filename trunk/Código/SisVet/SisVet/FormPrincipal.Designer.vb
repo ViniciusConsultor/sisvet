@@ -33,6 +33,7 @@ Partial Class FormPrincipal
         Me.LaboratórioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MedicamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TipoConsultaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TipoExameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MarcarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -53,7 +54,6 @@ Partial Class FormPrincipal
         Me.RelatóriosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.TipoExameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -137,6 +137,12 @@ Partial Class FormPrincipal
         Me.TipoConsultaToolStripMenuItem.Name = "TipoConsultaToolStripMenuItem"
         Me.TipoConsultaToolStripMenuItem.Size = New System.Drawing.Size(175, 26)
         Me.TipoConsultaToolStripMenuItem.Text = "Tipo consulta"
+        '
+        'TipoExameToolStripMenuItem
+        '
+        Me.TipoExameToolStripMenuItem.Name = "TipoExameToolStripMenuItem"
+        Me.TipoExameToolStripMenuItem.Size = New System.Drawing.Size(175, 26)
+        Me.TipoExameToolStripMenuItem.Text = "Tipo exame"
         '
         'ConsultaToolStripMenuItem1
         '
@@ -278,19 +284,12 @@ Partial Class FormPrincipal
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(41, 17)
         Me.ToolStripStatusLabel1.Text = "Sis Vet"
         '
-        'TipoExameToolStripMenuItem
-        '
-        Me.TipoExameToolStripMenuItem.Name = "TipoExameToolStripMenuItem"
-        Me.TipoExameToolStripMenuItem.Size = New System.Drawing.Size(175, 26)
-        Me.TipoExameToolStripMenuItem.Text = "Tipo exame"
-        '
         'FormPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange
         Me.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(626, 512)
         Me.Controls.Add(Me.StatusStrip1)
