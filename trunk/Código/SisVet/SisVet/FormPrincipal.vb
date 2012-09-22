@@ -54,8 +54,8 @@
     End Sub
 
     Private Sub ExameToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ExameToolStripMenuItem.Click
-        FormExame.MdiParent = Me
-        FormExame.Show()
+        FormExameLaboratorial.MdiParent = Me
+        FormExameLaboratorial.Show()
 
     End Sub
 
@@ -83,6 +83,12 @@
     Private Sub MedicaçãoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles MedicaçãoToolStripMenuItem.Click
         FormMedicacao.MdiParent = Me
         FormMedicacao.Show()
+
+    End Sub
+
+    Private Sub TipoExameToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles TipoExameToolStripMenuItem.Click
+        FormExame.MdiParent = Me
+        FormExame.Show()
 
     End Sub
 End Class
