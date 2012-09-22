@@ -287,7 +287,9 @@ Partial Class FormExameLaboratorial
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label6)
         Me.DoubleBuffered = True
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormExameLaboratorial"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Exame Laboratorial"
         Me.GroupBox10.ResumeLayout(False)
         Me.GroupBox10.PerformLayout()
