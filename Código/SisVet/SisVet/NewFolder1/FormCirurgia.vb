@@ -55,7 +55,7 @@
             PreencheGrid()
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+            '  MsgBox(ex.Message)
 
         End Try
 

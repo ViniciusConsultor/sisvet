@@ -266,6 +266,8 @@ Partial Class FormExameLaboratorial
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(843, 534)
         Me.Controls.Add(Me.txtresponsavel)
         Me.Controls.Add(Me.Label3)
@@ -284,6 +286,7 @@ Partial Class FormExameLaboratorial
         Me.Controls.Add(Me.txtcodigo)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label6)
+        Me.DoubleBuffered = True
         Me.Name = "FormExameLaboratorial"
         Me.Text = "Exame Laboratorial"
         Me.GroupBox10.ResumeLayout(False)
