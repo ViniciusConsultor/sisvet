@@ -97,6 +97,12 @@
     <Compile Include="FormContasApagar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormExameLaboratorial.Designer.vb">
+      <DependentUpon>FormExameLaboratorial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormExameLaboratorial.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormMedicacao.Designer.vb">
       <DependentUpon>FormMedicacao.vb</DependentUpon>
     </Compile>
@@ -195,6 +201,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FormContasApagar.resx">
       <DependentUpon>FormContasApagar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormExameLaboratorial.resx">
+      <DependentUpon>FormExameLaboratorial.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMedicacao.resx">
       <DependentUpon>FormMedicacao.vb</DependentUpon>
