@@ -91,6 +91,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassBanco.vb" />
+    <Compile Include="FormCirurgiaInternacao.Designer.vb">
+      <DependentUpon>FormCirurgiaInternacao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormCirurgiaInternacao.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormContasApagar.Designer.vb">
       <DependentUpon>FormContasApagar.vb</DependentUpon>
     </Compile>
@@ -107,6 +113,12 @@
       <DependentUpon>FormMedicacao.vb</DependentUpon>
     </Compile>
     <Compile Include="FormMedicacao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm1.Designer.vb">
+      <DependentUpon>LoginForm1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NewFolder1\FormCirurgia.Designer.vb">
@@ -199,6 +211,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormCirurgiaInternacao.resx">
+      <DependentUpon>FormCirurgiaInternacao.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormContasApagar.resx">
       <DependentUpon>FormContasApagar.vb</DependentUpon>
     </EmbeddedResource>
@@ -219,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPaciente.resx">
       <DependentUpon>FormPaciente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm1.resx">
+      <DependentUpon>LoginForm1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

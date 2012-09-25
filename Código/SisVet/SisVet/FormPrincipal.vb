@@ -57,11 +57,12 @@
         FormExameLaboratorial.MdiParent = Me
         FormExameLaboratorial.Show()
 
+
     End Sub
 
     Private Sub CirurgiaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles CirurgiaToolStripMenuItem.Click
-        FormCirurgia.MdiParent = Me
-        FormCirurgia.Show()
+        FormCirurgiaInternacao.MdiParent = Me
+        FormCirurgiaInternacao.Show()
 
     End Sub
 
@@ -89,6 +90,13 @@
     Private Sub TipoExameToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles TipoExameToolStripMenuItem.Click
         FormExame.MdiParent = Me
         FormExame.Show()
+
+
+    End Sub
+
+    Private Sub TipoCirurgiaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles TipoCirurgiaToolStripMenuItem.Click
+        FormCirurgia.MdiParent = Me
+        FormCirurgia.Show()
 
     End Sub
 End Class

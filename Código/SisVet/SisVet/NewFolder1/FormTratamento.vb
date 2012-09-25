@@ -68,7 +68,7 @@
 
             Dim result As Integer
             Dim sql As String
-            sql = "Select receber_dadostratamento('" & txtdescricao.Text & "'," & idPAC & "," & id & "," & cod & ")"
+            sql = "Select receber_dadostratamento('" & txtdescricao.ValueMember & "'," & idPAC & "," & id & "," & cod & ")"
 
             result = objpac.executasql(sql)
             txtcodigo.Text = result
@@ -157,6 +157,30 @@
             comboMedico.Text = DataGridView1.Item(3, DataGridView1.CurrentCell.RowIndex).Value
 
         End If
+
+    End Sub
+
+    Private Sub rbexame_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbexame.CheckedChanged
+        Dim obj As New Sisvet.ClassBanco
+
+        txtdescricao.DisplayMember = "NOME"
+        txtdescricao.ValueMember = "CODIGO"
+        If rbexame.Checked = True Then
+
+            txtdescricao.DataSource = obj.retornaDataTable(" select * FROM  retornaexame() AS (  CODIGO INTEGER, NOME TEXT, LABORATORIO VARCHAR)")
+
+        ElseIf rbcirurgia.Checked = True Then
+            txtdescricao.DataSource = obj.retornaDataTable(" select * FROM  retornacirurgia() AS (CODIGO INTEGER, NOME VARCHAR, MEDICO VARCHAR)")
+
+
+        ElseIf rbmedicaçao.Checked = True Then
+            txtdescricao.DataSource = obj.retornaDataTable(" select * FROM  retornamedicacao() AS ( NOMETRAT TEXT, NOMEREM TEXT, QTD_ESTOQUE VARCHAR, RESPONSAVEL VARCHAR, VALOR NUMERIC)")
+
+        End If
+
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As System.Object, e As System.EventArgs) Handles GroupBox1.Enter
 
     End Sub
 End Class
