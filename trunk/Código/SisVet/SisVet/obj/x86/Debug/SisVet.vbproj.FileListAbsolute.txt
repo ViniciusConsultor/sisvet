@@ -119,5 +119,6 @@ C:\Users\usuario\Documents\FACULDADE\5º Semestre\Sisvet\Código\SisVet\SisVet\o
 C:\Users\usuario\Documents\FACULDADE\5º Semestre\Sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.SplashScreen2.resources
 C:\Users\usuario\Documents\FACULDADE\5º Semestre\Sisvet\Código\SisVet\SisVet\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\usuario\Documents\FACULDADE\5º Semestre\Sisvet\Código\SisVet\SisVet\obj\x86\Debug\GenerateResource.write.1.tlog
-C:\Users\Thiago\Documents\UTFPR\5º Semestre\projeto-clinica-veterinaria\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormExameLaboratorial.resources
-E:\Facul\5º PERIODO\Programação SqL\Projeto SisVet\sisvet\Código\SisVet\SisVet\obj\x86\Debug\SisVet.FormExameLaboratorial.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SisVet\SisVet\obj\x86\Debug\SisVet.FormCirurgiaInternacao.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SisVet\SisVet\obj\x86\Debug\SisVet.FormExameLaboratorial.resources
+C:\Users\usuario\Documents\Visual Studio 2010\Projects\SisVet\SisVet\obj\x86\Debug\SisVet.LoginForm1.resources

@@ -34,6 +34,7 @@ Partial Class FormPrincipal
         Me.MedicamentoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TipoConsultaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TipoExameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TipoCirurgiaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MarcarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -90,7 +91,7 @@ Partial Class FormPrincipal
         '
         'CadastroToolStripMenuItem
         '
-        Me.CadastroToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClienteToolStripMenuItem1, Me.MedicoToolStripMenuItem, Me.PacienteToolStripMenuItem1, Me.LaboratórioToolStripMenuItem, Me.MedicamentoToolStripMenuItem, Me.TipoConsultaToolStripMenuItem, Me.TipoExameToolStripMenuItem})
+        Me.CadastroToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClienteToolStripMenuItem1, Me.MedicoToolStripMenuItem, Me.PacienteToolStripMenuItem1, Me.LaboratórioToolStripMenuItem, Me.MedicamentoToolStripMenuItem, Me.TipoConsultaToolStripMenuItem, Me.TipoExameToolStripMenuItem, Me.TipoCirurgiaToolStripMenuItem})
         Me.CadastroToolStripMenuItem.Image = CType(resources.GetObject("CadastroToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CadastroToolStripMenuItem.Name = "CadastroToolStripMenuItem"
         Me.CadastroToolStripMenuItem.Size = New System.Drawing.Size(96, 36)
@@ -143,6 +144,12 @@ Partial Class FormPrincipal
         Me.TipoExameToolStripMenuItem.Name = "TipoExameToolStripMenuItem"
         Me.TipoExameToolStripMenuItem.Size = New System.Drawing.Size(175, 26)
         Me.TipoExameToolStripMenuItem.Text = "Tipo exame"
+        '
+        'TipoCirurgiaToolStripMenuItem
+        '
+        Me.TipoCirurgiaToolStripMenuItem.Name = "TipoCirurgiaToolStripMenuItem"
+        Me.TipoCirurgiaToolStripMenuItem.Size = New System.Drawing.Size(175, 26)
+        Me.TipoCirurgiaToolStripMenuItem.Text = "Tipo cirurgia"
         '
         'ConsultaToolStripMenuItem1
         '
@@ -290,6 +297,7 @@ Partial Class FormPrincipal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange
         Me.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(626, 512)
         Me.Controls.Add(Me.StatusStrip1)
@@ -301,7 +309,6 @@ Partial Class FormPrincipal
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "FormPrincipal"
         Me.Text = "SisVet -Principal"
-        Me.TopMost = True
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -342,5 +349,6 @@ Partial Class FormPrincipal
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents TipoExameToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TipoCirurgiaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
