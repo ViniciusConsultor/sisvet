@@ -42,6 +42,7 @@ Partial Class FormContasApagar
         Me.Comboconsulta = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox10.SuspendLayout()
         Me.SuspendLayout()
@@ -250,11 +251,21 @@ Partial Class FormContasApagar
         '
         Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(156, 147)
+        Me.ComboBox1.Location = New System.Drawing.Point(165, 147)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(235, 24)
+        Me.ComboBox1.Size = New System.Drawing.Size(320, 24)
         Me.ComboBox1.TabIndex = 59
-        Me.ComboBox1.Visible = False
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(166, 128)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(242, 16)
+        Me.Label5.TabIndex = 60
+        Me.Label5.Text = "Cod,Nome, Nascimento, Registro,Sexo"
         '
         'FormContasApagar
         '
@@ -263,6 +274,7 @@ Partial Class FormContasApagar
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(620, 508)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Comboconsulta)
         Me.Controls.Add(Me.Label4)
@@ -310,4 +322,5 @@ Partial Class FormContasApagar
     Friend WithEvents Comboconsulta As System.Windows.Forms.ComboBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class

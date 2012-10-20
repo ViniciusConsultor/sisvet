@@ -249,6 +249,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCliente.resx">
       <DependentUpon>FormCliente.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="NewFolder1\FormExame.resx">
       <DependentUpon>FormExame.vb</DependentUpon>

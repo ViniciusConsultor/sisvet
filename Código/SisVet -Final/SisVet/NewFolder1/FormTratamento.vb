@@ -22,12 +22,18 @@
         ComboPaciente.DataSource = obj.retornaDataTable(" select * FROM  retornapac() AS (CODIGOpac INTEGER, NOMEpac VARCHAR, DATA_NASCIMENTO date, RGHV VARCHAR(11), ESPECIE VARCHAR(50), RACA VARCHAR(25), PELAGEM VARCHAR, SEXO CHAR(1), CASTRADO CHAR(1), CLIENTE VARCHAR)")
 
 
+
     End Sub
     Private Sub carregaConsulta()
         Dim obj As New Sisvet.ClassBanco
         ComboConsult.DisplayMember = "DATA"
         ComboConsult.ValueMember = "CODIGOCONS"
         ComboConsult.DataSource = obj.retornaDataTable(" select * FROM  retornaconsultaPAC(" & ComboPaciente.SelectedValue & ") AS(CODIGOCONS INTEGER, DATA DATE, HORA TIME, VETERINARIO VARCHAR, TIPO_CONSULTA VARCHAR, AGENDADO CHAR,PACIENTE VARCHAR, PRONTUARIO TEXT)")
+
+
+
+        ComboBox1.DisplayMember = "nome"
+        ComboBox1.DataSource = obj.retornaDataTable("Select carregapaciente(" & ComboConsult.SelectedValue & ") as nome")
 
 
     End Sub
@@ -37,6 +43,8 @@
 
         txtcodigo.Visible = False
         Dim obj As New Sisvet.ClassBanco
+        ComboBox1.DisplayMember = "nome"
+        ComboBox1.DataSource = obj.retornaDataTable("Select carregacomboremedio(" & 1 & ") as nome")
         Try
             obj = New Sisvet.ClassBanco
 
@@ -185,7 +193,7 @@
             combodescricao.Text = DataGridView1.Item(1, DataGridView1.CurrentCell.RowIndex).Value
             ComboPaciente.Text = DataGridView1.Item(2, DataGridView1.CurrentCell.RowIndex).Value
             comboMedico.Text = DataGridView1.Item(3, DataGridView1.CurrentCell.RowIndex).Value
-          
+
 
 
         End If
@@ -195,7 +203,7 @@
     Private Sub rbexame_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbexame.CheckedChanged, rbmedicaçao.CheckedChanged, rbcirurgia.CheckedChanged
         Dim obj As New Sisvet.ClassBanco
 
-     
+
         If rbexame.Checked = True Then
             combodescricao.DisplayMember = "NOME"
             combodescricao.ValueMember = "CODIGO"
@@ -223,4 +231,5 @@
         carregaConsulta()
 
     End Sub
+
 End Class
