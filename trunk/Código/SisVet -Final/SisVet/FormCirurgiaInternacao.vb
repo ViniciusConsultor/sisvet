@@ -81,7 +81,7 @@
         End Try
         CarregaCampos()
 
-        PreencheGrid(combopaciente.SelectedValue)
+        PreencheGrid2(combopaciente.SelectedValue)
 
     End Sub
     Private Sub btexcluir_Click(sender As System.Object, e As System.EventArgs) Handles btexcluir.Click
@@ -121,7 +121,7 @@
     Private Sub PreencheGrid2(cod As String)
         Dim obj As New Sisvet.ClassBanco
 
-        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornaCirurgiainternacao(" & cod & ") AS (CODIGO INTEGER, PACIENTE VARCHAR, TIPO_EXAME TEXT, DESCRICAO TEXT,DATA DATE,HORA TIME,  VALOR NUMERIC)")
+        DataGridView1.DataSource = obj.retornaDataTable(" select * FROM  retornacirurgiainternacao(" & cod & ") AS (CODIGO INTEGER, PACIENTE VARCHAR, TIPO_EXAME TEXT, DESCRICAO TEXT,DATA DATE,HORA TIME,  VALOR NUMERIC)")
 
     End Sub
     Private Sub combopaciente_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles combopaciente.SelectedIndexChanged

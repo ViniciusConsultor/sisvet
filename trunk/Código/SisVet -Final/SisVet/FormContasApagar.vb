@@ -125,18 +125,33 @@
 
     End Sub
 
-    Private Sub combocliente_Click(sender As Object, e As System.EventArgs) Handles combocliente.Click
-        CarregacomboCONS(combocliente.SelectedValue)
-    End Sub
+    'Private Sub combocliente_Click(sender As Object, e As System.EventArgs) Handles combocliente.Click
+    '    CarregacomboCONS(combocliente.SelectedValue)
+    'End Sub
 
     Private Sub CarregacomboCONS(cod As Integer)
         Dim obj As New Sisvet.ClassBanco
         Comboconsulta.DisplayMember = "DATA"
         Comboconsulta.ValueMember = "CODIGOCON"
         Comboconsulta.DataSource = obj.retornaDataTable(" select * FROM  retornaconsultaConta(" & cod & ") AS(CODIGOCOM INTEGER, DATA DATE)")
-        'ComboBox1.DisplayMember = "cur"
-        'ComboBox1.DataSource = obj.retornaDataTable("select * from testa_cursor() as (cur record)")
+
+
+        ComboBox1.DisplayMember = "nome"
+        ComboBox1.DataSource = obj.retornaDataTable("Select retornapacConta(" & combocliente.SelectedValue & ",'" & Comboconsulta.Text & "') as nome")
+
+
     End Sub
+
+    'Private Sub carregaConsulta()
+    '    Dim obj As New Sisvet.ClassBanco
+    '    Comboconsulta.DisplayMember = "DATA"
+    '    Comboconsulta.ValueMember = "CODIGOCONS"
+    '    Comboconsulta.DataSource = obj.retornaDataTable(" select * FROM  retornaconsultaPAC(" & ComboPacinte.SelectedValue & ") AS(CODIGOCONS INTEGER, DATA DATE, HORA TIME, VETERINARIO VARCHAR, TIPO_CONSULTA VARCHAR, AGENDADO CHAR,PACIENTE VARCHAR, PRONTUARIO TEXT)")
+
+
+
+
+    'End Sub
 
     Private Sub btexcluir_Click(sender As System.Object, e As System.EventArgs) Handles btexcluir.Click
         'Dim obj As New Sisvet.ClassBanco
@@ -163,5 +178,9 @@
         'Else
         'MessageBox.Show("Não Há Nenhum Código Selecionado para Excluir")
         'End If
+    End Sub
+
+    Private Sub combocliente_SelectionChangeCommitted(sender As Object, e As System.EventArgs) Handles combocliente.SelectionChangeCommitted
+        CarregacomboCONS(combocliente.SelectedValue)
     End Sub
 End Class

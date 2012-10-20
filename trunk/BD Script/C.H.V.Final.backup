@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.1.3
 -- Dumped by pg_dump version 9.1.3
--- Started on 2012-10-17 16:05:38
+-- Started on 2012-10-19 21:09:19
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -21,7 +21,7 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 2189 (class 0 OID 0)
+-- TOC entry 2190 (class 0 OID 0)
 -- Dependencies: 192
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
 --
@@ -33,7 +33,7 @@ SET search_path = public, pg_catalog;
 
 --
 -- TOC entry 204 (class 1255 OID 27779)
--- Dependencies: 6 715
+-- Dependencies: 6 716
 -- Name: atualiza_conta(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -54,7 +54,7 @@ ALTER FUNCTION public.atualiza_conta() OWNER TO postgres;
 
 --
 -- TOC entry 205 (class 1255 OID 27780)
--- Dependencies: 715 6
+-- Dependencies: 6 716
 -- Name: atualiza_contacirurgia(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -75,7 +75,7 @@ ALTER FUNCTION public.atualiza_contacirurgia() OWNER TO postgres;
 
 --
 -- TOC entry 206 (class 1255 OID 27781)
--- Dependencies: 6 715
+-- Dependencies: 716 6
 -- Name: atualiza_contaexame(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -96,7 +96,7 @@ ALTER FUNCTION public.atualiza_contaexame() OWNER TO postgres;
 
 --
 -- TOC entry 207 (class 1255 OID 27782)
--- Dependencies: 715 6
+-- Dependencies: 716 6
 -- Name: atualiza_contamedicacao(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -117,7 +117,7 @@ ALTER FUNCTION public.atualiza_contamedicacao() OWNER TO postgres;
 
 --
 -- TOC entry 208 (class 1255 OID 27783)
--- Dependencies: 715 6
+-- Dependencies: 6 716
 -- Name: atualizar_cirurgia(character varying, integer, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -137,7 +137,7 @@ ALTER FUNCTION public.atualizar_cirurgia(nome character varying, medico integer,
 
 --
 -- TOC entry 209 (class 1255 OID 27784)
--- Dependencies: 6 715
+-- Dependencies: 6 716
 -- Name: atualizar_cirurgiainternacao(integer, integer, integer, character varying, date, time without time zone, numeric); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -160,7 +160,7 @@ ALTER FUNCTION public.atualizar_cirurgiainternacao(internacao integer, tratament
 
 --
 -- TOC entry 210 (class 1255 OID 27785)
--- Dependencies: 6 715
+-- Dependencies: 716 6
 -- Name: atualizar_cliente(character varying, date, character varying, character varying, character, character varying, character varying, character, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -185,7 +185,7 @@ ALTER FUNCTION public.atualizar_cliente(nomecliente character varying, datanasci
 
 --
 -- TOC entry 212 (class 1255 OID 27786)
--- Dependencies: 6 715
+-- Dependencies: 716 6
 -- Name: atualizar_consulta(integer, date, time without time zone, integer, integer, character, integer, text); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -210,7 +210,7 @@ ALTER FUNCTION public.atualizar_consulta(codigoconsulta integer, dataconsulta da
 
 --
 -- TOC entry 213 (class 1255 OID 27787)
--- Dependencies: 6 715
+-- Dependencies: 716 6
 -- Name: atualizar_custos(integer, integer, numeric); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -229,8 +229,8 @@ $$;
 ALTER FUNCTION public.atualizar_custos(codcliente integer, codconsulta integer, valortotal numeric) OWNER TO postgres;
 
 --
--- TOC entry 338 (class 1255 OID 28175)
--- Dependencies: 715 6
+-- TOC entry 336 (class 1255 OID 28175)
+-- Dependencies: 716 6
 -- Name: atualizar_custos(integer, integer, date, numeric); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -239,7 +239,7 @@ CREATE FUNCTION atualizar_custos(codcliente integer, codconsulta integer, datapa
     AS $$
 	begin
 	
-	update custos set cod_cliente_fk = (select cod_cliente_fk from paciente where cod_paciente = (select cod_paciente_fk from consulta where cod_consulta = codconsulta)), dataconsulta = datapago ,valorTotal = valortot where cod_consulta_fk = codconsulta;
+	update custos set valortotal = valortotal - valortot, cod_cliente_fk = (select cod_cliente_fk from paciente where cod_paciente = (select cod_paciente_fk from consulta where cod_consulta = codconsulta)) , dataconsulta = datapago ;
 	
 	return codcliente;
 	end;
@@ -249,28 +249,8 @@ $$;
 ALTER FUNCTION public.atualizar_custos(codcliente integer, codconsulta integer, datapago date, valortot numeric) OWNER TO postgres;
 
 --
--- TOC entry 214 (class 1255 OID 27789)
--- Dependencies: 6 715
--- Name: atualizar_exame(character varying, integer, integer); Type: FUNCTION; Schema: public; Owner: postgres
---
-
-CREATE FUNCTION atualizar_exame(nome character varying, laboratorio integer, codigo integer) RETURNS integer
-    LANGUAGE plpgsql
-    AS $$
- begin
-	update exame set  tipo_exame = nome, cod_laboratorio_fk = laboratorio where cod_exame_pk = codigo;
-
-	return codigo;
- end;
-
-$$;
-
-
-ALTER FUNCTION public.atualizar_exame(nome character varying, laboratorio integer, codigo integer) OWNER TO postgres;
-
---
--- TOC entry 215 (class 1255 OID 27790)
--- Dependencies: 6 715
+-- TOC entry 214 (class 1255 OID 27790)
+-- Dependencies: 716 6
 -- Name: atualizar_exame(character varying, integer, character varying, numeric, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -289,8 +269,8 @@ $$;
 ALTER FUNCTION public.atualizar_exame(nome character varying, laboratorio integer, descricao character varying, valor numeric, codigo integer) OWNER TO postgres;
 
 --
--- TOC entry 299 (class 1255 OID 27791)
--- Dependencies: 6 715
+-- TOC entry 295 (class 1255 OID 27791)
+-- Dependencies: 6 716
 -- Name: atualizar_laboratoriais(integer, integer, integer, text, character varying, numeric); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -312,8 +292,8 @@ $$;
 ALTER FUNCTION public.atualizar_laboratoriais(cod integer, tratamento integer, exame integer, descricao text, responsavel character varying, valorexame numeric) OWNER TO postgres;
 
 --
--- TOC entry 216 (class 1255 OID 27792)
--- Dependencies: 6 715
+-- TOC entry 215 (class 1255 OID 27792)
+-- Dependencies: 6 716
 -- Name: atualizar_laboratorio(character varying, character varying, character varying, character varying, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -336,8 +316,8 @@ $$;
 ALTER FUNCTION public.atualizar_laboratorio(nome character varying, telefone character varying, endereco character varying, municipio character varying, codigo integer) OWNER TO postgres;
 
 --
--- TOC entry 217 (class 1255 OID 27793)
--- Dependencies: 6 715
+-- TOC entry 216 (class 1255 OID 27793)
+-- Dependencies: 716 6
 -- Name: atualizar_med(character varying, numeric, integer, character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -360,8 +340,8 @@ $$;
 ALTER FUNCTION public.atualizar_med(nome_remedio character varying, valor_remedio numeric, qtd_estoque integer, categoria_remedio character varying) OWNER TO postgres;
 
 --
--- TOC entry 218 (class 1255 OID 27794)
--- Dependencies: 6 715
+-- TOC entry 217 (class 1255 OID 27794)
+-- Dependencies: 716 6
 -- Name: atualizar_medicacao(integer, integer, character varying, character varying, numeric, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -380,8 +360,8 @@ $$;
 ALTER FUNCTION public.atualizar_medicacao(cod_trat integer, cod_rem integer, qtd character varying, cod_resp character varying, valor_med numeric, verificar integer) OWNER TO postgres;
 
 --
--- TOC entry 219 (class 1255 OID 27795)
--- Dependencies: 6 715
+-- TOC entry 218 (class 1255 OID 27795)
+-- Dependencies: 6 716
 -- Name: atualizar_medvet(integer, character varying, character varying, character varying, character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -404,8 +384,8 @@ $$;
 ALTER FUNCTION public.atualizar_medvet(codmedico integer, nomemedico character varying, especialidade character varying, crmv character varying, telefone character varying) OWNER TO postgres;
 
 --
--- TOC entry 220 (class 1255 OID 27796)
--- Dependencies: 6 715
+-- TOC entry 219 (class 1255 OID 27796)
+-- Dependencies: 716 6
 -- Name: atualizar_paciente(integer, character varying, character varying, character varying, date, character varying, character, character, character varying, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -429,8 +409,8 @@ $$;
 ALTER FUNCTION public.atualizar_paciente(codclientefk integer, rghvpaciente character varying, especiepaciente character varying, racapaciente character varying, nascimentopaciente date, pelagempaciente character varying, sexopaciente character, pacientecadastrado character, nomepaciente character varying, codpaciente integer) OWNER TO postgres;
 
 --
--- TOC entry 221 (class 1255 OID 27797)
--- Dependencies: 6 715
+-- TOC entry 220 (class 1255 OID 27797)
+-- Dependencies: 6 716
 -- Name: atualizar_remedio(character varying, numeric, integer, character varying, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -452,8 +432,8 @@ $$;
 ALTER FUNCTION public.atualizar_remedio(nome character varying, valor numeric, estoque integer, categoria character varying, cod integer) OWNER TO postgres;
 
 --
--- TOC entry 222 (class 1255 OID 27798)
--- Dependencies: 6 715
+-- TOC entry 221 (class 1255 OID 27798)
+-- Dependencies: 6 716
 -- Name: atualizar_tipoconsulta(integer, numeric); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -471,8 +451,8 @@ $$;
 ALTER FUNCTION public.atualizar_tipoconsulta(codtipoconsulta integer, valorconsulta numeric) OWNER TO postgres;
 
 --
--- TOC entry 223 (class 1255 OID 27799)
--- Dependencies: 6 715
+-- TOC entry 222 (class 1255 OID 27799)
+-- Dependencies: 716 6
 -- Name: atualizar_tratamento(character varying, integer, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -492,7 +472,7 @@ ALTER FUNCTION public.atualizar_tratamento(nome character varying, consulta inte
 
 --
 -- TOC entry 211 (class 1255 OID 27801)
--- Dependencies: 6 715
+-- Dependencies: 6 716
 -- Name: atualizar_usuario(integer, character varying, character varying, character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -510,8 +490,8 @@ $$;
 ALTER FUNCTION public.atualizar_usuario(codusuario integer, nomeusuario character varying, loginusuario character varying, senhausuario character varying) OWNER TO postgres;
 
 --
--- TOC entry 224 (class 1255 OID 27802)
--- Dependencies: 715 6
+-- TOC entry 223 (class 1255 OID 27802)
+-- Dependencies: 716 6
 -- Name: carregacomboremedio(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -536,8 +516,8 @@ $$;
 ALTER FUNCTION public.carregacomboremedio() OWNER TO postgres;
 
 --
--- TOC entry 225 (class 1255 OID 27803)
--- Dependencies: 715 6
+-- TOC entry 338 (class 1255 OID 27803)
+-- Dependencies: 6 716
 -- Name: carregacomboremedio(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -545,7 +525,7 @@ CREATE FUNCTION carregacomboremedio(cod integer) RETURNS SETOF refcursor
     LANGUAGE plpgsql
     AS $$
 DECLARE
-cs CURSOR FOR SELECT cod_remedio_fk from medicacao  where cod_tratamento_fk = cod;
+cs CURSOR FOR SELECT cod_remedio, nome_remedio from remedios  inner join medicacao on cod_remedio = cod_remedio_fk where cod_remedio_fk = cod;
  	
 reg RECORD;
 BEGIN
@@ -562,8 +542,60 @@ $$;
 ALTER FUNCTION public.carregacomboremedio(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 226 (class 1255 OID 27804)
--- Dependencies: 6 715
+-- TOC entry 337 (class 1255 OID 28180)
+-- Dependencies: 6 716
+-- Name: carregapaciente(); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION carregapaciente() RETURNS SETOF refcursor
+    LANGUAGE plpgsql
+    AS $$
+DECLARE
+cs CURSOR FOR SELECT cod_paciente, nome_paciente,especie_paciente from paciente  inner join consulta on cod_paciente = cod_paciente_fk;
+ 	
+reg RECORD;
+BEGIN
+OPEN cs;
+
+FETCH cs INTO reg;
+
+RETURN NEXT reg;
+RETURN;
+END;
+$$;
+
+
+ALTER FUNCTION public.carregapaciente() OWNER TO postgres;
+
+--
+-- TOC entry 328 (class 1255 OID 28179)
+-- Dependencies: 6 716
+-- Name: carregapaciente(integer); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION carregapaciente(cod integer) RETURNS SETOF refcursor
+    LANGUAGE plpgsql
+    AS $$
+DECLARE
+cs CURSOR FOR SELECT cod_paciente, nome_paciente,especie_paciente from paciente  inner join consulta on cod_paciente = cod_paciente_fk where cod_consulta = cod;
+ 	
+reg RECORD;
+BEGIN
+OPEN cs;
+
+FETCH cs INTO reg;
+
+RETURN NEXT reg;
+RETURN;
+END;
+$$;
+
+
+ALTER FUNCTION public.carregapaciente(cod integer) OWNER TO postgres;
+
+--
+-- TOC entry 224 (class 1255 OID 27804)
+-- Dependencies: 716 6
 -- Name: deletar_cliente(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -580,8 +612,8 @@ $$;
 ALTER FUNCTION public.deletar_cliente(codcliente integer) OWNER TO postgres;
 
 --
--- TOC entry 227 (class 1255 OID 27805)
--- Dependencies: 715 6
+-- TOC entry 225 (class 1255 OID 27805)
+-- Dependencies: 6 716
 -- Name: deletar_consulta(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -599,8 +631,8 @@ $$;
 ALTER FUNCTION public.deletar_consulta(codigoconsulta integer) OWNER TO postgres;
 
 --
--- TOC entry 228 (class 1255 OID 27806)
--- Dependencies: 6 715
+-- TOC entry 226 (class 1255 OID 27806)
+-- Dependencies: 716 6
 -- Name: deletar_custos(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -617,8 +649,8 @@ $$;
 ALTER FUNCTION public.deletar_custos(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 229 (class 1255 OID 27807)
--- Dependencies: 6 715
+-- TOC entry 227 (class 1255 OID 27807)
+-- Dependencies: 716 6
 -- Name: deletar_exame(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -635,8 +667,8 @@ $$;
 ALTER FUNCTION public.deletar_exame(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 230 (class 1255 OID 27808)
--- Dependencies: 6 715
+-- TOC entry 228 (class 1255 OID 27808)
+-- Dependencies: 6 716
 -- Name: deletar_laboratorio(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -653,8 +685,8 @@ $$;
 ALTER FUNCTION public.deletar_laboratorio(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 231 (class 1255 OID 27809)
--- Dependencies: 6 715
+-- TOC entry 229 (class 1255 OID 27809)
+-- Dependencies: 6 716
 -- Name: deletar_medvet(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -672,8 +704,8 @@ $$;
 ALTER FUNCTION public.deletar_medvet(codmedico integer) OWNER TO postgres;
 
 --
--- TOC entry 232 (class 1255 OID 27810)
--- Dependencies: 6 715
+-- TOC entry 230 (class 1255 OID 27810)
+-- Dependencies: 6 716
 -- Name: deletar_paciente(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -690,8 +722,8 @@ $$;
 ALTER FUNCTION public.deletar_paciente(codpaciente integer) OWNER TO postgres;
 
 --
--- TOC entry 233 (class 1255 OID 27811)
--- Dependencies: 6 715
+-- TOC entry 231 (class 1255 OID 27811)
+-- Dependencies: 716 6
 -- Name: deletar_remedio(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -708,8 +740,8 @@ $$;
 ALTER FUNCTION public.deletar_remedio(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 234 (class 1255 OID 27812)
--- Dependencies: 715 6
+-- TOC entry 232 (class 1255 OID 27812)
+-- Dependencies: 6 716
 -- Name: deletar_tipoconsulta(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -727,8 +759,8 @@ $$;
 ALTER FUNCTION public.deletar_tipoconsulta(codtipoconsulta integer) OWNER TO postgres;
 
 --
--- TOC entry 235 (class 1255 OID 27813)
--- Dependencies: 6 715
+-- TOC entry 233 (class 1255 OID 27813)
+-- Dependencies: 6 716
 -- Name: deletar_usuario(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -745,8 +777,26 @@ $$;
 ALTER FUNCTION public.deletar_usuario(codusuario integer) OWNER TO postgres;
 
 --
--- TOC entry 236 (class 1255 OID 27814)
--- Dependencies: 6 715
+-- TOC entry 316 (class 1255 OID 28177)
+-- Dependencies: 6 716
+-- Name: delete_conta(); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION delete_conta() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+
+begin 
+	select deletar_custos(old.cod_consulta);
+end;
+$$;
+
+
+ALTER FUNCTION public.delete_conta() OWNER TO postgres;
+
+--
+-- TOC entry 234 (class 1255 OID 27814)
+-- Dependencies: 6 716
 -- Name: insere_conta(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -769,8 +819,8 @@ $$;
 ALTER FUNCTION public.insere_conta() OWNER TO postgres;
 
 --
--- TOC entry 237 (class 1255 OID 27815)
--- Dependencies: 6 715
+-- TOC entry 235 (class 1255 OID 27815)
+-- Dependencies: 716 6
 -- Name: insere_contacirurgia(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -799,8 +849,8 @@ $$;
 ALTER FUNCTION public.insere_contacirurgia() OWNER TO postgres;
 
 --
--- TOC entry 238 (class 1255 OID 27816)
--- Dependencies: 6 715
+-- TOC entry 236 (class 1255 OID 27816)
+-- Dependencies: 716 6
 -- Name: insere_contaexame(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -829,8 +879,8 @@ $$;
 ALTER FUNCTION public.insere_contaexame() OWNER TO postgres;
 
 --
--- TOC entry 239 (class 1255 OID 27817)
--- Dependencies: 715 6
+-- TOC entry 237 (class 1255 OID 27817)
+-- Dependencies: 716 6
 -- Name: insere_contalaboratoriais(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -857,8 +907,8 @@ $$;
 ALTER FUNCTION public.insere_contalaboratoriais() OWNER TO postgres;
 
 --
--- TOC entry 240 (class 1255 OID 27818)
--- Dependencies: 715 6
+-- TOC entry 238 (class 1255 OID 27818)
+-- Dependencies: 716 6
 -- Name: insere_contamedicacao(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -887,8 +937,8 @@ $$;
 ALTER FUNCTION public.insere_contamedicacao() OWNER TO postgres;
 
 --
--- TOC entry 241 (class 1255 OID 27819)
--- Dependencies: 715 6
+-- TOC entry 239 (class 1255 OID 27819)
+-- Dependencies: 6 716
 -- Name: inserir_cirurgia(character varying, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -913,8 +963,8 @@ $$;
 ALTER FUNCTION public.inserir_cirurgia(nome character varying, medico integer) OWNER TO postgres;
 
 --
--- TOC entry 242 (class 1255 OID 27820)
--- Dependencies: 6 715
+-- TOC entry 240 (class 1255 OID 27820)
+-- Dependencies: 716 6
 -- Name: inserir_cirurgiainternacao(integer, integer, character varying, date, time without time zone, numeric); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -942,8 +992,8 @@ $$;
 ALTER FUNCTION public.inserir_cirurgiainternacao(tratamento integer, cirurgia integer, descricao character varying, datacirurgia date, horacirurgia time without time zone, valor numeric) OWNER TO postgres;
 
 --
--- TOC entry 329 (class 1255 OID 27821)
--- Dependencies: 715 6
+-- TOC entry 324 (class 1255 OID 27821)
+-- Dependencies: 716 6
 -- Name: inserir_cliente(character varying, date, character varying, character varying, character, character varying, character varying, character); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -971,8 +1021,8 @@ $$;
 ALTER FUNCTION public.inserir_cliente(nomecliente character varying, datanascimentocliente date, enderecocliente character varying, rgcliente character varying, telefone character, exxpeditorrgcliente character varying, municipiocliente character varying, cpfcliente character) OWNER TO postgres;
 
 --
--- TOC entry 244 (class 1255 OID 27822)
--- Dependencies: 6 715
+-- TOC entry 241 (class 1255 OID 27822)
+-- Dependencies: 6 716
 -- Name: inserir_consulta(date, time without time zone, integer, integer, character, integer, text); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -999,8 +1049,8 @@ $$;
 ALTER FUNCTION public.inserir_consulta(dataconsulta date, horaconsulta time without time zone, medicoveterinario integer, codigotipo integer, agendamento character, paciente integer, prontuario text) OWNER TO postgres;
 
 --
--- TOC entry 332 (class 1255 OID 28174)
--- Dependencies: 715 6
+-- TOC entry 327 (class 1255 OID 28174)
+-- Dependencies: 6 716
 -- Name: inserir_custos(integer, numeric); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1021,34 +1071,8 @@ $$;
 ALTER FUNCTION public.inserir_custos(codconsulta integer, valortot numeric) OWNER TO postgres;
 
 --
--- TOC entry 245 (class 1255 OID 27824)
--- Dependencies: 715 6
--- Name: inserir_exame(character varying, integer); Type: FUNCTION; Schema: public; Owner: postgres
---
-
-CREATE FUNCTION inserir_exame(nome character varying, laboratorio integer) RETURNS integer
-    LANGUAGE plpgsql
-    AS $$
-
-declare
-		cod integer;
-		
-	begin
-	insert into exame(tipo_exame, cod_laboratorio_fk) VALUES
-	( nome, laboratorio);
-
-	GET DIAGNOSTICS cod = RESULT_OID;
-	return cod;	
-
-	end;
-$$;
-
-
-ALTER FUNCTION public.inserir_exame(nome character varying, laboratorio integer) OWNER TO postgres;
-
---
--- TOC entry 246 (class 1255 OID 27825)
--- Dependencies: 715 6
+-- TOC entry 242 (class 1255 OID 27825)
+-- Dependencies: 716 6
 -- Name: inserir_exame(character varying, integer, character varying, numeric); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1073,8 +1097,8 @@ $$;
 ALTER FUNCTION public.inserir_exame(nome character varying, laboratorio integer, descricao character varying, valor numeric) OWNER TO postgres;
 
 --
--- TOC entry 255 (class 1255 OID 27826)
--- Dependencies: 6 715
+-- TOC entry 251 (class 1255 OID 27826)
+-- Dependencies: 716 6
 -- Name: inserir_laboratoriais(integer, integer, text, character varying, numeric); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1098,8 +1122,8 @@ $$;
 ALTER FUNCTION public.inserir_laboratoriais(tratamento integer, exame integer, descricao text, responsavel character varying, valor numeric) OWNER TO postgres;
 
 --
--- TOC entry 247 (class 1255 OID 27827)
--- Dependencies: 6 715
+-- TOC entry 243 (class 1255 OID 27827)
+-- Dependencies: 6 716
 -- Name: inserir_laboratorio(character varying, character varying, character varying, character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1128,8 +1152,8 @@ $$;
 ALTER FUNCTION public.inserir_laboratorio(nome character varying, telefone character varying, endereco character varying, municipio character varying) OWNER TO postgres;
 
 --
--- TOC entry 248 (class 1255 OID 27828)
--- Dependencies: 715 6
+-- TOC entry 244 (class 1255 OID 27828)
+-- Dependencies: 716 6
 -- Name: inserir_med(character varying, numeric, integer, character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1152,8 +1176,8 @@ $$;
 ALTER FUNCTION public.inserir_med(nome_remedio character varying, valor_remedio numeric, qtd_estoque integer, categoria_remedio character varying) OWNER TO postgres;
 
 --
--- TOC entry 249 (class 1255 OID 27829)
--- Dependencies: 715 6
+-- TOC entry 245 (class 1255 OID 27829)
+-- Dependencies: 6 716
 -- Name: inserir_medicacao(integer, integer, character varying, character varying, numeric); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1176,8 +1200,8 @@ $$;
 ALTER FUNCTION public.inserir_medicacao(cod_trat integer, cod_rem integer, qtd character varying, cod_resp character varying, valor numeric) OWNER TO postgres;
 
 --
--- TOC entry 250 (class 1255 OID 27830)
--- Dependencies: 6 715
+-- TOC entry 246 (class 1255 OID 27830)
+-- Dependencies: 6 716
 -- Name: inserir_medvet(character varying, character varying, character varying, character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1204,8 +1228,8 @@ $$;
 ALTER FUNCTION public.inserir_medvet(nomemedico character varying, especialidade character varying, crmv character varying, telefone character varying) OWNER TO postgres;
 
 --
--- TOC entry 251 (class 1255 OID 27831)
--- Dependencies: 6 715
+-- TOC entry 247 (class 1255 OID 27831)
+-- Dependencies: 716 6
 -- Name: inserir_paciente(integer, character varying, character varying, character varying, date, character varying, character, character, character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1233,8 +1257,8 @@ $$;
 ALTER FUNCTION public.inserir_paciente(codclientefk integer, rghvpaciente character varying, especiepaciente character varying, racapaciente character varying, nascimentopaciente date, pelagempaciente character varying, sexopaciente character, pacientecadastrado character, nomepaciente character varying) OWNER TO postgres;
 
 --
--- TOC entry 252 (class 1255 OID 27832)
--- Dependencies: 6 715
+-- TOC entry 248 (class 1255 OID 27832)
+-- Dependencies: 6 716
 -- Name: inserir_remedio(character varying, numeric, integer, character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1261,8 +1285,8 @@ $$;
 ALTER FUNCTION public.inserir_remedio(nome character varying, valor numeric, estoque integer, categoria character varying) OWNER TO postgres;
 
 --
--- TOC entry 253 (class 1255 OID 27833)
--- Dependencies: 715 6
+-- TOC entry 249 (class 1255 OID 27833)
+-- Dependencies: 716 6
 -- Name: inserir_tipoconsulta(numeric); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1283,8 +1307,8 @@ $$;
 ALTER FUNCTION public.inserir_tipoconsulta(valorconsulta numeric) OWNER TO postgres;
 
 --
--- TOC entry 254 (class 1255 OID 27834)
--- Dependencies: 6 715
+-- TOC entry 250 (class 1255 OID 27834)
+-- Dependencies: 716 6
 -- Name: inserir_tratamento(character varying, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1309,34 +1333,8 @@ $$;
 ALTER FUNCTION public.inserir_tratamento(nome character varying, consulta integer) OWNER TO postgres;
 
 --
--- TOC entry 243 (class 1255 OID 27835)
--- Dependencies: 715 6
--- Name: inserir_tratamento(character varying, integer, integer); Type: FUNCTION; Schema: public; Owner: postgres
---
-
-CREATE FUNCTION inserir_tratamento(nome character varying, paciente integer, medico integer) RETURNS integer
-    LANGUAGE plpgsql
-    AS $$
-
-declare
-		cod integer;
-		
-	begin
-	insert into tratamento(descricao_tratamento, cod_paciente_fk, cod_veterinario_fk) VALUES
-	( nome, paciente, medico);
-
-	GET DIAGNOSTICS cod = RESULT_OID;
-	return COD;	
-
-	end;
-$$;
-
-
-ALTER FUNCTION public.inserir_tratamento(nome character varying, paciente integer, medico integer) OWNER TO postgres;
-
---
--- TOC entry 256 (class 1255 OID 27836)
--- Dependencies: 715 6
+-- TOC entry 252 (class 1255 OID 27836)
+-- Dependencies: 6 716
 -- Name: inserir_usuario(character varying, character varying, character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1357,8 +1355,8 @@ $$;
 ALTER FUNCTION public.inserir_usuario(nome character varying, login_usu character varying, senha_usu character varying) OWNER TO postgres;
 
 --
--- TOC entry 257 (class 1255 OID 27837)
--- Dependencies: 6 715
+-- TOC entry 253 (class 1255 OID 27837)
+-- Dependencies: 6 716
 -- Name: pagar_conta(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1378,8 +1376,8 @@ $$;
 ALTER FUNCTION public.pagar_conta(codcusto integer) OWNER TO postgres;
 
 --
--- TOC entry 334 (class 1255 OID 28169)
--- Dependencies: 715 6
+-- TOC entry 330 (class 1255 OID 28169)
+-- Dependencies: 716 6
 -- Name: receber_dados_cirurgiainternacao(integer, integer, integer, text, date, time without time zone, numeric); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1407,8 +1405,8 @@ $$;
 ALTER FUNCTION public.receber_dados_cirurgiainternacao(verificar integer, tratamento integer, cirurgia integer, descricao text, datacirurgia date, horacirurgia time without time zone, valor numeric) OWNER TO postgres;
 
 --
--- TOC entry 258 (class 1255 OID 27839)
--- Dependencies: 715 6
+-- TOC entry 254 (class 1255 OID 27839)
+-- Dependencies: 716 6
 -- Name: receber_dadoscirurgia(character varying, integer, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1431,8 +1429,8 @@ CREATE FUNCTION receber_dadoscirurgia(nome character varying, medico integer, ve
 ALTER FUNCTION public.receber_dadoscirurgia(nome character varying, medico integer, verificar integer) OWNER TO postgres;
 
 --
--- TOC entry 259 (class 1255 OID 27840)
--- Dependencies: 715 6
+-- TOC entry 255 (class 1255 OID 27840)
+-- Dependencies: 6 716
 -- Name: receber_dadoscliente(character varying, date, character varying, character varying, character, character varying, character varying, character, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1459,8 +1457,8 @@ CREATE FUNCTION receber_dadoscliente(nomecliente character varying, datanascimen
 ALTER FUNCTION public.receber_dadoscliente(nomecliente character varying, datanascimentocliente date, enderecocliente character varying, rgcliente character varying, telefone character, expeditorrg character varying, municipiocliente character varying, cpfcliente character, verificar integer) OWNER TO postgres;
 
 --
--- TOC entry 260 (class 1255 OID 27841)
--- Dependencies: 6 715
+-- TOC entry 256 (class 1255 OID 27841)
+-- Dependencies: 6 716
 -- Name: receber_dadosconsulta(integer, date, time without time zone, integer, integer, character, integer, text); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1481,8 +1479,8 @@ $$;
 ALTER FUNCTION public.receber_dadosconsulta(verificar integer, dataconsulta date, horaconsulta time without time zone, medicoveterinario integer, codigotipo integer, agendamento character, paciente integer, prontuario text) OWNER TO postgres;
 
 --
--- TOC entry 261 (class 1255 OID 27842)
--- Dependencies: 715 6
+-- TOC entry 257 (class 1255 OID 27842)
+-- Dependencies: 6 716
 -- Name: receber_dadoscustos(integer, integer, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1502,8 +1500,8 @@ $$;
 ALTER FUNCTION public.receber_dadoscustos(verificar integer, codconsulta integer, codtipo integer) OWNER TO postgres;
 
 --
--- TOC entry 336 (class 1255 OID 28171)
--- Dependencies: 6 715
+-- TOC entry 332 (class 1255 OID 28171)
+-- Dependencies: 6 716
 -- Name: receber_dadoscustos(integer, integer, date, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1523,8 +1521,29 @@ $$;
 ALTER FUNCTION public.receber_dadoscustos(verificar integer, codconsulta integer, datapago date, codtipo integer) OWNER TO postgres;
 
 --
--- TOC entry 262 (class 1255 OID 27843)
--- Dependencies: 715 6
+-- TOC entry 335 (class 1255 OID 28178)
+-- Dependencies: 6 716
+-- Name: receber_dadoscustos(integer, integer, date, numeric); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION receber_dadoscustos(verificar integer, codconsulta integer, datapago date, valor numeric) RETURNS integer
+    LANGUAGE plpgsql
+    AS $$
+begin
+	if (verificar = 0) then
+		return (select inserir_custos(codconsulta,(select valor_consulta from tipo_consulta where cod_tipo_consulta = codconsulta)));
+	else
+		return (select atualizar_custos(verificar, codconsulta, datapago,valor));
+	end if;	
+end;
+$$;
+
+
+ALTER FUNCTION public.receber_dadoscustos(verificar integer, codconsulta integer, datapago date, valor numeric) OWNER TO postgres;
+
+--
+-- TOC entry 258 (class 1255 OID 27843)
+-- Dependencies: 6 716
 -- Name: receber_dadosexame(character varying, integer, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1547,8 +1566,8 @@ CREATE FUNCTION receber_dadosexame(nome character varying, laboratorio integer, 
 ALTER FUNCTION public.receber_dadosexame(nome character varying, laboratorio integer, verificar integer) OWNER TO postgres;
 
 --
--- TOC entry 263 (class 1255 OID 27844)
--- Dependencies: 6 715
+-- TOC entry 259 (class 1255 OID 27844)
+-- Dependencies: 6 716
 -- Name: receber_dadosexame(character varying, integer, character varying, numeric, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1571,8 +1590,8 @@ CREATE FUNCTION receber_dadosexame(nome character varying, laboratorio integer, 
 ALTER FUNCTION public.receber_dadosexame(nome character varying, laboratorio integer, descricao character varying, valor numeric, verificar integer) OWNER TO postgres;
 
 --
--- TOC entry 331 (class 1255 OID 27845)
--- Dependencies: 715 6
+-- TOC entry 326 (class 1255 OID 27845)
+-- Dependencies: 716 6
 -- Name: receber_dadoslaboratoriais(integer, integer, integer, text, character varying, numeric); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1594,8 +1613,8 @@ $$;
 ALTER FUNCTION public.receber_dadoslaboratoriais(verificar integer, tratamento integer, exame integer, descricao text, responsavel character varying, valor numeric) OWNER TO postgres;
 
 --
--- TOC entry 264 (class 1255 OID 27846)
--- Dependencies: 6 715
+-- TOC entry 260 (class 1255 OID 27846)
+-- Dependencies: 716 6
 -- Name: receber_dadoslaboratorio(character varying, character varying, character varying, character varying, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1618,8 +1637,8 @@ CREATE FUNCTION receber_dadoslaboratorio(nome character varying, telefone charac
 ALTER FUNCTION public.receber_dadoslaboratorio(nome character varying, telefone character varying, endereco character varying, municipio character varying, verificar integer) OWNER TO postgres;
 
 --
--- TOC entry 265 (class 1255 OID 27847)
--- Dependencies: 6 715
+-- TOC entry 261 (class 1255 OID 27847)
+-- Dependencies: 716 6
 -- Name: receber_dadosmedicacao(integer, integer, character varying, character varying, numeric, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1639,8 +1658,8 @@ $$;
 ALTER FUNCTION public.receber_dadosmedicacao(cod_trat integer, cod_rem integer, qtd character varying, cod_resp character varying, valor_remedio numeric, verificar integer) OWNER TO postgres;
 
 --
--- TOC entry 266 (class 1255 OID 27848)
--- Dependencies: 6 715
+-- TOC entry 262 (class 1255 OID 27848)
+-- Dependencies: 716 6
 -- Name: receber_dadosmedicamento(character varying, numeric, integer, character varying, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1660,8 +1679,8 @@ $$;
 ALTER FUNCTION public.receber_dadosmedicamento(nome_remedio character varying, valor_remedio numeric, qtd_estoque integer, categoria_remedio character varying, verificar integer) OWNER TO postgres;
 
 --
--- TOC entry 267 (class 1255 OID 27849)
--- Dependencies: 715 6
+-- TOC entry 263 (class 1255 OID 27849)
+-- Dependencies: 716 6
 -- Name: receber_dadosmedico(character varying, character varying, character varying, character varying, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1681,8 +1700,8 @@ $$;
 ALTER FUNCTION public.receber_dadosmedico(nomemedico character varying, especialidade character varying, crmv character varying, telefone character varying, verificar integer) OWNER TO postgres;
 
 --
--- TOC entry 269 (class 1255 OID 27850)
--- Dependencies: 6 715
+-- TOC entry 265 (class 1255 OID 27850)
+-- Dependencies: 716 6
 -- Name: receber_dadospaciente(integer, character varying, character varying, character varying, date, character varying, character, character, character varying, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1704,8 +1723,8 @@ $$;
 ALTER FUNCTION public.receber_dadospaciente(codclientefk integer, rghvpaciente character varying, especiepaciente character varying, racapaciente character varying, nascimentopaciente date, pelagempaciente character varying, sexopaciente character, pacientecadastrado character, nomepaciente character varying, verificar integer) OWNER TO postgres;
 
 --
--- TOC entry 270 (class 1255 OID 27851)
--- Dependencies: 6 715
+-- TOC entry 266 (class 1255 OID 27851)
+-- Dependencies: 716 6
 -- Name: receber_dadosremedio(character varying, numeric, integer, character varying, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1725,8 +1744,8 @@ $$;
 ALTER FUNCTION public.receber_dadosremedio(nome character varying, valor numeric, estoque integer, categoria character varying, verificar integer) OWNER TO postgres;
 
 --
--- TOC entry 271 (class 1255 OID 27852)
--- Dependencies: 715 6
+-- TOC entry 267 (class 1255 OID 27852)
+-- Dependencies: 716 6
 -- Name: receber_dadostipoconsulta(integer, numeric); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1746,8 +1765,8 @@ $$;
 ALTER FUNCTION public.receber_dadostipoconsulta(verificar integer, valorconsulta numeric) OWNER TO postgres;
 
 --
--- TOC entry 328 (class 1255 OID 28158)
--- Dependencies: 6 715
+-- TOC entry 323 (class 1255 OID 28158)
+-- Dependencies: 6 716
 -- Name: receber_dadostratamento(character varying, integer, integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1770,8 +1789,8 @@ CREATE FUNCTION receber_dadostratamento(descricao character varying, codconsulta
 ALTER FUNCTION public.receber_dadostratamento(descricao character varying, codconsulta integer, verificar integer) OWNER TO postgres;
 
 --
--- TOC entry 272 (class 1255 OID 27854)
--- Dependencies: 715 6
+-- TOC entry 268 (class 1255 OID 27854)
+-- Dependencies: 716 6
 -- Name: receber_dadosusuario(integer, character varying, character varying, character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1791,8 +1810,8 @@ $$;
 ALTER FUNCTION public.receber_dadosusuario(verificar integer, nomeusuario character varying, login character varying, senha character varying) OWNER TO postgres;
 
 --
--- TOC entry 273 (class 1255 OID 27855)
--- Dependencies: 715 6
+-- TOC entry 269 (class 1255 OID 27855)
+-- Dependencies: 6 716
 -- Name: ret(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1817,8 +1836,8 @@ $$;
 ALTER FUNCTION public.ret() OWNER TO postgres;
 
 --
--- TOC entry 274 (class 1255 OID 27857)
--- Dependencies: 6 715
+-- TOC entry 270 (class 1255 OID 27857)
+-- Dependencies: 6 716
 -- Name: ret(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1843,8 +1862,8 @@ $$;
 ALTER FUNCTION public.ret(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 335 (class 1255 OID 28170)
--- Dependencies: 715 6
+-- TOC entry 331 (class 1255 OID 28170)
+-- Dependencies: 716 6
 -- Name: ret(date); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1869,8 +1888,8 @@ $$;
 ALTER FUNCTION public.ret(cod date) OWNER TO postgres;
 
 --
--- TOC entry 275 (class 1255 OID 27858)
--- Dependencies: 6 715
+-- TOC entry 271 (class 1255 OID 27858)
+-- Dependencies: 6 716
 -- Name: retorna_usuario(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1895,8 +1914,8 @@ $$;
 ALTER FUNCTION public.retorna_usuario() OWNER TO postgres;
 
 --
--- TOC entry 276 (class 1255 OID 27859)
--- Dependencies: 6 715
+-- TOC entry 272 (class 1255 OID 27859)
+-- Dependencies: 6 716
 -- Name: retorna_usuario(character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1921,8 +1940,8 @@ $$;
 ALTER FUNCTION public.retorna_usuario(nomeusu character varying) OWNER TO postgres;
 
 --
--- TOC entry 277 (class 1255 OID 27860)
--- Dependencies: 6 715
+-- TOC entry 273 (class 1255 OID 27860)
+-- Dependencies: 716 6
 -- Name: retorna_usuario(character varying, character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1947,8 +1966,8 @@ $$;
 ALTER FUNCTION public.retorna_usuario(loginusu character varying, senhausu character varying) OWNER TO postgres;
 
 --
--- TOC entry 278 (class 1255 OID 27861)
--- Dependencies: 6 715
+-- TOC entry 274 (class 1255 OID 27861)
+-- Dependencies: 716 6
 -- Name: retornacirurgia(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -1973,8 +1992,8 @@ $$;
 ALTER FUNCTION public.retornacirurgia() OWNER TO postgres;
 
 --
--- TOC entry 279 (class 1255 OID 27862)
--- Dependencies: 6 715
+-- TOC entry 275 (class 1255 OID 27862)
+-- Dependencies: 6 716
 -- Name: retornacirurgia(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2000,8 +2019,8 @@ $$;
 ALTER FUNCTION public.retornacirurgia(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 280 (class 1255 OID 27863)
--- Dependencies: 715 6
+-- TOC entry 276 (class 1255 OID 27863)
+-- Dependencies: 716 6
 -- Name: retornacirurgia(character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2025,8 +2044,8 @@ $$;
 ALTER FUNCTION public.retornacirurgia(cod character varying) OWNER TO postgres;
 
 --
--- TOC entry 333 (class 1255 OID 27864)
--- Dependencies: 715 6
+-- TOC entry 329 (class 1255 OID 27864)
+-- Dependencies: 6 716
 -- Name: retornacirurgiaintern(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2053,8 +2072,8 @@ $$;
 ALTER FUNCTION public.retornacirurgiaintern() OWNER TO postgres;
 
 --
--- TOC entry 288 (class 1255 OID 27865)
--- Dependencies: 715 6
+-- TOC entry 284 (class 1255 OID 27865)
+-- Dependencies: 716 6
 -- Name: retornacirurgiaintern(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2065,7 +2084,7 @@ DECLARE RESU    RECORD; -- Variavel que armazenará o retorno da query
 BEGIN
  
   -- Vamos criar o LOOP para retornar a execução da query na tabela cadastro
-  FOR RESU IN SELECT  ci.cod_cirurgia_intern, p.nome_paciente, T.descricao_tratamento, ci.descricao_procedimento, ci.data_cirurgia, ci.horario_cirurgia, ci.valor_cirurgia from paciente p inner join tratamento t on p.cod_paciente = t.cod_paciente_fk inner join cirurgia_enternacao ci on t.cod_tratamento_pk = ci.cod_tratamento_fk inner join cirurgia c on c.cod_cirurgia_pk = ci.cod_cirurgia_fk
+  FOR RESU IN SELECT  ci.cod_internacao, p.nome_paciente, T.descricao_tratamento, ci.descricao_procedimento, ci.data_cirurgia, ci.horario_cirurgia, ci.valor_cirurgia from paciente p inner join tratamento t on p.cod_paciente = t.cod_paciente_fk inner join cirurgia_enternacao ci on t.cod_tratamento_pk = ci.cod_tratamento_fk inner join cirurgia c on c.cod_cirurgia_pk = ci.cod_cirurgia_fk
  where p.cod_paciente =cod
   LOOP
     -- O retorno de cada linha
@@ -2080,8 +2099,34 @@ $$;
 ALTER FUNCTION public.retornacirurgiaintern(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 281 (class 1255 OID 27866)
--- Dependencies: 715 6
+-- TOC entry 339 (class 1255 OID 28176)
+-- Dependencies: 6 716
+-- Name: retornacirurgiainternacao(); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION retornacirurgiainternacao() RETURNS SETOF record
+    LANGUAGE plpgsql
+    AS $$
+DECLARE RESU    RECORD; -- Variavel que armazenará o retorno da query
+BEGIN
+ 
+  -- Vamos criar o LOOP para retornar a execução da query na tabela cadastro
+  FOR RESU IN SELECT ci.cod_internacao, p.nome_paciente, T.descricao_tratamento, ci.descricao_procedimento, ci.data_cirurgia, ci.horario_cirurgia, ci.valor_cirurgia from paciente p inner join consulta c on p.cod_paciente = c.cod_paciente_fk inner join tratamento t on t.cod_consulta_fk = c.cod_consulta inner join cirurgia_enternacao ci on t.cod_tratamento_pk = ci.cod_tratamento_fk inner join cirurgia cirur on cirur.cod_cirurgia_pk = ci.cod_cirurgia_fk 
+  LOOP
+    -- O retorno de cada linha
+    RETURN NEXT RESU;
+  END LOOP;
+ 
+ 
+END;
+$$;
+
+
+ALTER FUNCTION public.retornacirurgiainternacao() OWNER TO postgres;
+
+--
+-- TOC entry 283 (class 1255 OID 27866)
+-- Dependencies: 6 716
 -- Name: retornacirurgiainternacao(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2092,7 +2137,7 @@ DECLARE RESU    RECORD; -- Variavel que armazenará o retorno da query
 BEGIN
  
   -- Vamos criar o LOOP para retornar a execução da query na tabela cadastro
-  FOR RESU IN SELECT ci.cod_cirurgia_intern, p.nome_paciente, T.descricao_tratamento, ci.descricao_procedimento, ci.data_cirurgia, ci.horario_cirurgia, ci.valor_cirurgia from paciente p inner join tratamento t on p.cod_paciente = t.cod_paciente_fk inner join cirurgia_enternacao ci on t.cod_tratamento_pk = ci.cod_tratamento_fk inner join cirurgia c on c.cod_cirurgia_pk = ci.cod_cirurgia_fk where p.cod_cirurgia_intern =cod
+  FOR RESU IN SELECT ci.cod_internacao, p.nome_paciente, T.descricao_tratamento, ci.descricao_procedimento, ci.data_cirurgia, ci.horario_cirurgia, ci.valor_cirurgia from paciente p inner join consulta c on p.cod_paciente = c.cod_paciente_fk inner join tratamento t on t.cod_consulta_fk = c.cod_consulta inner join cirurgia_enternacao ci on t.cod_tratamento_pk = ci.cod_tratamento_fk inner join cirurgia cirur on cirur.cod_cirurgia_pk = ci.cod_cirurgia_fk where ci.cod_internacao =cod
   LOOP
     -- O retorno de cada linha
     RETURN NEXT RESU;
@@ -2106,8 +2151,8 @@ $$;
 ALTER FUNCTION public.retornacirurgiainternacao(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 282 (class 1255 OID 27867)
--- Dependencies: 6 715
+-- TOC entry 277 (class 1255 OID 27867)
+-- Dependencies: 6 716
 -- Name: retornacli(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2132,8 +2177,8 @@ $$;
 ALTER FUNCTION public.retornacli() OWNER TO postgres;
 
 --
--- TOC entry 283 (class 1255 OID 27868)
--- Dependencies: 6 715
+-- TOC entry 278 (class 1255 OID 27868)
+-- Dependencies: 716 6
 -- Name: retornacli(character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2159,8 +2204,8 @@ $$;
 ALTER FUNCTION public.retornacli(cod character varying) OWNER TO postgres;
 
 --
--- TOC entry 284 (class 1255 OID 27869)
--- Dependencies: 715 6
+-- TOC entry 279 (class 1255 OID 27869)
+-- Dependencies: 6 716
 -- Name: retornacli(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2185,8 +2230,8 @@ $$;
 ALTER FUNCTION public.retornacli(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 285 (class 1255 OID 27870)
--- Dependencies: 6 715
+-- TOC entry 280 (class 1255 OID 27870)
+-- Dependencies: 6 716
 -- Name: retornaconsulta(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2211,8 +2256,8 @@ $$;
 ALTER FUNCTION public.retornaconsulta() OWNER TO postgres;
 
 --
--- TOC entry 286 (class 1255 OID 27871)
--- Dependencies: 715 6
+-- TOC entry 281 (class 1255 OID 27871)
+-- Dependencies: 6 716
 -- Name: retornaconsulta(character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2237,8 +2282,8 @@ $$;
 ALTER FUNCTION public.retornaconsulta(cod character varying) OWNER TO postgres;
 
 --
--- TOC entry 287 (class 1255 OID 27872)
--- Dependencies: 6 715
+-- TOC entry 282 (class 1255 OID 27872)
+-- Dependencies: 716 6
 -- Name: retornaconsulta(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2264,8 +2309,8 @@ $$;
 ALTER FUNCTION public.retornaconsulta(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 289 (class 1255 OID 27873)
--- Dependencies: 715 6
+-- TOC entry 285 (class 1255 OID 27873)
+-- Dependencies: 6 716
 -- Name: retornaconsultaconta(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2291,8 +2336,8 @@ $$;
 ALTER FUNCTION public.retornaconsultaconta(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 327 (class 1255 OID 28166)
--- Dependencies: 6 715
+-- TOC entry 322 (class 1255 OID 28166)
+-- Dependencies: 716 6
 -- Name: retornaconsultapac(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2318,8 +2363,8 @@ $$;
 ALTER FUNCTION public.retornaconsultapac(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 290 (class 1255 OID 27874)
--- Dependencies: 6 715
+-- TOC entry 286 (class 1255 OID 27874)
+-- Dependencies: 716 6
 -- Name: retornaconta(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2341,8 +2386,8 @@ $$;
 ALTER FUNCTION public.retornaconta() OWNER TO postgres;
 
 --
--- TOC entry 291 (class 1255 OID 27875)
--- Dependencies: 6 715
+-- TOC entry 287 (class 1255 OID 27875)
+-- Dependencies: 716 6
 -- Name: retornaconta(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2364,8 +2409,8 @@ $$;
 ALTER FUNCTION public.retornaconta(codigo integer) OWNER TO postgres;
 
 --
--- TOC entry 292 (class 1255 OID 27876)
--- Dependencies: 6 715
+-- TOC entry 288 (class 1255 OID 27876)
+-- Dependencies: 716 6
 -- Name: retornaconta(character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2387,8 +2432,8 @@ $$;
 ALTER FUNCTION public.retornaconta(codigo character varying) OWNER TO postgres;
 
 --
--- TOC entry 337 (class 1255 OID 27877)
--- Dependencies: 715 6
+-- TOC entry 333 (class 1255 OID 27877)
+-- Dependencies: 716 6
 -- Name: retornacustos(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2410,8 +2455,8 @@ $$;
 ALTER FUNCTION public.retornacustos() OWNER TO postgres;
 
 --
--- TOC entry 339 (class 1255 OID 27878)
--- Dependencies: 715 6
+-- TOC entry 334 (class 1255 OID 27878)
+-- Dependencies: 6 716
 -- Name: retornacustos(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2433,8 +2478,8 @@ $$;
 ALTER FUNCTION public.retornacustos(codigo integer) OWNER TO postgres;
 
 --
--- TOC entry 293 (class 1255 OID 27879)
--- Dependencies: 6 715
+-- TOC entry 289 (class 1255 OID 27879)
+-- Dependencies: 6 716
 -- Name: retornadados(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2456,8 +2501,8 @@ $$;
 ALTER FUNCTION public.retornadados(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 294 (class 1255 OID 27880)
--- Dependencies: 715 6
+-- TOC entry 290 (class 1255 OID 27880)
+-- Dependencies: 716 6
 -- Name: retornaexame(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2482,8 +2527,8 @@ $$;
 ALTER FUNCTION public.retornaexame() OWNER TO postgres;
 
 --
--- TOC entry 295 (class 1255 OID 27881)
--- Dependencies: 6 715
+-- TOC entry 291 (class 1255 OID 27881)
+-- Dependencies: 6 716
 -- Name: retornaexame(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2508,8 +2553,8 @@ $$;
 ALTER FUNCTION public.retornaexame(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 296 (class 1255 OID 27882)
--- Dependencies: 6 715
+-- TOC entry 292 (class 1255 OID 27882)
+-- Dependencies: 6 716
 -- Name: retornaexame(character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2534,8 +2579,8 @@ $$;
 ALTER FUNCTION public.retornaexame(cod character varying) OWNER TO postgres;
 
 --
--- TOC entry 297 (class 1255 OID 27883)
--- Dependencies: 715 6
+-- TOC entry 293 (class 1255 OID 27883)
+-- Dependencies: 716 6
 -- Name: retornaexamelabo(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2562,8 +2607,8 @@ $$;
 ALTER FUNCTION public.retornaexamelabo() OWNER TO postgres;
 
 --
--- TOC entry 298 (class 1255 OID 27884)
--- Dependencies: 6 715
+-- TOC entry 294 (class 1255 OID 27884)
+-- Dependencies: 6 716
 -- Name: retornaexamelabo(character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2588,8 +2633,8 @@ $$;
 ALTER FUNCTION public.retornaexamelabo(codigo character varying) OWNER TO postgres;
 
 --
--- TOC entry 300 (class 1255 OID 27885)
--- Dependencies: 6 715
+-- TOC entry 304 (class 1255 OID 27885)
+-- Dependencies: 716 6
 -- Name: retornaexamelabo(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2597,7 +2642,7 @@ CREATE FUNCTION retornaexamelabo(cod integer) RETURNS SETOF refcursor
     LANGUAGE plpgsql
     AS $$
 DECLARE
-EXAME CURSOR FOR SELECT p.nome_paciente, e.tipo_exame, l.descricao_exame, l.responsavel_exame, l.valor from paciente p inner join tratamento t on p.cod_paciente = t.cod_paciente_fk inner join laboratoriais l on t.cod_tratamento_pk = l.cod_tratameto_fk inner join exame e on e.cod_exame_pk = l.cod_exame_fk where p.cod_paciente =cod;
+EXAME CURSOR FOR SELECT p.nome_paciente, e.tipo_exame, l.descricao_exame, l.responsavel_exame, l.valor from paciente p inner join consulta c on p.cod_paciente = c.cod_paciente_fk inner join tratamento t on t.cod_consulta_fk = c.cod_consulta inner join laboratoriais l on l.cod_tratameto_fk = t.cod_tratamento_pk inner join exame e on e.cod_exame_pk = l.cod_exame_fk where p.cod_paciente =cod;
  	--um_empregado laboratorios%ROWTYPE;
 reg RECORD;
 	BEGIN
@@ -2615,8 +2660,8 @@ $$;
 ALTER FUNCTION public.retornaexamelabo(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 330 (class 1255 OID 27886)
--- Dependencies: 6 715
+-- TOC entry 325 (class 1255 OID 27886)
+-- Dependencies: 716 6
 -- Name: retornaexamelaboratorial(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2641,34 +2686,8 @@ $$;
 ALTER FUNCTION public.retornaexamelaboratorial() OWNER TO postgres;
 
 --
--- TOC entry 301 (class 1255 OID 27887)
--- Dependencies: 715 6
--- Name: retornaexamelabotext(); Type: FUNCTION; Schema: public; Owner: postgres
---
-
-CREATE FUNCTION retornaexamelabotext() RETURNS SETOF refcursor
-    LANGUAGE plpgsql
-    AS $$
-
-DECLARE
-EXAME CURSOR FOR SELECT (cod_tratameto_fk , cod_exame_fk ), p.nome_paciente, e.tipo_exame, l.descricao_exame, l.responsavel_exame, l.valor from paciente p inner join tratamento t on p.cod_paciente = t.cod_paciente_fk inner join laboratoriais l on t.cod_tratamento_pk = l.cod_tratameto_fk inner join exame e on e.cod_exame_pk = l.cod_exame_fk;
- 
-reg RECORD;
-	BEGIN
-	OPEN EXAME;
-	LOOP
-		FETCH EXAME INTO reg;
-		RETURN NEXT EXAME;
-		END LOOP;
-	END;
-$$;
-
-
-ALTER FUNCTION public.retornaexamelabotext() OWNER TO postgres;
-
---
--- TOC entry 302 (class 1255 OID 27888)
--- Dependencies: 715 6
+-- TOC entry 296 (class 1255 OID 27888)
+-- Dependencies: 6 716
 -- Name: retornalab(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2693,8 +2712,8 @@ $$;
 ALTER FUNCTION public.retornalab() OWNER TO postgres;
 
 --
--- TOC entry 303 (class 1255 OID 27889)
--- Dependencies: 715 6
+-- TOC entry 297 (class 1255 OID 27889)
+-- Dependencies: 6 716
 -- Name: retornalab(character); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2719,8 +2738,8 @@ $$;
 ALTER FUNCTION public.retornalab(cod character) OWNER TO postgres;
 
 --
--- TOC entry 304 (class 1255 OID 27890)
--- Dependencies: 715 6
+-- TOC entry 298 (class 1255 OID 27890)
+-- Dependencies: 6 716
 -- Name: retornalab(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2745,8 +2764,8 @@ $$;
 ALTER FUNCTION public.retornalab(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 305 (class 1255 OID 27891)
--- Dependencies: 715 6
+-- TOC entry 299 (class 1255 OID 27891)
+-- Dependencies: 716 6
 -- Name: retornamed(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2771,8 +2790,8 @@ $$;
 ALTER FUNCTION public.retornamed() OWNER TO postgres;
 
 --
--- TOC entry 324 (class 1255 OID 27892)
--- Dependencies: 6 715
+-- TOC entry 319 (class 1255 OID 27892)
+-- Dependencies: 6 716
 -- Name: retornamed(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2797,8 +2816,8 @@ $$;
 ALTER FUNCTION public.retornamed(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 306 (class 1255 OID 27893)
--- Dependencies: 715 6
+-- TOC entry 300 (class 1255 OID 27893)
+-- Dependencies: 716 6
 -- Name: retornamed(character); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2823,8 +2842,8 @@ $$;
 ALTER FUNCTION public.retornamed(cod character) OWNER TO postgres;
 
 --
--- TOC entry 307 (class 1255 OID 27894)
--- Dependencies: 715 6
+-- TOC entry 301 (class 1255 OID 27894)
+-- Dependencies: 716 6
 -- Name: retornamedicacao(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2849,8 +2868,8 @@ $$;
 ALTER FUNCTION public.retornamedicacao() OWNER TO postgres;
 
 --
--- TOC entry 308 (class 1255 OID 27895)
--- Dependencies: 6 715
+-- TOC entry 302 (class 1255 OID 27895)
+-- Dependencies: 716 6
 -- Name: retornamedicacao(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2875,8 +2894,8 @@ $$;
 ALTER FUNCTION public.retornamedicacao(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 309 (class 1255 OID 27896)
--- Dependencies: 6 715
+-- TOC entry 303 (class 1255 OID 27896)
+-- Dependencies: 6 716
 -- Name: retornamedicacao(character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2901,8 +2920,8 @@ $$;
 ALTER FUNCTION public.retornamedicacao(cod character varying) OWNER TO postgres;
 
 --
--- TOC entry 310 (class 1255 OID 27897)
--- Dependencies: 715 6
+-- TOC entry 305 (class 1255 OID 27897)
+-- Dependencies: 6 716
 -- Name: retornamedicacao(text); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2927,34 +2946,8 @@ $$;
 ALTER FUNCTION public.retornamedicacao(cod text) OWNER TO postgres;
 
 --
--- TOC entry 311 (class 1255 OID 27898)
--- Dependencies: 6 715
--- Name: retornamedicacao(character varying, character varying); Type: FUNCTION; Schema: public; Owner: postgres
---
-
-CREATE FUNCTION retornamedicacao(cod character varying, cod2 character varying) RETURNS SETOF record
-    LANGUAGE plpgsql
-    AS $$
-DECLARE RESU    RECORD; -- Variavel que armazenará o retorno da query
-BEGIN
-
-  -- Vamos criar o LOOP para retornar a execução da query na tabela cadastro
-  FOR RESU IN SELECT descricao_tratamento,nome_remedio, qtd_aplicada, responsavel_medicacao, valor FROM  remedios INNER JOIN medicacao ON cod_remedio = cod_remedio_fk INNER JOIN tratamento on cod_tratamento_pk = cod_tratamento_fk where  descricao_tratamento = COD and nome_remedio = COD2
- LOOP
-    -- O retorno de cada linha
-    RETURN;
-  END LOOP;
- 
- 
-END;
-$$;
-
-
-ALTER FUNCTION public.retornamedicacao(cod character varying, cod2 character varying) OWNER TO postgres;
-
---
--- TOC entry 312 (class 1255 OID 27899)
--- Dependencies: 715 6
+-- TOC entry 306 (class 1255 OID 27899)
+-- Dependencies: 716 6
 -- Name: retornamedicacao2(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -2979,8 +2972,8 @@ $$;
 ALTER FUNCTION public.retornamedicacao2(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 313 (class 1255 OID 27900)
--- Dependencies: 715 6
+-- TOC entry 307 (class 1255 OID 27900)
+-- Dependencies: 716 6
 -- Name: retornapac(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3005,8 +2998,8 @@ $$;
 ALTER FUNCTION public.retornapac() OWNER TO postgres;
 
 --
--- TOC entry 314 (class 1255 OID 27901)
--- Dependencies: 6 715
+-- TOC entry 308 (class 1255 OID 27901)
+-- Dependencies: 716 6
 -- Name: retornapac(character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3031,8 +3024,8 @@ $$;
 ALTER FUNCTION public.retornapac(cod character varying) OWNER TO postgres;
 
 --
--- TOC entry 315 (class 1255 OID 27902)
--- Dependencies: 715 6
+-- TOC entry 309 (class 1255 OID 27902)
+-- Dependencies: 716 6
 -- Name: retornapac(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3057,8 +3050,34 @@ $$;
 ALTER FUNCTION public.retornapac(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 316 (class 1255 OID 27903)
--- Dependencies: 715 6
+-- TOC entry 340 (class 1255 OID 36367)
+-- Dependencies: 716 6
+-- Name: retornapacconta(integer, date); Type: FUNCTION; Schema: public; Owner: postgres
+--
+
+CREATE FUNCTION retornapacconta(cod integer, dat date) RETURNS SETOF refcursor
+    LANGUAGE plpgsql
+    AS $$
+DECLARE
+cs CURSOR FOR SELECT p.cod_paciente, p.nome_paciente, p.nascimento_paciente, p.rghv_paciente, p.sexo_paciente  FROM paciente p inner join consulta co on p.cod_paciente = co.cod_paciente_fk inner join cliente cli on p.cod_cliente_fk = cli.cod_cliente WHERE  cli.cod_cliente = cod and co.data_consulta= dat;
+
+reg RECORD;
+BEGIN
+OPEN cs;
+
+FETCH cs INTO reg;
+
+RETURN NEXT reg;
+RETURN;
+END;
+$$;
+
+
+ALTER FUNCTION public.retornapacconta(cod integer, dat date) OWNER TO postgres;
+
+--
+-- TOC entry 310 (class 1255 OID 27903)
+-- Dependencies: 716 6
 -- Name: retornapactrat(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3081,8 +3100,8 @@ $$;
 ALTER FUNCTION public.retornapactrat(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 317 (class 1255 OID 27904)
--- Dependencies: 715 6
+-- TOC entry 311 (class 1255 OID 27904)
+-- Dependencies: 716 6
 -- Name: retornarem(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3107,8 +3126,8 @@ $$;
 ALTER FUNCTION public.retornarem() OWNER TO postgres;
 
 --
--- TOC entry 318 (class 1255 OID 27905)
--- Dependencies: 6 715
+-- TOC entry 312 (class 1255 OID 27905)
+-- Dependencies: 6 716
 -- Name: retornarem(character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3133,8 +3152,8 @@ $$;
 ALTER FUNCTION public.retornarem(cod character varying) OWNER TO postgres;
 
 --
--- TOC entry 319 (class 1255 OID 27906)
--- Dependencies: 715 6
+-- TOC entry 313 (class 1255 OID 27906)
+-- Dependencies: 6 716
 -- Name: retornarem(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3159,8 +3178,8 @@ $$;
 ALTER FUNCTION public.retornarem(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 320 (class 1255 OID 27907)
--- Dependencies: 715 6
+-- TOC entry 314 (class 1255 OID 27907)
+-- Dependencies: 6 716
 -- Name: retornatipo(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3185,8 +3204,8 @@ $$;
 ALTER FUNCTION public.retornatipo() OWNER TO postgres;
 
 --
--- TOC entry 321 (class 1255 OID 27908)
--- Dependencies: 6 715
+-- TOC entry 315 (class 1255 OID 27908)
+-- Dependencies: 716 6
 -- Name: retornatipo(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3211,8 +3230,8 @@ $$;
 ALTER FUNCTION public.retornatipo(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 268 (class 1255 OID 27909)
--- Dependencies: 715 6
+-- TOC entry 264 (class 1255 OID 27909)
+-- Dependencies: 6 716
 -- Name: retornatipo(character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3237,8 +3256,8 @@ $$;
 ALTER FUNCTION public.retornatipo(cod character varying) OWNER TO postgres;
 
 --
--- TOC entry 325 (class 1255 OID 27910)
--- Dependencies: 6 715
+-- TOC entry 320 (class 1255 OID 27910)
+-- Dependencies: 716 6
 -- Name: retornatratamento(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3263,8 +3282,8 @@ $$;
 ALTER FUNCTION public.retornatratamento() OWNER TO postgres;
 
 --
--- TOC entry 323 (class 1255 OID 27911)
--- Dependencies: 6 715
+-- TOC entry 318 (class 1255 OID 27911)
+-- Dependencies: 716 6
 -- Name: retornatratamento(character varying); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3289,8 +3308,8 @@ $$;
 ALTER FUNCTION public.retornatratamento(cod character varying) OWNER TO postgres;
 
 --
--- TOC entry 326 (class 1255 OID 27912)
--- Dependencies: 715 6
+-- TOC entry 321 (class 1255 OID 27912)
+-- Dependencies: 716 6
 -- Name: retornatratamento(integer); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3315,8 +3334,8 @@ $$;
 ALTER FUNCTION public.retornatratamento(cod integer) OWNER TO postgres;
 
 --
--- TOC entry 322 (class 1255 OID 27913)
--- Dependencies: 715 6
+-- TOC entry 317 (class 1255 OID 27913)
+-- Dependencies: 716 6
 -- Name: testa_cursor(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -3363,7 +3382,7 @@ ALTER TABLE public.cirurgia OWNER TO postgres;
 
 --
 -- TOC entry 162 (class 1259 OID 27917)
--- Dependencies: 161 6
+-- Dependencies: 6 161
 -- Name: cirurgia_cod_cirurgia_pk_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -3378,7 +3397,7 @@ CREATE SEQUENCE cirurgia_cod_cirurgia_pk_seq
 ALTER TABLE public.cirurgia_cod_cirurgia_pk_seq OWNER TO postgres;
 
 --
--- TOC entry 2190 (class 0 OID 0)
+-- TOC entry 2191 (class 0 OID 0)
 -- Dependencies: 162
 -- Name: cirurgia_cod_cirurgia_pk_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -3387,7 +3406,7 @@ ALTER SEQUENCE cirurgia_cod_cirurgia_pk_seq OWNED BY cirurgia.cod_cirurgia_pk;
 
 
 --
--- TOC entry 2191 (class 0 OID 0)
+-- TOC entry 2192 (class 0 OID 0)
 -- Dependencies: 162
 -- Name: cirurgia_cod_cirurgia_pk_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -3416,7 +3435,7 @@ ALTER TABLE public.cirurgia_enternacao OWNER TO postgres;
 
 --
 -- TOC entry 164 (class 1259 OID 27925)
--- Dependencies: 163 6
+-- Dependencies: 6 163
 -- Name: cirurgia_enternacao_cod_internacao_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -3431,7 +3450,7 @@ CREATE SEQUENCE cirurgia_enternacao_cod_internacao_seq
 ALTER TABLE public.cirurgia_enternacao_cod_internacao_seq OWNER TO postgres;
 
 --
--- TOC entry 2192 (class 0 OID 0)
+-- TOC entry 2193 (class 0 OID 0)
 -- Dependencies: 164
 -- Name: cirurgia_enternacao_cod_internacao_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -3440,17 +3459,17 @@ ALTER SEQUENCE cirurgia_enternacao_cod_internacao_seq OWNED BY cirurgia_enternac
 
 
 --
--- TOC entry 2193 (class 0 OID 0)
+-- TOC entry 2194 (class 0 OID 0)
 -- Dependencies: 164
 -- Name: cirurgia_enternacao_cod_internacao_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('cirurgia_enternacao_cod_internacao_seq', 4, true);
+SELECT pg_catalog.setval('cirurgia_enternacao_cod_internacao_seq', 3, true);
 
 
 --
 -- TOC entry 165 (class 1259 OID 27927)
--- Dependencies: 2078 2079 2080 2081 6
+-- Dependencies: 2079 2080 2081 2082 6
 -- Name: cliente; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -3490,7 +3509,7 @@ CREATE SEQUENCE cliente_cod_cliente_seq
 ALTER TABLE public.cliente_cod_cliente_seq OWNER TO postgres;
 
 --
--- TOC entry 2194 (class 0 OID 0)
+-- TOC entry 2195 (class 0 OID 0)
 -- Dependencies: 166
 -- Name: cliente_cod_cliente_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -3499,17 +3518,17 @@ ALTER SEQUENCE cliente_cod_cliente_seq OWNED BY cliente.cod_cliente;
 
 
 --
--- TOC entry 2195 (class 0 OID 0)
+-- TOC entry 2196 (class 0 OID 0)
 -- Dependencies: 166
 -- Name: cliente_cod_cliente_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('cliente_cod_cliente_seq', 1, false);
+SELECT pg_catalog.setval('cliente_cod_cliente_seq', 7, true);
 
 
 --
 -- TOC entry 167 (class 1259 OID 27936)
--- Dependencies: 2083 6
+-- Dependencies: 2084 6
 -- Name: consulta; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -3545,7 +3564,7 @@ CREATE SEQUENCE consulta_cod_consulta_seq
 ALTER TABLE public.consulta_cod_consulta_seq OWNER TO postgres;
 
 --
--- TOC entry 2196 (class 0 OID 0)
+-- TOC entry 2197 (class 0 OID 0)
 -- Dependencies: 168
 -- Name: consulta_cod_consulta_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -3554,7 +3573,7 @@ ALTER SEQUENCE consulta_cod_consulta_seq OWNED BY consulta.cod_consulta;
 
 
 --
--- TOC entry 2197 (class 0 OID 0)
+-- TOC entry 2198 (class 0 OID 0)
 -- Dependencies: 168
 -- Name: consulta_cod_consulta_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -3581,7 +3600,7 @@ ALTER TABLE public.custos OWNER TO postgres;
 
 --
 -- TOC entry 170 (class 1259 OID 27948)
--- Dependencies: 6 169
+-- Dependencies: 169 6
 -- Name: custos_cod_custo_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -3596,7 +3615,7 @@ CREATE SEQUENCE custos_cod_custo_seq
 ALTER TABLE public.custos_cod_custo_seq OWNER TO postgres;
 
 --
--- TOC entry 2198 (class 0 OID 0)
+-- TOC entry 2199 (class 0 OID 0)
 -- Dependencies: 170
 -- Name: custos_cod_custo_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -3605,7 +3624,7 @@ ALTER SEQUENCE custos_cod_custo_seq OWNED BY custos.cod_custo;
 
 
 --
--- TOC entry 2199 (class 0 OID 0)
+-- TOC entry 2200 (class 0 OID 0)
 -- Dependencies: 170
 -- Name: custos_cod_custo_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -3632,7 +3651,7 @@ ALTER TABLE public.exame OWNER TO postgres;
 
 --
 -- TOC entry 172 (class 1259 OID 27956)
--- Dependencies: 6 171
+-- Dependencies: 171 6
 -- Name: exame_cod_exame_pk_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -3647,7 +3666,7 @@ CREATE SEQUENCE exame_cod_exame_pk_seq
 ALTER TABLE public.exame_cod_exame_pk_seq OWNER TO postgres;
 
 --
--- TOC entry 2200 (class 0 OID 0)
+-- TOC entry 2201 (class 0 OID 0)
 -- Dependencies: 172
 -- Name: exame_cod_exame_pk_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -3656,12 +3675,12 @@ ALTER SEQUENCE exame_cod_exame_pk_seq OWNED BY exame.cod_exame_pk;
 
 
 --
--- TOC entry 2201 (class 0 OID 0)
+-- TOC entry 2202 (class 0 OID 0)
 -- Dependencies: 172
 -- Name: exame_cod_exame_pk_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('exame_cod_exame_pk_seq', 3, true);
+SELECT pg_catalog.setval('exame_cod_exame_pk_seq', 1, true);
 
 
 --
@@ -3699,7 +3718,7 @@ CREATE SEQUENCE laboratoriais_cod_laboratoriais_seq
 ALTER TABLE public.laboratoriais_cod_laboratoriais_seq OWNER TO postgres;
 
 --
--- TOC entry 2202 (class 0 OID 0)
+-- TOC entry 2203 (class 0 OID 0)
 -- Dependencies: 174
 -- Name: laboratoriais_cod_laboratoriais_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -3708,17 +3727,17 @@ ALTER SEQUENCE laboratoriais_cod_laboratoriais_seq OWNED BY laboratoriais.cod_la
 
 
 --
--- TOC entry 2203 (class 0 OID 0)
+-- TOC entry 2204 (class 0 OID 0)
 -- Dependencies: 174
 -- Name: laboratoriais_cod_laboratoriais_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('laboratoriais_cod_laboratoriais_seq', 7, true);
+SELECT pg_catalog.setval('laboratoriais_cod_laboratoriais_seq', 1, false);
 
 
 --
 -- TOC entry 175 (class 1259 OID 27966)
--- Dependencies: 2088 6
+-- Dependencies: 2089 6
 -- Name: laboratorios; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -3736,7 +3755,7 @@ ALTER TABLE public.laboratorios OWNER TO postgres;
 
 --
 -- TOC entry 176 (class 1259 OID 27970)
--- Dependencies: 6 175
+-- Dependencies: 175 6
 -- Name: laboratorios_cod_laboratorio_pk_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -3751,7 +3770,7 @@ CREATE SEQUENCE laboratorios_cod_laboratorio_pk_seq
 ALTER TABLE public.laboratorios_cod_laboratorio_pk_seq OWNER TO postgres;
 
 --
--- TOC entry 2204 (class 0 OID 0)
+-- TOC entry 2205 (class 0 OID 0)
 -- Dependencies: 176
 -- Name: laboratorios_cod_laboratorio_pk_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -3760,7 +3779,7 @@ ALTER SEQUENCE laboratorios_cod_laboratorio_pk_seq OWNED BY laboratorios.cod_lab
 
 
 --
--- TOC entry 2205 (class 0 OID 0)
+-- TOC entry 2206 (class 0 OID 0)
 -- Dependencies: 176
 -- Name: laboratorios_cod_laboratorio_pk_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -3789,7 +3808,7 @@ ALTER TABLE public.medicacao OWNER TO postgres;
 
 --
 -- TOC entry 178 (class 1259 OID 27975)
--- Dependencies: 6 177
+-- Dependencies: 177 6
 -- Name: medicacao_cod_medicacao_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -3804,7 +3823,7 @@ CREATE SEQUENCE medicacao_cod_medicacao_seq
 ALTER TABLE public.medicacao_cod_medicacao_seq OWNER TO postgres;
 
 --
--- TOC entry 2206 (class 0 OID 0)
+-- TOC entry 2207 (class 0 OID 0)
 -- Dependencies: 178
 -- Name: medicacao_cod_medicacao_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -3813,7 +3832,7 @@ ALTER SEQUENCE medicacao_cod_medicacao_seq OWNED BY medicacao.cod_tratamento_fk;
 
 
 --
--- TOC entry 2207 (class 0 OID 0)
+-- TOC entry 2208 (class 0 OID 0)
 -- Dependencies: 178
 -- Name: medicacao_cod_medicacao_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -3838,7 +3857,7 @@ CREATE SEQUENCE medicacao_cod_medicacao_seq1
 ALTER TABLE public.medicacao_cod_medicacao_seq1 OWNER TO postgres;
 
 --
--- TOC entry 2208 (class 0 OID 0)
+-- TOC entry 2209 (class 0 OID 0)
 -- Dependencies: 191
 -- Name: medicacao_cod_medicacao_seq1; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -3847,17 +3866,17 @@ ALTER SEQUENCE medicacao_cod_medicacao_seq1 OWNED BY medicacao.cod_medicacao;
 
 
 --
--- TOC entry 2209 (class 0 OID 0)
+-- TOC entry 2210 (class 0 OID 0)
 -- Dependencies: 191
 -- Name: medicacao_cod_medicacao_seq1; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('medicacao_cod_medicacao_seq1', 2, true);
+SELECT pg_catalog.setval('medicacao_cod_medicacao_seq1', 5, true);
 
 
 --
 -- TOC entry 179 (class 1259 OID 27977)
--- Dependencies: 2091 2092 6
+-- Dependencies: 2092 2093 6
 -- Name: medico_veterinario; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -3876,7 +3895,7 @@ ALTER TABLE public.medico_veterinario OWNER TO postgres;
 
 --
 -- TOC entry 180 (class 1259 OID 27982)
--- Dependencies: 6 179
+-- Dependencies: 179 6
 -- Name: medico_veterinario_codigo_medico_vet_pk_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -3891,7 +3910,7 @@ CREATE SEQUENCE medico_veterinario_codigo_medico_vet_pk_seq
 ALTER TABLE public.medico_veterinario_codigo_medico_vet_pk_seq OWNER TO postgres;
 
 --
--- TOC entry 2210 (class 0 OID 0)
+-- TOC entry 2211 (class 0 OID 0)
 -- Dependencies: 180
 -- Name: medico_veterinario_codigo_medico_vet_pk_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -3900,7 +3919,7 @@ ALTER SEQUENCE medico_veterinario_codigo_medico_vet_pk_seq OWNED BY medico_veter
 
 
 --
--- TOC entry 2211 (class 0 OID 0)
+-- TOC entry 2212 (class 0 OID 0)
 -- Dependencies: 180
 -- Name: medico_veterinario_codigo_medico_vet_pk_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -3910,7 +3929,7 @@ SELECT pg_catalog.setval('medico_veterinario_codigo_medico_vet_pk_seq', 6, true)
 
 --
 -- TOC entry 181 (class 1259 OID 27984)
--- Dependencies: 2094 2095 2096 6
+-- Dependencies: 2095 2096 2097 6
 -- Name: paciente; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -3950,7 +3969,7 @@ CREATE SEQUENCE paciente_cod_paciente_seq
 ALTER TABLE public.paciente_cod_paciente_seq OWNER TO postgres;
 
 --
--- TOC entry 2212 (class 0 OID 0)
+-- TOC entry 2213 (class 0 OID 0)
 -- Dependencies: 182
 -- Name: paciente_cod_paciente_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -3959,12 +3978,12 @@ ALTER SEQUENCE paciente_cod_paciente_seq OWNED BY paciente.cod_paciente;
 
 
 --
--- TOC entry 2213 (class 0 OID 0)
+-- TOC entry 2214 (class 0 OID 0)
 -- Dependencies: 182
 -- Name: paciente_cod_paciente_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('paciente_cod_paciente_seq', 6, true);
+SELECT pg_catalog.setval('paciente_cod_paciente_seq', 7, true);
 
 
 --
@@ -4001,7 +4020,7 @@ CREATE SEQUENCE remedios_cod_remedio_seq
 ALTER TABLE public.remedios_cod_remedio_seq OWNER TO postgres;
 
 --
--- TOC entry 2214 (class 0 OID 0)
+-- TOC entry 2215 (class 0 OID 0)
 -- Dependencies: 184
 -- Name: remedios_cod_remedio_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -4010,7 +4029,7 @@ ALTER SEQUENCE remedios_cod_remedio_seq OWNED BY remedios.cod_remedio;
 
 
 --
--- TOC entry 2215 (class 0 OID 0)
+-- TOC entry 2216 (class 0 OID 0)
 -- Dependencies: 184
 -- Name: remedios_cod_remedio_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -4050,7 +4069,7 @@ CREATE SEQUENCE tipo_consulta_cod_tipo_consulta_seq
 ALTER TABLE public.tipo_consulta_cod_tipo_consulta_seq OWNER TO postgres;
 
 --
--- TOC entry 2216 (class 0 OID 0)
+-- TOC entry 2217 (class 0 OID 0)
 -- Dependencies: 186
 -- Name: tipo_consulta_cod_tipo_consulta_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -4059,12 +4078,12 @@ ALTER SEQUENCE tipo_consulta_cod_tipo_consulta_seq OWNED BY tipo_consulta.cod_ti
 
 
 --
--- TOC entry 2217 (class 0 OID 0)
+-- TOC entry 2218 (class 0 OID 0)
 -- Dependencies: 186
 -- Name: tipo_consulta_cod_tipo_consulta_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('tipo_consulta_cod_tipo_consulta_seq', 1, false);
+SELECT pg_catalog.setval('tipo_consulta_cod_tipo_consulta_seq', 3, true);
 
 
 --
@@ -4099,7 +4118,7 @@ CREATE SEQUENCE tratamento_cod_tratamento_pk_seq
 ALTER TABLE public.tratamento_cod_tratamento_pk_seq OWNER TO postgres;
 
 --
--- TOC entry 2218 (class 0 OID 0)
+-- TOC entry 2219 (class 0 OID 0)
 -- Dependencies: 188
 -- Name: tratamento_cod_tratamento_pk_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -4108,17 +4127,17 @@ ALTER SEQUENCE tratamento_cod_tratamento_pk_seq OWNED BY tratamento.cod_tratamen
 
 
 --
--- TOC entry 2219 (class 0 OID 0)
+-- TOC entry 2220 (class 0 OID 0)
 -- Dependencies: 188
 -- Name: tratamento_cod_tratamento_pk_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('tratamento_cod_tratamento_pk_seq', 22, true);
+SELECT pg_catalog.setval('tratamento_cod_tratamento_pk_seq', 9, true);
 
 
 --
 -- TOC entry 189 (class 1259 OID 28010)
--- Dependencies: 2101 2102 2103 6
+-- Dependencies: 2102 2103 2104 6
 -- Name: usuario; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
 --
 
@@ -4137,7 +4156,7 @@ ALTER TABLE public.usuario OWNER TO postgres;
 
 --
 -- TOC entry 190 (class 1259 OID 28016)
--- Dependencies: 6 189
+-- Dependencies: 189 6
 -- Name: usuario_cod_usuario_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -4152,7 +4171,7 @@ CREATE SEQUENCE usuario_cod_usuario_seq
 ALTER TABLE public.usuario_cod_usuario_seq OWNER TO postgres;
 
 --
--- TOC entry 2220 (class 0 OID 0)
+-- TOC entry 2221 (class 0 OID 0)
 -- Dependencies: 190
 -- Name: usuario_cod_usuario_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
@@ -4161,7 +4180,7 @@ ALTER SEQUENCE usuario_cod_usuario_seq OWNED BY usuario.cod_usuario;
 
 
 --
--- TOC entry 2221 (class 0 OID 0)
+-- TOC entry 2222 (class 0 OID 0)
 -- Dependencies: 190
 -- Name: usuario_cod_usuario_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -4170,7 +4189,7 @@ SELECT pg_catalog.setval('usuario_cod_usuario_seq', 1, false);
 
 
 --
--- TOC entry 2075 (class 2604 OID 28018)
+-- TOC entry 2076 (class 2604 OID 28018)
 -- Dependencies: 162 161
 -- Name: cod_cirurgia_pk; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -4179,7 +4198,7 @@ ALTER TABLE ONLY cirurgia ALTER COLUMN cod_cirurgia_pk SET DEFAULT nextval('ciru
 
 
 --
--- TOC entry 2076 (class 2604 OID 28019)
+-- TOC entry 2077 (class 2604 OID 28019)
 -- Dependencies: 164 163
 -- Name: cod_internacao; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -4188,7 +4207,7 @@ ALTER TABLE ONLY cirurgia_enternacao ALTER COLUMN cod_internacao SET DEFAULT nex
 
 
 --
--- TOC entry 2077 (class 2604 OID 28020)
+-- TOC entry 2078 (class 2604 OID 28020)
 -- Dependencies: 166 165
 -- Name: cod_cliente; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -4197,7 +4216,7 @@ ALTER TABLE ONLY cliente ALTER COLUMN cod_cliente SET DEFAULT nextval('cliente_c
 
 
 --
--- TOC entry 2082 (class 2604 OID 28021)
+-- TOC entry 2083 (class 2604 OID 28021)
 -- Dependencies: 168 167
 -- Name: cod_consulta; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -4206,7 +4225,7 @@ ALTER TABLE ONLY consulta ALTER COLUMN cod_consulta SET DEFAULT nextval('consult
 
 
 --
--- TOC entry 2084 (class 2604 OID 28022)
+-- TOC entry 2085 (class 2604 OID 28022)
 -- Dependencies: 170 169
 -- Name: cod_custo; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -4215,7 +4234,7 @@ ALTER TABLE ONLY custos ALTER COLUMN cod_custo SET DEFAULT nextval('custos_cod_c
 
 
 --
--- TOC entry 2085 (class 2604 OID 28023)
+-- TOC entry 2086 (class 2604 OID 28023)
 -- Dependencies: 172 171
 -- Name: cod_exame_pk; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -4224,7 +4243,7 @@ ALTER TABLE ONLY exame ALTER COLUMN cod_exame_pk SET DEFAULT nextval('exame_cod_
 
 
 --
--- TOC entry 2086 (class 2604 OID 28024)
+-- TOC entry 2087 (class 2604 OID 28024)
 -- Dependencies: 174 173
 -- Name: cod_laboratoriais; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -4233,7 +4252,7 @@ ALTER TABLE ONLY laboratoriais ALTER COLUMN cod_laboratoriais SET DEFAULT nextva
 
 
 --
--- TOC entry 2087 (class 2604 OID 28025)
+-- TOC entry 2088 (class 2604 OID 28025)
 -- Dependencies: 176 175
 -- Name: cod_laboratorio_pk; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -4242,7 +4261,7 @@ ALTER TABLE ONLY laboratorios ALTER COLUMN cod_laboratorio_pk SET DEFAULT nextva
 
 
 --
--- TOC entry 2089 (class 2604 OID 28161)
+-- TOC entry 2090 (class 2604 OID 28161)
 -- Dependencies: 191 177
 -- Name: cod_medicacao; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -4251,7 +4270,7 @@ ALTER TABLE ONLY medicacao ALTER COLUMN cod_medicacao SET DEFAULT nextval('medic
 
 
 --
--- TOC entry 2090 (class 2604 OID 28026)
+-- TOC entry 2091 (class 2604 OID 28026)
 -- Dependencies: 180 179
 -- Name: codigo_medico_vet_pk; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -4260,7 +4279,7 @@ ALTER TABLE ONLY medico_veterinario ALTER COLUMN codigo_medico_vet_pk SET DEFAUL
 
 
 --
--- TOC entry 2093 (class 2604 OID 28027)
+-- TOC entry 2094 (class 2604 OID 28027)
 -- Dependencies: 182 181
 -- Name: cod_paciente; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -4269,7 +4288,7 @@ ALTER TABLE ONLY paciente ALTER COLUMN cod_paciente SET DEFAULT nextval('pacient
 
 
 --
--- TOC entry 2097 (class 2604 OID 28028)
+-- TOC entry 2098 (class 2604 OID 28028)
 -- Dependencies: 184 183
 -- Name: cod_remedio; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -4278,7 +4297,7 @@ ALTER TABLE ONLY remedios ALTER COLUMN cod_remedio SET DEFAULT nextval('remedios
 
 
 --
--- TOC entry 2098 (class 2604 OID 28029)
+-- TOC entry 2099 (class 2604 OID 28029)
 -- Dependencies: 186 185
 -- Name: cod_tipo_consulta; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -4287,7 +4306,7 @@ ALTER TABLE ONLY tipo_consulta ALTER COLUMN cod_tipo_consulta SET DEFAULT nextva
 
 
 --
--- TOC entry 2099 (class 2604 OID 28030)
+-- TOC entry 2100 (class 2604 OID 28030)
 -- Dependencies: 188 187
 -- Name: cod_tratamento_pk; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -4296,7 +4315,7 @@ ALTER TABLE ONLY tratamento ALTER COLUMN cod_tratamento_pk SET DEFAULT nextval('
 
 
 --
--- TOC entry 2100 (class 2604 OID 28031)
+-- TOC entry 2101 (class 2604 OID 28031)
 -- Dependencies: 190 189
 -- Name: cod_usuario; Type: DEFAULT; Schema: public; Owner: postgres
 --
@@ -4305,7 +4324,7 @@ ALTER TABLE ONLY usuario ALTER COLUMN cod_usuario SET DEFAULT nextval('usuario_c
 
 
 --
--- TOC entry 2169 (class 0 OID 27914)
+-- TOC entry 2170 (class 0 OID 27914)
 -- Dependencies: 161
 -- Data for Name: cirurgia; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -4317,79 +4336,76 @@ COPY cirurgia (cod_cirurgia_pk, descricao_cirurgia, medico_veterinario_fk) FROM 
 
 
 --
--- TOC entry 2170 (class 0 OID 27919)
+-- TOC entry 2171 (class 0 OID 27919)
 -- Dependencies: 163
 -- Data for Name: cirurgia_enternacao; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY cirurgia_enternacao (cod_tratamento_fk, cod_cirurgia_fk, descricao_procedimento, data_cirurgia, horario_cirurgia, valor_cirurgia, cod_internacao) FROM stdin;
-16	1	TESTANDO	2012-10-10	12:44:00	23.00	1
-21	2	EEE	2012-02-12	12:44:00	33.00	4
+1	1	TESRE	2012-10-12	12:00:00	88.00	1
+1	2	TESTE	2012-02-13	13:44:00	50.00	3
 \.
 
 
 --
--- TOC entry 2171 (class 0 OID 27927)
+-- TOC entry 2172 (class 0 OID 27927)
 -- Dependencies: 165
 -- Data for Name: cliente; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY cliente (cod_cliente, nome_cliente, data_nascimeto_cliente, endereco_cliente, rg_cliente, telefone_cliente, exxpedidor_rg_cliente, municipio_cliente, cpf_cliente) FROM stdin;
 3	ENRIQUE	1976-11-11	ALTAMIRO DE ASSIS PEREIRA	1828304847933	(43)8442-0022	SSPRS	CORNÉLIO PROCÓPIO	848.939.734-22
+7	CARLOS	2000-04-22	PARIAIBA Nº3330	27273737447	(43)8344-2882	SSPRS	SANTA MARIANA	837.834.288-57
 \.
 
 
 --
--- TOC entry 2172 (class 0 OID 27936)
+-- TOC entry 2173 (class 0 OID 27936)
 -- Dependencies: 167
 -- Data for Name: consulta; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY consulta (cod_consulta, data_consulta, hora_consutla, cod_medico_veterinario_fk, cod_tipo_consulta_fk, agendado, cod_paciente_fk, prontuario_paciente) FROM stdin;
-1	2012-10-10	12:45:00	3	3	S	6	VERIFICAR SITUAÇÃO DE STRESS
-2	2012-12-12	12:30:00	6	2	N	4	IEIIEIEIEIEI
+1	2012-10-12	15:00:00	6	1	S	6	TRAUMATISMOVVVVVV
+2	2012-10-13	12:30:00	3	2	S	4	VERIFICANDO TRAUMA
 \.
 
 
 --
--- TOC entry 2173 (class 0 OID 27945)
+-- TOC entry 2174 (class 0 OID 27945)
 -- Dependencies: 169
 -- Data for Name: custos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY custos (cod_consulta_fk, valortotal, cod_custo, cod_cliente_fk, dataconsulta) FROM stdin;
-2	117.00	2	3	2012-12-12
-1	\N	1	3	2012-10-20
+2	40.00	2	3	2012-10-13
+1	170.00	1	3	2012-10-12
 \.
 
 
 --
--- TOC entry 2174 (class 0 OID 27950)
+-- TOC entry 2175 (class 0 OID 27950)
 -- Dependencies: 171
 -- Data for Name: exame; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY exame (tipo_exame, cod_exame_pk, cod_laboratorio_fk, nome_responsavel, valor_exame) FROM stdin;
-SANGUINEO	1	1	\N	\N
-FESES	2	2	\N	\N
-UTERINO	3	2	\N	\N
+SANGUE	1	2	\N	\N
 \.
 
 
 --
--- TOC entry 2175 (class 0 OID 27958)
+-- TOC entry 2176 (class 0 OID 27958)
 -- Dependencies: 173
 -- Data for Name: laboratoriais; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY laboratoriais (cod_tratameto_fk, cod_exame_fk, descricao_exame, responsavel_exame, valor, cod_laboratoriais) FROM stdin;
-16	1	KKK	ENRIQEU	121.00	6
-17	1	DEFECO	EU	222.00	7
 \.
 
 
 --
--- TOC entry 2176 (class 0 OID 27966)
+-- TOC entry 2177 (class 0 OID 27966)
 -- Dependencies: 175
 -- Data for Name: laboratorios; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -4402,19 +4418,18 @@ COPY laboratorios (cod_laboratorio_pk, nome_laboratorio, telefone_laboratorio, e
 
 
 --
--- TOC entry 2177 (class 0 OID 27972)
+-- TOC entry 2178 (class 0 OID 27972)
 -- Dependencies: 177
 -- Data for Name: medicacao; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY medicacao (cod_tratamento_fk, cod_remedio_fk, qtd_aplicada, responsavel_medicacao, valor, tipo_responsavel, cod_medicacao) FROM stdin;
-16	1	4	RRREEE	23.00	\N	1
-22	1	9	OEOOEO	44.00	\N	2
+1	1	2	ENRIQUE	12.00	\N	5
 \.
 
 
 --
--- TOC entry 2178 (class 0 OID 27977)
+-- TOC entry 2179 (class 0 OID 27977)
 -- Dependencies: 179
 -- Data for Name: medico_veterinario; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -4427,7 +4442,7 @@ COPY medico_veterinario (codigo_medico_vet_pk, nome_medico_veterinario, especial
 
 
 --
--- TOC entry 2179 (class 0 OID 27984)
+-- TOC entry 2180 (class 0 OID 27984)
 -- Dependencies: 181
 -- Data for Name: paciente; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -4439,7 +4454,7 @@ COPY paciente (cod_paciente, cod_cliente_fk, rghv_paciente, especie_paciente, ra
 
 
 --
--- TOC entry 2180 (class 0 OID 27992)
+-- TOC entry 2181 (class 0 OID 27992)
 -- Dependencies: 183
 -- Data for Name: remedios; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -4451,37 +4466,39 @@ COPY remedios (cod_remedio, nome_remedio, valor_remedio, qtd_estoque, categoria_
 
 
 --
--- TOC entry 2181 (class 0 OID 27997)
+-- TOC entry 2182 (class 0 OID 27997)
 -- Dependencies: 185
 -- Data for Name: tipo_consulta; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY tipo_consulta (cod_tipo_consulta, valor_consulta, descricao_tipo_cconsulta) FROM stdin;
-1	20.00	EM AULA
+2	40.00	PLANTÃO
+1	20.00	NORMAL
 3	60.00	ESPECIAL
-2	40.00	CONVENCIONAL
 \.
 
 
 --
--- TOC entry 2182 (class 0 OID 28002)
+-- TOC entry 2183 (class 0 OID 28002)
 -- Dependencies: 187
 -- Data for Name: tratamento; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY tratamento (cod_tratamento_pk, descricao_tratamento, cod_consulta_fk) FROM stdin;
-16	ENCEFALO-CRÂNIANA	1
-18	ENCEFALO-CRÂNIANA	1
-17	ENCEFALO-CRÂNIANA	1
-19	ENCEFALO-CRÂNIANA	1
-20	ABDOMINAL	1
-21	ABDOMINAL	2
-22	TANDRIFLAN	2
+2	ENCEFALO-CRÂNIANA	1
+3	TANDRIFLAN	1
+5	SANGUE	1
+7	ABDOMINAL	1
+6	ENCEFALO-CRÂNIANA	2
+4	ENCEFALO-CRÂNIANA	1
+8	CALMAX	2
+1	SANGUE	1
+9	ENCEFALO-CRÂNIANA	2
 \.
 
 
 --
--- TOC entry 2183 (class 0 OID 28010)
+-- TOC entry 2184 (class 0 OID 28010)
 -- Dependencies: 189
 -- Data for Name: usuario; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -4491,7 +4508,7 @@ COPY usuario (cod_usuario, nome_usuario, login, senha) FROM stdin;
 
 
 --
--- TOC entry 2105 (class 2606 OID 28033)
+-- TOC entry 2106 (class 2606 OID 28033)
 -- Dependencies: 161 161
 -- Name: cirurgiaPK; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -4501,7 +4518,7 @@ ALTER TABLE ONLY cirurgia
 
 
 --
--- TOC entry 2107 (class 2606 OID 28035)
+-- TOC entry 2108 (class 2606 OID 28035)
 -- Dependencies: 163 163
 -- Name: cirurgia_enternacao_cod_internacao_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -4511,7 +4528,7 @@ ALTER TABLE ONLY cirurgia_enternacao
 
 
 --
--- TOC entry 2111 (class 2606 OID 28037)
+-- TOC entry 2112 (class 2606 OID 28037)
 -- Dependencies: 165 165
 -- Name: cod_cliPk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -4521,7 +4538,7 @@ ALTER TABLE ONLY cliente
 
 
 --
--- TOC entry 2135 (class 2606 OID 28039)
+-- TOC entry 2136 (class 2606 OID 28039)
 -- Dependencies: 181 181
 -- Name: cod_pacPK; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -4531,7 +4548,7 @@ ALTER TABLE ONLY paciente
 
 
 --
--- TOC entry 2139 (class 2606 OID 28041)
+-- TOC entry 2140 (class 2606 OID 28041)
 -- Dependencies: 185 185
 -- Name: cod_tipo_consultaPK; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -4541,7 +4558,7 @@ ALTER TABLE ONLY tipo_consulta
 
 
 --
--- TOC entry 2143 (class 2606 OID 28043)
+-- TOC entry 2144 (class 2606 OID 28043)
 -- Dependencies: 189 189
 -- Name: cod_usuarioPK; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -4551,7 +4568,7 @@ ALTER TABLE ONLY usuario
 
 
 --
--- TOC entry 2133 (class 2606 OID 28045)
+-- TOC entry 2134 (class 2606 OID 28045)
 -- Dependencies: 179 179
 -- Name: cod_veterinarioPK; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -4561,7 +4578,7 @@ ALTER TABLE ONLY medico_veterinario
 
 
 --
--- TOC entry 2115 (class 2606 OID 28047)
+-- TOC entry 2116 (class 2606 OID 28047)
 -- Dependencies: 167 167
 -- Name: codconsultaunique; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -4571,7 +4588,7 @@ ALTER TABLE ONLY consulta
 
 
 --
--- TOC entry 2117 (class 2606 OID 28049)
+-- TOC entry 2118 (class 2606 OID 28049)
 -- Dependencies: 167 167 167 167
 -- Name: consultaPK; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -4581,7 +4598,7 @@ ALTER TABLE ONLY consulta
 
 
 --
--- TOC entry 2119 (class 2606 OID 28051)
+-- TOC entry 2120 (class 2606 OID 28051)
 -- Dependencies: 169 169
 -- Name: consultapk; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -4591,7 +4608,7 @@ ALTER TABLE ONLY custos
 
 
 --
--- TOC entry 2113 (class 2606 OID 28053)
+-- TOC entry 2114 (class 2606 OID 28053)
 -- Dependencies: 165 165
 -- Name: cpf_cliUN; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -4601,7 +4618,7 @@ ALTER TABLE ONLY cliente
 
 
 --
--- TOC entry 2121 (class 2606 OID 28055)
+-- TOC entry 2122 (class 2606 OID 28055)
 -- Dependencies: 169 169
 -- Name: custos_cod_custo_key; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -4611,7 +4628,7 @@ ALTER TABLE ONLY custos
 
 
 --
--- TOC entry 2109 (class 2606 OID 28057)
+-- TOC entry 2110 (class 2606 OID 28057)
 -- Dependencies: 163 163 163
 -- Name: enternacaoPK; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -4621,7 +4638,7 @@ ALTER TABLE ONLY cirurgia_enternacao
 
 
 --
--- TOC entry 2123 (class 2606 OID 28059)
+-- TOC entry 2124 (class 2606 OID 28059)
 -- Dependencies: 171 171
 -- Name: examePK; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -4631,7 +4648,7 @@ ALTER TABLE ONLY exame
 
 
 --
--- TOC entry 2125 (class 2606 OID 28061)
+-- TOC entry 2126 (class 2606 OID 28061)
 -- Dependencies: 173 173 173
 -- Name: laboratoriaisPK; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -4641,7 +4658,7 @@ ALTER TABLE ONLY laboratoriais
 
 
 --
--- TOC entry 2129 (class 2606 OID 28063)
+-- TOC entry 2130 (class 2606 OID 28063)
 -- Dependencies: 175 175
 -- Name: laboratorioPK; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -4651,7 +4668,7 @@ ALTER TABLE ONLY laboratorios
 
 
 --
--- TOC entry 2145 (class 2606 OID 28065)
+-- TOC entry 2146 (class 2606 OID 28065)
 -- Dependencies: 189 189
 -- Name: login_usuarioUN; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -4661,7 +4678,7 @@ ALTER TABLE ONLY usuario
 
 
 --
--- TOC entry 2131 (class 2606 OID 28067)
+-- TOC entry 2132 (class 2606 OID 28067)
 -- Dependencies: 177 177 177
 -- Name: medicacaoPK; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -4671,7 +4688,7 @@ ALTER TABLE ONLY medicacao
 
 
 --
--- TOC entry 2137 (class 2606 OID 28069)
+-- TOC entry 2138 (class 2606 OID 28069)
 -- Dependencies: 183 183
 -- Name: remedioPK; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -4681,7 +4698,7 @@ ALTER TABLE ONLY remedios
 
 
 --
--- TOC entry 2141 (class 2606 OID 28071)
+-- TOC entry 2142 (class 2606 OID 28071)
 -- Dependencies: 187 187
 -- Name: tratamentoPK; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -4691,7 +4708,7 @@ ALTER TABLE ONLY tratamento
 
 
 --
--- TOC entry 2127 (class 2606 OID 28073)
+-- TOC entry 2128 (class 2606 OID 28073)
 -- Dependencies: 173 173
 -- Name: uniqueLaboratoriais; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
 --
@@ -4701,7 +4718,7 @@ ALTER TABLE ONLY laboratoriais
 
 
 --
--- TOC entry 2161 (class 2620 OID 28074)
+-- TOC entry 2162 (class 2620 OID 28074)
 -- Dependencies: 205 163
 -- Name: gatilho_atualizar_cirurgia; Type: TRIGGER; Schema: public; Owner: postgres
 --
@@ -4710,7 +4727,7 @@ CREATE TRIGGER gatilho_atualizar_cirurgia AFTER UPDATE ON cirurgia_enternacao FO
 
 
 --
--- TOC entry 2163 (class 2620 OID 28075)
+-- TOC entry 2164 (class 2620 OID 28075)
 -- Dependencies: 204 167
 -- Name: gatilho_atualizar_conta; Type: TRIGGER; Schema: public; Owner: postgres
 --
@@ -4719,7 +4736,7 @@ CREATE TRIGGER gatilho_atualizar_conta AFTER UPDATE ON consulta FOR EACH ROW EXE
 
 
 --
--- TOC entry 2165 (class 2620 OID 28076)
+-- TOC entry 2166 (class 2620 OID 28076)
 -- Dependencies: 173 206
 -- Name: gatilho_atualizar_exame; Type: TRIGGER; Schema: public; Owner: postgres
 --
@@ -4728,8 +4745,8 @@ CREATE TRIGGER gatilho_atualizar_exame AFTER UPDATE ON laboratoriais FOR EACH RO
 
 
 --
--- TOC entry 2167 (class 2620 OID 28077)
--- Dependencies: 207 177
+-- TOC entry 2168 (class 2620 OID 28077)
+-- Dependencies: 177 207
 -- Name: gatilho_atualizar_medicacao; Type: TRIGGER; Schema: public; Owner: postgres
 --
 
@@ -4737,8 +4754,8 @@ CREATE TRIGGER gatilho_atualizar_medicacao AFTER UPDATE ON medicacao FOR EACH RO
 
 
 --
--- TOC entry 2162 (class 2620 OID 28078)
--- Dependencies: 237 163
+-- TOC entry 2163 (class 2620 OID 28078)
+-- Dependencies: 163 235
 -- Name: gatilho_inserir_cirurgia; Type: TRIGGER; Schema: public; Owner: postgres
 --
 
@@ -4746,8 +4763,8 @@ CREATE TRIGGER gatilho_inserir_cirurgia AFTER INSERT ON cirurgia_enternacao FOR 
 
 
 --
--- TOC entry 2164 (class 2620 OID 28079)
--- Dependencies: 167 236
+-- TOC entry 2165 (class 2620 OID 28079)
+-- Dependencies: 234 167
 -- Name: gatilho_inserir_conta; Type: TRIGGER; Schema: public; Owner: postgres
 --
 
@@ -4755,8 +4772,8 @@ CREATE TRIGGER gatilho_inserir_conta AFTER INSERT ON consulta FOR EACH ROW EXECU
 
 
 --
--- TOC entry 2166 (class 2620 OID 28080)
--- Dependencies: 238 173
+-- TOC entry 2167 (class 2620 OID 28080)
+-- Dependencies: 173 236
 -- Name: gatilho_inserir_exame; Type: TRIGGER; Schema: public; Owner: postgres
 --
 
@@ -4764,8 +4781,8 @@ CREATE TRIGGER gatilho_inserir_exame AFTER INSERT ON laboratoriais FOR EACH ROW 
 
 
 --
--- TOC entry 2168 (class 2620 OID 28081)
--- Dependencies: 177 240
+-- TOC entry 2169 (class 2620 OID 28081)
+-- Dependencies: 177 238
 -- Name: gatilho_inserir_medicacao; Type: TRIGGER; Schema: public; Owner: postgres
 --
 
@@ -4773,8 +4790,8 @@ CREATE TRIGGER gatilho_inserir_medicacao AFTER INSERT ON medicacao FOR EACH ROW 
 
 
 --
--- TOC entry 2149 (class 2606 OID 28082)
--- Dependencies: 2134 167 181
+-- TOC entry 2150 (class 2606 OID 28082)
+-- Dependencies: 167 181 2135
 -- Name: PacienteFK; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4783,8 +4800,8 @@ ALTER TABLE ONLY consulta
 
 
 --
--- TOC entry 2147 (class 2606 OID 28087)
--- Dependencies: 163 161 2104
+-- TOC entry 2148 (class 2606 OID 28087)
+-- Dependencies: 2105 163 161
 -- Name: cirurgiaFK; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4793,8 +4810,8 @@ ALTER TABLE ONLY cirurgia_enternacao
 
 
 --
--- TOC entry 2152 (class 2606 OID 28092)
--- Dependencies: 165 2110 169
+-- TOC entry 2153 (class 2606 OID 28092)
+-- Dependencies: 165 2111 169
 -- Name: clientefk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4803,8 +4820,8 @@ ALTER TABLE ONLY custos
 
 
 --
--- TOC entry 2159 (class 2606 OID 28097)
--- Dependencies: 181 2110 165
+-- TOC entry 2160 (class 2606 OID 28097)
+-- Dependencies: 2111 165 181
 -- Name: cod_cliFK; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4813,8 +4830,8 @@ ALTER TABLE ONLY paciente
 
 
 --
--- TOC entry 2153 (class 2606 OID 28102)
--- Dependencies: 2114 167 169
+-- TOC entry 2154 (class 2606 OID 28102)
+-- Dependencies: 167 169 2115
 -- Name: consultafk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4823,8 +4840,8 @@ ALTER TABLE ONLY custos
 
 
 --
--- TOC entry 2155 (class 2606 OID 28107)
--- Dependencies: 171 173 2122
+-- TOC entry 2156 (class 2606 OID 28107)
+-- Dependencies: 171 2123 173
 -- Name: exameFK; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4833,8 +4850,8 @@ ALTER TABLE ONLY laboratoriais
 
 
 --
--- TOC entry 2154 (class 2606 OID 28112)
--- Dependencies: 171 175 2128
+-- TOC entry 2155 (class 2606 OID 28112)
+-- Dependencies: 2129 171 175
 -- Name: laboratorioFK; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4843,8 +4860,8 @@ ALTER TABLE ONLY exame
 
 
 --
--- TOC entry 2146 (class 2606 OID 28117)
--- Dependencies: 2132 161 179
+-- TOC entry 2147 (class 2606 OID 28117)
+-- Dependencies: 179 2133 161
 -- Name: medicoFK; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4853,8 +4870,8 @@ ALTER TABLE ONLY cirurgia
 
 
 --
--- TOC entry 2150 (class 2606 OID 28122)
--- Dependencies: 167 179 2132
+-- TOC entry 2151 (class 2606 OID 28122)
+-- Dependencies: 167 179 2133
 -- Name: medico_veterinarioFK; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4863,8 +4880,8 @@ ALTER TABLE ONLY consulta
 
 
 --
--- TOC entry 2157 (class 2606 OID 28127)
--- Dependencies: 183 177 2136
+-- TOC entry 2158 (class 2606 OID 28127)
+-- Dependencies: 177 183 2137
 -- Name: remedio_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4873,8 +4890,8 @@ ALTER TABLE ONLY medicacao
 
 
 --
--- TOC entry 2151 (class 2606 OID 28132)
--- Dependencies: 167 185 2138
+-- TOC entry 2152 (class 2606 OID 28132)
+-- Dependencies: 167 185 2139
 -- Name: tipo_consultaFK; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4883,8 +4900,8 @@ ALTER TABLE ONLY consulta
 
 
 --
--- TOC entry 2148 (class 2606 OID 28137)
--- Dependencies: 2140 163 187
+-- TOC entry 2149 (class 2606 OID 28137)
+-- Dependencies: 163 187 2141
 -- Name: tratamentoFK; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4893,8 +4910,8 @@ ALTER TABLE ONLY cirurgia_enternacao
 
 
 --
--- TOC entry 2156 (class 2606 OID 28142)
--- Dependencies: 173 2140 187
+-- TOC entry 2157 (class 2606 OID 28142)
+-- Dependencies: 173 187 2141
 -- Name: tratamentoFK; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4903,8 +4920,8 @@ ALTER TABLE ONLY laboratoriais
 
 
 --
--- TOC entry 2160 (class 2606 OID 28147)
--- Dependencies: 167 2114 187
+-- TOC entry 2161 (class 2606 OID 28147)
+-- Dependencies: 167 2115 187
 -- Name: tratamento_cod_consulta_fk_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4913,8 +4930,8 @@ ALTER TABLE ONLY tratamento
 
 
 --
--- TOC entry 2158 (class 2606 OID 28152)
--- Dependencies: 177 2140 187
+-- TOC entry 2159 (class 2606 OID 28152)
+-- Dependencies: 177 2141 187
 -- Name: tratamento_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -4923,7 +4940,7 @@ ALTER TABLE ONLY medicacao
 
 
 --
--- TOC entry 2188 (class 0 OID 0)
+-- TOC entry 2189 (class 0 OID 0)
 -- Dependencies: 6
 -- Name: public; Type: ACL; Schema: -; Owner: postgres
 --
@@ -4934,7 +4951,7 @@ GRANT ALL ON SCHEMA public TO postgres;
 GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
--- Completed on 2012-10-17 16:05:40
+-- Completed on 2012-10-19 21:09:21
 
 --
 -- PostgreSQL database dump complete
